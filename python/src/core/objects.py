@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 
 import asyncio, logging
-from typing import Annotated, Any, Union, Optional, Tuple, List, Dict
+from typing import Annotated, Any, Union, Optional, Tuple, List, Dict, Literal
 from datetime import datetime
 from pydantic.dataclasses import dataclass
 from pinecone import Pinecone
@@ -25,7 +25,6 @@ class Tool:
 class ToolListResponse:
     embeddings: Annotated[list[float], Doc("The embeddings for the query used to retrieve the tools")]
     tools: Annotated[list[Tool], Doc("A list of tools")]
-    execution_time: Annotated[float, Doc("Latency of the tool list retrieval in milliseconds")]
     query: Optional[str] = None  # Add the original query for cache purposes
 
     def sort_tools_by_score(self, reversed: bool = False, limit: int = 10) -> None:
