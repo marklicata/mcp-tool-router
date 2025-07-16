@@ -10,4 +10,4 @@ __pycache__/
 *.egg-info/
 dist/
 build/
-core/mcp_servers.json
+server/json_utils/
