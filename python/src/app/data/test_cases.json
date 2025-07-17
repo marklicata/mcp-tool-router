@@ -1,0 +1,3299 @@
+[
+    {
+        "id": 1,
+        "question": "What public repositories under the Microsoft organization mention \"Copilot\" in their description?",
+        "expected_tools": [
+            "GitHub.SearchRepositories"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 2,
+        "question": "List all public repositories for user \"mark3labs\".",
+        "expected_tools": [
+            "GitHub.SearchRepositories"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 3,
+        "question": "Find repositories related to \"machine learning\" created in the last year.",
+        "expected_tools": [
+            "GitHub.SearchRepositories"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 4,
+        "question": "Show all repositories with the keyword \"metadata\" in the description.",
+        "expected_tools": [
+            "GitHub.SearchRepositories"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 5,
+        "question": "Retrieve the README.md of the repository azure/azure-sdk.",
+        "expected_tools": [
+            "GitHub.GetFileContents"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 6,
+        "question": "Fetch the contents of Dockerfile in microsoft/vscode.",
+        "expected_tools": [
+            "GitHub.GetFileContents"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 7,
+        "question": "What does the .gitignore file contain in the LangChain repo?",
+        "expected_tools": [
+            "GitHub.GetFileContents"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 8,
+        "question": "List the last 20 commits on the main branch of the Copilot repository.",
+        "expected_tools": [
+            "GitHub.ListCommits"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 9,
+        "question": "Show commit history for the branch dev in your repository.",
+        "expected_tools": [
+            "GitHub.ListCommits"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 10,
+        "question": "Retrieve details of commit 7a4e3df in the Copilot server codebase.",
+        "expected_tools": [
+            "GitHub.GetCommit"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 11,
+        "question": "Which files changed in commit 7a4e3df?",
+        "expected_tools": [
+            "GitHub.GetCommit"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 12,
+        "question": "Find code snippets in repositories that reference \"Pinecone\".",
+        "expected_tools": [
+            "GitHub.SearchCode"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 13,
+        "question": "Search for functions named PushFiles across all repos under your account.",
+        "expected_tools": [
+            "GitHub.SearchCode"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 14,
+        "question": "Identify occurrences of LangChain.run in public repositories.",
+        "expected_tools": [
+            "GitHub.SearchCode"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 15,
+        "question": "List all branches in the microsoft/azure-sdk repository.",
+        "expected_tools": [
+            "GitHub.ListBranches"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 16,
+        "question": "What branches are protected in the microsoft/vscode repo?",
+        "expected_tools": [
+            "GitHub.ListBranches"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 17,
+        "question": "Show remote and local branches for the Copilot server.",
+        "expected_tools": [
+            "GitHub.ListBranches"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 18,
+        "question": "List all tags for the GitHub-Copilot repository.",
+        "expected_tools": [
+            "GitHub.ListTags"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 19,
+        "question": "What is the latest tag in azure-sdk-for-js?",
+        "expected_tools": [
+            "GitHub.ListTags"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 20,
+        "question": "Get details on tag v1.2.3 in the Copilot repo.",
+        "expected_tools": [
+            "GitHub.GetTag"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 21,
+        "question": "Which branch is tag v1.2.3 linked to?",
+        "expected_tools": [
+            "GitHub.GetTag"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 22,
+        "question": "Create or update config.yaml on branch main in repo AI-Governance.",
+        "expected_tools": [
+            "GitHub.CreateOrUpdateFile"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 23,
+        "question": "Add a new README.md file to the project repo.",
+        "expected_tools": [
+            "GitHub.CreateOrUpdateFile"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 24,
+        "question": "Initialize a new private repository named MCP-Test.",
+        "expected_tools": [
+            "GitHub.CreateRepository"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 25,
+        "question": "Create a public repository named OpenAI-Examples.",
+        "expected_tools": [
+            "GitHub.CreateRepository"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 26,
+        "question": "Fork the microsoft/Copilot repository to your GitHub account.",
+        "expected_tools": [
+            "GitHub.ForkRepository"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 27,
+        "question": "Fork azure-sdk-for-python as a template in your organization.",
+        "expected_tools": [
+            "GitHub.ForkRepository"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 28,
+        "question": "Create a new branch feature/login from main.",
+        "expected_tools": [
+            "GitHub.CreateBranch"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 29,
+        "question": "Start a hotfix branch from the release branch.",
+        "expected_tools": [
+            "GitHub.CreateBranch"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 30,
+        "question": "Push local changes from branch dev-feature to GitHub.",
+        "expected_tools": [
+            "GitHub.PushFiles"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 31,
+        "question": "Show issue #24 in the Copilot repo.",
+        "expected_tools": [
+            "GitHub.GetIssue"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 32,
+        "question": "List all open issues in the microsoft/azure-cli repository.",
+        "expected_tools": [
+            "GitHub.ListIssues"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 33,
+        "question": "Search issues mentioning MCP across repositories.",
+        "expected_tools": [
+            "GitHub.SearchIssues"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 34,
+        "question": "Find issues with the label bug in Copilot.",
+        "expected_tools": [
+            "GitHub.SearchIssues"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 35,
+        "question": "What comments exist on issue #13?",
+        "expected_tools": [
+            "GitHub.GetIssueComments"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 36,
+        "question": "Add reproduction steps as a comment to issue #9.",
+        "expected_tools": [
+            "GitHub.AddIssueComment"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 37,
+        "question": "Create a new issue titled Memory leak in agent in your repo.",
+        "expected_tools": [
+            "GitHub.CreateIssue"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 38,
+        "question": "Update issue #18 to add the label wontfix.",
+        "expected_tools": [
+            "GitHub.UpdateIssue"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 39,
+        "question": "Assign Copilot agent to triage issue #44.",
+        "expected_tools": [
+            "GitHub.AssignCopilotToIssue"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 40,
+        "question": "Fetch details for issue #31, including title and body.",
+        "expected_tools": [
+            "GitHub.GetIssue"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 41,
+        "question": "Get pull request #89 in the azure-sdk repo.",
+        "expected_tools": [
+            "GitHub.GetPullRequest"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 42,
+        "question": "List all open pull requests in microsoft/vscode.",
+        "expected_tools": [
+            "GitHub.ListPullRequests"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 43,
+        "question": "Search for pull requests with label enhancement.",
+        "expected_tools": [
+            "GitHub.SearchPullRequests"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 44,
+        "question": "What files changed in PR #45?",
+        "expected_tools": [
+            "GitHub.GetPullRequestFiles"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 45,
+        "question": "Retrieve the diff view for PR #108.",
+        "expected_tools": [
+            "GitHub.GetPullRequestDiff"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 46,
+        "question": "Check if PR #77 can be merged without conflicts.",
+        "expected_tools": [
+            "GitHub.GetPullRequestStatus"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 47,
+        "question": "List review comments on PR #19.",
+        "expected_tools": [
+            "GitHub.GetPullRequestComments"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 48,
+        "question": "Who approved PR #92?",
+        "expected_tools": [
+            "GitHub.GetPullRequestReviews"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 49,
+        "question": "Merge PR #60 into main with squash commits.",
+        "expected_tools": [
+            "GitHub.MergePullRequest"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 50,
+        "question": "Create a draft pull request from dev to main.",
+        "expected_tools": [
+            "GitHub.CreatePullRequest"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 51,
+        "question": "Update the title of PR #34 to Refactor logging module.",
+        "expected_tools": [
+            "GitHub.UpdatePullRequest"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 52,
+        "question": "Request Copilot to review PR #101.",
+        "expected_tools": [
+            "GitHub.RequestCopilotReview"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 53,
+        "question": "Start a pending review on PR #41.",
+        "expected_tools": [
+            "GitHub.CreatePendingPullRequestReview"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 54,
+        "question": "Add an inline comment to the pending review for PR #22.",
+        "expected_tools": [
+            "GitHub.AddPullRequestReviewCommentToPendingReview"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 55,
+        "question": "Submit the pending review for PR #22.",
+        "expected_tools": [
+            "GitHub.SubmitPendingPullRequestReview"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 56,
+        "question": "List all workflows for the azure-sdk repo.",
+        "expected_tools": [
+            "GitHub.ListWorkflows"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 57,
+        "question": "Show recent workflow runs for the deploy workflow.",
+        "expected_tools": [
+            "GitHub.ListWorkflowRuns"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 58,
+        "question": "Get details for workflow run #32.",
+        "expected_tools": [
+            "GitHub.GetWorkflowRun"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 59,
+        "question": "Download logs for run #17.",
+        "expected_tools": [
+            "GitHub.GetWorkflowRunLogs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 60,
+        "question": "List jobs executed in workflow run #17.",
+        "expected_tools": [
+            "GitHub.ListWorkflowJobs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 61,
+        "question": "Show logs for the build-app job.",
+        "expected_tools": [
+            "GitHub.GetJobLogs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 62,
+        "question": "List artifacts from workflow run #20.",
+        "expected_tools": [
+            "GitHub.ListWorkflowRunArtifacts"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 63,
+        "question": "Trigger the deploy workflow manually.",
+        "expected_tools": [
+            "GitHub.RunWorkflow"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 64,
+        "question": "Retry only the failed jobs in workflow run #25.",
+        "expected_tools": [
+            "GitHub.RerunFailedJobs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 65,
+        "question": "Cancel the currently running backup workflow.",
+        "expected_tools": [
+            "GitHub.CancelWorkflowRun"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 66,
+        "question": "List all code scanning alerts in microsoft/vscode.",
+        "expected_tools": [
+            "GitHub.ListCodeScanningAlerts"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 67,
+        "question": "Get alert #12 details from code scanning in the Copilot repo.",
+        "expected_tools": [
+            "GitHub.GetCodeScanningAlert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 68,
+        "question": "How many security alerts exist in azure-sdk?",
+        "expected_tools": [
+            "GitHub.ListCodeScanningAlerts"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 69,
+        "question": "Show buffer overflow findings for code scanning.",
+        "expected_tools": [
+            "GitHub.GetCodeScanningAlert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 70,
+        "question": "Fetch metadata for alert #15 from code scanning.",
+        "expected_tools": [
+            "GitHub.GetCodeScanningAlert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 71,
+        "question": "List all secret scanning alerts in your repo.",
+        "expected_tools": [
+            "GitHub.ListSecretScanningAlerts"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 72,
+        "question": "Retrieve details for secret scanning alert #99.",
+        "expected_tools": [
+            "GitHub.GetSecretScanningAlert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 73,
+        "question": "Are any API keys exposed in azure-sdk?",
+        "expected_tools": [
+            "GitHub.ListSecretScanningAlerts"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 74,
+        "question": "Show the context of secret alert #42.",
+        "expected_tools": [
+            "GitHub.GetSecretScanningAlert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 75,
+        "question": "How many leaks detected by GitHub secret scanning?",
+        "expected_tools": [
+            "GitHub.ListSecretScanningAlerts"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 76,
+        "question": "List your current GitHub notifications.",
+        "expected_tools": [
+            "GitHub.ListNotifications"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 77,
+        "question": "Get details for notification #5.",
+        "expected_tools": [
+            "GitHub.GetNotificationDetails"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 78,
+        "question": "Dismiss notification for PR #32.",
+        "expected_tools": [
+            "GitHub.DismissNotification"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 79,
+        "question": "Mark all notifications as read.",
+        "expected_tools": [
+            "GitHub.MarkAllNotificationsRead"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 80,
+        "question": "Subscribe to updates on issue #14.",
+        "expected_tools": [
+            "GitHub.ManageNotificationSubscription"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 81,
+        "question": "Search for GitHub users with \u201cAI\u201d in their bio.",
+        "expected_tools": [
+            "GitHub.SearchUsers"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 82,
+        "question": "Find details for user \u201cmark3labs.\u201d",
+        "expected_tools": [
+            "GitHub.SearchUsers"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 83,
+        "question": "Search for organizations working on Copilot projects.",
+        "expected_tools": [
+            "GitHub.SearchOrgs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 84,
+        "question": "Find GitHub orgs related to \u201cLangChain Labs.\u201d",
+        "expected_tools": [
+            "GitHub.SearchOrgs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 85,
+        "question": "Search for users with keyword \u201cengineer\u201d in their profile.",
+        "expected_tools": [
+            "GitHub.SearchUsers"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 86,
+        "question": "Who am I authenticated as in this GitHub session?",
+        "expected_tools": [
+            "GitHub.GetMe"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 87,
+        "question": "What is my GitHub username?",
+        "expected_tools": [
+            "GitHub.GetMe"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 88,
+        "question": "Retrieve my profile metadata.",
+        "expected_tools": [
+            "GitHub.GetMe"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 89,
+        "question": "Which permissions does the authenticated user have?",
+        "expected_tools": [
+            "GitHub.GetMe"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 90,
+        "question": "Get the current user\u2019s email from GitHub context.",
+        "expected_tools": [
+            "GitHub.GetMe"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 91,
+        "question": "What GitHub toolsets are available for dynamic enabling?",
+        "expected_tools": [
+            "GitHub.ListAvailableToolsets"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 92,
+        "question": "Show all tools grouped by toolset.",
+        "expected_tools": [
+            "GitHub.GetToolsetsTools"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 93,
+        "question": "Enable the \u201cissues\u201d toolset at runtime.",
+        "expected_tools": [
+            "GitHub.EnableToolset"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 94,
+        "question": "Discover dynamic tool groups that can be activated.",
+        "expected_tools": [
+            "GitHub.ListAvailableToolsets"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 95,
+        "question": "List tools in the \u201cactions\u201d toolset.",
+        "expected_tools": [
+            "GitHub.GetToolsetsTools"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 96,
+        "question": "Activate the \u201cnotifications\u201d toolset dynamically.",
+        "expected_tools": [
+            "GitHub.EnableToolset"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 97,
+        "question": "What dynamic toolsets exist for secret protection?",
+        "expected_tools": [
+            "GitHub.ListAvailableToolsets"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 98,
+        "question": "Display tools within the \u201crepos\u201d dynamic group.",
+        "expected_tools": [
+            "GitHub.GetToolsetsTools"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 99,
+        "question": "Enable the \u201ccode_security\u201d toolset for scanning.",
+        "expected_tools": [
+            "GitHub.EnableToolset"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 100,
+        "question": "List all potentially activatable toolsets for advanced workflows.",
+        "expected_tools": [
+            "GitHub.ListAvailableToolsets"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 101,
+        "question": "List all App Configuration accounts available in the subscription.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-account-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 102,
+        "question": "Show all key-values in the App Configuration named 'ProdConfig'.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-kv-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 103,
+        "question": "Retrieve the value of the 'AppTheme' key.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-kv-show"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 104,
+        "question": "Set the 'LogLevel' key to 'Verbose'.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-kv-set"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 105,
+        "question": "Delete the 'DeprecatedSetting' key from configuration.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-kv-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 106,
+        "question": "Lock the 'EnvironmentMode' key to prevent edits.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-kv-lock"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 7,
+        "question": "Unlock the 'MaintenanceFlag' key to allow updates.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-kv-unlock"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 8,
+        "question": "Compare the values of 'FeatureToggleA' and 'FeatureToggleB' keys.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-kv-show",
+            "Azure.azmcp-appconfig-kv-show"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 9,
+        "question": "List all Cosmos DB accounts in the resource group 'rg-prod'.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-account-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 10,
+        "question": "Show databases under the 'prod-cosmos' account.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 11,
+        "question": "List containers in the 'analytics-db' database.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-container-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 12,
+        "question": "Query user profiles from the 'users' container.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-container-item-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 13,
+        "question": "Insert a new telemetry record into the 'logs' container.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-container-item-insert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 14,
+        "question": "Delete expired token items from the 'sessions' container.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-container-item-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 15,
+        "question": "Count the number of documents in the 'orders' container.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-container-item-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 16,
+        "question": "Fetch all items where 'status' equals 'active' from the 'clients' container.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-container-item-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 17,
+        "question": "Migrate documents from container 'temp-data' to 'archive-data'.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-container-item-query",
+            "Azure.azmcp-cosmos-database-container-item-insert",
+            "Azure.azmcp-cosmos-database-container-item-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 18,
+        "question": "Preview the schema of a document in the 'config' container.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-container-item-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 19,
+        "question": "List all Blob Storage accounts under subscription.",
+        "expected_tools": [
+            "Azure.azmcp-storage-account-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 20,
+        "question": "Display containers in the 'backup-container' Storage account.",
+        "expected_tools": [
+            "Azure.azmcp-storage-container-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 21,
+        "question": "List blobs in the 'archive-container'.",
+        "expected_tools": [
+            "Azure.azmcp-storage-blob-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 22,
+        "question": "Download the 'app.log' blob from 'logs' container.",
+        "expected_tools": [
+            "Azure.azmcp-storage-blob-download"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 23,
+        "question": "Upload 'report.pdf' to the 'reports' container.",
+        "expected_tools": [
+            "Azure.azmcp-storage-blob-upload"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 24,
+        "question": "Delete the 'debug.log' blob from 'logs'.",
+        "expected_tools": [
+            "Azure.azmcp-storage-blob-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 25,
+        "question": "Download 'data.csv' with SAS token generation via CLI.",
+        "expected_tools": [
+            "Azure.azmcp-storage-blob-download",
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 26,
+        "question": "Copy 'archive.zip' blob from container 'temp' to 'archive' using CLI.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 27,
+        "question": "Retrieve metadata of 'images/photo.png' blob.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 28,
+        "question": "Set a blob tier to 'Archive' for 'bigdata.bak'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 29,
+        "question": "Run KQL log query to find error logs from yesterday.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-logs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 30,
+        "question": "Query CPU usage metrics for 'AppService' over the last 24 hours.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-metrics"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 31,
+        "question": "Find login failures in the past 24 hours via log query.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-logs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 32,
+        "question": "Get memory usage metrics for the storage account.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-metrics"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 33,
+        "question": "List all failed requests count from logs.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-logs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 34,
+        "question": "Compare CPU and memory usage for 'VM01' in the last week.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-metrics",
+            "Azure.azmcp-monitor-query-metrics"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 35,
+        "question": "Retrieve disk I/O metrics for 'DBServer'.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-metrics"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 36,
+        "question": "Filter logs for timeout errors in 'FunctionApp'.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-logs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 37,
+        "question": "Estimate cost of Azure Monitor data ingestion last month.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-metrics"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 38,
+        "question": "Stream all logs where 'severity' equals 'Critical'.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-logs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 39,
+        "question": "List all keys stored in Key Vault 'prod-kv'.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 40,
+        "question": "Retrieve metadata for key 'SignKey'.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-get"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 41,
+        "question": "Fetch the value of key 'EncryptionKeyId'.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-get"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 42,
+        "question": "Create a new RSA key named 'NewRSAKey'.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-create"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 43,
+        "question": "Generate an AES key for encryption named 'AESKey01'.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-create"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 44,
+        "question": "Delete the key 'DeprecatedKey' from the vault.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 45,
+        "question": "Rotate the key 'SignKey' to a new version.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-create"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 46,
+        "question": "Backup the key 'MyKey' to secure storage.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 47,
+        "question": "Restore a key from backup into 'prod-kv'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 48,
+        "question": "List only RSA keys in the vault.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 49,
+        "question": "List all AI Search services in West US.",
+        "expected_tools": [
+            "Azure.azmcp-search-service-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 50,
+        "question": "Show indexes in the 'LegalSearch' service.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 51,
+        "question": "Run search query for contracts tagged NDA.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 52,
+        "question": "Find policies labeled '2024-HIPAA'.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 53,
+        "question": "Create an index for product catalog named 'product-index'.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-create"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 54,
+        "question": "Build a new index for resume search named 'resume-index'.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-create"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 55,
+        "question": "Delete the legacy index 'dev-test' from AI Search.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 56,
+        "question": "Update the 'product-index' with new mapping.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 57,
+        "question": "List all indexes across all search services.",
+        "expected_tools": [
+            "Azure.azmcp-search-service-list",
+            "Azure.azmcp-search-index-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 58,
+        "question": "Retrieve document count from 'resume-index'.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 59,
+        "question": "List all Kusto clusters in subscription.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-cluster-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 60,
+        "question": "Show databases in cluster 'telemetry-cluster'.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-database-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 61,
+        "question": "Run Kusto query to find error logs from Data Explorer.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 62,
+        "question": "Count failed requests by region in Kusto.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 63,
+        "question": "Export query results to CSV from Kusto.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 64,
+        "question": "Find the top 10 slowest queries in last 7 days.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 65,
+        "question": "List all tables in Kusto database 'analytics'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 66,
+        "question": "Visualize time series of CPU metrics via Kusto query.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 67,
+        "question": "List PostgreSQL servers in finance subscription.",
+        "expected_tools": [
+            "Azure.azmcp-postgres-server-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 68,
+        "question": "Show all databases on server 'pg-core'.",
+        "expected_tools": [
+            "Azure.azmcp-postgres-database-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 69,
+        "question": "Run SQL query: SELECT * FROM users WHERE active=true.",
+        "expected_tools": [
+            "Azure.azmcp-postgres-table-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 70,
+        "question": "Get top 10 customers by revenue from 'salesdb'.",
+        "expected_tools": [
+            "Azure.azmcp-postgres-table-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 71,
+        "question": "Backup the 'reports' database to storage.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 72,
+        "question": "Restore 'reports' database from backup.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 73,
+        "question": "List schemas in the 'finance' database.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 74,
+        "question": "Count rows in 'transactions' table where amount > 1000.",
+        "expected_tools": [
+            "Azure.azmcp-postgres-table-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 75,
+        "question": "List all Service Bus namespaces in the subscription.",
+        "expected_tools": [
+            "Azure.azmcp-servicebus-namespace-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 76,
+        "question": "Show queues in namespace 'prod-sb'.",
+        "expected_tools": [
+            "Azure.azmcp-servicebus-queue-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 77,
+        "question": "Send a 'Hello World' message to the 'alerts' queue.",
+        "expected_tools": [
+            "Azure.azmcp-servicebus-message-send"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 78,
+        "question": "Receive the next 5 messages from 'alert-queue'.",
+        "expected_tools": [
+            "Azure.azmcp-servicebus-message-receive"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 79,
+        "question": "Purge all messages in 'temp-queue'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 80,
+        "question": "Peek messages without removing from 'alerts'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 81,
+        "question": "Schedule a message to 'scheduled-queue' for tomorrow.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 82,
+        "question": "Get queue metadata for 'order-queue'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 83,
+        "question": "List resource groups in the 'West US' subscription.",
+        "expected_tools": [
+            "Azure.azmcp-resourcegroup-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 84,
+        "question": "Show all Azure subscriptions available.",
+        "expected_tools": [
+            "Azure.azmcp-subscription-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 85,
+        "question": "Check if resource group 'rg-test' exists.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 86,
+        "question": "List resources in resource group 'rg-prod'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 87,
+        "question": "List all tagged resource groups with tag 'env=prod'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 88,
+        "question": "Count resource groups per region.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 89,
+        "question": "Delete resource group 'rg-old'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 90,
+        "question": "Lock resource group 'rg-prod' from deletion.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 91,
+        "question": "Run 'az vm list' to display virtual machines.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 92,
+        "question": "Execute 'az deployment group create' for ARM template.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 93,
+        "question": "List available locations for resources using CLI.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 94,
+        "question": "Show help for 'az storage account create'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 95,
+        "question": "Run an interactive shell command 'bash' in Azure Cloud Shell.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 96,
+        "question": "Execute any valid Azure CLI command, such as 'az group show'.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 97,
+        "question": "Query error logs in Azure Monitor and store the results in a Cosmos DB container.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-logs",
+            "Azure.azmcp-cosmos-database-container-item-insert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 98,
+        "question": "Retrieve all keys from Key Vault and save them as key-value pairs in App Configuration.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-list",
+            "Azure.azmcp-appconfig-kv-set"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 99,
+        "question": "List all blobs in storage, then log the count via Azure Monitor metrics.",
+        "expected_tools": [
+            "Azure.azmcp-storage-blob-list",
+            "Azure.azmcp-monitor-query-metrics"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 100,
+        "question": "Run a Kusto query, then export the result to a Blob Storage container.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-query",
+            "Azure.azmcp-storage-blob-upload"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 201,
+        "question": "Open the file named 'main.py' from the project root.",
+        "expected_tools": [
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 202,
+        "question": "Search for the term 'database connection' across the entire workspace.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 203,
+        "question": "Run the command 'npm install' in the terminal.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 204,
+        "question": "Install the Prettier extension for formatting support.",
+        "expected_tools": [
+            "VSCode.InstallExtension"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 205,
+        "question": "Toggle a breakpoint at the current line in the editor.",
+        "expected_tools": [
+            "VSCode.ToggleBreakpoint"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 206,
+        "question": "List all extensions currently installed in VSCode.",
+        "expected_tools": [
+            "VSCode.ListExtensions"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 207,
+        "question": "Change the theme of the editor to 'Dark+ (default dark)'.",
+        "expected_tools": [
+            "VSCode.ChangeTheme"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 208,
+        "question": "Start a debug session for the current Python project.",
+        "expected_tools": [
+            "VSCode.StartDebugSession"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 209,
+        "question": "Format the currently open document according to default settings.",
+        "expected_tools": [
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 210,
+        "question": "Peek at the definition of the 'handleRequest' function.",
+        "expected_tools": [
+            "VSCode.PeekDefinition"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 211,
+        "question": "Rename the 'apiService' symbol across all usages.",
+        "expected_tools": [
+            "VSCode.RenameSymbol"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 212,
+        "question": "Enable Zen Mode for a distraction-free editing experience.",
+        "expected_tools": [
+            "VSCode.ToggleZenMode"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 213,
+        "question": "Search for all usages of the variable 'userData' in the workspace.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 214,
+        "question": "Install the Python extension published by Microsoft.",
+        "expected_tools": [
+            "VSCode.InstallExtension"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 215,
+        "question": "Open a file by fuzzy-matching 'config.json'.",
+        "expected_tools": [
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 216,
+        "question": "Apply formatting to the currently open HTML file.",
+        "expected_tools": [
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 217,
+        "question": "Run the command 'pytest' in the terminal.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 218,
+        "question": "Start debugging the Node.js server script.",
+        "expected_tools": [
+            "VSCode.StartDebugSession"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 219,
+        "question": "Toggle Zen Mode off to return to default layout.",
+        "expected_tools": [
+            "VSCode.ToggleZenMode"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 220,
+        "question": "Change the color theme to 'Solarized Light'.",
+        "expected_tools": [
+            "VSCode.ChangeTheme"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 221,
+        "question": "Peek the definition of a class named 'UserModel'.",
+        "expected_tools": [
+            "VSCode.PeekDefinition"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 222,
+        "question": "Add a breakpoint to the first line of a test function.",
+        "expected_tools": [
+            "VSCode.ToggleBreakpoint"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 223,
+        "question": "Rename function 'calculateTax' to 'computeTax' everywhere.",
+        "expected_tools": [
+            "VSCode.RenameSymbol"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 224,
+        "question": "Install the 'Live Server' extension to preview web pages.",
+        "expected_tools": [
+            "VSCode.InstallExtension"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 225,
+        "question": "Find where 'config.PORT' is being set.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 226,
+        "question": "Run 'git status' via integrated terminal.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 227,
+        "question": "Reformat JavaScript file to comply with ESLint rules.",
+        "expected_tools": [
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 228,
+        "question": "View a list of all installed VSCode extensions.",
+        "expected_tools": [
+            "VSCode.ListExtensions"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 229,
+        "question": "Debug the currently open test file.",
+        "expected_tools": [
+            "VSCode.StartDebugSession"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 230,
+        "question": "Rename symbol 'MAX_RETRY' throughout the entire workspace.",
+        "expected_tools": [
+            "VSCode.RenameSymbol"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 231,
+        "question": "Install a VSCode extension by searching for 'Docker'.",
+        "expected_tools": [
+            "VSCode.InstallExtension"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 232,
+        "question": "Open the most recently modified file.",
+        "expected_tools": [
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 233,
+        "question": "Find the number of times 'logger.info' is called.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 234,
+        "question": "Add breakpoints to all test cases in 'auth.test.js'.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.ToggleBreakpoint"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 235,
+        "question": "Preview the definition of an enum named 'StatusCode'.",
+        "expected_tools": [
+            "VSCode.PeekDefinition"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 236,
+        "question": "Format a Markdown file with inconsistent spacing.",
+        "expected_tools": [
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 237,
+        "question": "Start debugging with breakpoints already in place.",
+        "expected_tools": [
+            "VSCode.StartDebugSession"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 238,
+        "question": "Change editor theme to 'Abyss'.",
+        "expected_tools": [
+            "VSCode.ChangeTheme"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 239,
+        "question": "Enable Zen Mode and hide minimap for focus.",
+        "expected_tools": [
+            "VSCode.ToggleZenMode"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 240,
+        "question": "Search the workspace for a comment containing 'TODO'.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 241,
+        "question": "Open the 'README.md' file from root directory.",
+        "expected_tools": [
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 242,
+        "question": "Install the ESLint plugin for JavaScript linting.",
+        "expected_tools": [
+            "VSCode.InstallExtension"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 243,
+        "question": "List plugins that assist with Python development.",
+        "expected_tools": [
+            "VSCode.ListExtensions"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 244,
+        "question": "Peek into the implementation of the 'fetchData' method.",
+        "expected_tools": [
+            "VSCode.PeekDefinition"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 245,
+        "question": "Replace all references of 'authToken' with 'accessToken'.",
+        "expected_tools": [
+            "VSCode.RenameSymbol"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 300,
+        "question": "Search for public GitHub repositories mentioning \"Copilot\" and open the README in VSCode.",
+        "expected_tools": [
+            "GitHub.SearchRepositories",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 301,
+        "question": "List all Azure App Configuration accounts and show their key-values in a Cosmos DB container.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-account-list",
+            "Azure.azmcp-appconfig-kv-list",
+            "Azure.azmcp-cosmos-database-container-item-insert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 302,
+        "question": "Find code references to \"Pinecone\" across GitHub repos and navigate to the files in VSCode.",
+        "expected_tools": [
+            "GitHub.SearchCode",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 303,
+        "question": "Retrieve the Dockerfile from a GitHub repo and format it in the editor.",
+        "expected_tools": [
+            "GitHub.GetFileContents",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 304,
+        "question": "List recent commits on the main branch of a repo and peek at the diff for the latest commit.",
+        "expected_tools": [
+            "GitHub.ListCommits",
+            "GitHub.GetCommit"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 305,
+        "question": "Fetch secrets scanning alerts from GitHub and save the alert list to Azure Blob Storage.",
+        "expected_tools": [
+            "GitHub.ListSecretScanningAlerts",
+            "Azure.azmcp-storage-blob-upload"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 306,
+        "question": "Search VSCode workspace for \"TODO\" and run a terminal command to create an issue in GitHub.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 307,
+        "question": "Open the Python project main file, start a debug session, and toggle a breakpoint on the first line.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.StartDebugSession",
+            "VSCode.ToggleBreakpoint"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 308,
+        "question": "List all Azure Storage accounts and download a specific blob to local workspace.",
+        "expected_tools": [
+            "Azure.azmcp-storage-account-list",
+            "Azure.azmcp-storage-blob-download"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 309,
+        "question": "Search for pull requests labeled \"enhancement\" and request a Copilot review for each.",
+        "expected_tools": [
+            "GitHub.SearchPullRequests",
+            "GitHub.RequestCopilotReview"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 310,
+        "question": "Query Azure Monitor logs for errors, then insert the results into a PostgreSQL table.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-logs",
+            "Azure.azmcp-postgres-table-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 311,
+        "question": "List VSCode extensions, then install the Prettier extension if missing.",
+        "expected_tools": [
+            "VSCode.ListExtensions",
+            "VSCode.InstallExtension"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 312,
+        "question": "Create a new branch in GitHub, open VSCode to that branch, and format the workspace.",
+        "expected_tools": [
+            "GitHub.CreateBranch",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 313,
+        "question": "Fetch all code scanning alerts, filter for high severity, and rename the symbol \"vuln\" to \"issue\" in VSCode.",
+        "expected_tools": [
+            "GitHub.ListCodeScanningAlerts",
+            "VSCode.RenameSymbol"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 314,
+        "question": "List Kusto clusters, run a query for request failures, and save the output to a file in VSCode.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-cluster-list",
+            "Azure.azmcp-kusto-query",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 315,
+        "question": "Search for issues mentioning \"bug\" in GitHub, then list their comments.",
+        "expected_tools": [
+            "GitHub.SearchIssues",
+            "GitHub.GetIssueComments"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 316,
+        "question": "Retrieve a pull request diff, apply formatting, and commit updates.",
+        "expected_tools": [
+            "GitHub.GetPullRequestDiff",
+            "VSCode.FormatDocument",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 317,
+        "question": "List resource groups in Azure, then query CPU metrics for each VM in those groups.",
+        "expected_tools": [
+            "Azure.azmcp-resourcegroup-list",
+            "Azure.azmcp-monitor-query-metrics"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 318,
+        "question": "Open the workspace settings, change the theme to Solarized, and enable Zen Mode.",
+        "expected_tools": [
+            "VSCode.ChangeTheme",
+            "VSCode.ToggleZenMode"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 319,
+        "question": "Search Azure Search indexes for \"NDA\", then download results to Blob Storage.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-query",
+            "Azure.azmcp-storage-blob-upload"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 320,
+        "question": "List all pull requests, mergeable status, and list associated tags.",
+        "expected_tools": [
+            "GitHub.ListPullRequests",
+            "GitHub.GetPullRequestStatus",
+            "GitHub.ListTags"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 321,
+        "question": "Run a VSCode terminal command to execute 'npm test' and capture output in Azure App Configuration.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand",
+            "Azure.azmcp-appconfig-kv-set"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 322,
+        "question": "Search for a GitHub user, fetch their public repos, and open their profile in VSCode terminal.",
+        "expected_tools": [
+            "GitHub.SearchUsers",
+            "GitHub.SearchRepositories",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 323,
+        "question": "List all Azure Key Vault keys, then retrieve each key metadata.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-list",
+            "Azure.azmcp-keyvault-key-get"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 324,
+        "question": "Show notifications in GitHub, dismiss irrelevant ones, and mark remaining as read.",
+        "expected_tools": [
+            "GitHub.ListNotifications",
+            "GitHub.DismissNotification",
+            "GitHub.MarkAllNotificationsRead"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 325,
+        "question": "Open a file by fuzzy search for \"config.yaml\" and rename the symbol \"env\" to \"environment\".",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.RenameSymbol"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 326,
+        "question": "List workflows in GitHub, rerun only failed jobs, and fetch logs for a specific job.",
+        "expected_tools": [
+            "GitHub.ListWorkflowRuns",
+            "GitHub.RerunFailedJobs",
+            "GitHub.GetJobLogs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 327,
+        "question": "Query Azure Cosmos DB for documents older than 30 days, then delete them.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-container-item-query",
+            "Azure.azmcp-cosmos-database-container-item-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 328,
+        "question": "Search code for \"LangChain.run\", list branches, and open relevant branches in VSCode.",
+        "expected_tools": [
+            "GitHub.SearchCode",
+            "GitHub.ListBranches",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 329,
+        "question": "Install ESLint, list all installed extensions, and format the project code.",
+        "expected_tools": [
+            "VSCode.InstallExtension",
+            "VSCode.ListExtensions",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 330,
+        "question": "Create an Azure Service Bus queue, send a test message, then receive it.",
+        "expected_tools": [
+            "Azure.azmcp-servicebus-queue-list",
+            "Azure.azmcp-servicebus-message-send",
+            "Azure.azmcp-servicebus-message-receive"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 331,
+        "question": "Search GitHub orgs for \"LangChain Labs\", list their repos, and fork one.",
+        "expected_tools": [
+            "GitHub.SearchOrgs",
+            "GitHub.SearchRepositories",
+            "GitHub.ForkRepository"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 332,
+        "question": "Open the terminal, run 'az vm list', and format the JSON output in VSCode.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 333,
+        "question": "List tags for a GitHub repo, get latest tag details, then create a release branch.",
+        "expected_tools": [
+            "GitHub.ListTags",
+            "GitHub.GetTag",
+            "GitHub.CreateBranch"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 334,
+        "question": "Query Azure Monitor metrics for memory usage, then visualize results in VSCode.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-metrics",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 335,
+        "question": "Retrieve pull request comments, add an inline comment on line 42, and submit review.",
+        "expected_tools": [
+            "GitHub.GetPullRequestComments",
+            "GitHub.AddPullRequestReviewCommentToPendingReview",
+            "GitHub.SubmitPendingPullRequestReview"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 336,
+        "question": "List all workflows artifacts, download one, and open it locally.",
+        "expected_tools": [
+            "GitHub.ListWorkflowRunArtifacts",
+            "GitHub.DownloadWorkflowRunArtifact",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 337,
+        "question": "Search Azure AI Search for \"HIPAA\" documents and list matching indexes.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-query",
+            "Azure.azmcp-search-index-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 338,
+        "question": "Open the GitHub Actions logs for a failed run and cancel the running workflow.",
+        "expected_tools": [
+            "GitHub.GetWorkflowRunLogs",
+            "GitHub.CancelWorkflowRun"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 339,
+        "question": "List PostgreSQL databases, run a schema query, and open results in VSCode.",
+        "expected_tools": [
+            "Azure.azmcp-postgres-database-list",
+            "Azure.azmcp-postgres-table-query",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 340,
+        "question": "Create or update a file in a GitHub repo, commit changes, and push them.",
+        "expected_tools": [
+            "GitHub.CreateOrUpdateFile",
+            "GitHub.PushFiles"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 341,
+        "question": "Search code for critical TODOs, list issues, and open issue #1 in VSCode terminal.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "GitHub.ListIssues",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 342,
+        "question": "List Key Vault keys, delete a deprecated key, and verify via list again.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-list",
+            "Azure.azmcp-keyvault-key-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 343,
+        "question": "Search users with \"AI\" in bio, fetch their repos, and clone one via terminal.",
+        "expected_tools": [
+            "GitHub.SearchUsers",
+            "GitHub.SearchRepositories",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 344,
+        "question": "Open a file, rename symbol \"oldName\" to \"newName\", and format document.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.RenameSymbol",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 345,
+        "question": "List Azure CLI commands help for storage account creation in the terminal.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 346,
+        "question": "Search GitHub code for regex patterns, then run tests via VSCode terminal.",
+        "expected_tools": [
+            "GitHub.SearchCode",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 347,
+        "question": "Peek definition of a function in VSCode, then commit updated docstring to GitHub.",
+        "expected_tools": [
+            "VSCode.PeekDefinition",
+            "GitHub.PushFiles"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 348,
+        "question": "List Azure Monitor log queries, run one, and insert results into App Configuration.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-logs",
+            "Azure.azmcp-appconfig-kv-set"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 349,
+        "question": "Retrieve pull request status, merge if clean, then delete the feature branch.",
+        "expected_tools": [
+            "GitHub.GetPullRequestStatus",
+            "GitHub.MergePullRequest",
+            "GitHub.DeleteBranch"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 350,
+        "question": "List extensions, install Python and Docker support, then reload VSCode window.",
+        "expected_tools": [
+            "VSCode.ListExtensions",
+            "VSCode.InstallExtension",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 351,
+        "question": "Search for security alerts in GitHub code scanning and mute a specific alert.",
+        "expected_tools": [
+            "GitHub.ListCodeScanningAlerts",
+            "GitHub.GetCodeScanningAlert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 352,
+        "question": "Query Kusto for transaction errors and upload the output to a Search index.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-query",
+            "Azure.azmcp-search-index-create"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 353,
+        "question": "Open the terminal, run 'git status', then list branches in VSCode.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand",
+            "GitHub.ListBranches"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 354,
+        "question": "List Azure subscriptions, switch to one, and list resource groups.",
+        "expected_tools": [
+            "Azure.azmcp-subscription-list",
+            "Azure.azmcp-resourcegroup-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 355,
+        "question": "Search workspace for deprecated API usage, then create GitHub issues for each occurrence.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "GitHub.CreateIssue"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 356,
+        "question": "Peek definition of a class, start debugging, and add breakpoints to constructor.",
+        "expected_tools": [
+            "VSCode.PeekDefinition",
+            "VSCode.StartDebugSession",
+            "VSCode.ToggleBreakpoint"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 357,
+        "question": "Retrieve secret scanning alerts, filter by exposed tokens, and delete offending files via VSCode.",
+        "expected_tools": [
+            "GitHub.ListSecretScanningAlerts",
+            "VSCode.OpenFile",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 358,
+        "question": "Search for Azure Service Bus namespaces, open a queue list, and send test messages.",
+        "expected_tools": [
+            "Azure.azmcp-servicebus-namespace-list",
+            "Azure.azmcp-servicebus-queue-list",
+            "Azure.azmcp-servicebus-message-send"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 359,
+        "question": "Open the current workspace folder list and close any unused folders.",
+        "expected_tools": [
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 360,
+        "question": "List GitHub notifications, mark all as read, and open VSCode Zen Mode.",
+        "expected_tools": [
+            "GitHub.ListNotifications",
+            "GitHub.MarkAllNotificationsRead",
+            "VSCode.ToggleZenMode"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 361,
+        "question": "List workflows for a repo, download the last artifact, and open in editor.",
+        "expected_tools": [
+            "GitHub.ListWorkflowRuns",
+            "GitHub.DownloadWorkflowRunArtifact",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 362,
+        "question": "Search Kusto for resource spikes, then push alerts to GitHub issues via CLI.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-query",
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 363,
+        "question": "List Azure Postgres servers, query all tables, and format results in VSCode.",
+        "expected_tools": [
+            "Azure.azmcp-postgres-server-list",
+            "Azure.azmcp-postgres-table-query",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 364,
+        "question": "Search for all Azure CLI commands referencing 'storage' and list their help outputs.",
+        "expected_tools": [
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 365,
+        "question": "Open the file 'index.html', rename title tag, and commit to GitHub.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.RenameSymbol",
+            "GitHub.CreateOrUpdateFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 366,
+        "question": "List GitHub dynamic toolsets, enable 'issues', and search for open issues.",
+        "expected_tools": [
+            "GitHub.ListAvailableToolsets",
+            "GitHub.EnableToolset",
+            "GitHub.ListIssues"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 367,
+        "question": "Run VSCode terminal command to install Azure CLI and list subscriptions.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand",
+            "Azure.azmcp-subscription-list"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 368,
+        "question": "List all GitHub branches, sync the current branch, and push changes.",
+        "expected_tools": [
+            "GitHub.ListBranches",
+            "GitHub.UpdatePullRequestBranch",
+            "GitHub.PushFiles"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 369,
+        "question": "Search the workspace for 'fetchData', peek its definition, and refactor name.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "VSCode.PeekDefinition",
+            "VSCode.RenameSymbol"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 370,
+        "question": "List Azure Key Vault keys, back them up via CLI, and lock each key.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-list",
+            "Azure.azmcp-cli-command-run",
+            "Azure.azmcp-keyvault-key-lock"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 371,
+        "question": "Search GitHub for repos tagged 'machine learning', list commits, and merge a PR.",
+        "expected_tools": [
+            "GitHub.SearchRepositories",
+            "GitHub.ListCommits",
+            "GitHub.MergePullRequest"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 372,
+        "question": "Open the launch configuration file, format JSON, and start a debug session.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.FormatDocument",
+            "VSCode.StartDebugSession"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 373,
+        "question": "Run a VSCode terminal command to seed the database, then query active users.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand",
+            "Azure.azmcp-postgres-table-query"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 374,
+        "question": "List secret scanning alerts, dismiss low-risk ones, and mark others in App Configuration.",
+        "expected_tools": [
+            "GitHub.ListSecretScanningAlerts",
+            "GitHub.DismissNotification",
+            "Azure.azmcp-appconfig-kv-set"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 375,
+        "question": "Search workspace for 'errorHandler', peek its definition, and commit improvements.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "VSCode.PeekDefinition",
+            "GitHub.PushFiles"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 376,
+        "question": "Fetch pull request files, format them, and run ESLint via terminal.",
+        "expected_tools": [
+            "GitHub.GetPullRequestFiles",
+            "VSCode.FormatDocument",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 377,
+        "question": "List workflows, cancel a stuck run, and rerun only its failed jobs.",
+        "expected_tools": [
+            "GitHub.ListWorkflowRuns",
+            "GitHub.CancelWorkflowRun",
+            "GitHub.RerunFailedJobs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 378,
+        "question": "Query Azure Monitor metrics for cost, then insert summary into Cosmos DB.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-metrics",
+            "Azure.azmcp-cosmos-database-container-item-insert"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 379,
+        "question": "Open the key vault policy file, format it, and push changes to GitHub.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.FormatDocument",
+            "GitHub.CreateOrUpdateFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 380,
+        "question": "Search for open VSCode issues in workspace, then create GitHub issues for each.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "GitHub.CreateIssue"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 381,
+        "question": "List Azure Search indexes, delete an obsolete one, and recreate with new schema.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-list",
+            "Azure.azmcp-search-index-delete",
+            "Azure.azmcp-search-index-create"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 382,
+        "question": "Search GitHub code for SQL injection patterns, open files, and fix vulnerabilities.",
+        "expected_tools": [
+            "GitHub.SearchCode",
+            "VSCode.OpenFile",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 383,
+        "question": "List all GitHub notifications, open the first in VSCode, and dismiss after review.",
+        "expected_tools": [
+            "GitHub.ListNotifications",
+            "VSCode.RunTerminalCommand",
+            "GitHub.DismissNotification"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 384,
+        "question": "Run a terminal command to install Python dependencies and start VSCode debugger.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand",
+            "VSCode.StartDebugSession"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 385,
+        "question": "List Azure Cosmos DB containers, query items, and delete expired entries.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-container-list",
+            "Azure.azmcp-cosmos-database-container-item-query",
+            "Azure.azmcp-cosmos-database-container-item-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 386,
+        "question": "Search workspace for \"import pandas\", peek definition, and run stats script.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "VSCode.PeekDefinition",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 387,
+        "question": "Fetch pull request review comments, add one more, and submit the review.",
+        "expected_tools": [
+            "GitHub.GetPullRequestReviews",
+            "GitHub.CreateAndSubmitPullRequestReview"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 388,
+        "question": "List storage containers, upload a backup, and verify via blob list.",
+        "expected_tools": [
+            "Azure.azmcp-storage-container-list",
+            "Azure.azmcp-storage-blob-upload",
+            "Azure.azmcp-storage-blob-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 389,
+        "question": "Open settings.json, change editor.fontSize to 14, and save.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 390,
+        "question": "Search GitHub for license files, open one, and format markdown.",
+        "expected_tools": [
+            "GitHub.SearchCode",
+            "VSCode.OpenFile",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 391,
+        "question": "List GitHub pull requests, create a pending review, and add inline comments.",
+        "expected_tools": [
+            "GitHub.ListPullRequests",
+            "GitHub.CreatePendingPullRequestReview",
+            "GitHub.AddPullRequestReviewCommentToPendingReview"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 392,
+        "question": "Query Azure Kusto for performance metrics, then download results as CSV.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-query",
+            "Azure.azmcp-cli-command-run"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 393,
+        "question": "Open the main configuration, rename symbol 'timeout' to 'requestTimeout', and format.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.RenameSymbol",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 394,
+        "question": "Search for Azure CLI 'vm start', run it in VSCode terminal, and confirm VM status.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 395,
+        "question": "List Azure Monitor logs, query for critical errors, and create GitHub issues.",
+        "expected_tools": [
+            "Azure.azmcp-monitor-query-logs",
+            "GitHub.CreateIssue"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 396,
+        "question": "List repositories, fork one, open it in VSCode, and create a new branch.",
+        "expected_tools": [
+            "GitHub.ListRepositories",
+            "GitHub.ForkRepository",
+            "GitHub.CreateBranch",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 397,
+        "question": "Open the terminal, install Azure Data Explorer extension, and list clusters.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand",
+            "Azure.azmcp-kusto-cluster-list"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 398,
+        "question": "Format the workspace codebase, run linter via terminal, and commit fixes.",
+        "expected_tools": [
+            "VSCode.FormatDocument",
+            "VSCode.RunTerminalCommand",
+            "GitHub.PushFiles"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 399,
+        "question": "List service bus namespaces, peek queue metadata, and toggle Zen Mode.",
+        "expected_tools": [
+            "Azure.azmcp-servicebus-namespace-list",
+            "Azure.azmcp-cli-command-run",
+            "VSCode.ToggleZenMode"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 400,
+        "question": "Search GitHub for 'vulnerability', get alerts, and delete vulnerable files in VSCode.",
+        "expected_tools": [
+            "GitHub.SearchCode",
+            "GitHub.GetCodeScanningAlert",
+            "VSCode.OpenFile",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 401,
+        "question": "Create a new GitHub repository named 'Telemetry-Dashboard' and push initial files from VSCode.",
+        "expected_tools": [
+            "GitHub.CreateRepository",
+            "GitHub.PushFiles",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 402,
+        "question": "Search for Azure blob storage accounts containing 'backup' and list their container contents.",
+        "expected_tools": [
+            "Azure.azmcp-storage-account-list",
+            "Azure.azmcp-storage-container-list",
+            "Azure.azmcp-storage-blob-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 403,
+        "question": "List all pull requests in a GitHub repo and open their modified files in VSCode.",
+        "expected_tools": [
+            "GitHub.ListPullRequests",
+            "GitHub.GetPullRequestFiles",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 404,
+        "question": "Open a README file in VSCode and format its markdown structure using editor settings.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 405,
+        "question": "List all PostgreSQL servers and run SQL queries on the 'finance' database.",
+        "expected_tools": [
+            "Azure.azmcp-postgres-server-list",
+            "Azure.azmcp-postgres-database-list",
+            "Azure.azmcp-postgres-table-query"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 406,
+        "question": "Start a debug session for the VSCode workspace and toggle breakpoints on function calls.",
+        "expected_tools": [
+            "VSCode.StartDebugSession",
+            "VSCode.ToggleBreakpoint"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 407,
+        "question": "Search GitHub issues with label 'security', assign Copilot to review the top 3.",
+        "expected_tools": [
+            "GitHub.SearchIssues",
+            "GitHub.AssignCopilotToIssue"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 408,
+        "question": "Query Kusto database for login failures and export to blob storage.",
+        "expected_tools": [
+            "Azure.azmcp-kusto-query",
+            "Azure.azmcp-storage-blob-upload"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 409,
+        "question": "Open the workspace file containing environment variables and rename 'API_KEY' to 'SERVICE_TOKEN'.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.RenameSymbol"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 410,
+        "question": "Create a new pull request, assign reviewers, and submit a review.",
+        "expected_tools": [
+            "GitHub.CreatePullRequest",
+            "GitHub.UpdatePullRequest",
+            "GitHub.CreateAndSubmitPullRequestReview"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 411,
+        "question": "List current workflow runs in GitHub and rerun any failed deployment jobs.",
+        "expected_tools": [
+            "GitHub.ListWorkflowRuns",
+            "GitHub.RerunFailedJobs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 412,
+        "question": "Install Python and Docker extensions and reload VSCode session.",
+        "expected_tools": [
+            "VSCode.InstallExtension",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 413,
+        "question": "Search in workspace for deprecated function and open its definition.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "VSCode.PeekDefinition"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 414,
+        "question": "List Azure AI Search services and indexes used for eDiscovery.",
+        "expected_tools": [
+            "Azure.azmcp-search-service-list",
+            "Azure.azmcp-search-index-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 415,
+        "question": "Open a folder in the VSCode workspace and list all files inside.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 416,
+        "question": "Retrieve details about a secret scanning alert and comment on the associated issue.",
+        "expected_tools": [
+            "GitHub.GetSecretScanningAlert",
+            "GitHub.AddIssueComment"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 417,
+        "question": "List Cosmos DB containers and delete any items with expired timestamps.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-container-list",
+            "Azure.azmcp-cosmos-database-container-item-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 418,
+        "question": "Format a YAML configuration file and push updates to GitHub.",
+        "expected_tools": [
+            "VSCode.FormatDocument",
+            "GitHub.PushFiles"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 419,
+        "question": "Search GitHub for repositories using LangChain and get README content of top 3.",
+        "expected_tools": [
+            "GitHub.SearchRepositories",
+            "GitHub.GetFileContents"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 420,
+        "question": "Start a terminal command to run 'az login' and list subscriptions.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand",
+            "Azure.azmcp-subscription-list"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 421,
+        "question": "Trigger a backup job workflow and view its status.",
+        "expected_tools": [
+            "GitHub.RunWorkflow",
+            "GitHub.GetWorkflowRun"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 422,
+        "question": "Rename a symbol in all TypeScript files and add breakpoints to changed lines.",
+        "expected_tools": [
+            "VSCode.RenameSymbol",
+            "VSCode.ToggleBreakpoint"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 423,
+        "question": "Create a new key in Azure Key Vault and show its metadata.",
+        "expected_tools": [
+            "Azure.azmcp-keyvault-key-create",
+            "Azure.azmcp-keyvault-key-get"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 424,
+        "question": "List Azure search indexes, delete the legacy one, and build a new one for product catalog.",
+        "expected_tools": [
+            "Azure.azmcp-search-index-list",
+            "Azure.azmcp-search-index-delete",
+            "Azure.azmcp-search-index-create"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 425,
+        "question": "Search the workspace for '404 handler' and view inline definition.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "VSCode.PeekDefinition"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 426,
+        "question": "Retrieve all comments from a GitHub issue and summarize them in editor.",
+        "expected_tools": [
+            "GitHub.GetIssueComments",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 427,
+        "question": "List storage blob files, download logs, and format in editor.",
+        "expected_tools": [
+            "Azure.azmcp-storage-blob-list",
+            "Azure.azmcp-storage-blob-download",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 428,
+        "question": "List service bus queues and send a diagnostic message to one of them.",
+        "expected_tools": [
+            "Azure.azmcp-servicebus-queue-list",
+            "Azure.azmcp-servicebus-message-send"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 429,
+        "question": "List tools grouped by GitHub toolset and enable the 'actions' group.",
+        "expected_tools": [
+            "GitHub.GetToolsetsTools",
+            "GitHub.EnableToolset"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 430,
+        "question": "Open the license file in the workspace and format it using Prettier.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 431,
+        "question": "Query Azure App Configuration for logging keys and update them to 'Verbose'.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-kv-list",
+            "Azure.azmcp-appconfig-kv-set"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 432,
+        "question": "Search the workspace for obsolete helper functions and delete related files.",
+        "expected_tools": [
+            "VSCode.SearchInWorkspace",
+            "VSCode.RunTerminalCommand"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 433,
+        "question": "Run a command to count test cases and create GitHub issues for missing coverage.",
+        "expected_tools": [
+            "VSCode.RunTerminalCommand",
+            "GitHub.CreateIssue"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 434,
+        "question": "Display all blob containers and delete obsolete storage files.",
+        "expected_tools": [
+            "Azure.azmcp-storage-container-list",
+            "Azure.azmcp-storage-blob-delete"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 435,
+        "question": "List GitHub branches and create a new one named 'feature-graphql'.",
+        "expected_tools": [
+            "GitHub.ListBranches",
+            "GitHub.CreateBranch"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 436,
+        "question": "Search for high-severity security alerts and format descriptions in Markdown.",
+        "expected_tools": [
+            "GitHub.ListCodeScanningAlerts",
+            "VSCode.OpenFile"
+        ],
+        "local_server": true
+    },
+    {
+        "id": 437,
+        "question": "Query App Configuration for feature flags and lock critical ones.",
+        "expected_tools": [
+            "Azure.azmcp-appconfig-kv-list",
+            "Azure.azmcp-appconfig-kv-lock"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 438,
+        "question": "List Cosmos DB database names and containers under each.",
+        "expected_tools": [
+            "Azure.azmcp-cosmos-database-list",
+            "Azure.azmcp-cosmos-container-list"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 439,
+        "question": "Search GitHub organizations for ones involved with OpenAI.",
+        "expected_tools": [
+            "GitHub.SearchOrgs"
+        ],
+        "local_server": false
+    },
+    {
+        "id": 440,
+        "question": "Open the main application file, rename 'initApp' to 'initializeApp', and format.",
+        "expected_tools": [
+            "VSCode.OpenFile",
+            "VSCode.RenameSymbol",
+            "VSCode.FormatDocument"
+        ],
+        "local_server": true
+    }
+]
