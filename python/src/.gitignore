@@ -11,3 +11,4 @@ __pycache__/
 dist/
 build/
 server/json_utils/
+server/utils_local_search.py

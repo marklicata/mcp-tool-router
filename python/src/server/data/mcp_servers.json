@@ -1,7 +1,4 @@
 {
-  "version": "1.0",
-  "description": "This file defines the MCP server configuration for GitHub, including available toolsets and their tools. It is used to dynamically enable and manage tools for the MCP server.",
-  "last_updated": "2023-10-01",
   "servers": [
     {
       "name": "GitHub",
@@ -2526,10 +2523,10 @@
           "tools": [
             {
               "name": "SimpleQnATool",
-              "description": "A simple question and answer tool that takes a query and returns a response. Useful for direct, factual Q&A scenarios.",
+              "description": "A simple question and answer tool that takes a query and returns a response. Useful for direct, factual QA scenarios.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of SimpleQnATool. A simple question and answer tool that takes a query and returns a response. Useful for direct, factual Q&A scenarios. Keywords: q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , Q, n, A Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , c, a, p, i, t, a, l,  , o, f,  , F, r, a, n, c, e, ?, \",  , |",
+                "title": "Description of SimpleQnATool. A simple question and answer tool that takes a query and returns a response. Useful for direct, factual QA scenarios. Keywords: q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , Q, n, A Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , c, a, p, i, t, a, l,  , o, f,  , F, r, a, n, c, e, ?, \",  , |",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -2849,7 +2846,7 @@
               }
             },
             {
-              "name": "CMDB_(Configuration_Management_Database)",
+              "name": "CMDB_Configuration_Management_Database",
               "description": "Stores and manages configuration data related to Alibaba Cloud resources. Allows querying and updating of resource metadata and attributes.",
               "inputSchema": {},
               "annotations": {
@@ -3077,11 +3074,11 @@
               }
             },
             {
-              "name": "Q&A",
+              "name": "QA",
               "description": "A question answering tool that lets users ask questions about a specific document or content.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Q&A. A question answering tool that lets users ask questions about a specific document or content. Keywords: q, u, e, s, t, i, o, n, ,,  , a, n, s, w, e, r, ,,  , a, s, k, ,,  , i, n, f, o, r, m, a, t, i, o, n,  , e, x, t, r, a, c, t, i, o, n Sample Questions: \", W, h, a, t,  , a, r, e,  , t, h, e,  , m, a, i, n,  , f, i, n, d, i, n, g, s,  , o, f,  , t, h, i, s,  , r, e, p, o, r, t, ?, \", ,,  , \", W, h, o,  , i, s,  , t, h, e,  , a, u, t, h, o, r,  , o, f,  , t, h, i, s,  , p, a, p, e, r, ?, \"",
+                "title": "Description of QA. A question answering tool that lets users ask questions about a specific document or content. Keywords: q, u, e, s, t, i, o, n, ,,  , a, n, s, w, e, r, ,,  , a, s, k, ,,  , i, n, f, o, r, m, a, t, i, o, n,  , e, x, t, r, a, c, t, i, o, n Sample Questions: \", W, h, a, t,  , a, r, e,  , t, h, e,  , m, a, i, n,  , f, i, n, d, i, n, g, s,  , o, f,  , t, h, i, s,  , r, e, p, o, r, t, ?, \", ,,  , \", W, h, o,  , i, s,  , t, h, e,  , a, u, t, h, o, r,  , o, f,  , t, h, i, s,  , p, a, p, e, r, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -3089,7 +3086,7 @@
               }
             },
             {
-              "name": "Speech_to_Text_(STT)",
+              "name": "Speech_to_Text_STT",
               "description": "Converts audio files or spoken input into written text. Sample queries: \"Transcribe this audio recording,\" \"Convert my voice note to text.\"",
               "inputSchema": {},
               "annotations": {
@@ -3101,7 +3098,7 @@
               }
             },
             {
-              "name": "Text_to_Speech_(TTS)",
+              "name": "Text_to_Speech_TTS",
               "description": "Turns entered text into spoken audio. Useful for accessibility and creating voiceovers. Sample queries: \"Read this text aloud,\" \"Generate audio for this paragraph.\"",
               "inputSchema": {},
               "annotations": {
@@ -3293,11 +3290,11 @@
               }
             },
             {
-              "name": "Task_&_Job_Inspector",
+              "name": "Task_-_Job_Inspector",
               "description": "Reviews, manages, and inspects ongoing and historical jobs/tasks in the Doris system. Useful for \"Show my recent import jobs\", \"List all running load tasks\", or \"Abort a stuck job.\"",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Task_&_Job_Inspector. Reviews, manages, and inspects ongoing and historical jobs/tasks in the Doris system. Useful for \"Show my recent import jobs\", \"List all running load tasks\", or \"Abort a stuck job.\" Keywords: j, o, b, s, ,,  , i, m, p, o, r, t, ,,  , e, x, p, o, r, t, ,,  , t, a, s, k, s, ,,  , c, o, n, t, r, o, l",
+                "title": "Description of Task_-_Job_Inspector. Reviews, manages, and inspects ongoing and historical jobs/tasks in the Doris system. Useful for \"Show my recent import jobs\", \"List all running load tasks\", or \"Abort a stuck job.\" Keywords: j, o, b, s, ,,  , i, m, p, o, r, t, ,,  , e, x, p, o, r, t, ,,  , t, a, s, k, s, ,,  , c, o, n, t, r, o, l",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -3509,11 +3506,11 @@
               }
             },
             {
-              "name": "User_&_Account_Management",
+              "name": "User_-_Account_Management",
               "description": "Tools for managing user accounts, including login, password management, and account roles.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of User_&_Account_Management. Tools for managing user accounts, including login, password management, and account roles. Keywords: u, s, e, r, ,,  , a, c, c, o, u, n, t, ,,  , p, a, s, s, w, o, r, d, ,,  , l, o, g, i, n, ,,  , l, o, g, o, u, t, ,,  , r, o, l, e, s Sample Questions: \", H, o, w,  , d, o,  , I,  , r, e, s, e, t,  , m, y,  , p, a, s, s, w, o, r, d, ?, \", ,,  , \", C, a, n,  , I,  , v, i, e, w,  , u, s, e, r, s,  , w, i, t, h,  , a, d, m, i, n,  , p, r, i, v, i, l, e, g, e, s, ?, \", ,,  , \", H, o, w,  , t, o,  , r, e, m, o, v, e,  , a,  , u, s, e, r,  , f, r, o, m,  , m, y,  , h, o, u, s, e, h, o, l, d, ?, \"",
+                "title": "Description of User_-_Account_Management. Tools for managing user accounts, including login, password management, and account roles. Keywords: u, s, e, r, ,,  , a, c, c, o, u, n, t, ,,  , p, a, s, s, w, o, r, d, ,,  , l, o, g, i, n, ,,  , l, o, g, o, u, t, ,,  , r, o, l, e, s Sample Questions: \", H, o, w,  , d, o,  , I,  , r, e, s, e, t,  , m, y,  , p, a, s, s, w, o, r, d, ?, \", ,,  , \", C, a, n,  , I,  , v, i, e, w,  , u, s, e, r, s,  , w, i, t, h,  , a, d, m, i, n,  , p, r, i, v, i, l, e, g, e, s, ?, \", ,,  , \", H, o, w,  , t, o,  , r, e, m, o, v, e,  , a,  , u, s, e, r,  , f, r, o, m,  , m, y,  , h, o, u, s, e, h, o, l, d, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -3557,11 +3554,11 @@
               }
             },
             {
-              "name": "Log_&_Diagnostic",
+              "name": "Log_-_Diagnostic",
               "description": "Access device and system logs for diagnostics and troubleshooting.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Log_&_Diagnostic. Access device and system logs for diagnostics and troubleshooting. Keywords: l, o, g, ,,  , d, i, a, g, n, o, s, t, i, c, ,,  , e, r, r, o, r, ,,  , d, o, w, n, l, o, a, d,  , l, o, g, s, ,,  , t, r, o, u, b, l, e, s, h, o, o, t, i, n, g Sample Questions: \", H, o, w,  , d, o,  , I,  , v, i, e, w,  , t, h, e,  , l, o, g, s,  , f, o, r,  , a,  , s, p, e, c, i, f, i, c,  , d, e, v, i, c, e, ?, \", ,,  , \", W, h, e, r, e,  , c, a, n,  , I,  , f, i, n, d,  , e, r, r, o, r,  , r, e, p, o, r, t, s, ?, \", ,,  , \", H, o, w,  , t, o,  , d, o, w, n, l, o, a, d,  , d, i, a, g, n, o, s, t, i, c,  , l, o, g, s, ?, \"",
+                "title": "Description of Log_-_Diagnostic. Access device and system logs for diagnostics and troubleshooting. Keywords: l, o, g, ,,  , d, i, a, g, n, o, s, t, i, c, ,,  , e, r, r, o, r, ,,  , d, o, w, n, l, o, a, d,  , l, o, g, s, ,,  , t, r, o, u, b, l, e, s, h, o, o, t, i, n, g Sample Questions: \", H, o, w,  , d, o,  , I,  , v, i, e, w,  , t, h, e,  , l, o, g, s,  , f, o, r,  , a,  , s, p, e, c, i, f, i, c,  , d, e, v, i, c, e, ?, \", ,,  , \", W, h, e, r, e,  , c, a, n,  , I,  , f, i, n, d,  , e, r, r, o, r,  , r, e, p, o, r, t, s, ?, \", ,,  , \", H, o, w,  , t, o,  , d, o, w, n, l, o, a, d,  , d, i, a, g, n, o, s, t, i, c,  , l, o, g, s, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -4013,11 +4010,11 @@
               }
             },
             {
-              "name": "User_&_Team_Administration",
+              "name": "User_-_Team_Administration",
               "description": "Tools to manage users, assign roles, and organize teams. Enables inviting users, setting access levels, and reviewing team memberships.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of User_&_Team_Administration. Tools to manage users, assign roles, and organize teams. Enables inviting users, setting access levels, and reviewing team memberships. Keywords: u, s, e, r, ,,  , t, e, a, m, ,,  , p, e, r, m, i, s, s, i, o, n, s, ,,  , r, o, l, e, ,,  , a, d, d,  , m, e, m, b, e, r, ,,  , i, n, v, i, t, e Sample Questions: \", A, d, d,  , a,  , n, e, w,  , u, s, e, r,  , t, o,  , t, h, e,  , t, e, a, m,  , A, l, p, h, a, ., \", ,,  , \", W, h, a, t,  , a, r, e,  , t, h, e,  , r, o, l, e, s,  , a, v, a, i, l, a, b, l, e,  , i, n,  , t, h, i, s,  , p, r, o, j, e, c, t, ?, \"",
+                "title": "Description of User_-_Team_Administration. Tools to manage users, assign roles, and organize teams. Enables inviting users, setting access levels, and reviewing team memberships. Keywords: u, s, e, r, ,,  , t, e, a, m, ,,  , p, e, r, m, i, s, s, i, o, n, s, ,,  , r, o, l, e, ,,  , a, d, d,  , m, e, m, b, e, r, ,,  , i, n, v, i, t, e Sample Questions: \", A, d, d,  , a,  , n, e, w,  , u, s, e, r,  , t, o,  , t, h, e,  , t, e, a, m,  , A, l, p, h, a, ., \", ,,  , \", W, h, a, t,  , a, r, e,  , t, h, e,  , r, o, l, e, s,  , a, v, a, i, l, a, b, l, e,  , i, n,  , t, h, i, s,  , p, r, o, j, e, c, t, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -4025,11 +4022,11 @@
               }
             },
             {
-              "name": "Webhook_&_Automation",
+              "name": "Webhook_-_Automation",
               "description": "Facilitates integration with external services and automation via webhooks and custom triggers on repository events.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Webhook_&_Automation. Facilitates integration with external services and automation via webhooks and custom triggers on repository events. Keywords: w, e, b, h, o, o, k, ,,  , i, n, t, e, g, r, a, t, i, o, n, ,,  , a, u, t, o, m, a, t, i, o, n, ,,  , e, v, e, n, t, ,,  , t, r, i, g, g, e, r, ,,  , e, x, t, e, r, n, a, l,  , s, e, r, v, i, c, e Sample Questions: \", S, e, t,  , u, p,  , a,  , w, e, b, h, o, o, k,  , f, o, r,  , p, u, l, l,  , r, e, q, u, e, s, t,  , e, v, e, n, t, s, ., \", ,,  , \", L, i, s, t,  , a, c, t, i, v, e,  , w, e, b, h, o, o, k, s,  , f, o, r,  , t, h, i, s,  , r, e, p, o, ., \"",
+                "title": "Description of Webhook_-_Automation. Facilitates integration with external services and automation via webhooks and custom triggers on repository events. Keywords: w, e, b, h, o, o, k, ,,  , i, n, t, e, g, r, a, t, i, o, n, ,,  , a, u, t, o, m, a, t, i, o, n, ,,  , e, v, e, n, t, ,,  , t, r, i, g, g, e, r, ,,  , e, x, t, e, r, n, a, l,  , s, e, r, v, i, c, e Sample Questions: \", S, e, t,  , u, p,  , a,  , w, e, b, h, o, o, k,  , f, o, r,  , p, u, l, l,  , r, e, q, u, e, s, t,  , e, v, e, n, t, s, ., \", ,,  , \", L, i, s, t,  , a, c, t, i, v, e,  , w, e, b, h, o, o, k, s,  , f, o, r,  , t, h, i, s,  , r, e, p, o, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -4049,11 +4046,11 @@
               }
             },
             {
-              "name": "Issue_&_Pull_Request_Tracking",
+              "name": "Issue_-_Pull_Request_Tracking",
               "description": "Enables tracking of issues, bug reports, and pull requests across repositories. Supports creation, assignment, commenting, and status updates.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Issue_&_Pull_Request_Tracking. Enables tracking of issues, bug reports, and pull requests across repositories. Supports creation, assignment, commenting, and status updates. Keywords: i, s, s, u, e, ,,  , p, u, l, l,  , r, e, q, u, e, s, t, ,,  , b, u, g, ,,  , f, e, a, t, u, r, e, ,,  , a, s, s, i, g, n, ,,  , c, o, m, m, e, n, t, ,,  , s, t, a, t, u, s Sample Questions: \", C, r, e, a, t, e,  , a,  , n, e, w,  , i, s, s, u, e,  , f, o, r,  , t, h, e,  , r, e, p, o, s, i, t, o, r, y, ., \", ,,  , \", L, i, s, t,  , o, p, e, n,  , p, u, l, l,  , r, e, q, u, e, s, t, s, ., \"",
+                "title": "Description of Issue_-_Pull_Request_Tracking. Enables tracking of issues, bug reports, and pull requests across repositories. Supports creation, assignment, commenting, and status updates. Keywords: i, s, s, u, e, ,,  , p, u, l, l,  , r, e, q, u, e, s, t, ,,  , b, u, g, ,,  , f, e, a, t, u, r, e, ,,  , a, s, s, i, g, n, ,,  , c, o, m, m, e, n, t, ,,  , s, t, a, t, u, s Sample Questions: \", C, r, e, a, t, e,  , a,  , n, e, w,  , i, s, s, u, e,  , f, o, r,  , t, h, e,  , r, e, p, o, s, i, t, o, r, y, ., \", ,,  , \", L, i, s, t,  , o, p, e, n,  , p, u, l, l,  , r, e, q, u, e, s, t, s, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -4253,7 +4250,7 @@
               }
             },
             {
-              "name": "Convert_AWS_Step_Functions_YAML_to_ASL_(JSON)",
+              "name": "Convert_AWS_Step_Functions_YAML_to_ASL_JSON",
               "description": "This utility converts YAML-formatted Step Functions definitions back into the standard Amazon States Language (ASL/JSON). It allows users to store or edit workflows in YAML and have them automatically converted to a deployable JSON format.",
               "inputSchema": {},
               "annotations": {
@@ -4505,11 +4502,11 @@
               }
             },
             {
-              "name": "Testing_&_Demo",
+              "name": "Testing_-_Demo",
               "description": "Tools and scripts to test MCP verification workflows and provide sample interactions.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Testing_&_Demo. Tools and scripts to test MCP verification workflows and provide sample interactions.",
+                "title": "Description of Testing_-_Demo. Tools and scripts to test MCP verification workflows and provide sample interactions.",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -5309,7 +5306,7 @@
           "description": "",
           "tools": [
             {
-              "name": "Merchant_Control_Panel_(MCP)",
+              "name": "Merchant_Control_Panel_MCP",
               "description": "A suite of dashboard and API tools enabling merchants to manage their payments, settlements, refunds, and other operations on the Cashfree Payments platform. The Merchant Control Panel provides a comprehensive interface for accessing payment data, generating reports, configuring APIs, managing accounts, and handling disputes.",
               "inputSchema": {},
               "annotations": {
@@ -5369,11 +5366,11 @@
               }
             },
             {
-              "name": "Analytics_&_Aggregations",
+              "name": "Analytics_-_Aggregations",
               "description": "Provides endpoints and utilities for performing analytics, aggregations, and obtaining summary statistics across the dataset. Includes filtering, grouping, and metric calculations.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Analytics_&_Aggregations. Provides endpoints and utilities for performing analytics, aggregations, and obtaining summary statistics across the dataset. Includes filtering, grouping, and metric calculations. Keywords: a, n, a, l, y, t, i, c, s, ,,  , a, g, g, r, e, g, a, t, i, o, n, ,,  , s, t, a, t, i, s, t, i, c, s, ,,  , f, i, l, t, e, r, i, n, g, ,,  , g, r, o, u, p, i, n, g, ,,  , m, e, t, r, i, c, s Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , t, o, t, a, l,  , n, u, m, b, e, r,  , o, f,  , V, C,  , d, e, a, l, s,  , b, y,  , s, e, c, t, o, r, ?, \",  , \", S, h, o, w,  , a, g, g, r, e, g, a, t, e,  , f, u, n, d, i, n, g,  , b, y,  , y, e, a, r, ., \"",
+                "title": "Description of Analytics_-_Aggregations. Provides endpoints and utilities for performing analytics, aggregations, and obtaining summary statistics across the dataset. Includes filtering, grouping, and metric calculations. Keywords: a, n, a, l, y, t, i, c, s, ,,  , a, g, g, r, e, g, a, t, i, o, n, ,,  , s, t, a, t, i, s, t, i, c, s, ,,  , f, i, l, t, e, r, i, n, g, ,,  , g, r, o, u, p, i, n, g, ,,  , m, e, t, r, i, c, s Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , t, o, t, a, l,  , n, u, m, b, e, r,  , o, f,  , V, C,  , d, e, a, l, s,  , b, y,  , s, e, c, t, o, r, ?, \",  , \", S, h, o, w,  , a, g, g, r, e, g, a, t, e,  , f, u, n, d, i, n, g,  , b, y,  , y, e, a, r, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -6521,11 +6518,11 @@
           "description": "",
           "tools": [
             {
-              "name": "Knowledge_Q&A",
+              "name": "Knowledge_QA",
               "description": "Provides question answering based on knowledge base and knowledge documents.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Knowledge_Q&A. Provides question answering based on knowledge base and knowledge documents. Keywords: \", k, n, o, w, l, e, d, g, e, \", ,,  , \", Q, &, A, \", ,,  , \", d, o, c, u, m, e, n, t, \", ,,  , \", a, s, k, \", ,,  , \", q, u, e, s, t, i, o, n, \", ,,  , \", q, u, e, r, y, \", .,  , S, a, m, p, l, e,  , q, u, e, s, t, i, o, n, s, :,  , \", W, h, a, t,  , i, s,  , t, h, e,  , H, O, A,  , f, e, e,  , s, c, h, e, d, u, l, e, ?, \", ,,  , \", H, o, w,  , d, o,  , I,  , r, e, s, e, r, v, e,  , t, h, e,  , c, l, u, b, h, o, u, s, e, ?, \", ,,  , \", W, h, e, r, e,  , c, a, n,  , I,  , f, i, n, d,  , c, o, m, m, u, n, i, t, y,  , r, u, l, e, s, ?, \"",
+                "title": "Description of Knowledge_QA. Provides question answering based on knowledge base and knowledge documents. Keywords: \", k, n, o, w, l, e, d, g, e, \", ,,  , \", Q, -, A, \", ,,  , \", d, o, c, u, m, e, n, t, \", ,,  , \", a, s, k, \", ,,  , \", q, u, e, s, t, i, o, n, \", ,,  , \", q, u, e, r, y, \", .,  , S, a, m, p, l, e,  , q, u, e, s, t, i, o, n, s, :,  , \", W, h, a, t,  , i, s,  , t, h, e,  , H, O, A,  , f, e, e,  , s, c, h, e, d, u, l, e, ?, \", ,,  , \", H, o, w,  , d, o,  , I,  , r, e, s, e, r, v, e,  , t, h, e,  , c, l, u, b, h, o, u, s, e, ?, \", ,,  , \", W, h, e, r, e,  , c, a, n,  , I,  , f, i, n, d,  , c, o, m, m, u, n, i, t, y,  , r, u, l, e, s, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -6761,11 +6758,11 @@
               }
             },
             {
-              "name": "MCP_Validation_&_Preprocessing",
+              "name": "MCP_Validation_-_Preprocessing",
               "description": "Validates and preprocesses incoming MetadataChangeProposals to ensure data quality, entity existence, and correct structuring before acceptance. Can enforce business logic like ownership requirements or schema compatibility. Sample",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of MCP_Validation_&_Preprocessing. Validates and preprocesses incoming MetadataChangeProposals to ensure data quality, entity existence, and correct structuring before acceptance. Can enforce business logic like ownership requirements or schema compatibility. Sample Keywords: v, a, l, i, d, a, t, e,  , p, r, o, p, o, s, a, l, ,,  , p, r, e, p, r, o, c, e, s, s,  , M, C, P, ,,  , b, u, s, i, n, e, s, s,  , r, u, l, e, s, .,  , S, a, m, p, l, e,  , q, u, e, s, t, i, o, n, s, :,  , \", W, i, l, l,  , m, y,  , M, C, P,  , b, e,  , r, e, j, e, c, t, e, d,  , i, f,  , t, h, e,  , e, n, t, i, t, y,  , d, o, e, s, n, \", t,  , e, x, i, s, t, ?, \", ,,  , \", H, o, w,  , c, a, n,  , I,  , a, d, d,  , c, u, s, t, o, m,  , v, a, l, i, d, a, t, i, o, n,  , f, o, r,  , i, n, c, o, m, i, n, g,  , M, C, P, S, ?, \", ,,  , \", W, h, a, t,  , h, a, p, p, e, n, s,  , i, f,  , I,  , p, r, o, p, o, s, e,  , a, n,  , i, n, v, a, l, i, d,  , s, c, h, e, m, a,  , u, p, d, a, t, e, ?, \"",
+                "title": "Description of MCP_Validation_-_Preprocessing. Validates and preprocesses incoming MetadataChangeProposals to ensure data quality, entity existence, and correct structuring before acceptance. Can enforce business logic like ownership requirements or schema compatibility. Sample Keywords: v, a, l, i, d, a, t, e,  , p, r, o, p, o, s, a, l, ,,  , p, r, e, p, r, o, c, e, s, s,  , M, C, P, ,,  , b, u, s, i, n, e, s, s,  , r, u, l, e, s, .,  , S, a, m, p, l, e,  , q, u, e, s, t, i, o, n, s, :,  , \", W, i, l, l,  , m, y,  , M, C, P,  , b, e,  , r, e, j, e, c, t, e, d,  , i, f,  , t, h, e,  , e, n, t, i, t, y,  , d, o, e, s, n, \", t,  , e, x, i, s, t, ?, \", ,,  , \", H, o, w,  , c, a, n,  , I,  , a, d, d,  , c, u, s, t, o, m,  , v, a, l, i, d, a, t, i, o, n,  , f, o, r,  , i, n, c, o, m, i, n, g,  , M, C, P, S, ?, \", ,,  , \", W, h, a, t,  , h, a, p, p, e, n, s,  , i, f,  , I,  , p, r, o, p, o, s, e,  , a, n,  , i, n, v, a, l, i, d,  , s, c, h, e, m, a,  , u, p, d, a, t, e, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -7125,7 +7122,7 @@
       ]
     },
     {
-      "name": "DexPaprika (CoinPaprika)",
+      "name": "DexPaprika_CoinPaprika",
       "endpoint": "https://github.com/coinpaprika/dexpaprika-mcp",
       "toolsets": [
         {
@@ -7313,7 +7310,7 @@
               }
             },
             {
-              "name": "Internet_Search_(DuckDuckGo)",
+              "name": "Internet_Search_DuckDuckGo",
               "description": "Uses DuckDuckGo to perform privacy-focused internet searches. Returns web URLs and short descriptions relevant to the user\"s question.",
               "inputSchema": {},
               "annotations": {
@@ -7325,11 +7322,11 @@
               }
             },
             {
-              "name": "Webpage_Q&A",
+              "name": "Webpage_QA",
               "description": "Allows users to ask questions about the content of a specific webpage by providing a URL. The tool reads and processes the page to give detailed answers.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Webpage_Q&A. Allows users to ask questions about the content of a specific webpage by providing a URL. The tool reads and processes the page to give detailed answers. Keywords: w, e, b, p, a, g, e,  , Q, &, A, ,,  , U, R, L,  , a, n, a, l, y, s, i, s, ,,  , c, o, n, t, e, n, t,  , s, u, m, m, a, r, i, z, a, t, i, o, n Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, e,  , m, a, i, n,  , p, o, i, n, t, s,  , o, f,  , t, h, i, s,  , a, r, t, i, c, l, e, :,  , [, U, R, L, ], \", ,,  , \", W, h, a, t,  , a, r, e,  , t, h, e,  , k, e, y,  , b, e, n, e, f, i, t, s,  , m, e, n, t, i, o, n, e, d,  , i, n,  , t, h, i, s,  , s, a, l, e, s,  , p, a, g, e, ?, \"",
+                "title": "Description of Webpage_QA. Allows users to ask questions about the content of a specific webpage by providing a URL. The tool reads and processes the page to give detailed answers. Keywords: w, e, b, p, a, g, e,  , Q, -, A, ,,  , U, R, L,  , a, n, a, l, y, s, i, s, ,,  , c, o, n, t, e, n, t,  , s, u, m, m, a, r, i, z, a, t, i, o, n Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, e,  , m, a, i, n,  , p, o, i, n, t, s,  , o, f,  , t, h, i, s,  , a, r, t, i, c, l, e, :,  , [, U, R, L, ], \", ,,  , \", W, h, a, t,  , a, r, e,  , t, h, e,  , k, e, y,  , b, e, n, e, f, i, t, s,  , m, e, n, t, i, o, n, e, d,  , i, n,  , t, h, i, s,  , s, a, l, e, s,  , p, a, g, e, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -7685,11 +7682,11 @@
               }
             },
             {
-              "name": "User_&_Contact_Management",
+              "name": "User_-_Contact_Management",
               "description": "Manage users, recipients, and contacts within the signature platform.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of User_&_Contact_Management. Manage users, recipients, and contacts within the signature platform.",
+                "title": "Description of User_-_Contact_Management. Manage users, recipients, and contacts within the signature platform.",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -8097,7 +8094,7 @@
               "description": "Dataset management, including onboarding, cataloging, and querying capabilities for financial datasets. Enables users to find, filter, and retrieve historical and real-time data.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of mcp_data. Dataset management, including onboarding, cataloging, and querying capabilities for financial datasets. Enables users to find, filter, and retrieve historical and real-time data. Keywords: d, a, t, a, s, e, t, s, ,,  , c, a, t, a, l, o, g, ,,  , h, i, s, t, o, r, i, c, a, l,  , d, a, t, a, ,,  , r, e, a, l, -, t, i, m, e,  , d, a, t, a Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , s, y, m, b, o, l,  , l, i, s, t,  , f, o, r,  , t, h, e,  , S, &, P,  , 5, 0, 0, ?, \", ,,  , \", S, h, o, w,  , m, e,  , p, r, i, c, e,  , d, a, t, a,  , f, o, r,  , A, A, P, L, ., \"",
+                "title": "Description of mcp_data. Dataset management, including onboarding, cataloging, and querying capabilities for financial datasets. Enables users to find, filter, and retrieve historical and real-time data. Keywords: d, a, t, a, s, e, t, s, ,,  , c, a, t, a, l, o, g, ,,  , h, i, s, t, o, r, i, c, a, l,  , d, a, t, a, ,,  , r, e, a, l, -, t, i, m, e,  , d, a, t, a Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , s, y, m, b, o, l,  , l, i, s, t,  , f, o, r,  , t, h, e,  , S, -, P,  , 5, 0, 0, ?, \", ,,  , \", S, h, o, w,  , m, e,  , p, r, i, c, e,  , d, a, t, a,  , f, o, r,  , A, A, P, L, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -9198,10 +9195,10 @@
             },
             {
               "name": "Conversation",
-              "description": "Handles conversational interactions for context-aware Q&A over document sets, leveraging retrieval-augmented generation. Sample operations: \"Chat with my documents about company policy.\"",
+              "description": "Handles conversational interactions for context-aware QA over document sets, leveraging retrieval-augmented generation. Sample operations: \"Chat with my documents about company policy.\"",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Conversation. Handles conversational interactions for context-aware Q&A over document sets, leveraging retrieval-augmented generation. Sample operations: \"Chat with my documents about company policy.\" Keywords: c, h, a, t, ,,  , q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , R, A, G, ,,  , c, o, n, v, e, r, s, a, t, i, o, n, a, l,  , A, I",
+                "title": "Description of Conversation. Handles conversational interactions for context-aware QA over document sets, leveraging retrieval-augmented generation. Sample operations: \"Chat with my documents about company policy.\" Keywords: c, h, a, t, ,,  , q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , R, A, G, ,,  , c, o, n, v, e, r, s, a, t, i, o, n, a, l,  , A, I",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -9285,7 +9282,7 @@
               "description": "A tool that enables conversation with the content of YouTube videos. Users can input YouTube video URLs and ask questions related to the video\"s content.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of YouTube_Video_Talk. A tool that enables conversation with the content of YouTube videos. Users can input YouTube video URLs and ask questions related to the video\"s content. Keywords: Y, o, u, T, u, b, e, ,,  , v, i, d, e, o, ,,  , t, r, a, n, s, c, r, i, p, t, ,,  , c, o, n, v, e, r, s, a, t, i, o, n, ,,  , Q, &, A Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, e,  , m, a, i, n,  , p, o, i, n, t, s,  , o, f,  , t, h, i, s,  , v, i, d, e, o, \", ,,  , \", W, h, a, t,  , d, i, d,  , t, h, e,  , s, p, e, a, k, e, r,  , s, a, y,  , a, b, o, u, t,  , c, l, i, m, a, t, e,  , c, h, a, n, g, e, ?, \", ,,  , \", L, i, s, t,  , k, e, y,  , f, a, c, t, s,  , f, r, o, m,  , t, h, i, s,  , t, u, t, o, r, i, a, l, ., \"",
+                "title": "Description of YouTube_Video_Talk. A tool that enables conversation with the content of YouTube videos. Users can input YouTube video URLs and ask questions related to the video\"s content. Keywords: Y, o, u, T, u, b, e, ,,  , v, i, d, e, o, ,,  , t, r, a, n, s, c, r, i, p, t, ,,  , c, o, n, v, e, r, s, a, t, i, o, n, ,,  , Q, -, A Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, e,  , m, a, i, n,  , p, o, i, n, t, s,  , o, f,  , t, h, i, s,  , v, i, d, e, o, \", ,,  , \", W, h, a, t,  , d, i, d,  , t, h, e,  , s, p, e, a, k, e, r,  , s, a, y,  , a, b, o, u, t,  , c, l, i, m, a, t, e,  , c, h, a, n, g, e, ?, \", ,,  , \", L, i, s, t,  , k, e, y,  , f, a, c, t, s,  , f, r, o, m,  , t, h, i, s,  , t, u, t, o, r, i, a, l, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -9297,7 +9294,7 @@
               "description": "A tool for uploading and interacting with PDF documents. Users can upload PDF files and ask questions directly about the document contents.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of PDF_Talk. A tool for uploading and interacting with PDF documents. Users can upload PDF files and ask questions directly about the document contents. Keywords: P, D, F, ,,  , d, o, c, u, m, e, n, t,  , Q, &, A, ,,  , u, p, l, o, a, d, ,,  , d, o, c, u, m, e, n, t,  , a, n, a, l, y, s, i, s Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, i, s,  , p, a, g, e, \", ,,  , \", F, i, n, d,  , a, l, l,  , m, e, n, t, i, o, n, s,  , o, f,  , L, i, n, k, e, d, I, n, \", ,,  , \", G, i, v, e,  , m, e,  , a,  , l, i, s, t,  , o, f,  , a, l, l,  , c, i, t, e, d,  , r, e, f, e, r, e, n, c, e, s, ., \"",
+                "title": "Description of PDF_Talk. A tool for uploading and interacting with PDF documents. Users can upload PDF files and ask questions directly about the document contents. Keywords: P, D, F, ,,  , d, o, c, u, m, e, n, t,  , Q, -, A, ,,  , u, p, l, o, a, d, ,,  , d, o, c, u, m, e, n, t,  , a, n, a, l, y, s, i, s Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, i, s,  , p, a, g, e, \", ,,  , \", F, i, n, d,  , a, l, l,  , m, e, n, t, i, o, n, s,  , o, f,  , L, i, n, k, e, d, I, n, \", ,,  , \", G, i, v, e,  , m, e,  , a,  , l, i, s, t,  , o, f,  , a, l, l,  , c, i, t, e, d,  , r, e, f, e, r, e, n, c, e, s, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -9306,10 +9303,10 @@
             },
             {
               "name": "Webpage_Talk",
-              "description": "Allows users to enter a web page URL, fetches the content, and enables Q&A about the page.",
+              "description": "Allows users to enter a web page URL, fetches the content, and enables QA about the page.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Webpage_Talk. Allows users to enter a web page URL, fetches the content, and enables Q&A about the page. Keywords: w, e, b, p, a, g, e, ,,  , U, R, L, ,,  , c, o, n, t, e, n, t,  , a, n, a, l, y, s, i, s, ,,  , w, e, b,  , a, r, t, i, c, l, e Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, i, s,  , a, r, t, i, c, l, e, \", ,,  , \", W, h, a, t,  , a, r, e,  , t, h, e,  , m, a, i, n,  , c, o, n, c, l, u, s, i, o, n, s, ?, \", ,,  , \", L, i, s, t,  , f, i, v, e,  , i, m, p, o, r, t, a, n, t,  , p, o, i, n, t, s, ., \"",
+                "title": "Description of Webpage_Talk. Allows users to enter a web page URL, fetches the content, and enables QA about the page. Keywords: w, e, b, p, a, g, e, ,,  , U, R, L, ,,  , c, o, n, t, e, n, t,  , a, n, a, l, y, s, i, s, ,,  , w, e, b,  , a, r, t, i, c, l, e Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, i, s,  , a, r, t, i, c, l, e, \", ,,  , \", W, h, a, t,  , a, r, e,  , t, h, e,  , m, a, i, n,  , c, o, n, c, l, u, s, i, o, n, s, ?, \", ,,  , \", L, i, s, t,  , f, i, v, e,  , i, m, p, o, r, t, a, n, t,  , p, o, i, n, t, s, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -9318,10 +9315,10 @@
             },
             {
               "name": "Slack_Knowledge_Talk",
-              "description": "Enables Q&A with knowledge stored in Slack channels. Users can interact with team knowledge and historical discussions directly.",
+              "description": "Enables QA with knowledge stored in Slack channels. Users can interact with team knowledge and historical discussions directly.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Slack_Knowledge_Talk. Enables Q&A with knowledge stored in Slack channels. Users can interact with team knowledge and historical discussions directly. Keywords: S, l, a, c, k, ,,  , t, e, a, m,  , k, n, o, w, l, e, d, g, e, ,,  , c, h, a, t,  , h, i, s, t, o, r, y, ,,  , k, n, o, w, l, e, d, g, e,  , b, a, s, e Sample Questions: \", W, h, a, t,  , d, i, d,  , w, e,  , d, i, s, c, u, s, s,  , a, b, o, u, t,  , p, r, o, j, e, c, t,  , X,  , l, a, s, t,  , w, e, e, k, ?, \", ,,  , \", L, i, s, t,  , c, o, n, c, l, u, s, i, o, n, s,  , f, r, o, m,  , t, h, e,  , #, d, e, s, i, g, n,  , c, h, a, n, n, e, l, ., \"",
+                "title": "Description of Slack_Knowledge_Talk. Enables QA with knowledge stored in Slack channels. Users can interact with team knowledge and historical discussions directly. Keywords: S, l, a, c, k, ,,  , t, e, a, m,  , k, n, o, w, l, e, d, g, e, ,,  , c, h, a, t,  , h, i, s, t, o, r, y, ,,  , k, n, o, w, l, e, d, g, e,  , b, a, s, e Sample Questions: \", W, h, a, t,  , d, i, d,  , w, e,  , d, i, s, c, u, s, s,  , a, b, o, u, t,  , p, r, o, j, e, c, t,  , X,  , l, a, s, t,  , w, e, e, k, ?, \", ,,  , \", L, i, s, t,  , c, o, n, c, l, u, s, i, o, n, s,  , f, r, o, m,  , t, h, e,  , #, d, e, s, i, g, n,  , c, h, a, n, n, e, l, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -9581,11 +9578,11 @@
               }
             },
             {
-              "name": "User_&_Access_Management",
+              "name": "User_-_Access_Management",
               "description": "Manage user accounts, roles, and permissions for secure access to MCP resources.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of User_&_Access_Management. Manage user accounts, roles, and permissions for secure access to MCP resources. Keywords: u, s, e, r,  , m, a, n, a, g, e, m, e, n, t, ,,  , p, e, r, m, i, s, s, i, o, n, s, ,,  , a, c, c, e, s, s,  , c, o, n, t, r, o, l, ,,  , r, o, l, e, s Sample Questions: \", A, d, d,  , a,  , n, e, w,  , a, d, m, i, n,  , u, s, e, r, ,, \",  , \", R, e, s, t, r, i, c, t,  , a, c, c, e, s, s,  , t, o,  , f, i, n, a, n, c, e,  , d, o, c, u, m, e, n, t, s, ., \"",
+                "title": "Description of User_-_Access_Management. Manage user accounts, roles, and permissions for secure access to MCP resources. Keywords: u, s, e, r,  , m, a, n, a, g, e, m, e, n, t, ,,  , p, e, r, m, i, s, s, i, o, n, s, ,,  , a, c, c, e, s, s,  , c, o, n, t, r, o, l, ,,  , r, o, l, e, s Sample Questions: \", A, d, d,  , a,  , n, e, w,  , a, d, m, i, n,  , u, s, e, r, ,, \",  , \", R, e, s, t, r, i, c, t,  , a, c, c, e, s, s,  , t, o,  , f, i, n, a, n, c, e,  , d, o, c, u, m, e, n, t, s, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -9653,7 +9650,7 @@
               }
             },
             {
-              "name": "MCP_Admin_Panel_(Web_UI)",
+              "name": "MCP_Admin_Panel_Web_UI",
               "description": "A web-based user interface for managing and monitoring Hologres MCP server operations visually. Users can browse metadata, configure integrations, and monitor system health. Sample",
               "inputSchema": {},
               "annotations": {
@@ -9833,11 +9830,11 @@
               }
             },
             {
-              "name": "Permissions_&_Access_Control",
+              "name": "Permissions_-_Access_Control",
               "description": "Provides granular management of user permissions, organizational roles, and access to Hugging Face Spaces, datasets, or models.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Permissions_&_Access_Control. Provides granular management of user permissions, organizational roles, and access to Hugging Face Spaces, datasets, or models. Keywords: p, e, r, m, i, s, s, i, o, n, s, ,,  , a, c, c, e, s, s,  , c, o, n, t, r, o, l, ,,  , r, o, l, e,  , m, a, n, a, g, e, m, e, n, t Sample Questions: \", H, o, w,  , d, o,  , I,  , r, e, s, t, r, i, c, t,  , a, c, c, e, s, s,  , t, o,  , a,  , p, r, i, v, a, t, e,  , m, o, d, e, l, ?, \", ,,  , \", C, a, n,  , I,  , m, a, n, a, g, e,  , c, o, n, t, r, i, b, u, t, o, r,  , p, e, r, m, i, s, s, i, o, n, s,  , f, o, r,  , m, y,  , d, a, t, a, s, e, t, ?, \"",
+                "title": "Description of Permissions_-_Access_Control. Provides granular management of user permissions, organizational roles, and access to Hugging Face Spaces, datasets, or models. Keywords: p, e, r, m, i, s, s, i, o, n, s, ,,  , a, c, c, e, s, s,  , c, o, n, t, r, o, l, ,,  , r, o, l, e,  , m, a, n, a, g, e, m, e, n, t Sample Questions: \", H, o, w,  , d, o,  , I,  , r, e, s, t, r, i, c, t,  , a, c, c, e, s, s,  , t, o,  , a,  , p, r, i, v, a, t, e,  , m, o, d, e, l, ?, \", ,,  , \", C, a, n,  , I,  , m, a, n, a, g, e,  , c, o, n, t, r, i, b, u, t, o, r,  , p, e, r, m, i, s, s, i, o, n, s,  , f, o, r,  , m, y,  , d, a, t, a, s, e, t, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -10337,7 +10334,7 @@
               }
             },
             {
-              "name": "NLP_(Natural_Language_Processing)",
+              "name": "NLP_Natural_Language_Processing",
               "description": "Handles natural language processing tasks including document classification, named entity recognition, text summarization, and chunking. It supports extracting entities, summarizing documents, and classifying text.",
               "inputSchema": {},
               "annotations": {
@@ -10349,7 +10346,7 @@
               }
             },
             {
-              "name": "LLM_(Large_Language_Models)",
+              "name": "LLM_Large_Language_Models",
               "description": "Enables leveraging large language models for question answering, conversation, and generating responses.",
               "inputSchema": {},
               "annotations": {
@@ -10845,7 +10842,7 @@
       ]
     },
     {
-      "name": "kluster.ai",
+      "name": "klusterai",
       "endpoint": "https://docs.kluster.ai/get-started/mcp/overview/",
       "toolsets": [
         {
@@ -12138,10 +12135,10 @@
             },
             {
               "name": "ask_groq_llama3",
-              "description": "Generic Q&A tool using Groq-hosted Llama-3 generative models.",
+              "description": "Generic QA tool using Groq-hosted Llama-3 generative models.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of ask_groq_llama3. Generic Q&A tool using Groq-hosted Llama-3 generative models. Keywords: L, l, a, m, a, 3, ,,  , G, r, o, q, ,,  , A, I, ,,  , q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , s, u, m, m, a, r, i, z, a, t, i, o, n Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, i, s,  , a, r, t, i, c, l, e, ., \", ,,  , \", W, r, i, t, e,  , a,  , p, o, e, m,  , a, b, o, u, t,  , s, p, r, i, n, g, ., \"",
+                "title": "Description of ask_groq_llama3. Generic QA tool using Groq-hosted Llama-3 generative models. Keywords: L, l, a, m, a, 3, ,,  , G, r, o, q, ,,  , A, I, ,,  , q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , s, u, m, m, a, r, i, z, a, t, i, o, n Sample Questions: \", S, u, m, m, a, r, i, z, e,  , t, h, i, s,  , a, r, t, i, c, l, e, ., \", ,,  , \", W, r, i, t, e,  , a,  , p, o, e, m,  , a, b, o, u, t,  , s, p, r, i, n, g, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -12257,11 +12254,11 @@
               }
             },
             {
-              "name": "Q&A",
+              "name": "QA",
               "description": "Answers questions based on a given context or document. Utilizes NLP models to extract precise answers.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Q&A. Answers questions based on a given context or document. Utilizes NLP models to extract precise answers. Keywords: q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , i, n, f, o, r, m, a, t, i, o, n,  , r, e, t, r, i, e, v, a, l, ,,  , a, n, s, w, e, r,  , e, x, t, r, a, c, t, i, o, n Sample Questions: \", W, h, a, t,  , d, o, e, s,  , t, h, i, s,  , p, a, r, a, g, r, a, p, h,  , m, e, a, n, ?, \", ,,  , \", W, h, o,  , i, s,  , t, h, e,  , m, a, i, n,  , c, h, a, r, a, c, t, e, r,  , i, n,  , t, h, i, s,  , s, t, o, r, y, ?, \"",
+                "title": "Description of QA. Answers questions based on a given context or document. Utilizes NLP models to extract precise answers. Keywords: q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , i, n, f, o, r, m, a, t, i, o, n,  , r, e, t, r, i, e, v, a, l, ,,  , a, n, s, w, e, r,  , e, x, t, r, a, c, t, i, o, n Sample Questions: \", W, h, a, t,  , d, o, e, s,  , t, h, i, s,  , p, a, r, a, g, r, a, p, h,  , m, e, a, n, ?, \", ,,  , \", W, h, o,  , i, s,  , t, h, e,  , m, a, i, n,  , c, h, a, r, a, c, t, e, r,  , i, n,  , t, h, i, s,  , s, t, o, r, y, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -12281,7 +12278,7 @@
               }
             },
             {
-              "name": "NER_(Named_Entity_Recognition)",
+              "name": "NER_Named_Entity_Recognition",
               "description": "Detects and categorizes named entities such as people, locations, and organizations in text using AI models.",
               "inputSchema": {},
               "annotations": {
@@ -12798,10 +12795,10 @@
             },
             {
               "name": "Cypher_QA_Chain",
-              "description": "A tool that interprets natural language questions, translates them into Cypher (Memgraph\"s query language), executes them against the graph database, and returns a user-friendly answer. Useful for Q&A interfaces over graph data.",
+              "description": "A tool that interprets natural language questions, translates them into Cypher (Memgraph\"s query language), executes them against the graph database, and returns a user-friendly answer. Useful for QA interfaces over graph data.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Cypher_QA_Chain. A tool that interprets natural language questions, translates them into Cypher (Memgraph\"s query language), executes them against the graph database, and returns a user-friendly answer. Useful for Q&A interfaces over graph data. Keywords: c, y, p, h, e, r, ,,  , q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , g, r, a, p, h,  , q, u, e, r, i, e, s, ,,  , M, e, m, g, r, a, p, h Sample Questions: \", W, h, i, c, h,  , u, s, e, r, s,  , a, r, e,  , c, o, n, n, e, c, t, e, d,  , t, o,  , J, o, h, n, ?, \"",
+                "title": "Description of Cypher_QA_Chain. A tool that interprets natural language questions, translates them into Cypher (Memgraph\"s query language), executes them against the graph database, and returns a user-friendly answer. Useful for QA interfaces over graph data. Keywords: c, y, p, h, e, r, ,,  , q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , g, r, a, p, h,  , q, u, e, r, i, e, s, ,,  , M, e, m, g, r, a, p, h Sample Questions: \", W, h, i, c, h,  , u, s, e, r, s,  , a, r, e,  , c, o, n, n, e, c, t, e, d,  , t, o,  , J, o, h, n, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -13121,7 +13118,7 @@
               }
             },
             {
-              "name": "Data_Import_/_Export",
+              "name": "Data_Import_Export",
               "description": "Tools to bulk import and export data to/from Milvus. Supports importing via files and monitoring import progress.",
               "inputSchema": {},
               "annotations": {
@@ -13662,10 +13659,10 @@
           "tools": [
             {
               "name": "consult",
-              "description": "Provides contextual consulting and Q&A capabilities for medical and clinical professionals. This toolset allows users to ask medical questions, simulate patient cases, and receive guidance based on standard of care or published literature.",
+              "description": "Provides contextual consulting and QA capabilities for medical and clinical professionals. This toolset allows users to ask medical questions, simulate patient cases, and receive guidance based on standard of care or published literature.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of consult. Provides contextual consulting and Q&A capabilities for medical and clinical professionals. This toolset allows users to ask medical questions, simulate patient cases, and receive guidance based on standard of care or published literature. Keywords: c, o, n, s, u, l, t, ,,  , Q, &, A, ,,  , c, l, i, n, i, c, a, l,  , a, d, v, i, c, e, ,,  , m, e, d, i, c, a, l,  , g, u, i, d, a, n, c, e Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , r, e, c, o, m, m, e, n, d, e, d,  , t, r, e, a, t, m, e, n, t,  , f, o, r,  , a, c, u, t, e,  , a, p, p, e, n, d, i, c, i, t, i, s, ?, \", ,,  , \", H, o, w,  , d, o,  , I,  , m, a, n, a, g, e,  , a,  , C, O, P, D,  , e, x, a, c, e, r, b, a, t, i, o, n,  , a, t,  , h, o, m, e, ?, \"",
+                "title": "Description of consult. Provides contextual consulting and QA capabilities for medical and clinical professionals. This toolset allows users to ask medical questions, simulate patient cases, and receive guidance based on standard of care or published literature. Keywords: c, o, n, s, u, l, t, ,,  , Q, -, A, ,,  , c, l, i, n, i, c, a, l,  , a, d, v, i, c, e, ,,  , m, e, d, i, c, a, l,  , g, u, i, d, a, n, c, e Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , r, e, c, o, m, m, e, n, d, e, d,  , t, r, e, a, t, m, e, n, t,  , f, o, r,  , a, c, u, t, e,  , a, p, p, e, n, d, i, c, i, t, i, s, ?, \", ,,  , \", H, o, w,  , d, o,  , I,  , m, a, n, a, g, e,  , a,  , C, O, P, D,  , e, x, a, c, e, r, b, a, t, i, o, n,  , a, t,  , h, o, m, e, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -14538,10 +14535,10 @@
           "tools": [
             {
               "name": "Knowledge",
-              "description": "Provides general Q&A and answering capabilities. Handles a wide range of questions, including but not limited to commands like \"What can you do?\" and general chit-chat.",
+              "description": "Provides general QA and answering capabilities. Handles a wide range of questions, including but not limited to commands like \"What can you do?\" and general chit-chat.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Knowledge. Provides general Q&A and answering capabilities. Handles a wide range of questions, including but not limited to commands like \"What can you do?\" and general chit-chat. Keywords: k, n, o, w, l, e, d, g, e, ,,  , g, e, n, e, r, a, l, ,,  , Q, &, A, ,,  , h, e, l, p, ,,  , a, s, s, i, s, t, a, n, t, .,  , S, a, m, p, l, e,  , q, u, e, s, t, i, o, n, s, :,  , \", T, e, l, l,  , m, e,  , a, b, o, u, t,  , O, c, t, o, E, v, e, r, y, w, h, e, r, e, \", ,,  , \", W, h, a, t,  , i, s,  , M, C, P, ?, \", ,,  , \", H, o, w,  , d, o,  , I,  , u, s, e,  , t, h, i, s,  , p, l, u, g, i, n, ?, \"",
+                "title": "Description of Knowledge. Provides general QA and answering capabilities. Handles a wide range of questions, including but not limited to commands like \"What can you do?\" and general chit-chat. Keywords: k, n, o, w, l, e, d, g, e, ,,  , g, e, n, e, r, a, l, ,,  , Q, -, A, ,,  , h, e, l, p, ,,  , a, s, s, i, s, t, a, n, t, .,  , S, a, m, p, l, e,  , q, u, e, s, t, i, o, n, s, :,  , \", T, e, l, l,  , m, e,  , a, b, o, u, t,  , O, c, t, o, E, v, e, r, y, w, h, e, r, e, \", ,,  , \", W, h, a, t,  , i, s,  , M, C, P, ?, \", ,,  , \", H, o, w,  , d, o,  , I,  , u, s, e,  , t, h, i, s,  , p, l, u, g, i, n, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -14645,11 +14642,11 @@
               }
             },
             {
-              "name": "Voting_&_Polling_System",
+              "name": "Voting_-_Polling_System",
               "description": "Manages the creation and tracking of votes and polls within the meeting context. Supports sample questions like \"Start a poll for choosing the next project name\" or \"What was the result of the last vote?\".",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Voting_&_Polling_System. Manages the creation and tracking of votes and polls within the meeting context. Supports sample questions like \"Start a poll for choosing the next project name\" or \"What was the result of the last vote?\". Keywords: p, o, l, l, ,,  , v, o, t, e, ,,  , s, u, r, v, e, y, ,,  , r, e, s, u, l, t, s",
+                "title": "Description of Voting_-_Polling_System. Manages the creation and tracking of votes and polls within the meeting context. Supports sample questions like \"Start a poll for choosing the next project name\" or \"What was the result of the last vote?\". Keywords: p, o, l, l, ,,  , v, o, t, e, ,,  , s, u, r, v, e, y, ,,  , r, e, s, u, l, t, s",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -14669,11 +14666,11 @@
               }
             },
             {
-              "name": "Document_&_Link_Handler",
+              "name": "Document_-_Link_Handler",
               "description": "Facilitates the storage, retrieval, and sharing of documents and links relevant to a meeting or topic. Supports queries like \"Share the planning document\" or \"Where can I find last week\"s notes?\".",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Document_&_Link_Handler. Facilitates the storage, retrieval, and sharing of documents and links relevant to a meeting or topic. Supports queries like \"Share the planning document\" or \"Where can I find last week\"s notes?\". Keywords: d, o, c, u, m, e, n, t, ,,  , l, i, n, k, ,,  , n, o, t, e, s, ,,  , f, i, l, e,  , s, h, a, r, i, n, g",
+                "title": "Description of Document_-_Link_Handler. Facilitates the storage, retrieval, and sharing of documents and links relevant to a meeting or topic. Supports queries like \"Share the planning document\" or \"Where can I find last week\"s notes?\". Keywords: d, o, c, u, m, e, n, t, ,,  , l, i, n, k, ,,  , n, o, t, e, s, ,,  , f, i, l, e,  , s, h, a, r, i, n, g",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -15305,11 +15302,11 @@
           "description": "",
           "tools": [
             {
-              "name": "Q&A",
+              "name": "QA",
               "description": "A question-and-answer tool for interacting with knowledge bases. Users can query with natural language (e.g., \"What is the status of the project?\" or \"Summarize last week\"s sales data\").",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Q&A. A question-and-answer tool for interacting with knowledge bases. Users can query with natural language (e.g., \"What is the status of the project?\" or \"Summarize last week\"s sales data\"). Keywords: q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , k, n, o, w, l, e, d, g, e,  , b, a, s, e, ,,  , q, u, e, r, y",
+                "title": "Description of QA. A question-and-answer tool for interacting with knowledge bases. Users can query with natural language (e.g., \"What is the status of the project?\" or \"Summarize last week\"s sales data\"). Keywords: q, u, e, s, t, i, o, n,  , a, n, s, w, e, r, i, n, g, ,,  , k, n, o, w, l, e, d, g, e,  , b, a, s, e, ,,  , q, u, e, r, y",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -15701,11 +15698,11 @@
               }
             },
             {
-              "name": "Health_&_Miscellaneous",
+              "name": "Health_-_Miscellaneous",
               "description": "Utility tools for connectivity and system health checks.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Health_&_Miscellaneous. Utility tools for connectivity and system health checks.",
+                "title": "Description of Health_-_Miscellaneous. Utility tools for connectivity and system health checks.",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -16289,11 +16286,11 @@
               }
             },
             {
-              "name": "Data_Loader_&_Export_Tool",
+              "name": "Data_Loader_-_Export_Tool",
               "description": "Allows batch import or export of data to/from supported databases. Users could ask \"Upload this CSV to the orders table\" or \"Download results as Excel.\"",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Data_Loader_&_Export_Tool. Allows batch import or export of data to/from supported databases. Users could ask \"Upload this CSV to the orders table\" or \"Download results as Excel.\" Keywords: i, m, p, o, r, t, ,,  , e, x, p, o, r, t, ,,  , u, p, l, o, a, d, ,,  , d, o, w, n, l, o, a, d, ,,  , C, S, V, ,,  , E, x, c, e, l, ,,  , b, a, t, c, h",
+                "title": "Description of Data_Loader_-_Export_Tool. Allows batch import or export of data to/from supported databases. Users could ask \"Upload this CSV to the orders table\" or \"Download results as Excel.\" Keywords: i, m, p, o, r, t, ,,  , e, x, p, o, r, t, ,,  , u, p, l, o, a, d, ,,  , d, o, w, n, l, o, a, d, ,,  , C, S, V, ,,  , E, x, c, e, l, ,,  , b, a, t, c, h",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -17777,11 +17774,11 @@
               }
             },
             {
-              "name": "Keyword_&_Tag_Extractor",
+              "name": "Keyword_-_Tag_Extractor",
               "description": "Extracts keywords or tags from desired text or documents for organization or downstream ML models.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Keyword_&_Tag_Extractor. Extracts keywords or tags from desired text or documents for organization or downstream ML models. Keywords: N, L, P, ,,  , k, e, y, w, o, r, d,  , e, x, t, r, a, c, t, i, o, n, ,,  , d, o, c, u, m, e, n, t,  , t, a, g, g, i, n, g, .,  , E, x, a, m, p, l, e, :,  , \", E, x, t, r, a, c, t,  , t, o, p, i, c, s,  , f, r, o, m,  , a,  , l, a, r, g, e,  , c, o, r, p, u, s,  , o, f,  , r, e, s, e, a, r, c, h,  , p, a, p, e, r, s, ., \"",
+                "title": "Description of Keyword_-_Tag_Extractor. Extracts keywords or tags from desired text or documents for organization or downstream ML models. Keywords: N, L, P, ,,  , k, e, y, w, o, r, d,  , e, x, t, r, a, c, t, i, o, n, ,,  , d, o, c, u, m, e, n, t,  , t, a, g, g, i, n, g, .,  , E, x, a, m, p, l, e, :,  , \", E, x, t, r, a, c, t,  , t, o, p, i, c, s,  , f, r, o, m,  , a,  , l, a, r, g, e,  , c, o, r, p, u, s,  , o, f,  , r, e, s, e, a, r, c, h,  , p, a, p, e, r, s, ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -17945,7 +17942,7 @@
               }
             },
             {
-              "name": "Web_Application_Firewall_(WAF)",
+              "name": "Web_Application_Firewall_WAF",
               "description": "Acts as a web application firewall, inspecting incoming HTTP requests, filtering malicious payloads, and providing rule-based protection against common web threats such as SQL injection and XSS.",
               "inputSchema": {},
               "annotations": {
@@ -18749,7 +18746,7 @@
               }
             },
             {
-              "name": "PSTH_(Peri_Stimulus_Time_Histogram)",
+              "name": "PSTH_Peri_Stimulus_Time_Histogram",
               "description": "Tool for plotting spike (or event) histograms around specific events or stimuli. You can ask: \"Plot PSTH aligned to lever press\", \"Show the average firing rate relative to stimulus onset\", \"Give me the Peri-Event Time Histogram for licks.\"",
               "inputSchema": {},
               "annotations": {
@@ -19353,7 +19350,7 @@
               "description": "Answers specific questions about the content of recorded meetings, allowing quick reference to important details.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Question_Answering. Answers specific questions about the content of recorded meetings, allowing quick reference to important details. Keywords: m, e, e, t, i, n, g,  , d, e, t, a, i, l, s, ,,  , Q, &, A, ,,  , s, e, a, r, c, h Sample Questions: \", W, h, e, n,  , i, s,  , t, h, e,  , n, e, x, t,  , m, e, e, t, i, n, g,  , s, c, h, e, d, u, l, e, d, ?, \", ,,  , \", W, h, o,  , w, i, l, l,  , t, a, k, e,  , c, a, r, e,  , o, f,  , d, e, p, l, o, y, m, e, n, t, ?, \"",
+                "title": "Description of Question_Answering. Answers specific questions about the content of recorded meetings, allowing quick reference to important details. Keywords: m, e, e, t, i, n, g,  , d, e, t, a, i, l, s, ,,  , Q, -, A, ,,  , s, e, a, r, c, h Sample Questions: \", W, h, e, n,  , i, s,  , t, h, e,  , n, e, x, t,  , m, e, e, t, i, n, g,  , s, c, h, e, d, u, l, e, d, ?, \", ,,  , \", W, h, o,  , w, i, l, l,  , t, a, k, e,  , c, a, r, e,  , o, f,  , d, e, p, l, o, y, m, e, n, t, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -19629,7 +19626,7 @@
               "description": "A versatile question-answering tool that allows users to ask uncategorized questions or provide custom instructions. It is designed to handle a wide range of queries not covered by specific modules.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Ask. A versatile question-answering tool that allows users to ask uncategorized questions or provide custom instructions. It is designed to handle a wide range of queries not covered by specific modules. Keywords: a, s, k, ,,  , g, e, n, e, r, a, l,  , q, u, e, s, t, i, o, n, ,,  , i, n, s, t, r, u, c, t, i, o, n, ,,  , Q, &, A Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , c, a, p, i, t, a, l,  , o, f,  , F, r, a, n, c, e, ?, \", ,,  , \", S, u, m, m, a, r, i, z, e,  , t, h, i, s,  , t, e, x, t, :,  , ., ., ., \"",
+                "title": "Description of Ask. A versatile question-answering tool that allows users to ask uncategorized questions or provide custom instructions. It is designed to handle a wide range of queries not covered by specific modules. Keywords: a, s, k, ,,  , g, e, n, e, r, a, l,  , q, u, e, s, t, i, o, n, ,,  , i, n, s, t, r, u, c, t, i, o, n, ,,  , Q, -, A Sample Questions: \", W, h, a, t,  , i, s,  , t, h, e,  , c, a, p, i, t, a, l,  , o, f,  , F, r, a, n, c, e, ?, \", ,,  , \", S, u, m, m, a, r, i, z, e,  , t, h, i, s,  , t, e, x, t, :,  , ., ., ., \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -19734,10 +19731,10 @@
             },
             {
               "name": "Ragbot",
-              "description": "A Retrieval-Augmented Generation (RAG) bot that combines external knowledge retrieval with LLM-driven completion. It supports tasks such as document Q&A and context-aware conversations.",
+              "description": "A Retrieval-Augmented Generation (RAG) bot that combines external knowledge retrieval with LLM-driven completion. It supports tasks such as document QA and context-aware conversations.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Ragbot. A Retrieval-Augmented Generation (RAG) bot that combines external knowledge retrieval with LLM-driven completion. It supports tasks such as document Q&A and context-aware conversations. Keywords: R, A, G, ,,  , r, e, t, r, i, e, v, a, l, -, a, u, g, m, e, n, t, e, d,  , g, e, n, e, r, a, t, i, o, n, ,,  , d, o, c, u, m, e, n, t,  , Q, A, ,,  , c, o, n, t, e, x, t Sample Questions: \", F, i, n, d,  , t, h, e,  , m, o, s, t,  , r, e, l, e, v, a, n, t,  , d, o, c, u, m, e, n, t,  , f, r, a, g, m, e, n, t, s,  , t, o,  , t, h, i, s,  , q, u, e, s, t, i, o, n, \", ,,  , \", A, n, s, w, e, r,  , t, h, i, s,  , q, u, e, s, t, i, o, n,  , u, s, i, n, g,  , r, e, t, r, i, e, v, e, d,  , t, e, x, t, \"",
+                "title": "Description of Ragbot. A Retrieval-Augmented Generation (RAG) bot that combines external knowledge retrieval with LLM-driven completion. It supports tasks such as document QA and context-aware conversations. Keywords: R, A, G, ,,  , r, e, t, r, i, e, v, a, l, -, a, u, g, m, e, n, t, e, d,  , g, e, n, e, r, a, t, i, o, n, ,,  , d, o, c, u, m, e, n, t,  , Q, A, ,,  , c, o, n, t, e, x, t Sample Questions: \", F, i, n, d,  , t, h, e,  , m, o, s, t,  , r, e, l, e, v, a, n, t,  , d, o, c, u, m, e, n, t,  , f, r, a, g, m, e, n, t, s,  , t, o,  , t, h, i, s,  , q, u, e, s, t, i, o, n, \", ,,  , \", A, n, s, w, e, r,  , t, h, i, s,  , q, u, e, s, t, i, o, n,  , u, s, i, n, g,  , r, e, t, r, i, e, v, e, d,  , t, e, x, t, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -20129,7 +20126,7 @@
           "description": "",
           "tools": [
             {
-              "name": "Map_Comparison_Tool_(MCT)",
+              "name": "Map_Comparison_Tool_MCT",
               "description": "A central component of the verodat-mcp-server, the Map Comparison Tool (MCT) enables the systematic comparison of raster datasets/maps over space and time via REST API endpoints. It supports queries like \"How do recent NDVI values differ from the reference period?\", \"Detect temporal changes in land cover between 1970 and 2000\", or \"Which regions show significant soil moisture anomalies?\"",
               "inputSchema": {},
               "annotations": {
@@ -21005,11 +21002,11 @@
               }
             },
             {
-              "name": "Permission_&_Role_Management",
+              "name": "Permission_-_Role_Management",
               "description": "Tools for assigning roles, setting and enforcing permissions, and managing user access within rooms or services.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Permission_&_Role_Management. Tools for assigning roles, setting and enforcing permissions, and managing user access within rooms or services. Keywords: p, e, r, m, i, s, s, i, o, n, ,,  , r, o, l, e, ,,  , a, c, c, e, s, s,  , c, o, n, t, r, o, l, ,,  , u, s, e, r,  , r, i, g, h, t, s Sample Questions: \", H, o, w,  , a, r, e,  , r, o, l, e, s,  , a, s, s, i, g, n, e, d,  , t, o,  , u, s, e, r, s, ?, \", ,,  , \", W, h, a, t,  , p, e, r, m, i, s, s, i, o, n, s,  , c, a, n,  , b, e,  , c, o, n, f, i, g, u, r, e, d, ?, \", ,,  , \", I, s,  , t, h, e, r, e,  , a, n,  , A, P, I,  , f, o, r,  , a, d, j, u, s, t, i, n, g,  , u, s, e, r,  , r, o, l, e, s, ?, \"",
+                "title": "Description of Permission_-_Role_Management. Tools for assigning roles, setting and enforcing permissions, and managing user access within rooms or services. Keywords: p, e, r, m, i, s, s, i, o, n, ,,  , r, o, l, e, ,,  , a, c, c, e, s, s,  , c, o, n, t, r, o, l, ,,  , u, s, e, r,  , r, i, g, h, t, s Sample Questions: \", H, o, w,  , a, r, e,  , r, o, l, e, s,  , a, s, s, i, g, n, e, d,  , t, o,  , u, s, e, r, s, ?, \", ,,  , \", W, h, a, t,  , p, e, r, m, i, s, s, i, o, n, s,  , c, a, n,  , b, e,  , c, o, n, f, i, g, u, r, e, d, ?, \", ,,  , \", I, s,  , t, h, e, r, e,  , a, n,  , A, P, I,  , f, o, r,  , a, d, j, u, s, t, i, n, g,  , u, s, e, r,  , r, o, l, e, s, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -21029,11 +21026,11 @@
               }
             },
             {
-              "name": "Statistics_&_Monitoring",
+              "name": "Statistics_-_Monitoring",
               "description": "Tools to collect and analyze metrics about rooms, users, media usage, and system performance. Offers real-time and historical data querying.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Statistics_&_Monitoring. Tools to collect and analyze metrics about rooms, users, media usage, and system performance. Offers real-time and historical data querying. Keywords: s, t, a, t, i, s, t, i, c, s, ,,  , m, e, t, r, i, c, s, ,,  , m, o, n, i, t, o, r, i, n, g, ,,  , a, n, a, l, y, t, i, c, s, ,,  , r, e, p, o, r, t, i, n, g Sample Questions: \", H, o, w,  , c, a, n,  , I,  , g, e, t,  , r, o, o, m,  , u, s, a, g, e,  , s, t, a, t, i, s, t, i, c, s, ?, \", ,,  , \", W, h, a, t,  , m, e, t, r, i, c, s,  , a, r, e,  , c, o, l, l, e, c, t, e, d,  , f, o, r,  , e, a, c, h,  , u, s, e, r,  , s, e, s, s, i, o, n, ?, \", ,,  , \", W, h, e, r, e,  , t, o,  , f, i, n, d,  , s, y, s, t, e, m,  , h, e, a, l, t, h,  , r, e, p, o, r, t, s, ?, \"",
+                "title": "Description of Statistics_-_Monitoring. Tools to collect and analyze metrics about rooms, users, media usage, and system performance. Offers real-time and historical data querying. Keywords: s, t, a, t, i, s, t, i, c, s, ,,  , m, e, t, r, i, c, s, ,,  , m, o, n, i, t, o, r, i, n, g, ,,  , a, n, a, l, y, t, i, c, s, ,,  , r, e, p, o, r, t, i, n, g Sample Questions: \", H, o, w,  , c, a, n,  , I,  , g, e, t,  , r, o, o, m,  , u, s, a, g, e,  , s, t, a, t, i, s, t, i, c, s, ?, \", ,,  , \", W, h, a, t,  , m, e, t, r, i, c, s,  , a, r, e,  , c, o, l, l, e, c, t, e, d,  , f, o, r,  , e, a, c, h,  , u, s, e, r,  , s, e, s, s, i, o, n, ?, \", ,,  , \", W, h, e, r, e,  , t, o,  , f, i, n, d,  , s, y, s, t, e, m,  , h, e, a, l, t, h,  , r, e, p, o, r, t, s, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -21041,11 +21038,11 @@
               }
             },
             {
-              "name": "Recording_&_Playback",
+              "name": "Recording_-_Playback",
               "description": "Enables recording of media sessions, management of recorded files, and playback controls.",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Recording_&_Playback. Enables recording of media sessions, management of recorded files, and playback controls. Keywords: r, e, c, o, r, d, i, n, g, ,,  , p, l, a, y, b, a, c, k, ,,  , v, i, d, e, o,  , f, i, l, e, s, ,,  , a, r, c, h, i, v, e, s, ,,  , s, e, s, s, i, o, n,  , r, e, p, l, a, y Sample Questions: \", H, o, w,  , d, o,  , I,  , s, t, a, r, t,  , a,  , r, o, o, m,  , r, e, c, o, r, d, i, n, g, ?, \", ,,  , \", W, h, e, r, e,  , c, a, n,  , I,  , d, o, w, n, l, o, a, d,  , r, e, c, o, r, d, e, d,  , f, i, l, e, s, ?, \", ,,  , \", I, s,  , t, h, e, r, e,  , s, u, p, p, o, r, t,  , f, o, r,  , p, l, a, y, b, a, c, k,  , w, i, t, h, i, n,  , t, h, e,  , p, l, a, t, f, o, r, m, ?, \"",
+                "title": "Description of Recording_-_Playback. Enables recording of media sessions, management of recorded files, and playback controls. Keywords: r, e, c, o, r, d, i, n, g, ,,  , p, l, a, y, b, a, c, k, ,,  , v, i, d, e, o,  , f, i, l, e, s, ,,  , a, r, c, h, i, v, e, s, ,,  , s, e, s, s, i, o, n,  , r, e, p, l, a, y Sample Questions: \", H, o, w,  , d, o,  , I,  , s, t, a, r, t,  , a,  , r, o, o, m,  , r, e, c, o, r, d, i, n, g, ?, \", ,,  , \", W, h, e, r, e,  , c, a, n,  , I,  , d, o, w, n, l, o, a, d,  , r, e, c, o, r, d, e, d,  , f, i, l, e, s, ?, \", ,,  , \", I, s,  , t, h, e, r, e,  , s, u, p, p, o, r, t,  , f, o, r,  , p, l, a, y, b, a, c, k,  , w, i, t, h, i, n,  , t, h, e,  , p, l, a, t, f, o, r, m, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -21053,11 +21050,11 @@
               }
             },
             {
-              "name": "Notification_&_Callback",
+              "name": "Notification_-_Callback",
               "description": "Manages event-based notifications and webhook callbacks to external systems on specific triggers (like user join/leave, room end, etc).",
               "inputSchema": {},
               "annotations": {
-                "title": "Description of Notification_&_Callback. Manages event-based notifications and webhook callbacks to external systems on specific triggers (like user join/leave, room end, etc). Keywords: n, o, t, i, f, i, c, a, t, i, o, n, ,,  , c, a, l, l, b, a, c, k, ,,  , w, e, b, h, o, o, k, ,,  , e, v, e, n, t, ,,  , p, u, s, h Sample Questions: \", C, a, n,  , I,  , g, e, t,  , n, o, t, i, f, i, e, d,  , w, h, e, n,  , u, s, e, r, s,  , j, o, i, n,  , a,  , r, o, o, m, ?, \", ,,  , \", H, o, w,  , d, o,  , c, a, l, l, b, a, c, k,  , U, R, L, s,  , w, o, r, k, ?, \", ,,  , \", W, h, a, t,  , e, v, e, n, t, s,  , t, r, i, g, g, e, r,  , w, e, b, h, o, o, k, s, ?, \"",
+                "title": "Description of Notification_-_Callback. Manages event-based notifications and webhook callbacks to external systems on specific triggers (like user join/leave, room end, etc). Keywords: n, o, t, i, f, i, c, a, t, i, o, n, ,,  , c, a, l, l, b, a, c, k, ,,  , w, e, b, h, o, o, k, ,,  , e, v, e, n, t, ,,  , p, u, s, h Sample Questions: \", C, a, n,  , I,  , g, e, t,  , n, o, t, i, f, i, e, d,  , w, h, e, n,  , u, s, e, r, s,  , j, o, i, n,  , a,  , r, o, o, m, ?, \", ,,  , \", H, o, w,  , d, o,  , c, a, l, l, b, a, c, k,  , U, R, L, s,  , w, o, r, k, ?, \", ,,  , \", W, h, a, t,  , e, v, e, n, t, s,  , t, r, i, g, g, e, r,  , w, e, b, h, o, o, k, s, ?, \"",
                 "readOnlyHint": true,
                 "destructiveHint": false,
                 "idempotentHint": false,
@@ -21329,7 +21326,7 @@
               }
             },
             {
-              "name": "CLI_(Command_Line_Interface)",
+              "name": "CLI_Command_Line_Interface",
               "description": "A command-line tool for interacting with MCP services programmatically. Enables scripting, automation, and resource management without using the web console.",
               "inputSchema": {},
               "annotations": {

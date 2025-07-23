@@ -1,30 +1,21 @@
-from threading import local
-import asyncio, os, sys, logging, json, time, random, configparser
+import os, sys, logging, json, time, configparser
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from datetime import datetime
-from src.server.utils_azure_search import AzureSearchManager
-from src.server.utils_local_search import LocalSearchManager
-from src.server.utils_core import ToolListResult, ToolResult, Server
-from typing import List, Dict, Any, Literal
-from collections import Counter
-from mcp.server.fastmcp import FastMCP
+from utils_azure_search import AzureSearchManager
+from utils_objects import Server, Tool, ToolResults
+from typing import List, Dict, Any
+from fastapi import FastAPI, Request
+import uvicorn
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
-# tool_router = FastMCP(
-#     name="MCP Tool Router"
-# )
-
-# Global router instance
+# GLOBAL VARIABLES
+app = FastAPI()
 router_instance = None
-
 
 class ToolRouter:
     """High-performance MCP Tool Router"""
-    
-    def __init__(self):
+
+    def __init__(self, token: str = None):
 
         # Configuration variables from config.ini
         self.config = configparser.ConfigParser()
@@ -34,12 +25,15 @@ class ToolRouter:
         self.tool_return_limit = self.config.getint('ToolRouter', 'TOOL_RETURN_LIMIT', fallback=10)
         self.use_local_tools = self.config.getboolean('ToolRouter', 'USE_LOCAL_TOOLS', fallback=False)
         self.use_search_cache = self.config.getboolean('TestRun', 'USE_SEARCH_CACHE', fallback=False)
+        self.minimum_tool_score = self.config.getfloat('ToolRouter', 'MINIMUM_TOOL_SCORE', fallback=0.5)
 
+        # Initialize the Azure Search Manager
         self.azure_search_manager = AzureSearchManager()
-        
-        if self.use_local_tools:
-            from src.server.utils_local_search import LocalSearchManager
-            self.local_search_manager = LocalSearchManager()
+
+        ####
+        # TODO: When local tools are implemented, initialize the LocalSearchManager
+        # First check if self.use_local_tools is True
+        ####
 
     async def normalize_NNB_scores(self, scores: list[float]) -> list[float]:
         """
@@ -51,7 +45,9 @@ class ToolRouter:
         """
 
         def rescale(value, old_min, old_max, new_min=0, new_max=1):
+            """Rescale a value from one range to another. Used when multiple vectors have different ranges."""
             return ((value - old_min) / (old_max - old_min)) * (new_max - new_min) + new_min
+        
         if not scores:
             return []
         min_s = min(scores) if min(scores) > 0 else 0
@@ -59,118 +55,102 @@ class ToolRouter:
         return [rescale(s, min_s, max_s) for s in scores]
 
 
-
-    async def get_local_tools(self, query: str) -> ToolListResult:
+    ####
+    # TODO: When local tools are implemented, implement the get_local_tools method
+    # This method should retrieve local tools based on the query.
+    # And return a list of Tool objects.
+    ####
+    async def get_local_tools(self, query: str) -> List[Tool]:
         """
         Retrieve local tools based on the query.
         Args:
             query (str): The query string to search for local tools.
         Returns:
-            ToolList: A ToolList containing the local tools matching the query.
+            List[Tool]: A list of local tools matching the query.
         """
-        logging.info(f"Searching for local tools matching query: '{query}'")
-        try:
-            local_results = await self.local_search_manager.search(
-                query=query,
-                top_k=self.tool_result_cnt
-            )
-        except Exception as e:
-            logging.error(f"Error querying Local Search for '{query}': {e}")
-            return None
-
-        if local_results is not None:
-            return local_results
-        else:
-            logging.info(f"No local tools found matching query: '{query}'")
-            return ToolListResult(tools=[], query=query)
+        return []  # Placeholder for local tools retrieval logic
 
 
-    async def get_remote_tools(self, query: str) -> ToolListResult:
+    async def get_remote_tools(self, query: str) -> List[Tool]:
         """
         Retrieve remote tools based on the query.
         Args:
             query (str): The query string to search for remote tools.
         Returns:
-            ToolList: A ToolList containing the remote tools matching the query.
+            List[Tool]: A list of remote tools matching the query.
         """
-
-        #Timer start
-        start_time = time.time()
         try:
-            search_result = await self.azure_search_manager.search(
-                client=self.azure_search_manager.search_client,
+            search_result = await self.azure_search_manager.perform_azure_search(
                 search_text=query,
                 top_k=self.tool_result_cnt
             )
         except Exception as e:
             logging.error(f"Error querying Azure Search for '{query}': {e}")
-            return None
+            return [None]
         if search_result is not None:
             # Convert to list to check if we have results
             result_list = list(search_result)
             if result_list:
-                search_result_list = ToolListResult(tools=[], query=query)
-                for result in result_list:
-                    parts = result.get('id').split("_")
-                    _tool = ToolResult(
-                        score=result.get('@search.score', 0.0),
-                        server=Server(id="123", name=parts[0], location="remote"),
-                        toolset="_".join(parts[1:-1]),                  #### TODO: Fix this to use correct Server ID
-                        id=result.get('id'),
-                        name=parts[-1],
-                        endpoint=result.get('endpoint', ''),
-                        kwargs=result.get('kwargs', {})
-                    )
-                    search_result_list.tools.append(_tool)
-                if len(search_result_list.tools) == 0:
+                search_result_list = [Tool(
+                    id=f"{result.get('server', '')}.{result.get('name', '')}",
+                    server=result.get('server', ''),
+                    toolset=result.get('toolset', ''),
+                    name=result.get('name', ''),
+                    description=result.get('description', ''),
+                    tool_vector=result.get('tool_vector', []),
+                    score=result.get('@search.reranker_score', 0.0),
+                ) for result in result_list if result.get('server') and result.get('name')]
+
+                if len(search_result_list) == 0:
                     logging.info("No results found.")                
                 return search_result_list
         else:
             logging.info(f"No remote tools found matching query: '{query}'")
-            return ToolListResult(tools=[], query=query)
+            return []
 
 
-    async def route(self, query: str) -> ToolListResult:
+    async def route(self, query: str) -> ToolResults:
         """
         Process a single query with performance tracking
         Args:
             query (str): The query string to process
         Returns:
-            ToolListResult: A ToolListResult containing the results of the query processing
+            ToolResults: A ToolResults object containing the results of the query processing
         """
 
-        tasks = [
-            asyncio.create_task(self.get_remote_tools(query))
-        ]
-        if self.use_local_tools:
-            tasks.append(asyncio.create_task(self.get_local_tools(query)))
+        start_execution_time = time.time()
+        try:
+            remote_tools_list = await self.get_remote_tools(query=query)
+            remote_tools_list.sort(key=lambda x: x.score if x else 0, reverse=True)
+        except Exception as e:
+            logging.error(f"Error retrieving remote tools: {e}")
+            remote_tools_list = []
+   
+        if len(remote_tools_list) == 0 or remote_tools_list is None:
+            logging.info(f"No remote tools found for query: '{query}'")
+            return ToolResults(execution_time=0.0, tools=[])
 
-        ToolListResults = await asyncio.gather(*tasks)
+        ####
+        # TODO: When local tools are implemented, add the logic to retrieve local tools. Should be done async with remote call.
+        # After retrieveing both remote and local tools, combine & dedupe the results.
+        # Then normalize the scores and re-rank the results.
+        ####
 
-        # Combine results from all sources
-        combined_results = ToolListResult(tools=[], query=query)
-        for tool_list in ToolListResults:
-            if tool_list is None or tool_list.tools is None:
-                continue
-            tool_list.tools.sort(key=lambda x: x.score, reverse=True)
-            # Normalize scores
-            scores = [tool.score for tool in tool_list.tools]
-            normalized_scores = await self.normalize_NNB_scores(scores)
-            for tool, norm_score in zip(tool_list.tools, normalized_scores):
-                tool.score = norm_score
-            
-            for tool in tool_list.tools:
-                if tool.id not in [t.id for t in combined_results.tools]:
-                    combined_results.tools.append(tool)
-        
-        # Sort and limit results
-        combined_results.tools.sort(key=lambda x: x.score, reverse=True)
-        return ToolListResult(tools=combined_results.tools[:self.tool_return_limit], query=query)
+        # Make sure tools meet the minimum score requirement
+        remote_tools_list = [tool for tool in remote_tools_list if tool.score >= self.minimum_tool_score]
+
+        # Limit the number of results if needed
+        if len(remote_tools_list) > self.tool_return_limit:
+            remote_tools_list = remote_tools_list[:self.tool_return_limit]
+
+        # create execution time for the query
+        total_execution_time = time.time() - start_execution_time
+
+        return ToolResults(execution_time=total_execution_time, tools=remote_tools_list)
 
 
-
-# @tool_router.tool()
-async def get_mcp_tools(query:str) -> ToolListResult:
+@app.put("/get_mcp_tools/")
+async def get_mcp_tools(request: Request) -> ToolResults:
     """
     Get tools based on the query.
     Args:
@@ -178,26 +158,56 @@ async def get_mcp_tools(query:str) -> ToolListResult:
     Returns:
         ToolListResult: A ToolListResult containing the tools matching the query.
     """
+    auth_header = request.headers.get("Authorization")
+    token = auth_header.split(" ")[1] if auth_header else None
+    raw_RQ_body = await request.body()
+    query = json.loads(raw_RQ_body.decode("utf-8")).get("query", "")
+
     global router_instance
     if router_instance is None:
         router_instance = ToolRouter()
+
+    #Timer start
+    start_time = time.time()
+
+    # Check if the query is empty
+    if not query or query.strip() == "":
+        return {
+            "error": "Query cannot be empty",
+            "timestamp": datetime.now().isoformat()
+        }
     
     # Route the query to get tools
-    return await router_instance.route(query)
+    try:
+        results = await router_instance.route(query=query)
+    except Exception as e:
+        logging.error(f"Error routing query '{query}': {e}")
+        return {
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }
+    
+    if results is None or len(results.tools) == 0:
+        logging.info(f"No tools found for query: '{query}'")
+        return []
+    return results
 
 
-# @tool_router.tool()
-async def get_router_status() -> Dict[str, Any]:
+@app.get("/get_router_status")
+async def get_router_status(request: Request) -> Dict[str, Any]:
     """
     Get the current status and configuration of the tool router.
     
     Returns:
         Dictionary containing router status and configuration
     """
+    auth_header = request.headers.get("Authorization")
+    token = auth_header.split(" ")[1] if auth_header else None
+
     global router_instance
     if router_instance is None:
         router_instance = ToolRouter()
-    
+
     try:
         return {
             "status": "active",
@@ -216,25 +226,13 @@ async def get_router_status() -> Dict[str, Any]:
         }
         
     except Exception as e:
-        logger.error(f"Error in get_router_status: {e}")
+        logging.error(f"Error in get_router_status: {e}")
         return {
             "status": "error",
             "error": str(e),
             "timestamp": datetime.now().isoformat()
         }
-    
-
-async def main():
-    """
-    Main function to run the tool router.
-    This function initializes the tool router and starts the FastMCP server.
-    """
-    global router_instance
-    if router_instance is None:
-        router_instance = ToolRouter()
-    file_name = 'python/src/server/data/mcp_servers.json'
-    # await router_instance.azure_search_manager.create_tools_from_file(file_path=file_name)
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    uvicorn.run(app, host="0.0.0.0", port=8000)

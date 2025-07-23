@@ -1,0 +1,6951 @@
+[
+  {
+    "question": "How do I encrypt a file using the MCP tool?",
+    "expected_tools": [
+      "ArmorCryptoMCP.MCP_Tool"
+    ]
+  },
+  {
+    "question": "What is the process to digitally sign a transaction with MCP?",
+    "expected_tools": [
+      "ArmorCryptoMCP.MCP_Tool"
+    ]
+  },
+  {
+    "question": "How can I verify the signature on a message using the MCP tool?",
+    "expected_tools": [
+      "ArmorCryptoMCP.MCP_Tool"
+    ]
+  },
+  {
+    "question": "Is it possible to decrypt data encrypted with Armor Wallet via the command line?",
+    "expected_tools": [
+      "ArmorCryptoMCP.MCP_Tool"
+    ]
+  },
+  {
+    "question": "How can I reload the system configuration on the Agentset server?",
+    "expected_tools": [
+      "Agentset.admin"
+    ]
+  },
+  {
+    "question": "Show all built-in commands available on this system.",
+    "expected_tools": [
+      "Agentset.builtin"
+    ]
+  },
+  {
+    "question": "Evaluate this Python expression: sum([1, 2, 3, 4])",
+    "expected_tools": [
+      "Agentset.eval"
+    ]
+  },
+  {
+    "question": "List all files in the /var/log directory.",
+    "expected_tools": [
+      "Agentset.files"
+    ]
+  },
+  {
+    "question": "Fetch data from this API endpoint: https://api.example.com/v1/info",
+    "expected_tools": [
+      "Agentset.http"
+    ]
+  },
+  {
+    "question": "Send an email to admin@example.com with the subject 'System Alert'.",
+    "expected_tools": [
+      "Agentset.mail"
+    ]
+  },
+  {
+    "question": "Calculate the cosine of 60 degrees.",
+    "expected_tools": [
+      "Agentset.math"
+    ]
+  },
+  {
+    "question": "Ping the domain google.com and show the results.",
+    "expected_tools": [
+      "Agentset.network"
+    ]
+  },
+  {
+    "question": "Run the backup script nightly_backup.sh.",
+    "expected_tools": [
+      "Agentset.scripts"
+    ]
+  },
+  {
+    "question": "Execute the shell command: ls -lah /tmp",
+    "expected_tools": [
+      "Agentset.shell"
+    ]
+  },
+  {
+    "question": "Run a SQL query to list all tables in the database.",
+    "expected_tools": [
+      "Agentset.sql"
+    ]
+  },
+  {
+    "question": "List all user accounts and their roles in the Agentset MCP system.",
+    "expected_tools": [
+      "Agentset.users"
+    ]
+  },
+  {
+    "question": "Execute the runbook for database failover.",
+    "expected_tools": [
+      "Algolia.Runbook"
+    ]
+  },
+  {
+    "question": "Notify the team about the completion of the deployment process.",
+    "expected_tools": [
+      "Algolia.Informer"
+    ]
+  },
+  {
+    "question": "Resolve incident INC-200 and update its status accordingly.",
+    "expected_tools": [
+      "Algolia.Handler"
+    ]
+  },
+  {
+    "question": "Show me the current status of all ongoing workflows using the dashboard.",
+    "expected_tools": [
+      "Algolia.MCP_UI"
+    ]
+  },
+  {
+    "question": "List available runbooks and trigger the one related to site upgrade, then inform stakeholders about initiation.",
+    "expected_tools": [
+      "Algolia.Runbook",
+      "Algolia.Informer"
+    ]
+  },
+  {
+    "question": "Access the incident list from the UI and resolve all open critical alerts.",
+    "expected_tools": [
+      "Algolia.MCP_UI",
+      "Algolia.Handler"
+    ]
+  },
+  {
+    "question": "List all RDS instances available in my Alibaba Cloud account, including their status and engine types.",
+    "expected_tools": [
+      "AlibabaCloudRDS.DescribeDBInstances"
+    ]
+  },
+  {
+    "question": "Show all databases present in the RDS instance rds_test123.",
+    "expected_tools": [
+      "AlibabaCloudRDS.DescribeDatabases"
+    ]
+  },
+  {
+    "question": "Retrieve the list of users and database accounts for RDS instance rds_test123.",
+    "expected_tools": [
+      "AlibabaCloudRDS.DescribeAccounts"
+    ]
+  },
+  {
+    "question": "View and check all current configuration parameters for my MySQL RDS instance rds_prod456.",
+    "expected_tools": [
+      "AlibabaCloudRDS.DescribeParameters"
+    ]
+  },
+  {
+    "question": "Change the description of RDS instance rds_projectA to 'Finance Department Prod DB'.",
+    "expected_tools": [
+      "AlibabaCloudRDS.ModifyDBInstanceDescription"
+    ]
+  },
+  {
+    "question": "Restart the RDS instance rds_projectA to apply configuration changes.",
+    "expected_tools": [
+      "AlibabaCloudRDS.RestartDBInstance"
+    ]
+  },
+  {
+    "question": "Upgrade the RDS instance rds_projectA to 8 CPUs and 32GB RAM.",
+    "expected_tools": [
+      "AlibabaCloudRDS.ModifyDBInstanceSpec"
+    ]
+  },
+  {
+    "question": "Create a manual backup for my RDS instance rds_projectA before applying updates.",
+    "expected_tools": [
+      "AlibabaCloudRDS.CreateBackup"
+    ]
+  },
+  {
+    "question": "Show the list of all backups for the RDS instance rds_projectA.",
+    "expected_tools": [
+      "AlibabaCloudRDS.DescribeBackups"
+    ]
+  },
+  {
+    "question": "Restore the RDS instance rds_projectA from the most recent backup.",
+    "expected_tools": [
+      "AlibabaCloudRDS.RestoreDBInstance"
+    ]
+  },
+  {
+    "question": "Summarize this research article into a few key points.",
+    "expected_tools": [
+      "AllVoiceLab.Summarizer"
+    ]
+  },
+  {
+    "question": "Who is the author of this paper?",
+    "expected_tools": [
+      "AllVoiceLab.Q&A"
+    ]
+  },
+  {
+    "question": "Transcribe this audio meeting recording into text.",
+    "expected_tools": [
+      "AllVoiceLab.Speech_to_Text_(STT)"
+    ]
+  },
+  {
+    "question": "Read this text message aloud for accessibility.",
+    "expected_tools": [
+      "AllVoiceLab.Text_to_Speech_(TTS)"
+    ]
+  },
+  {
+    "question": "Translate this French voice memo into English.",
+    "expected_tools": [
+      "AllVoiceLab.Voice_Translation"
+    ]
+  },
+  {
+    "question": "Analyze this business contract to identify key topics and any potential risks.",
+    "expected_tools": [
+      "AllVoiceLab.Document_Analyzer"
+    ]
+  },
+  {
+    "question": "Transcribe this Spanish audio, translate it to English, then summarize the main points.",
+    "expected_tools": [
+      "AllVoiceLab.Speech_to_Text_(STT)",
+      "AllVoiceLab.Voice_Translation",
+      "AllVoiceLab.Summarizer"
+    ]
+  },
+  {
+    "question": "Convert this podcast episode to text, analyze it for the main themes, and generate a summary.",
+    "expected_tools": [
+      "AllVoiceLab.Speech_to_Text_(STT)",
+      "AllVoiceLab.Document_Analyzer",
+      "AllVoiceLab.Summarizer"
+    ]
+  },
+  {
+    "question": "After answering questions about this document, create an audio summary for visually impaired users.",
+    "expected_tools": [
+      "AllVoiceLab.Q&A",
+      "AllVoiceLab.Summarizer",
+      "AllVoiceLab.Text_to_Speech_(TTS)"
+    ]
+  },
+  {
+    "question": "Get my current paper trading account balance and open positions.",
+    "expected_tools": [
+      "Alpaca.alpaca_paper_api"
+    ]
+  },
+  {
+    "question": "Place a real buy market order for 10 shares of TSLA in my live account.",
+    "expected_tools": [
+      "Alpaca.alpaca_live_api"
+    ]
+  },
+  {
+    "question": "Fetch the latest real-time quote and news for AAPL.",
+    "expected_tools": [
+      "Alpaca.alpaca_data_api"
+    ]
+  },
+  {
+    "question": "List all currently deployed AI models and run a prediction using the model 'portfolio_predictor'.",
+    "expected_tools": [
+      "Alpaca.alpaca_aimd"
+    ]
+  },
+  {
+    "question": "Check system diagnostics and view error logs for the server.",
+    "expected_tools": [
+      "Alpaca.alpaca_utils"
+    ]
+  },
+  {
+    "question": "How can I convert an AWS Step Functions definition from Amazon States Language (ASL, JSON) to YAML format for easier editing?",
+    "expected_tools": [
+      "AWS.Convert_AWS_Step_Functions_Amazon_States_Language_(ASL)_to_YAML"
+    ]
+  },
+  {
+    "question": "I have authored my Step Functions workflow in YAML. How do I convert it back to ASL (JSON) so I can deploy it to AWS?",
+    "expected_tools": [
+      "AWS.Convert_AWS_Step_Functions_YAML_to_ASL_(JSON)"
+    ]
+  },
+  {
+    "question": "Is my Step Functions state machine definition valid according to Amazon's schema?",
+    "expected_tools": [
+      "AWS.Validate_State_Machine_Definitions"
+    ]
+  },
+  {
+    "question": "How can I migrate my Step Functions defined in AWS CDK to a YAML-based workflow compatible with MCP?",
+    "expected_tools": [
+      "AWS.Convert_CDK_StepFunction_Constructs_to_MCP_YAML"
+    ]
+  },
+  {
+    "question": "How can I test my Step Functions workflow locally, using either its ASL or YAML definition, before deploying to AWS?",
+    "expected_tools": [
+      "AWS.Local_Simulation_of_Step_Functions_Workflows"
+    ]
+  },
+  {
+    "question": "Can I analyze my Step Functions definition for workflow coverage, unused steps, and execution paths to ensure my workflow is optimized?",
+    "expected_tools": [
+      "AWS.Workflow_Coverage_and_Step_Analysis"
+    ]
+  },
+  {
+    "question": "List all datasets currently available in the system.",
+    "expected_tools": [
+      "Axiom.Datasets"
+    ]
+  },
+  {
+    "question": "Run a query to count all error events over the last 24 hours.",
+    "expected_tools": [
+      "Axiom.Query"
+    ]
+  },
+  {
+    "question": "Ingest a new batch of security logs into the appropriate dataset.",
+    "expected_tools": [
+      "Axiom.Ingest",
+      "Axiom.Datasets"
+    ]
+  },
+  {
+    "question": "Check if the Axiom server is up and running.",
+    "expected_tools": [
+      "Axiom.Health"
+    ]
+  },
+  {
+    "question": "What version of the Axiom MCP server is currently installed?",
+    "expected_tools": [
+      "Axiom.Info"
+    ]
+  },
+  {
+    "question": "Create a new dataset named 'user_analytics' for tracking user activities.",
+    "expected_tools": [
+      "Axiom.Datasets"
+    ]
+  },
+  {
+    "question": "Show the top 10 sources by error count in the 'application_logs' dataset.",
+    "expected_tools": [
+      "Axiom.Query"
+    ]
+  },
+  {
+    "question": "Delete the dataset called 'test_events'.",
+    "expected_tools": [
+      "Axiom.Datasets"
+    ]
+  },
+  {
+    "question": "Show build and metadata information about the current server instance.",
+    "expected_tools": [
+      "Axiom.Info"
+    ]
+  },
+  {
+    "question": "How does the MCP Core system integrate with different adapters and modules within BoldSign?",
+    "expected_tools": [
+      "BoldSign.MCP_Core",
+      "BoldSign.MCP_Adapter"
+    ]
+  },
+  {
+    "question": "Which adapters are currently available for MCP to connect with external systems, and how can I implement a new channel adapter?",
+    "expected_tools": [
+      "BoldSign.MCP_Adapter"
+    ]
+  },
+  {
+    "question": "How do I register a new communication channel in the BoldSign MCP, and can I disable an existing channel using the channel service?",
+    "expected_tools": [
+      "BoldSign.MCP_Channel_Service"
+    ]
+  },
+  {
+    "question": "What types of tasks does the MCP Worker handle, and how does it process queued background jobs in BoldSign?",
+    "expected_tools": [
+      "BoldSign.MCP_Worker"
+    ]
+  },
+  {
+    "question": "What common utility functions and helper methods does the MCP Utilities module provide, and how can I use them in my integration?",
+    "expected_tools": [
+      "BoldSign.MCP_Utilities"
+    ]
+  },
+  {
+    "question": "How does the orchestration of multiple channels work in MCP when integrating new external communication systems?",
+    "expected_tools": [
+      "BoldSign.MCP_Core",
+      "BoldSign.MCP_Adapter",
+      "BoldSign.MCP_Channel_Service"
+    ]
+  },
+  {
+    "question": "What is the process for ensuring reliability and error handling in asynchronous task execution within the MCP Worker?",
+    "expected_tools": [
+      "BoldSign.MCP_Worker",
+      "BoldSign.MCP_Utilities"
+    ]
+  },
+  {
+    "question": "Show me all failed requests in the last hour for debugging and analytics purposes.",
+    "expected_tools": [
+      "BrightData.request_logs"
+    ]
+  },
+  {
+    "question": "Set up a new datacenter proxy pool for Germany and enable automatic IP rotation.",
+    "expected_tools": [
+      "BrightData.proxy_manager"
+    ]
+  },
+  {
+    "question": "Export the detailed usage report for May 2023, including bandwidth and cost breakdowns.",
+    "expected_tools": [
+      "BrightData.usage_report"
+    ]
+  },
+  {
+    "question": "Create a new user account with read-only access and audit all recent changes to admin roles.",
+    "expected_tools": [
+      "BrightData.user_management"
+    ]
+  },
+  {
+    "question": "Generate a new API key for my script and show its usage stats.",
+    "expected_tools": [
+      "BrightData.api_key_manager"
+    ]
+  },
+  {
+    "question": "Find all request log entries where my API key was used and check for any suspicious activity.",
+    "expected_tools": [
+      "BrightData.request_logs",
+      "BrightData.api_key_manager"
+    ]
+  },
+  {
+    "question": "Which proxy type consumed the most bandwidth last week?",
+    "expected_tools": [
+      "BrightData.usage_report"
+    ]
+  },
+  {
+    "question": "Monitor proxy health and view the current proxy pool status.",
+    "expected_tools": [
+      "BrightData.proxy_manager"
+    ]
+  },
+  {
+    "question": "Revoke a compromised API key and enforce stricter security settings for all programmatic access.",
+    "expected_tools": [
+      "BrightData.api_key_manager",
+      "BrightData.user_management"
+    ]
+  },
+  {
+    "question": "How can I list all MCP services running on my platform?",
+    "expected_tools": [
+      "BuiltWith.mcpctl"
+    ]
+  },
+  {
+    "question": "Can you validate my MCP configuration manifest for errors and best practices?",
+    "expected_tools": [
+      "BuiltWith.mcplint"
+    ]
+  },
+  {
+    "question": "How do I generate and inspect a valid manifest YAML file for a new MCP service?",
+    "expected_tools": [
+      "BuiltWith.mcp_manifest"
+    ]
+  },
+  {
+    "question": "What steps are needed to simulate production routing and test my MCP service locally?",
+    "expected_tools": [
+      "BuiltWith.mcp_proxy"
+    ]
+  },
+  {
+    "question": "Are there any deprecated fields or misconfigurations in my current MCP manifest?",
+    "expected_tools": [
+      "BuiltWith.mcplint",
+      "BuiltWith.mcp_manifest"
+    ]
+  },
+  {
+    "question": "How do I obtain and debug the current build and configuration information for a specific MCP instance?",
+    "expected_tools": [
+      "BuiltWith.mcpctl"
+    ]
+  },
+  {
+    "question": "How can I fetch all available API endpoints and their documentation for querying company data?",
+    "expected_tools": [
+      "CBInsights.API_Explorer"
+    ]
+  },
+  {
+    "question": "Can I get notified in real-time when a new company is added to the CB Insights database?",
+    "expected_tools": [
+      "CBInsights.Change_Data_Capture"
+    ]
+  },
+  {
+    "question": "How do I match my external list of startup names to CB Insights' canonical company records?",
+    "expected_tools": [
+      "CBInsights.Entity_Reconciliation"
+    ]
+  },
+  {
+    "question": "What is the total investment amount in AI startups by year?",
+    "expected_tools": [
+      "CBInsights.Analytics_&_Aggregations"
+    ]
+  },
+  {
+    "question": "How can I obtain a full export of all company profiles as a downloadable file or S3 delivery?",
+    "expected_tools": [
+      "CBInsights.Data_Snapshot_Delivery"
+    ]
+  },
+  {
+    "question": "Can I track funding round updates as soon as they happen?",
+    "expected_tools": [
+      "CBInsights.Change_Data_Capture"
+    ]
+  },
+  {
+    "question": "How do I find out what authentication headers are required to access CB Insights' REST API?",
+    "expected_tools": [
+      "CBInsights.API_Explorer"
+    ]
+  },
+  {
+    "question": "Show me aggregate data on the number of IPOs by sector over the last five years.",
+    "expected_tools": [
+      "CBInsights.Analytics_&_Aggregations"
+    ]
+  },
+  {
+    "question": "Is 'Acme Corp' present in the CB Insights canonical dataset, and if so, what is its entity ID?",
+    "expected_tools": [
+      "CBInsights.Entity_Reconciliation"
+    ]
+  },
+  {
+    "question": "When is the next full data snapshot scheduled for delivery, and how can I access it?",
+    "expected_tools": [
+      "CBInsights.Data_Snapshot_Delivery"
+    ]
+  },
+  {
+    "question": "What is Chargebee's cancellation and refund policy?",
+    "expected_tools": [
+      "Chargebee.FAQ_QA",
+      "Chargebee.Article_Search"
+    ]
+  },
+  {
+    "question": "How do I integrate Chargebee with Salesforce?",
+    "expected_tools": [
+      "Chargebee.Article_Search"
+    ]
+  },
+  {
+    "question": "Summarize the attached Chargebee API User Manual.",
+    "expected_tools": [
+      "Chargebee.Resource_Retriever"
+    ]
+  },
+  {
+    "question": "I am unable to update my payment method; what can I do to resolve this?",
+    "expected_tools": [
+      "Chargebee.Troubleshooting_Guide",
+      "Chargebee.Article_Search"
+    ]
+  },
+  {
+    "question": "Where can I find documentation about API rate limits in Chargebee?",
+    "expected_tools": [
+      "Chargebee.Article_Search"
+    ]
+  },
+  {
+    "question": "How can I list all collections in the Chroma vector database?",
+    "expected_tools": [
+      "Chroma.Vector_DB_Admin"
+    ]
+  },
+  {
+    "question": "Create a new embedding collection called 'research_papers'.",
+    "expected_tools": [
+      "Chroma.Vector_DB_Admin"
+    ]
+  },
+  {
+    "question": "Upload this PDF document for semantic search capabilities in Chroma.",
+    "expected_tools": [
+      "Chroma.Document_Uploader"
+    ]
+  },
+  {
+    "question": "Ingest my markdown notes into the Chroma database for search.",
+    "expected_tools": [
+      "Chroma.Document_Uploader"
+    ]
+  },
+  {
+    "question": "Find documents similar to this provided text snippet.",
+    "expected_tools": [
+      "Chroma.Query_Engine"
+    ]
+  },
+  {
+    "question": "Search for code samples related to user authentication.",
+    "expected_tools": [
+      "Chroma.Query_Engine"
+    ]
+  },
+  {
+    "question": "Delete the collection named 'test_data' from the Chroma database.",
+    "expected_tools": [
+      "Chroma.Vector_DB_Admin"
+    ]
+  },
+  {
+    "question": "Retrieve relevant information on topic X from the Chroma database.",
+    "expected_tools": [
+      "Chroma.Query_Engine"
+    ]
+  },
+  {
+    "question": "What are the differences between machine learning and traditional programming?",
+    "expected_tools": [
+      "ChronulusAI.AskAndAnswer"
+    ]
+  },
+  {
+    "question": "Search for the most recent advancements in quantum computing.",
+    "expected_tools": [
+      "ChronulusAI.SearchTool"
+    ]
+  },
+  {
+    "question": "Run this Python code: print('Hello, Chronulus AI!')",
+    "expected_tools": [
+      "ChronulusAI.CodeExecutionTool"
+    ]
+  },
+  {
+    "question": "Upload a PDF document and extract all the text content from it.",
+    "expected_tools": [
+      "ChronulusAI.FileManagementTool"
+    ]
+  },
+  {
+    "question": "Write a script that counts word frequency in a text file, save it to a new file, and upload the results.",
+    "expected_tools": [
+      "ChronulusAI.CodeExecutionTool",
+      "ChronulusAI.FileManagementTool"
+    ]
+  },
+  {
+    "question": "Find recent scientific articles on AI ethics and summarize their key findings.",
+    "expected_tools": [
+      "ChronulusAI.SearchTool",
+      "ChronulusAI.AskAndAnswer"
+    ]
+  },
+  {
+    "question": "Show repository metadata for the current project.",
+    "expected_tools": [
+      "Cloudflare.metadata"
+    ]
+  },
+  {
+    "question": "What infrastructure changes are planned for the next deployment?",
+    "expected_tools": [
+      "Cloudflare.plan"
+    ]
+  },
+  {
+    "question": "Apply the latest configuration changes to the production environment.",
+    "expected_tools": [
+      "Cloudflare.apply"
+    ]
+  },
+  {
+    "question": "Destroy the staging environment and remove all its resources.",
+    "expected_tools": [
+      "Cloudflare.destroy"
+    ]
+  },
+  {
+    "question": "Show the current deployment status of the infrastructure.",
+    "expected_tools": [
+      "Cloudflare.status"
+    ]
+  },
+  {
+    "question": "Who owns this repository, and what are its statistics?",
+    "expected_tools": [
+      "Cloudflare.metadata"
+    ]
+  },
+  {
+    "question": "Deploy the current infrastructure plan.",
+    "expected_tools": [
+      "Cloudflare.plan",
+      "Cloudflare.apply"
+    ]
+  },
+  {
+    "question": "Tear down all deployed resources for the development environment.",
+    "expected_tools": [
+      "Cloudflare.destroy"
+    ]
+  },
+  {
+    "question": "What is the status of environment X?",
+    "expected_tools": [
+      "Cloudflare.status"
+    ]
+  },
+  {
+    "question": "How do I query all users from the MySQL database within an automation workflow?",
+    "expected_tools": [
+      "Conductor.mysql"
+    ]
+  },
+  {
+    "question": "Can I insert data into a MySQL table during my workflow?",
+    "expected_tools": [
+      "Conductor.mysql"
+    ]
+  },
+  {
+    "question": "How can I create a directory called '/data/backups' on the server as part of an automation pipeline?",
+    "expected_tools": [
+      "Conductor.shell"
+    ]
+  },
+  {
+    "question": "Run a deployment script using shell commands and report the results.",
+    "expected_tools": [
+      "Conductor.shell"
+    ]
+  },
+  {
+    "question": "Can I restart a service on a remote server via SSH using an automation workflow?",
+    "expected_tools": [
+      "Conductor.ssh"
+    ]
+  },
+  {
+    "question": "How do I upload a configuration file to a remote server in an MCP workflow?",
+    "expected_tools": [
+      "Conductor.ssh"
+    ]
+  },
+  {
+    "question": "How do I launch a new EC2 instance in AWS from my workflow?",
+    "expected_tools": [
+      "Conductor.aws"
+    ]
+  },
+  {
+    "question": "Can I automate S3 bucket creation as part of this workflow?",
+    "expected_tools": [
+      "Conductor.aws"
+    ]
+  },
+  {
+    "question": "How can I fetch a database password securely from Vault in a workflow?",
+    "expected_tools": [
+      "Conductor.vault"
+    ]
+  },
+  {
+    "question": "What steps do I take to store a new API key safely using the Vault integration?",
+    "expected_tools": [
+      "Conductor.vault"
+    ]
+  },
+  {
+    "question": "How can I provision a new Confluent Cloud environment and deploy a basic Kafka cluster?",
+    "expected_tools": [
+      "Confluent.provisioning"
+    ]
+  },
+  {
+    "question": "What steps are needed to deploy and monitor a new source connector for ingesting data from an external database to Confluent Cloud?",
+    "expected_tools": [
+      "Confluent.connectors"
+    ]
+  },
+  {
+    "question": "How do I add ACLs for a new user to allow produce and consume access to specific Kafka topics within an existing Confluent cluster?",
+    "expected_tools": [
+      "Confluent.kafka_acls"
+    ]
+  },
+  {
+    "question": "How can I update an existing connector's configuration and ensure minimal downtime for connected services?",
+    "expected_tools": [
+      "Confluent.connectors"
+    ]
+  },
+  {
+    "question": "What is the process to provision additional resources for scaling up an existing Confluent Cloud cluster?",
+    "expected_tools": [
+      "Confluent.provisioning"
+    ]
+  },
+  {
+    "question": "How can I list and describe all custom ACLs applied to a particular Kafka topic in a given Confluent environment?",
+    "expected_tools": [
+      "Confluent.kafka_acls"
+    ]
+  },
+  {
+    "question": "Summarize the main points of this lengthy article about climate change.",
+    "expected_tools": [
+      "Convex.summarize"
+    ]
+  },
+  {
+    "question": "What are the major topics discussed in this corporate quarterly report?",
+    "expected_tools": [
+      "Convex.topics"
+    ]
+  },
+  {
+    "question": "Analyze the sentiment expressed in these recent customer reviews.",
+    "expected_tools": [
+      "Convex.sentiment"
+    ]
+  },
+  {
+    "question": "List the named entities (such as people, organizations, and places) mentioned in this news article.",
+    "expected_tools": [
+      "Convex.entities"
+    ]
+  },
+  {
+    "question": "Generate potential quiz questions based on the following educational passage.",
+    "expected_tools": [
+      "Convex.questions"
+    ]
+  },
+  {
+    "question": "Identify the main topics and summarize this scientific research paper.",
+    "expected_tools": [
+      "Convex.topics",
+      "Convex.summarize"
+    ]
+  },
+  {
+    "question": "Extract all entities and analyze the overall sentiment in this interview transcript.",
+    "expected_tools": [
+      "Convex.entities",
+      "Convex.sentiment"
+    ]
+  },
+  {
+    "question": "How can I create a custom glossary to ensure consistent translation of technical terms?",
+    "expected_tools": [
+      "DeepL.glossary"
+    ]
+  },
+  {
+    "question": "Translate this paragraph to Japanese with a formal tone, applying my preferred glossary.",
+    "expected_tools": [
+      "DeepL.translation",
+      "DeepL.formality",
+      "DeepL.glossary"
+    ]
+  },
+  {
+    "question": "What is my current API usage and how much quota is remaining this month?",
+    "expected_tools": [
+      "DeepL.usage"
+    ]
+  },
+  {
+    "question": "Is the DeepL translation server currently operational?",
+    "expected_tools": [
+      "DeepL.health"
+    ]
+  },
+  {
+    "question": "List the available formality levels supported for Spanish translations.",
+    "expected_tools": [
+      "DeepL.formality"
+    ]
+  },
+  {
+    "question": "How can I list all current clusters managed by the MCP and view their configuration details?",
+    "expected_tools": [
+      "Dynatrace.mcp_admin"
+    ]
+  },
+  {
+    "question": "What steps are required to automate the scaling of MCP deployments in a Kubernetes environment?",
+    "expected_tools": [
+      "Dynatrace.mcp_operator"
+    ]
+  },
+  {
+    "question": "How can I create a custom event hook that triggers when a specific workload is deployed in the MCP?",
+    "expected_tools": [
+      "Dynatrace.mcp_sdk"
+    ]
+  },
+  {
+    "question": "What is the process to onboard a new user with specific permissions into the Managed Control Plane?",
+    "expected_tools": [
+      "Dynatrace.mcp_admin"
+    ]
+  },
+  {
+    "question": "How do I ensure automatic recovery of failed MCP pods and monitor their health status?",
+    "expected_tools": [
+      "Dynatrace.mcp_operator"
+    ]
+  },
+  {
+    "question": "How do I interact programmatically with MCP resources to integrate them into my application workflow?",
+    "expected_tools": [
+      "Dynatrace.mcp_sdk"
+    ]
+  },
+  {
+    "question": "Download a dataset from a given URL, save it to the local environment, and display its contents.",
+    "expected_tools": [
+      "E2B.Internet",
+      "E2B.Filesystem",
+      "E2B.Code_Interpreter"
+    ]
+  },
+  {
+    "question": "List all the files currently present in the working directory and read the contents of a specific file.",
+    "expected_tools": [
+      "E2B.Terminal",
+      "E2B.Filesystem"
+    ]
+  },
+  {
+    "question": "Upload a CSV file, calculate the mean and median of a specific column, and save the output as a new file.",
+    "expected_tools": [
+      "E2B.Filesystem",
+      "E2B.Code_Interpreter"
+    ]
+  },
+  {
+    "question": "Fetch the latest news headlines from a website and generate a summary report in a text file.",
+    "expected_tools": [
+      "E2B.Internet",
+      "E2B.Code_Interpreter",
+      "E2B.Filesystem"
+    ]
+  },
+  {
+    "question": "Run a shell command to check the currently installed Python packages and output the results as a file you can download.",
+    "expected_tools": [
+      "E2B.Terminal",
+      "E2B.Filesystem"
+    ]
+  },
+  {
+    "question": "Can you help me understand this math problem and provide a personalized explanation?",
+    "expected_tools": [
+      "EduBase.MCP_Learn"
+    ]
+  },
+  {
+    "question": "What are today's homework assignments for my classes?",
+    "expected_tools": [
+      "EduBase.MCP_Chat"
+    ]
+  },
+  {
+    "question": "How do I add a new course to the system as an administrator?",
+    "expected_tools": [
+      "EduBase.MCP_Admin"
+    ]
+  },
+  {
+    "question": "Where can I report a bug or get help with a technical issue on EduBase?",
+    "expected_tools": [
+      "EduBase.MCP_Assist"
+    ]
+  },
+  {
+    "question": "Can I manage user permissions for teachers and students in different classrooms?",
+    "expected_tools": [
+      "EduBase.MCP_Admin"
+    ]
+  },
+  {
+    "question": "What are the key points in the lesson on renewable energy?",
+    "expected_tools": [
+      "EduBase.MCP_Learn"
+    ]
+  },
+  {
+    "question": "Can you explain the science project requirements to me?",
+    "expected_tools": [
+      "EduBase.MCP_Chat"
+    ]
+  },
+  {
+    "question": "How do I reset my password if I forgot it?",
+    "expected_tools": [
+      "EduBase.MCP_Assist"
+    ]
+  },
+  {
+    "question": "How can I scan my code for security vulnerabilities and policy violations directly within VSCode before committing?",
+    "expected_tools": [
+      "EndorLabs.mcp_vscode_extension"
+    ]
+  },
+  {
+    "question": "What steps are needed to check for risky dependencies in a Java project using JetBrains IDEs like IntelliJ IDEA?",
+    "expected_tools": [
+      "EndorLabs.mcp_jetbrains_plugin"
+    ]
+  },
+  {
+    "question": "Can I enforce organization-defined security policies while writing code in PyCharm?",
+    "expected_tools": [
+      "EndorLabs.mcp_jetbrains_plugin"
+    ]
+  },
+  {
+    "question": "Is it possible to view flagged security issues inline as I edit my project in VSCode?",
+    "expected_tools": [
+      "EndorLabs.mcp_vscode_extension"
+    ]
+  },
+  {
+    "question": "How do I initiate a full code and dependency scan for my JavaScript project using VSCode and review the scan results?",
+    "expected_tools": [
+      "EndorLabs.mcp_vscode_extension"
+    ]
+  },
+  {
+    "question": "What options are available to detect vulnerability details in dependencies when using WebStorm IDE?",
+    "expected_tools": [
+      "EndorLabs.mcp_jetbrains_plugin"
+    ]
+  },
+  {
+    "question": "Retrieve a list of all documents that are currently awaiting signature.",
+    "expected_tools": [
+      "eSignatures.Document_Management",
+      "eSignatures.Signature_Workflow"
+    ]
+  },
+  {
+    "question": "Send a contract template to multiple recipients for signature and track progress.",
+    "expected_tools": [
+      "eSignatures.Template_Management",
+      "eSignatures.Signature_Workflow",
+      "eSignatures.User_&_Contact_Management"
+    ]
+  },
+  {
+    "question": "Add a new user to the platform and assign contacts to be notified for document signing.",
+    "expected_tools": [
+      "eSignatures.User_&_Contact_Management"
+    ]
+  },
+  {
+    "question": "Store a newly signed agreement in the document management system and set up a recurring workflow using a predefined template.",
+    "expected_tools": [
+      "eSignatures.Document_Management",
+      "eSignatures.Template_Management",
+      "eSignatures.Signature_Workflow"
+    ]
+  },
+  {
+    "question": "Retrieve the details and status of a specific signature workflow by document ID.",
+    "expected_tools": [
+      "eSignatures.Signature_Workflow",
+      "eSignatures.Document_Management"
+    ]
+  },
+  {
+    "question": "How can I find all files that reference the 'user_auth' function?",
+    "expected_tools": [
+      "Exa.Code_Search"
+    ]
+  },
+  {
+    "question": "Edit the config.yaml file to update the database host configuration.",
+    "expected_tools": [
+      "Exa.Code_Search",
+      "Exa.Editor"
+    ]
+  },
+  {
+    "question": "Restart the server after applying changes to the environment variables.",
+    "expected_tools": [
+      "Exa.Server_Control",
+      "Exa.Terminal"
+    ]
+  },
+  {
+    "question": "List all files in the logs directory and check the last 10 lines in error.log.",
+    "expected_tools": [
+      "Exa.Terminal"
+    ]
+  },
+  {
+    "question": "Test a Python script that processes JSON data and print the output.",
+    "expected_tools": [
+      "Exa.Python_REPL"
+    ]
+  },
+  {
+    "question": "Modify the login handler function to include additional logging statements.",
+    "expected_tools": [
+      "Exa.Code_Search",
+      "Exa.Editor"
+    ]
+  },
+  {
+    "question": "Show me the latest news headlines on climate change.",
+    "expected_tools": [
+      "fetchSERP.Google_News"
+    ]
+  },
+  {
+    "question": "Find me reviews, prices, and store options for a Samsung Galaxy S23.",
+    "expected_tools": [
+      "fetchSERP.Google_Shopping"
+    ]
+  },
+  {
+    "question": "Where is the nearest Italian restaurant to my current location?",
+    "expected_tools": [
+      "fetchSERP.Google_Maps"
+    ]
+  },
+  {
+    "question": "Show me academic publications on quantum computing.",
+    "expected_tools": [
+      "fetchSERP.Google_Scholar"
+    ]
+  },
+  {
+    "question": "Search for video tutorials on Python programming.",
+    "expected_tools": [
+      "fetchSERP.Google_Videos"
+    ]
+  },
+  {
+    "question": "Find high-quality images of the Eiffel Tower at night.",
+    "expected_tools": [
+      "fetchSERP.Google_Images"
+    ]
+  },
+  {
+    "question": "What are the trending topics in technology right now?",
+    "expected_tools": [
+      "fetchSERP.Google_Search"
+    ]
+  },
+  {
+    "question": "Create a new exam template for Chemistry 201 including answer sheet and marking scheme.",
+    "expected_tools": [
+      "Fewsats.TemplateManager"
+    ]
+  },
+  {
+    "question": "Find all Algebra questions for Grade 11 at the hard difficulty level.",
+    "expected_tools": [
+      "Fewsats.QuestionBank"
+    ]
+  },
+  {
+    "question": "Automatically mark all objective questions in the Biology 202 final exam and log the marking progress.",
+    "expected_tools": [
+      "Fewsats.MarkingAssistant"
+    ]
+  },
+  {
+    "question": "Schedule the History 101 midterm exam for March 15th at 2 PM in Room D and assign invigilators.",
+    "expected_tools": [
+      "Fewsats.ExamScheduler"
+    ]
+  },
+  {
+    "question": "Generate a performance report for all students who took the Math 101 exam last month.",
+    "expected_tools": [
+      "Fewsats.ReportGenerator"
+    ]
+  },
+  {
+    "question": "List all available answer sheet templates for Physics exams.",
+    "expected_tools": [
+      "Fewsats.TemplateManager"
+    ]
+  },
+  {
+    "question": "Add a new multiple-choice question to the Geography section for Grade 9.",
+    "expected_tools": [
+      "Fewsats.QuestionBank"
+    ]
+  },
+  {
+    "question": "Show marking suggestions for question 5 in the English Literature exam.",
+    "expected_tools": [
+      "Fewsats.MarkingAssistant"
+    ]
+  },
+  {
+    "question": "List all exams scheduled in Room A this week.",
+    "expected_tools": [
+      "Fewsats.ExamScheduler"
+    ]
+  },
+  {
+    "question": "Show statistics for Science MCQs in the recent exams.",
+    "expected_tools": [
+      "Fewsats.ReportGenerator"
+    ]
+  },
+  {
+    "question": "How can I schedule a recurring daily scan of all production servers and automatically collect the results?",
+    "expected_tools": [
+      "FluidAttacks.scheduler",
+      "FluidAttacks.runner",
+      "FluidAttacks.collector"
+    ]
+  },
+  {
+    "question": "Can I generate a PDF report of all vulnerabilities detected in the last weekly scan?",
+    "expected_tools": [
+      "FluidAttacks.reporter",
+      "FluidAttacks.collector"
+    ]
+  },
+  {
+    "question": "How do I configure a probe to target a new server in our staging environment?",
+    "expected_tools": [
+      "FluidAttacks.configurator"
+    ]
+  },
+  {
+    "question": "Is it possible to notify the security team immediately if a critical vulnerability is found during a scheduled scan?",
+    "expected_tools": [
+      "FluidAttacks.notifier",
+      "FluidAttacks.scheduler",
+      "FluidAttacks.collector"
+    ]
+  },
+  {
+    "question": "How can I programmatically start a scan, check its status, and retrieve the output via an external application?",
+    "expected_tools": [
+      "FluidAttacks.api"
+    ]
+  },
+  {
+    "question": "After executing a custom probe to enumerate open ports, where can I view and export the raw data for further analysis?",
+    "expected_tools": [
+      "FluidAttacks.runner",
+      "FluidAttacks.collector",
+      "FluidAttacks.reporter"
+    ]
+  },
+  {
+    "question": "Create a new VM session to start working on a project.",
+    "expected_tools": [
+      "ForeverVM.createSession"
+    ]
+  },
+  {
+    "question": "Send the command 'ls -la' to the current VM session's terminal.",
+    "expected_tools": [
+      "ForeverVM.sendInput"
+    ]
+  },
+  {
+    "question": "Resize the terminal window in the session to 100x30.",
+    "expected_tools": [
+      "ForeverVM.resizeTerminal"
+    ]
+  },
+  {
+    "question": "Terminate the VM session with ID abc123.",
+    "expected_tools": [
+      "ForeverVM.killSession"
+    ]
+  },
+  {
+    "question": "Check the current status of my VM session.",
+    "expected_tools": [
+      "ForeverVM.status"
+    ]
+  },
+  {
+    "question": "What is quantum entanglement and how does it work?",
+    "expected_tools": [
+      "GibsonAI.ask",
+      "GibsonAI.explain"
+    ]
+  },
+  {
+    "question": "Find all references to climate change in the latest GibsonAI knowledge base.",
+    "expected_tools": [
+      "GibsonAI.search"
+    ]
+  },
+  {
+    "question": "Summarize the key findings of the most recent IPCC climate report.",
+    "expected_tools": [
+      "GibsonAI.search",
+      "GibsonAI.summarize"
+    ]
+  },
+  {
+    "question": "Cite your sources for the information you provided about black holes.",
+    "expected_tools": [
+      "GibsonAI.cite"
+    ]
+  },
+  {
+    "question": "Explain step-by-step how CRISPR gene editing works.",
+    "expected_tools": [
+      "GibsonAI.explain"
+    ]
+  },
+  {
+    "question": "List the main ideas from the document titled 'Future of Artificial Intelligence'.",
+    "expected_tools": [
+      "GibsonAI.search",
+      "GibsonAI.summarize"
+    ]
+  },
+  {
+    "question": "Provide a detailed, referenced answer to: What are the main causes of inflation?",
+    "expected_tools": [
+      "GibsonAI.ask",
+      "GibsonAI.search",
+      "GibsonAI.cite"
+    ]
+  },
+  {
+    "question": "Generate a continuation for the prompt: 'Artificial intelligence will revolutionize education by...'",
+    "expected_tools": [
+      "Glean.text_completion"
+    ]
+  },
+  {
+    "question": "In a chat format, how would you handle a user asking for book recommendations based on their favorite genre?",
+    "expected_tools": [
+      "Glean.chat_completion"
+    ]
+  },
+  {
+    "question": "Compute semantic embeddings for the following sentences to find out which are most similar: 'The cat sat on the mat.', 'A dog was sleeping on the mat.', 'The sun rises in the east.'",
+    "expected_tools": [
+      "Glean.embeddings"
+    ]
+  },
+  {
+    "question": "Have a multi-turn conversation about vacation destinations, responding contextually to each user query.",
+    "expected_tools": [
+      "Glean.chat_completion"
+    ]
+  },
+  {
+    "question": "Encode the phrase 'Machine learning accelerates discovery' into a vector for semantic similarity search.",
+    "expected_tools": [
+      "Glean.embeddings"
+    ]
+  },
+  {
+    "question": "How do I package my Python application as a container image ready for Cloud Run deployment?",
+    "expected_tools": [
+      "GoogleCloudRun.containerize"
+    ]
+  },
+  {
+    "question": "Deploy my Docker image gcr.io/my-project/my-app:latest to Cloud Run as a new service.",
+    "expected_tools": [
+      "GoogleCloudRun.core_deploy"
+    ]
+  },
+  {
+    "question": "Show me detailed information about the Cloud Run service named 'web-api'.",
+    "expected_tools": [
+      "GoogleCloudRun.core_describe"
+    ]
+  },
+  {
+    "question": "Delete the Cloud Run service named 'staging-backend' from my project.",
+    "expected_tools": [
+      "GoogleCloudRun.core_delete"
+    ]
+  },
+  {
+    "question": "List all Cloud Run services available in the region us-central1 for my current project.",
+    "expected_tools": [
+      "GoogleCloudRun.core_list"
+    ]
+  },
+  {
+    "question": "What are the major features and bug fixes in the latest Grain platform update?",
+    "expected_tools": [
+      "Grain.Release_Note_Summarizer",
+      "Grain.Changelog_Explorer"
+    ]
+  },
+  {
+    "question": "Summarize the key improvements listed in the release notes for the June 18, 2025 update.",
+    "expected_tools": [
+      "Grain.Release_Note_Summarizer"
+    ]
+  },
+  {
+    "question": "List all bugs fixed in version 2025.06.18 of Grain.",
+    "expected_tools": [
+      "Grain.Changelog_Explorer"
+    ]
+  },
+  {
+    "question": "How will the changes in the latest release affect current Grain integrations and user workflows?",
+    "expected_tools": [
+      "Grain.Impact_Analyzer"
+    ]
+  },
+  {
+    "question": "Which functionalities were deprecated in the most recent Grain update, and what actions do users need to take?",
+    "expected_tools": [
+      "Grain.Changelog_Explorer",
+      "Grain.Impact_Analyzer"
+    ]
+  },
+  {
+    "question": "Summarize the main points from this YouTube video: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "expected_tools": [
+      "GROWI.YouTube_Video_Talk"
+    ]
+  },
+  {
+    "question": "Upload this PDF document and list all cited references.",
+    "expected_tools": [
+      "GROWI.PDF_Talk"
+    ]
+  },
+  {
+    "question": "What are the main conclusions from this web page: https://example.com/article-about-ai?",
+    "expected_tools": [
+      "GROWI.Webpage_Talk"
+    ]
+  },
+  {
+    "question": "What did the team discuss about project X last week in Slack?",
+    "expected_tools": [
+      "GROWI.Slack_Knowledge_Talk"
+    ]
+  },
+  {
+    "question": "Find all mentions of LinkedIn in this uploaded PDF.",
+    "expected_tools": [
+      "GROWI.PDF_Talk"
+    ]
+  },
+  {
+    "question": "List five important points from this web article: https://example.com/ai-innovation.",
+    "expected_tools": [
+      "GROWI.Webpage_Talk"
+    ]
+  },
+  {
+    "question": "What did the speaker say about climate change in this YouTube video: https://www.youtube.com/watch?v=abcd1234?",
+    "expected_tools": [
+      "GROWI.YouTube_Video_Talk"
+    ]
+  },
+  {
+    "question": "List conclusions from the #design channel in Slack.",
+    "expected_tools": [
+      "GROWI.Slack_Knowledge_Talk"
+    ]
+  },
+  {
+    "question": "How can I authenticate a new user to securely access the MCP server?",
+    "expected_tools": [
+      "Harper.Authentication"
+    ]
+  },
+  {
+    "question": "What is the status of all plugins currently managed by the MCP server?",
+    "expected_tools": [
+      "Harper.Plugin_Management"
+    ]
+  },
+  {
+    "question": "How do I add middleware to log all incoming API requests to the MCP server?",
+    "expected_tools": [
+      "Harper.API_Routing_and_Middleware"
+    ]
+  },
+  {
+    "question": "What is the current health and uptime status of the MCP server?",
+    "expected_tools": [
+      "Harper.Health_Monitoring"
+    ]
+  },
+  {
+    "question": "How can I update the access control policy for API endpoints on Harper?",
+    "expected_tools": [
+      "Harper.Authentication",
+      "Harper.API_Routing_and_Middleware"
+    ]
+  },
+  {
+    "question": "How do I enable a plugin that adds security-related middleware to the MCP server?",
+    "expected_tools": [
+      "Harper.Plugin_Management",
+      "Harper.API_Routing_and_Middleware"
+    ]
+  },
+  {
+    "question": "How does the Heroku.Agent submit and run jobs on virtual machines?",
+    "expected_tools": [
+      "Heroku.Agent"
+    ]
+  },
+  {
+    "question": "What are the stages involved in building an application slug in Heroku?",
+    "expected_tools": [
+      "Heroku.Builder"
+    ]
+  },
+  {
+    "question": "How can I manage app releases and formations via the Heroku Controller REST API?",
+    "expected_tools": [
+      "Heroku.Controller"
+    ]
+  },
+  {
+    "question": "How does the Heroku Scheduler allocate jobs and maintain the desired state of applications?",
+    "expected_tools": [
+      "Heroku.Scheduler"
+    ]
+  },
+  {
+    "question": "How does the Heroku Logger collect, store, and serve log output from applications?",
+    "expected_tools": [
+      "Heroku.Logger"
+    ]
+  },
+  {
+    "question": "Ping example.com to check if it is reachable and determine the network latency.",
+    "expected_tools": [
+      "Hunter.Ping"
+    ]
+  },
+  {
+    "question": "Perform a traceroute to google.com to map the path packets take through the network.",
+    "expected_tools": [
+      "Hunter.Traceroute"
+    ]
+  },
+  {
+    "question": "Resolve the domain name hunter.io to its IP address.",
+    "expected_tools": [
+      "Hunter.DNS_Lookup"
+    ]
+  },
+  {
+    "question": "Perform a reverse DNS lookup for the IP address 8.8.8.8.",
+    "expected_tools": [
+      "Hunter.DNS_Lookup"
+    ]
+  },
+  {
+    "question": "Get WHOIS registration details for example.net.",
+    "expected_tools": [
+      "Hunter.Whois_Lookup"
+    ]
+  },
+  {
+    "question": "Find geolocation and ownership information for 185.199.108.153.",
+    "expected_tools": [
+      "Hunter.IP_Lookup"
+    ]
+  },
+  {
+    "question": "Check the SSL certificate validity for gmail.com.",
+    "expected_tools": [
+      "Hunter.SSL_Check"
+    ]
+  },
+  {
+    "question": "What is the current weather in Berlin?",
+    "expected_tools": [
+      "IBMwxflows.weather_query"
+    ]
+  },
+  {
+    "question": "What will the weather be like in London this weekend?",
+    "expected_tools": [
+      "IBMwxflows.weather_forecast"
+    ]
+  },
+  {
+    "question": "Are there any weather alerts for Miami?",
+    "expected_tools": [
+      "IBMwxflows.weather_alerts"
+    ]
+  },
+  {
+    "question": "Give me the seven-day forecast for Tokyo.",
+    "expected_tools": [
+      "IBMwxflows.weather_forecast"
+    ]
+  },
+  {
+    "question": "Tell me the temperature, wind, and humidity in San Francisco.",
+    "expected_tools": [
+      "IBMwxflows.weather_query"
+    ]
+  },
+  {
+    "question": "Is there a storm warning near Chicago?",
+    "expected_tools": [
+      "IBMwxflows.weather_alerts"
+    ]
+  },
+  {
+    "question": "How does the MCP Platform facilitate integration of problem management and user submissions in programming contests?",
+    "expected_tools": [
+      "JetBrains.MCP_Platform",
+      "JetBrains.MCP_Server"
+    ]
+  },
+  {
+    "question": "What process does the grader follow to evaluate solutions in a coding contest, and can you set custom constraints for evaluation?",
+    "expected_tools": [
+      "JetBrains.MCP_Grader",
+      "JetBrains.MCP_Platform"
+    ]
+  },
+  {
+    "question": "How does a participant join a contest and receive problems, and what client functionality is provided for submitting solutions?",
+    "expected_tools": [
+      "JetBrains.MCP_Client",
+      "JetBrains.MCP_Server"
+    ]
+  },
+  {
+    "question": "Describe the JSON protocol used for communication between the contest server, client participants, and graders. How are event notifications and status updates handled?",
+    "expected_tools": [
+      "JetBrains.MCP_Protocol",
+      "JetBrains.MCP_Server",
+      "JetBrains.MCP_Client",
+      "JetBrains.MCP_Grader"
+    ]
+  },
+  {
+    "question": "What mechanisms are in place for managing communication and coordination between multiple modules (server, client, grader) in an integrated contest environment?",
+    "expected_tools": [
+      "JetBrains.MCP_Platform",
+      "JetBrains.MCP_Server",
+      "JetBrains.MCP_Client",
+      "JetBrains.MCP_Grader",
+      "JetBrains.MCP_Protocol"
+    ]
+  },
+  {
+    "question": "What is the size of my codebase and which programming languages are used in my project?",
+    "expected_tools": [
+      "JFrog.project_inspect"
+    ]
+  },
+  {
+    "question": "Are any dependencies in my project known to be vulnerable or outdated?",
+    "expected_tools": [
+      "JFrog.dependency_check"
+    ]
+  },
+  {
+    "question": "Did I commit any sensitive data like secret keys or passwords in my repository?",
+    "expected_tools": [
+      "JFrog.secrets_scan"
+    ]
+  },
+  {
+    "question": "Are there any security issues or misconfigurations in my Terraform and Kubernetes files?",
+    "expected_tools": [
+      "JFrog.iac_scan"
+    ]
+  },
+  {
+    "question": "Does my Docker image have any high-severity vulnerabilities?",
+    "expected_tools": [
+      "JFrog.container_scan"
+    ]
+  },
+  {
+    "question": "Are there any dependencies with license violations or restricted open-source licenses in my project?",
+    "expected_tools": [
+      "JFrog.license_compliance"
+    ]
+  },
+  {
+    "question": "What is the capital of Finland?",
+    "expected_tools": [
+      "KagiSearch.general_knowledge"
+    ]
+  },
+  {
+    "question": "Who won the Nobel Prize in Physics in the most recent year?",
+    "expected_tools": [
+      "KagiSearch.web_search"
+    ]
+  },
+  {
+    "question": "Calculate the area of a circle with radius 7.",
+    "expected_tools": [
+      "KagiSearch.math"
+    ]
+  },
+  {
+    "question": "How can I reverse a string in JavaScript?",
+    "expected_tools": [
+      "KagiSearch.code"
+    ]
+  },
+  {
+    "question": "What are the latest NASA space mission updates?",
+    "expected_tools": [
+      "KagiSearch.web_search"
+    ]
+  },
+  {
+    "question": "Solve for x: 4x - 12 = 8.",
+    "expected_tools": [
+      "KagiSearch.math"
+    ]
+  },
+  {
+    "question": "Show me an example of a Python function to fetch data from a URL.",
+    "expected_tools": [
+      "KagiSearch.code"
+    ]
+  },
+  {
+    "question": "Who discovered electricity?",
+    "expected_tools": [
+      "KagiSearch.general_knowledge"
+    ]
+  },
+  {
+    "question": "Generate a detailed summary report on employee productivity over the last quarter.",
+    "expected_tools": [
+      "KlavisReportGen.generate_report"
+    ]
+  },
+  {
+    "question": "Extract all tables containing sales data from this PDF quarterly performance report.",
+    "expected_tools": [
+      "KlavisReportGen.extract_tables"
+    ]
+  },
+  {
+    "question": "Visualize the year-over-year revenue growth by department using charts.",
+    "expected_tools": [
+      "KlavisReportGen.visualize_data"
+    ]
+  },
+  {
+    "question": "Generate a report summarizing the extracted tables from this research document and include relevant charts.",
+    "expected_tools": [
+      "KlavisReportGen.extract_tables",
+      "KlavisReportGen.generate_report",
+      "KlavisReportGen.visualize_data"
+    ]
+  },
+  {
+    "question": "Provide an exploratory data analysis with summary tables and charts for the customer feedback dataset.",
+    "expected_tools": [
+      "KlavisReportGen.generate_report",
+      "KlavisReportGen.visualize_data"
+    ]
+  },
+  {
+    "question": "How do I create a new customer profile in Klaviyo?",
+    "expected_tools": [
+      "Klaviyo.Profiles"
+    ]
+  },
+  {
+    "question": "What lists and segments are available in my Klaviyo account?",
+    "expected_tools": [
+      "Klaviyo.Lists_and_Segments"
+    ]
+  },
+  {
+    "question": "Show me recent events and purchases for a particular user.",
+    "expected_tools": [
+      "Klaviyo.Events",
+      "Klaviyo.Profiles"
+    ]
+  },
+  {
+    "question": "List all products currently in the catalog.",
+    "expected_tools": [
+      "Klaviyo.Catalogs"
+    ]
+  },
+  {
+    "question": "How can I create and customize a new email template for a campaign?",
+    "expected_tools": [
+      "Klaviyo.Templates"
+    ]
+  },
+  {
+    "question": "List all published flows in my Klaviyo workspace.",
+    "expected_tools": [
+      "Klaviyo.Flows"
+    ]
+  },
+  {
+    "question": "Add a group of new contacts to an existing mailing list.",
+    "expected_tools": [
+      "Klaviyo.Lists_and_Segments"
+    ]
+  },
+  {
+    "question": "Update the price of a particular product in the catalog.",
+    "expected_tools": [
+      "Klaviyo.Catalogs"
+    ]
+  },
+  {
+    "question": "Create an automated flow for re-engaging inactive customers.",
+    "expected_tools": [
+      "Klaviyo.Flows",
+      "Klaviyo.Lists_and_Segments"
+    ]
+  },
+  {
+    "question": "Retrieve all fields and attributes available on customer profiles.",
+    "expected_tools": [
+      "Klaviyo.Profiles"
+    ]
+  },
+  {
+    "question": "How can I create a new tenant and provision admin users for it?",
+    "expected_tools": [
+      "KnitMCPServer.Admin_Toolset"
+    ]
+  },
+  {
+    "question": "List and describe all currently configured data sources and their associated schemas in the server.",
+    "expected_tools": [
+      "KnitMCPServer.Data_Management_Toolset"
+    ]
+  },
+  {
+    "question": "How do I set up and monitor a data transformation pipeline that integrates data from two data sources?",
+    "expected_tools": [
+      "KnitMCPServer.Pipeline_Toolset"
+    ]
+  },
+  {
+    "question": "Provide a REST endpoint to query integrated customer data across all sources.",
+    "expected_tools": [
+      "KnitMCPServer.API_Access_Toolset"
+    ]
+  },
+  {
+    "question": "How can I rotate API keys for a specific user and ensure their data source access is preserved?",
+    "expected_tools": [
+      "KnitMCPServer.Admin_Toolset",
+      "KnitMCPServer.Data_Management_Toolset"
+    ]
+  },
+  {
+    "question": "Export processed sales data from a monitored pipeline through the available API layer.",
+    "expected_tools": [
+      "KnitMCPServer.Pipeline_Toolset",
+      "KnitMCPServer.API_Access_Toolset"
+    ]
+  },
+  {
+    "question": "What is 15% of 87?",
+    "expected_tools": [
+      "KnockMCPServer.Calculator_Tool"
+    ]
+  },
+  {
+    "question": "Who won the 2024 NBA Finals?",
+    "expected_tools": [
+      "KnockMCPServer.Browser_Tool"
+    ]
+  },
+  {
+    "question": "Sort this list of numbers: [3, 1, 2, 5, 4]",
+    "expected_tools": [
+      "KnockMCPServer.Python_Tool"
+    ]
+  },
+  {
+    "question": "List all files in the current directory.",
+    "expected_tools": [
+      "KnockMCPServer.Terminal_Tool"
+    ]
+  },
+  {
+    "question": "Write a Python function to count unique words in a text file and then automate running it on 'sample.txt' in the current directory.",
+    "expected_tools": [
+      "KnockMCPServer.Python_Tool",
+      "KnockMCPServer.Terminal_Tool"
+    ]
+  },
+  {
+    "question": "Check the latest stock price for Apple.",
+    "expected_tools": [
+      "KnockMCPServer.Browser_Tool"
+    ]
+  },
+  {
+    "question": "Calculate (12 * 6) - 8 ^ 2.",
+    "expected_tools": [
+      "KnockMCPServer.Calculator_Tool"
+    ]
+  },
+  {
+    "question": "Plot a sine curve for x = 0 to x = 2π.",
+    "expected_tools": [
+      "KnockMCPServer.Python_Tool"
+    ]
+  },
+  {
+    "question": "Check disk usage on the server.",
+    "expected_tools": [
+      "KnockMCPServer.Terminal_Tool"
+    ]
+  },
+  {
+    "question": "Find all users who like JavaScript.",
+    "expected_tools": [
+      "Kuzu.Kuzu_Query"
+    ]
+  },
+  {
+    "question": "Create a new 'Person' node for user Alice.",
+    "expected_tools": [
+      "Kuzu.Kuzu_Query"
+    ]
+  },
+  {
+    "question": "Return all relationships between movies and actors.",
+    "expected_tools": [
+      "Kuzu.Kuzu_Query"
+    ]
+  },
+  {
+    "question": "Show me the current schema of the database.",
+    "expected_tools": [
+      "Kuzu.Kuzu_Schema"
+    ]
+  },
+  {
+    "question": "Add a new property 'age' to the Person node type.",
+    "expected_tools": [
+      "Kuzu.Kuzu_Schema"
+    ]
+  },
+  {
+    "question": "Remove the FOLLOWS relationship from the schema.",
+    "expected_tools": [
+      "Kuzu.Kuzu_Schema"
+    ]
+  },
+  {
+    "question": "Is the server running?",
+    "expected_tools": [
+      "Kuzu.Kuzu_Server_Management"
+    ]
+  },
+  {
+    "question": "Restart the server.",
+    "expected_tools": [
+      "Kuzu.Kuzu_Server_Management"
+    ]
+  },
+  {
+    "question": "Show the current version of KuzuDB MCP.",
+    "expected_tools": [
+      "Kuzu.Kuzu_Server_Management"
+    ]
+  },
+  {
+    "question": "Which ports are open on the host 10.0.0.5?",
+    "expected_tools": [
+      "KWDB.mcp_fingerprint",
+      "KWDB.mcp_portscan"
+    ]
+  },
+  {
+    "question": "Can I test SSH brute-forcing with a custom user and password list against 192.168.1.10?",
+    "expected_tools": [
+      "KWDB.mcp_bruteforce"
+    ]
+  },
+  {
+    "question": "Which services are running on all hosts in the 192.168.2.0/24 subnet?",
+    "expected_tools": [
+      "KWDB.mcp_portscan",
+      "KWDB.mcp_fingerprint"
+    ]
+  },
+  {
+    "question": "Can you attempt to exploit known vulnerabilities on 172.16.0.12 and list the results?",
+    "expected_tools": [
+      "KWDB.mcp_fingerprint",
+      "KWDB.mcp_exploit"
+    ]
+  },
+  {
+    "question": "Generate an HTML report summarizing all findings from the last vulnerability scan.",
+    "expected_tools": [
+      "KWDB.mcp_report"
+    ]
+  },
+  {
+    "question": "Export the latest scan and exploitation results as a PDF.",
+    "expected_tools": [
+      "KWDB.mcp_report"
+    ]
+  },
+  {
+    "question": "How would you parse the Lisp code '(define (square x) (* x x))' into its structured format?",
+    "expected_tools": [
+      "Lisply.parse"
+    ]
+  },
+  {
+    "question": "What is the result of evaluating the Lisp code '(* 3 4)'?",
+    "expected_tools": [
+      "Lisply.eval"
+    ]
+  },
+  {
+    "question": "Show the intermediate evaluation state after a single step for the expression '(* 2 (+ 1 2))'.",
+    "expected_tools": [
+      "Lisply.step"
+    ]
+  },
+  {
+    "question": "Explain in simple terms what happens when you run '(map square '(1 2 3 4))' in Lisp.",
+    "expected_tools": [
+      "Lisply.explain"
+    ]
+  },
+  {
+    "question": "Trace the evaluation of '(factorial 4)' step by step, showing each intermediate state.",
+    "expected_tools": [
+      "Lisply.step"
+    ]
+  },
+  {
+    "question": "Given the code '(lambda (x) (+ x 1))', provide a human-readable explanation of what this code does.",
+    "expected_tools": [
+      "Lisply.explain"
+    ]
+  },
+  {
+    "question": "What are the differences between OpenAI's GPT-4, Google's Gemini, Groq's Llama-3, and local Ollama models for conversational AI tasks?",
+    "expected_tools": [
+      "Logfire.ask_chat_google",
+      "Logfire.ask_groq_llama3",
+      "Logfire.ask_openai_chat",
+      "Logfire.ask_ollama_chat"
+    ]
+  },
+  {
+    "question": "Provide the docstring and documentation for the function numpy.mean.",
+    "expected_tools": [
+      "Logfire.get_function_doc"
+    ]
+  },
+  {
+    "question": "List all Python packages currently installed in the Logfire runtime environment.",
+    "expected_tools": [
+      "Logfire.list_python_packages"
+    ]
+  },
+  {
+    "question": "How can I serialize a Python object to JSON according to the official Python documentation?",
+    "expected_tools": [
+      "Logfire.search_python_docs"
+    ]
+  },
+  {
+    "question": "Summarize the main points of the latest research article about quantum computing.",
+    "expected_tools": [
+      "Logfire.ask_chat_google",
+      "Logfire.ask_groq_llama3",
+      "Logfire.ask_openai_chat",
+      "Logfire.ask_ollama_chat"
+    ]
+  },
+  {
+    "question": "Which Python packages does the current environment depend on for machine learning tasks?",
+    "expected_tools": [
+      "Logfire.list_python_packages"
+    ]
+  },
+  {
+    "question": "Search the Python documentation for information about list comprehensions.",
+    "expected_tools": [
+      "Logfire.search_python_docs"
+    ]
+  },
+  {
+    "question": "Transcribe this French audio recipe into text.",
+    "expected_tools": [
+      "MagicMealKits.Transcription"
+    ]
+  },
+  {
+    "question": "Translate this recipe from English to Spanish.",
+    "expected_tools": [
+      "MagicMealKits.Translation"
+    ]
+  },
+  {
+    "question": "Summarize the main cooking steps in this article.",
+    "expected_tools": [
+      "MagicMealKits.Summarization"
+    ]
+  },
+  {
+    "question": "Who are the chefs mentioned in this press release?",
+    "expected_tools": [
+      "MagicMealKits.NER_(Named_Entity_Recognition)"
+    ]
+  },
+  {
+    "question": "What are the key ingredients listed in this section of text?",
+    "expected_tools": [
+      "MagicMealKits.Q&A"
+    ]
+  },
+  {
+    "question": "Can you help me choose a meal kit suitable for vegans?",
+    "expected_tools": [
+      "MagicMealKits.Chatbot"
+    ]
+  },
+  {
+    "question": "How do I pause all threads in the MCP server?",
+    "expected_tools": [
+      "Mapbox.Control_port"
+    ]
+  },
+  {
+    "question": "List all currently loaded MCP modules.",
+    "expected_tools": [
+      "Mapbox.Control_port"
+    ]
+  },
+  {
+    "question": "What is the current state of the network module?",
+    "expected_tools": [
+      "Mapbox.State_plugin"
+    ]
+  },
+  {
+    "question": "List all running tasks in the system.",
+    "expected_tools": [
+      "Mapbox.State_plugin"
+    ]
+  },
+  {
+    "question": "How can I reload the config module at runtime?",
+    "expected_tools": [
+      "Mapbox.Module_loader"
+    ]
+  },
+  {
+    "question": "Unload an unused plugin dynamically.",
+    "expected_tools": [
+      "Mapbox.Module_loader"
+    ]
+  },
+  {
+    "question": "Set log level to debug for all modules.",
+    "expected_tools": [
+      "Mapbox.Logger"
+    ]
+  },
+  {
+    "question": "Show the last 100 log messages.",
+    "expected_tools": [
+      "Mapbox.Logger"
+    ]
+  },
+  {
+    "question": "Discover all Minecraft: Pocket Edition servers currently available on the local network.",
+    "expected_tools": [
+      "MCPDiscovery.mcp_discovery"
+    ]
+  },
+  {
+    "question": "How does the MCP Discovery server facilitate server discovery for LAN Minecraft clients?",
+    "expected_tools": [
+      "MCPDiscovery.mcp_discovery"
+    ]
+  },
+  {
+    "question": "What is Metoro and how does it work?",
+    "expected_tools": [
+      "Metoro.Ask"
+    ]
+  },
+  {
+    "question": "Summarize the key findings from this uploaded research paper about machine learning.",
+    "expected_tools": [
+      "Metoro.DocumentReader",
+      "Metoro.TextSummarizer"
+    ]
+  },
+  {
+    "question": "Store the organizational structure document into the knowledge base and retrieve all entries about team roles.",
+    "expected_tools": [
+      "Metoro.DocumentReader",
+      "Metoro.KnowledgeBase"
+    ]
+  },
+  {
+    "question": "Create a new task for reviewing the latest security report and track its completion status.",
+    "expected_tools": [
+      "Metoro.TaskManager"
+    ]
+  },
+  {
+    "question": "Extract the content of this PDF and provide a brief summary.",
+    "expected_tools": [
+      "Metoro.DocumentReader",
+      "Metoro.TextSummarizer"
+    ]
+  },
+  {
+    "question": "What facts related to project Y are stored in the knowledge base?",
+    "expected_tools": [
+      "Metoro.KnowledgeBase"
+    ]
+  },
+  {
+    "question": "How does the MCP server process a custom policy evaluation request received via REST API?",
+    "expected_tools": [
+      "MicrosoftLearnDocs.mcpserver"
+    ]
+  },
+  {
+    "question": "How do I configure authorization logging in the MCP server?",
+    "expected_tools": [
+      "MicrosoftLearnDocs.mcpserver"
+    ]
+  },
+  {
+    "question": "What steps are required to test a new policy locally before deploying it to the MCP server?",
+    "expected_tools": [
+      "MicrosoftLearnDocs.mcptool"
+    ]
+  },
+  {
+    "question": "Which mcptool command lets me simulate a user access check for a policy?",
+    "expected_tools": [
+      "MicrosoftLearnDocs.mcptool"
+    ]
+  },
+  {
+    "question": "Where can I find a sample RBAC policy for Microsoft Cloud Policy (MCP)?",
+    "expected_tools": [
+      "MicrosoftLearnDocs.policy_samples"
+    ]
+  },
+  {
+    "question": "What does a conditional access policy sample look like for MCP?",
+    "expected_tools": [
+      "MicrosoftLearnDocs.policy_samples"
+    ]
+  },
+  {
+    "question": "How can I authorize API requests to specific Momento services based on user roles?",
+    "expected_tools": [
+      "Momento.mcp_proxy",
+      "Momento.opa_policy_evaluator"
+    ]
+  },
+  {
+    "question": "Evaluate whether a given action on a Momento cache resource is permitted according to organization policy.",
+    "expected_tools": [
+      "Momento.opa_policy_evaluator"
+    ]
+  },
+  {
+    "question": "Apply a new routing rule to direct API requests through a specific endpoint in the MCP proxy.",
+    "expected_tools": [
+      "Momento.mcp_configurer"
+    ]
+  },
+  {
+    "question": "Audit and log all incoming API requests for access control analysis on the Momento platform.",
+    "expected_tools": [
+      "Momento.mcp_proxy",
+      "Momento.opa_policy_evaluator"
+    ]
+  },
+  {
+    "question": "Validate the current MCP configuration file for errors before applying it system-wide.",
+    "expected_tools": [
+      "Momento.mcp_configurer"
+    ]
+  },
+  {
+    "question": "List all databases available on this MongoDB server.",
+    "expected_tools": [
+      "MongoDB.listDatabases"
+    ]
+  },
+  {
+    "question": "What collections exist in the 'sales' database?",
+    "expected_tools": [
+      "MongoDB.listCollections"
+    ]
+  },
+  {
+    "question": "Show the schema of the 'orders' collection in the 'sales' database.",
+    "expected_tools": [
+      "MongoDB.getSchema"
+    ]
+  },
+  {
+    "question": "Describe the 'users' collection, including indexes and document count.",
+    "expected_tools": [
+      "MongoDB.describeCollection"
+    ]
+  },
+  {
+    "question": "Find all orders placed after January 1, 2024 in the 'orders' collection.",
+    "expected_tools": [
+      "MongoDB.runMongoQuery"
+    ]
+  },
+  {
+    "question": "Update the status of order #98765 to 'shipped' in the 'orders' collection.",
+    "expected_tools": [
+      "MongoDB.runMongoQuery"
+    ]
+  },
+  {
+    "question": "What is the recommended first-line therapy for newly diagnosed hypertension in adults?",
+    "expected_tools": [
+      "Nerve.consult",
+      "Nerve.research"
+    ]
+  },
+  {
+    "question": "Document an HPI for a 40-year-old female presenting with acute shortness of breath.",
+    "expected_tools": [
+      "Nerve.scribe"
+    ]
+  },
+  {
+    "question": "Summarize the latest clinical guidelines on management of chronic kidney disease.",
+    "expected_tools": [
+      "Nerve.research",
+      "Nerve.summarize"
+    ]
+  },
+  {
+    "question": "Translate these discharge instructions about wound care into Spanish.",
+    "expected_tools": [
+      "Nerve.translate"
+    ]
+  },
+  {
+    "question": "Shorten this SOAP note to include only pertinent positive and negative findings.",
+    "expected_tools": [
+      "Nerve.summarize"
+    ]
+  },
+  {
+    "question": "List recent landmark studies relevant to type 2 diabetes treatment.",
+    "expected_tools": [
+      "Nerve.research"
+    ]
+  },
+  {
+    "question": "Provide a simulated patient scenario for a new onset of atrial fibrillation and discuss appropriate management according to recent literature.",
+    "expected_tools": [
+      "Nerve.consult",
+      "Nerve.research"
+    ]
+  },
+  {
+    "question": "How do I set up a new Nx workspace for my team to start developing applications?",
+    "expected_tools": [
+      "Nx.create_nx_workspace"
+    ]
+  },
+  {
+    "question": "How can I scaffold a new React application within my existing Nx workspace?",
+    "expected_tools": [
+      "Nx.generate"
+    ]
+  },
+  {
+    "question": "What is the best way to run all unit tests for every library in my Nx workspace?",
+    "expected_tools": [
+      "Nx.run_task"
+    ]
+  },
+  {
+    "question": "How do I visualize the dependency graph between applications and libraries in my Nx workspace?",
+    "expected_tools": [
+      "Nx.dep_graph"
+    ]
+  },
+  {
+    "question": "How do I quickly generate a new Angular library and then build it using Nx commands?",
+    "expected_tools": [
+      "Nx.generate",
+      "Nx.run_task"
+    ]
+  },
+  {
+    "question": "Can I identify circular dependencies between projects in my Nx workspace?",
+    "expected_tools": [
+      "Nx.dep_graph"
+    ]
+  },
+  {
+    "question": "What did users say about the latest Octagon software update?",
+    "expected_tools": [
+      "Octagon.ask_retrieval"
+    ]
+  },
+  {
+    "question": "How can I write a Python function that checks if a number is even?",
+    "expected_tools": [
+      "Octagon.ask_code"
+    ]
+  },
+  {
+    "question": "Calculate the square root of 256.",
+    "expected_tools": [
+      "Octagon.ask_calculator"
+    ]
+  },
+  {
+    "question": "Summarize this customer support conversation for me.",
+    "expected_tools": [
+      "Octagon.summarize"
+    ]
+  },
+  {
+    "question": "Extract all the named entities from this paragraph.",
+    "expected_tools": [
+      "Octagon.extract"
+    ]
+  },
+  {
+    "question": "Classify this comment as positive, negative, or neutral feedback.",
+    "expected_tools": [
+      "Octagon.classify"
+    ]
+  },
+  {
+    "question": "Find all hospitals within 2 kilometers of Central Park.",
+    "expected_tools": [
+      "OlaMaps.Feature_Search",
+      "OlaMaps.Spatial_Analysis"
+    ]
+  },
+  {
+    "question": "How many schools are there in Brooklyn?",
+    "expected_tools": [
+      "OlaMaps.Feature_Summary"
+    ]
+  },
+  {
+    "question": "Which parks intersect with subway lines in Manhattan?",
+    "expected_tools": [
+      "OlaMaps.Feature_Search",
+      "OlaMaps.Spatial_Analysis"
+    ]
+  },
+  {
+    "question": "Show a map highlighting neighborhoods with average income over $100,000.",
+    "expected_tools": [
+      "OlaMaps.Feature_Search",
+      "OlaMaps.Feature_Summary",
+      "OlaMaps.Map_Visualization"
+    ]
+  },
+  {
+    "question": "Visualize all fire stations in Queens on the map.",
+    "expected_tools": [
+      "OlaMaps.Feature_Search",
+      "OlaMaps.Map_Visualization"
+    ]
+  },
+  {
+    "question": "What were the most frequent errors in the MCP logs over the last 24 hours?",
+    "expected_tools": [
+      "OP.GG.McpAnalyzer"
+    ]
+  },
+  {
+    "question": "How do I update configuration settings for an MCP microservice?",
+    "expected_tools": [
+      "OP.GG.McpAdmin"
+    ]
+  },
+  {
+    "question": "Can you retrieve current usage statistics from the MCP REST API?",
+    "expected_tools": [
+      "OP.GG.McpApi"
+    ]
+  },
+  {
+    "question": "What is the current health status and uptime of all MCP microservices?",
+    "expected_tools": [
+      "OP.GG.McpMonitor"
+    ]
+  },
+  {
+    "question": "Which endpoints are most frequently accessed according to the user event logs?",
+    "expected_tools": [
+      "OP.GG.McpAnalyzer"
+    ]
+  },
+  {
+    "question": "What is the CPU and memory usage metric for each node in the MCP environment?",
+    "expected_tools": [
+      "OP.GG.McpMonitor"
+    ]
+  },
+  {
+    "question": "How can I view the deployment status and history for a specific MCP component?",
+    "expected_tools": [
+      "OP.GG.McpAdmin"
+    ]
+  },
+  {
+    "question": "Which API endpoints are available, and what statistics can be fetched from them?",
+    "expected_tools": [
+      "OP.GG.McpApi"
+    ]
+  },
+  {
+    "question": "Can you fetch detailed system information for MCP from the API?",
+    "expected_tools": [
+      "OP.GG.McpApi"
+    ]
+  },
+  {
+    "question": "How do I process a payment using PayPal's API platform?",
+    "expected_tools": [
+      "PayPal.Gateway",
+      "PayPal.API_Docs"
+    ]
+  },
+  {
+    "question": "How can I enable or configure fraud detection tools on my PayPal dashboard?",
+    "expected_tools": [
+      "PayPal.Control_Panel"
+    ]
+  },
+  {
+    "question": "Where can I download monthly settlement and transaction reports for my merchant account?",
+    "expected_tools": [
+      "PayPal.Merchant_Reporting",
+      "PayPal.Control_Panel"
+    ]
+  },
+  {
+    "question": "How do I find integration guides and sample code for initiating refunds via PayPal MCP?",
+    "expected_tools": [
+      "PayPal.API_Docs"
+    ]
+  },
+  {
+    "question": "Can I customize the reporting periods for downloadable merchant statements?",
+    "expected_tools": [
+      "PayPal.Merchant_Reporting"
+    ]
+  },
+  {
+    "question": "What are the authentication steps required for accessing PayPal’s Gateway API?",
+    "expected_tools": [
+      "PayPal.Gateway",
+      "PayPal.API_Docs"
+    ]
+  },
+  {
+    "question": "Where can I monitor real-time payment analytics and manage account settings?",
+    "expected_tools": [
+      "PayPal.Control_Panel"
+    ]
+  },
+  {
+    "question": "What error codes could be returned by PayPal's REST APIs and where can I find their documentation?",
+    "expected_tools": [
+      "PayPal.API_Docs"
+    ]
+  },
+  {
+    "question": "What is the current health status of the Pearl server?",
+    "expected_tools": [
+      "Pearl.Status"
+    ]
+  },
+  {
+    "question": "Can you search for user accounts named 'Sarah Lee' in the connected data sources?",
+    "expected_tools": [
+      "Pearl.Search"
+    ]
+  },
+  {
+    "question": "How do I reset my account password?",
+    "expected_tools": [
+      "Pearl.Ask"
+    ]
+  },
+  {
+    "question": "Restart the database service on the Pearl server.",
+    "expected_tools": [
+      "Pearl.Action"
+    ]
+  },
+  {
+    "question": "Connect me to the email server.",
+    "expected_tools": [
+      "Pearl.Connect"
+    ]
+  },
+  {
+    "question": "List all existing indexes in the current Pinecone deployment.",
+    "expected_tools": [
+      "Pinecone.Index_Management"
+    ]
+  },
+  {
+    "question": "Check the health status of the Pinecone service.",
+    "expected_tools": [
+      "Pinecone.Health_&_Miscellaneous"
+    ]
+  },
+  {
+    "question": "Create a new namespace called 'project_data' in the 'analytics' Pinecone index.",
+    "expected_tools": [
+      "Pinecone.Namespace_Management"
+    ]
+  },
+  {
+    "question": "Insert multiple vectors with associated metadata into the 'documents' namespace of the 'main' index.",
+    "expected_tools": [
+      "Pinecone.Vector_Management"
+    ]
+  },
+  {
+    "question": "Search for the top 5 most similar vectors in the 'user_profiles' namespace of the 'accounts' index, given an input vector.",
+    "expected_tools": [
+      "Pinecone.Query/Search"
+    ]
+  },
+  {
+    "question": "What information is available about recent advancements in AI document retrieval systems?",
+    "expected_tools": [
+      "PineconeAssistant.Web_Search",
+      "PineconeAssistant.Knowledge_Base"
+    ]
+  },
+  {
+    "question": "Summarize my previous conversations where I asked about conversational AI models.",
+    "expected_tools": [
+      "PineconeAssistant.Conversation"
+    ]
+  },
+  {
+    "question": "Update my profile to reflect that I am interested in knowledge management solutions.",
+    "expected_tools": [
+      "PineconeAssistant.Memory"
+    ]
+  },
+  {
+    "question": "Search through all stored documents for the term 'vector database' and list the most relevant sources.",
+    "expected_tools": [
+      "PineconeAssistant.Knowledge_Base"
+    ]
+  },
+  {
+    "question": "Remind me of the action items discussed during my last session.",
+    "expected_tools": [
+      "PineconeAssistant.Conversation",
+      "PineconeAssistant.Memory"
+    ]
+  },
+  {
+    "question": "Show me the state of the 'orders' table as of March 1st, 2024.",
+    "expected_tools": [
+      "Prisma.Temporal_Tables"
+    ]
+  },
+  {
+    "question": "Which policies restrict user 456 from accessing employee payroll data?",
+    "expected_tools": [
+      "Prisma.Row_Level_Security_(RLS)_Policies"
+    ]
+  },
+  {
+    "question": "How is the 'events' table partitioned by month in this database?",
+    "expected_tools": [
+      "Prisma.Table_Partitioning"
+    ]
+  },
+  {
+    "question": "What tables are being logically replicated from the production to the reporting instance?",
+    "expected_tools": [
+      "Prisma.Logical_Replication"
+    ]
+  },
+  {
+    "question": "Add a new torrent download using this magnet link.",
+    "expected_tools": [
+      "Put.io.AddTransfers"
+    ]
+  },
+  {
+    "question": "List all my current transfers and their statuses.",
+    "expected_tools": [
+      "Put.io.ListTransfers"
+    ]
+  },
+  {
+    "question": "Cancel the Ubuntu ISO download that is currently active.",
+    "expected_tools": [
+      "Put.io.CancelTransfer"
+    ]
+  },
+  {
+    "question": "Show all files in my Movies folder.",
+    "expected_tools": [
+      "Put.io.ListFiles"
+    ]
+  },
+  {
+    "question": "Get details for the file named 'Video.mp4'.",
+    "expected_tools": [
+      "Put.io.GetFileDetails"
+    ]
+  },
+  {
+    "question": "Delete all files in my Trash folder.",
+    "expected_tools": [
+      "Put.io.DeleteFiles"
+    ]
+  },
+  {
+    "question": "Stream Inception movie now.",
+    "expected_tools": [
+      "Put.io.StreamFile"
+    ]
+  },
+  {
+    "question": "What are the latest news developments about OpenAI?",
+    "expected_tools": [
+      "Ragie.WebSearch"
+    ]
+  },
+  {
+    "question": "Summarize the findings in section 2 of the uploaded financial report.",
+    "expected_tools": [
+      "Ragie.AskDocs"
+    ]
+  },
+  {
+    "question": "How many new users registered last month?",
+    "expected_tools": [
+      "Ragie.DatabaseQA"
+    ]
+  },
+  {
+    "question": "Who invented the World Wide Web?",
+    "expected_tools": [
+      "Ragie.WikipediaSearch"
+    ]
+  },
+  {
+    "question": "Provide a list of all customers from California in the database.",
+    "expected_tools": [
+      "Ragie.DatabaseQA"
+    ]
+  },
+  {
+    "question": "Find recent articles about climate change from across the internet.",
+    "expected_tools": [
+      "Ragie.WebSearch"
+    ]
+  },
+  {
+    "question": "What does the uploaded contract state about payment terms?",
+    "expected_tools": [
+      "Ragie.AskDocs"
+    ]
+  },
+  {
+    "question": "Explain the significance of the Manhattan Project.",
+    "expected_tools": [
+      "Ragie.WikipediaSearch"
+    ]
+  },
+  {
+    "question": "Generate an image of a futuristic robot working in a city park.",
+    "expected_tools": [
+      "Recraft.generate_images"
+    ]
+  },
+  {
+    "question": "Show me several alternative styles of this company logo.",
+    "expected_tools": [
+      "Recraft.generate_variations"
+    ]
+  },
+  {
+    "question": "Change the background of this portrait to a sunset scene.",
+    "expected_tools": [
+      "Recraft.edit_image"
+    ]
+  },
+  {
+    "question": "Describe what is happening in this vacation photograph.",
+    "expected_tools": [
+      "Recraft.describe_image"
+    ]
+  },
+  {
+    "question": "Add a dog to the image of this living room.",
+    "expected_tools": [
+      "Recraft.edit_image"
+    ]
+  },
+  {
+    "question": "How can I bulk load a CSV file containing user profiles into my Redis Cloud instance?",
+    "expected_tools": [
+      "RedisCloudAPI.mcp_data_ingestor"
+    ]
+  },
+  {
+    "question": "How do I create a new Redis cluster in a specified cloud environment, scale its memory, and check its current usage stats?",
+    "expected_tools": [
+      "RedisCloudAPI.mcp_admin_cli"
+    ]
+  },
+  {
+    "question": "What steps should I follow to ensure secure, highly available, and auto-reconnecting connections from my application to Redis Cloud, and does the service provide SSH tunneling?",
+    "expected_tools": [
+      "RedisCloudAPI.mcp_connection_manager"
+    ]
+  },
+  {
+    "question": "How can I export Redis performance metrics and logs to Prometheus and visualize latency trends in Grafana dashboards, including setting up alerts for high memory usage?",
+    "expected_tools": [
+      "RedisCloudAPI.mcp_cloud_exporter"
+    ]
+  },
+  {
+    "question": "Chat with me about the implications of large language models in healthcare.",
+    "expected_tools": [
+      "Reexpress.LLM_Chat"
+    ]
+  },
+  {
+    "question": "What is the latest news on artificial intelligence from reputable sources?",
+    "expected_tools": [
+      "Reexpress.Browser"
+    ]
+  },
+  {
+    "question": "Retrieve the organization's data privacy policy.",
+    "expected_tools": [
+      "Reexpress.Knowledge_Base"
+    ]
+  },
+  {
+    "question": "Summarize this article: [https://example.com/ai-news-article]",
+    "expected_tools": [
+      "Reexpress.URL_QA"
+    ]
+  },
+  {
+    "question": "What is the current weather in Shanghai?",
+    "expected_tools": [
+      "Reexpress.Tool_QA"
+    ]
+  },
+  {
+    "question": "Look up recent project documentation updates for Reexpress.",
+    "expected_tools": [
+      "Reexpress.Knowledge_Base"
+    ]
+  },
+  {
+    "question": "Answer questions about the content of this webpage: [https://example.com/company-history]",
+    "expected_tools": [
+      "Reexpress.URL_QA"
+    ]
+  },
+  {
+    "question": "Find recent stock prices for AAPL.",
+    "expected_tools": [
+      "Reexpress.Tool_QA"
+    ]
+  },
+  {
+    "question": "Write a creative story about an adventurous dog.",
+    "expected_tools": [
+      "Reexpress.LLM_Chat"
+    ]
+  },
+  {
+    "question": "List three key benefits of regular exercise.",
+    "expected_tools": [
+      "Rember.list"
+    ]
+  },
+  {
+    "question": "Select the correct answer: Which planet is known as the Red Planet? A) Venus B) Mars C) Jupiter",
+    "expected_tools": [
+      "Rember.choices"
+    ]
+  },
+  {
+    "question": "Extract all the proper nouns from the following paragraph.",
+    "expected_tools": [
+      "Rember.extract"
+    ]
+  },
+  {
+    "question": "Replace all instances of the word 'bad' with 'unfavorable' in the provided text.",
+    "expected_tools": [
+      "Rember.replace"
+    ]
+  },
+  {
+    "question": "Rewrite the following sentence to sound more formal: 'I'm going to the store now.'",
+    "expected_tools": [
+      "Rember.rewrite"
+    ]
+  },
+  {
+    "question": "Compose a thank you message for a customer who made a recent purchase.",
+    "expected_tools": [
+      "Rember.compose"
+    ]
+  },
+  {
+    "question": "Transform the following CSV data into JSON format.",
+    "expected_tools": [
+      "Rember.transform"
+    ]
+  },
+  {
+    "question": "Generate a short story about a space explorer who discovers a new planet.",
+    "expected_tools": [
+      "Riza.text_completion"
+    ]
+  },
+  {
+    "question": "Edit this paragraph for grammar and clarity: 'He go to market and buy vegetable'.",
+    "expected_tools": [
+      "Riza.text_editing"
+    ]
+  },
+  {
+    "question": "Based on the provided passage, who was the main inventor mentioned?",
+    "expected_tools": [
+      "Riza.question_answering"
+    ]
+  },
+  {
+    "question": "Summarize the following news article in three sentences.",
+    "expected_tools": [
+      "Riza.summarization"
+    ]
+  },
+  {
+    "question": "Classify this review as positive, neutral, or negative: 'The product exceeded my expectations.'",
+    "expected_tools": [
+      "Riza.classification"
+    ]
+  },
+  {
+    "question": "Let's have a conversation about recent advancements in artificial intelligence.",
+    "expected_tools": [
+      "Riza.chat"
+    ]
+  },
+  {
+    "question": "Can you generate C++ code for my Event-B model?",
+    "expected_tools": [
+      "Rodin.codeGenerator"
+    ]
+  },
+  {
+    "question": "Check if my model satisfies all declared invariants.",
+    "expected_tools": [
+      "Rodin.modelAnalysis"
+    ]
+  },
+  {
+    "question": "Transform this UML model into an Event-B model.",
+    "expected_tools": [
+      "Rodin.modelTransformation"
+    ]
+  },
+  {
+    "question": "Find any specification errors or inconsistencies in this Rodin project.",
+    "expected_tools": [
+      "Rodin.modelAnalysis"
+    ]
+  },
+  {
+    "question": "Migrate my existing model to an updated modeling language format.",
+    "expected_tools": [
+      "Rodin.modelTransformation"
+    ]
+  },
+  {
+    "question": "Generate Java classes corresponding to each entity in my model.",
+    "expected_tools": [
+      "Rodin.codeGenerator"
+    ]
+  },
+  {
+    "question": "Do any of my dependencies have known vulnerabilities according to the latest SBOM report?",
+    "expected_tools": [
+      "SafeDep.Vulnerabilities"
+    ]
+  },
+  {
+    "question": "Which dependencies violate our license policy or are using licenses that are not permitted?",
+    "expected_tools": [
+      "SafeDep.Licenses"
+    ]
+  },
+  {
+    "question": "Are there any deprecated or unsupported dependencies in my project?",
+    "expected_tools": [
+      "SafeDep.Deprecations"
+    ]
+  },
+  {
+    "question": "Which dependencies are both deprecated and have known vulnerabilities?",
+    "expected_tools": [
+      "SafeDep.Vulnerabilities",
+      "SafeDep.Deprecations"
+    ]
+  },
+  {
+    "question": "List dependencies with problematic licenses and indicate if any of them are also deprecated.",
+    "expected_tools": [
+      "SafeDep.Licenses",
+      "SafeDep.Deprecations"
+    ]
+  },
+  {
+    "question": "What tables are available in the 'sales' schema?",
+    "expected_tools": [
+      "StarRocks.Schema_Explorer"
+    ]
+  },
+  {
+    "question": "Describe the structure and columns of the 'orders' table.",
+    "expected_tools": [
+      "StarRocks.Schema_Explorer"
+    ]
+  },
+  {
+    "question": "Show me 5 sample rows from the 'customer_activity' table.",
+    "expected_tools": [
+      "StarRocks.Data_Preview"
+    ]
+  },
+  {
+    "question": "How many users registered yesterday?",
+    "expected_tools": [
+      "StarRocks.SQL_Query_Executor"
+    ]
+  },
+  {
+    "question": "List the names and prices of products with a stock count greater than 100.",
+    "expected_tools": [
+      "StarRocks.SQL_Query_Executor"
+    ]
+  },
+  {
+    "question": "Preview data in the 'inventory' table to inspect the first few records.",
+    "expected_tools": [
+      "StarRocks.Data_Preview"
+    ]
+  },
+  {
+    "question": "What are the latest advancements in quantum computing?",
+    "expected_tools": [
+      "Tavily.search",
+      "Tavily.serp"
+    ]
+  },
+  {
+    "question": "Find recent news articles about the SpaceX Starship launch.",
+    "expected_tools": [
+      "Tavily.search",
+      "Tavily.serp"
+    ]
+  },
+  {
+    "question": "Show me images of the Eiffel Tower at night.",
+    "expected_tools": [
+      "Tavily.image_search"
+    ]
+  },
+  {
+    "question": "Find the top 5 results for the query: renewable energy trends 2024.",
+    "expected_tools": [
+      "Tavily.serp"
+    ]
+  },
+  {
+    "question": "Compare the prices and reviews of the latest wireless earbuds.",
+    "expected_tools": [
+      "Tavily.product_search"
+    ]
+  },
+  {
+    "question": "Search for product information on the iPhone 15 and provide online store links.",
+    "expected_tools": [
+      "Tavily.product_search",
+      "Tavily.serp"
+    ]
+  },
+  {
+    "question": "Find pictures of Himalayan cats.",
+    "expected_tools": [
+      "Tavily.image_search"
+    ]
+  },
+  {
+    "question": "Analyze the return and volatility of a portfolio based on the contents of this uploaded CSV file.",
+    "expected_tools": [
+      "TokenMetrics.Text_File_Uploader",
+      "TokenMetrics.Code_Interpreter"
+    ]
+  },
+  {
+    "question": "Get the latest price and news for Ethereum from widely used crypto analytics sites.",
+    "expected_tools": [
+      "TokenMetrics.Web_Browser"
+    ]
+  },
+  {
+    "question": "Summarize the provided web page’s information about the launch of a new token.",
+    "expected_tools": [
+      "TokenMetrics.Web_Page_Uploader"
+    ]
+  },
+  {
+    "question": "Plot the trends of Bitcoin dominance over time using this uploaded CSV market data.",
+    "expected_tools": [
+      "TokenMetrics.Text_File_Uploader",
+      "TokenMetrics.Code_Interpreter"
+    ]
+  },
+  {
+    "question": "Extract all links from this uploaded HTML page and check which ones reference blockchain explorers.",
+    "expected_tools": [
+      "TokenMetrics.Web_Page_Uploader",
+      "TokenMetrics.Code_Interpreter"
+    ]
+  },
+  {
+    "question": "Fetch and summarize the most recent Wikipedia article about 'DeFi'.",
+    "expected_tools": [
+      "TokenMetrics.Wikipedia_Plugin"
+    ]
+  },
+  {
+    "question": "Compare the risk-adjusted performance of several cryptocurrencies using historical price data from two CSV files.",
+    "expected_tools": [
+      "TokenMetrics.Text_File_Uploader",
+      "TokenMetrics.Code_Interpreter"
+    ]
+  },
+  {
+    "question": "Browse and summarize the latest regulatory news impacting crypto in the US from a reputable news site.",
+    "expected_tools": [
+      "TokenMetrics.Web_Browser"
+    ]
+  },
+  {
+    "question": "What are the latest trends in international trade finance?",
+    "expected_tools": [
+      "TradeAgent.Knowledge_Search"
+    ]
+  },
+  {
+    "question": "How do I apply for a Letter of Credit for an export transaction?",
+    "expected_tools": [
+      "TradeAgent.Financing"
+    ]
+  },
+  {
+    "question": "What documents are required to export machinery to Germany?",
+    "expected_tools": [
+      "TradeAgent.Customs_Declaration"
+    ]
+  },
+  {
+    "question": "Can you generate a sample international sales contract for exporting goods to the US?",
+    "expected_tools": [
+      "TradeAgent.International_Trade_Contract"
+    ]
+  },
+  {
+    "question": "What are the main risks I should consider when exporting electronics to Africa, and how can these be mitigated?",
+    "expected_tools": [
+      "TradeAgent.Risk_Control"
+    ]
+  },
+  {
+    "question": "What is the current USD/CNY exchange rate and how can I hedge FX risk for my export contract?",
+    "expected_tools": [
+      "TradeAgent.Foreign_Exchange_Management"
+    ]
+  },
+  {
+    "question": "How do I resolve a dispute with a supplier over an undelivered shipment?",
+    "expected_tools": [
+      "TradeAgent.Dispute_Resolution"
+    ]
+  },
+  {
+    "question": "What is the capital of Spain?",
+    "expected_tools": [
+      "UnifAI.Ask"
+    ]
+  },
+  {
+    "question": "Describe what is happening in this uploaded photo.",
+    "expected_tools": [
+      "UnifAI.ImageDescription"
+    ]
+  },
+  {
+    "question": "How many people are present in this image?",
+    "expected_tools": [
+      "UnifAI.ImageQuestionAnswering"
+    ]
+  },
+  {
+    "question": "Extract all the text from this image of a page.",
+    "expected_tools": [
+      "UnifAI.OCR"
+    ]
+  },
+  {
+    "question": "Who are the signatories in this contract document?",
+    "expected_tools": [
+      "UnifAI.DocumentQA"
+    ]
+  },
+  {
+    "question": "Transcribe this voice memo to text.",
+    "expected_tools": [
+      "UnifAI.SpeechRecognition"
+    ]
+  },
+  {
+    "question": "Research the impact of quantum computing on financial markets, including recent developments and reputable web references.",
+    "expected_tools": [
+      "VCAgents.ResearchAgent"
+    ]
+  },
+  {
+    "question": "Find the work email and LinkedIn profile for Sarah Kim, a partner at Sequoia Capital.",
+    "expected_tools": [
+      "VCAgents.ContactAgent"
+    ]
+  },
+  {
+    "question": "List all Series B investments in health tech startups in the United States during 2023, summarizing key investors and recipient companies.",
+    "expected_tools": [
+      "VCAgents.VCProspectorAgent"
+    ]
+  },
+  {
+    "question": "Extract customer feedback from the most recent support email thread and update the CRM record for client ID #5892.",
+    "expected_tools": [
+      "VCAgents.CRMDataAgent"
+    ]
+  },
+  {
+    "question": "Summarize notable European AI startup funding events from the last quarter and suggest appropriate VC contacts for outreach.",
+    "expected_tools": [
+      "VCAgents.VCProspectorAgent",
+      "VCAgents.ContactAgent"
+    ]
+  },
+  {
+    "question": "How did NDVI values in eastern Bavaria change from 2000 to 2020 compared to the 1981-2000 reference period?",
+    "expected_tools": [
+      "Verodat.Map_Comparison_Tool_(MCT)",
+      "Verodat.Dataset_Metadata_API"
+    ]
+  },
+  {
+    "question": "List all available soil moisture raster datasets covering Lower Saxony for the years 2010–2022.",
+    "expected_tools": [
+      "Verodat.Dataset_Metadata_API"
+    ]
+  },
+  {
+    "question": "Calculate the monthly average precipitation and its anomaly for Munich in July 2015.",
+    "expected_tools": [
+      "Verodat.Statistics_and_Aggregation_API",
+      "Verodat.Dataset_Metadata_API"
+    ]
+  },
+  {
+    "question": "Visualize soil moisture anomalies in Upper Bavaria for June 2021 using a blue-red color ramp and download the clipped raster for a given polygon.",
+    "expected_tools": [
+      "Verodat.Dynamic_Map_Server",
+      "Verodat.Dataset_Metadata_API"
+    ]
+  },
+  {
+    "question": "Detect land cover changes between 1985 and 2015 in a specified polygonal region in Franconia.",
+    "expected_tools": [
+      "Verodat.Map_Comparison_Tool_(MCT)",
+      "Verodat.Dataset_Metadata_API"
+    ]
+  },
+  {
+    "question": "Extract a time series of NDVI values for a custom AOI in Brandenburg from 2012 to 2020.",
+    "expected_tools": [
+      "Verodat.Statistics_and_Aggregation_API",
+      "Verodat.Dataset_Metadata_API"
+    ]
+  },
+  {
+    "question": "What is the process ID of the current process?",
+    "expected_tools": [
+      "VideoDBDirector.pid"
+    ]
+  },
+  {
+    "question": "What is the current working directory of this process?",
+    "expected_tools": [
+      "VideoDBDirector.cwd"
+    ]
+  },
+  {
+    "question": "List all files and folders in the /tmp directory.",
+    "expected_tools": [
+      "VideoDBDirector.ls"
+    ]
+  },
+  {
+    "question": "Show all environment variables set for this process.",
+    "expected_tools": [
+      "VideoDBDirector.env"
+    ]
+  },
+  {
+    "question": "Get the file size and last modification time for video_metadata.csv.",
+    "expected_tools": [
+      "VideoDBDirector.stat"
+    ]
+  },
+  {
+    "question": "Is google.com reachable and what is the response time from the server?",
+    "expected_tools": [
+      "WaveSpeed.Ping"
+    ]
+  },
+  {
+    "question": "Show the traceroute from the server to example.com to identify where delays occur.",
+    "expected_tools": [
+      "WaveSpeed.Traceroute"
+    ]
+  },
+  {
+    "question": "What is the IP address and MX record for github.com?",
+    "expected_tools": [
+      "WaveSpeed.DNS_Lookup"
+    ]
+  },
+  {
+    "question": "Which ports are open on 192.168.1.100?",
+    "expected_tools": [
+      "WaveSpeed.Port_Scan"
+    ]
+  },
+  {
+    "question": "Get the registration and owner details for waveai.com.",
+    "expected_tools": [
+      "WaveSpeed.Whois"
+    ]
+  },
+  {
+    "question": "What is the geographic location and ISP of 8.8.8.8?",
+    "expected_tools": [
+      "WaveSpeed.GeoIP"
+    ]
+  },
+  {
+    "question": "What is the capital city of Japan?",
+    "expected_tools": [
+      "WayStation.Ask"
+    ]
+  },
+  {
+    "question": "Write a Python script to sort a list of numbers in ascending order.",
+    "expected_tools": [
+      "WayStation.Code"
+    ]
+  },
+  {
+    "question": "Find the latest news about space exploration.",
+    "expected_tools": [
+      "WayStation.Search"
+    ]
+  },
+  {
+    "question": "Summarize the key findings from this research article (provide URL or document).",
+    "expected_tools": [
+      "WayStation.Read"
+    ]
+  },
+  {
+    "question": "Debug this JavaScript code that isn't running properly.",
+    "expected_tools": [
+      "WayStation.Code"
+    ]
+  },
+  {
+    "question": "Extract the main arguments from this PDF file.",
+    "expected_tools": [
+      "WayStation.Read"
+    ]
+  },
+  {
+    "question": "Search for scholarly articles related to climate change.",
+    "expected_tools": [
+      "WayStation.Search"
+    ]
+  },
+  {
+    "question": "How does machine learning differ from traditional programming?",
+    "expected_tools": [
+      "WayStation.Ask"
+    ]
+  },
+  {
+    "question": "Store a user session token in Redis.",
+    "expected_tools": [
+      "YepCode.redis"
+    ]
+  },
+  {
+    "question": "Retrieve all user profiles with the status 'active' from MongoDB.",
+    "expected_tools": [
+      "YepCode.mongodb"
+    ]
+  },
+  {
+    "question": "Delete a key named 'temporary_cache' from Redis.",
+    "expected_tools": [
+      "YepCode.redis"
+    ]
+  },
+  {
+    "question": "Send a welcome email to a new user using SMTP.",
+    "expected_tools": [
+      "YepCode.smtp"
+    ]
+  },
+  {
+    "question": "Trigger a webhook to notify a third-party service when an order is completed.",
+    "expected_tools": [
+      "YepCode.webhook"
+    ]
+  },
+  {
+    "question": "Send a message with order details to the 'orders' RabbitMQ queue.",
+    "expected_tools": [
+      "YepCode.rabbitmq"
+    ]
+  },
+  {
+    "question": "Consume messages from the 'notifications' RabbitMQ queue.",
+    "expected_tools": [
+      "YepCode.rabbitmq"
+    ]
+  },
+  {
+    "question": "Post JSON-encoded order data to an external REST API endpoint.",
+    "expected_tools": [
+      "YepCode.rest"
+    ]
+  },
+  {
+    "question": "Update the email address of a user in MongoDB.",
+    "expected_tools": [
+      "YepCode.mongodb"
+    ]
+  },
+  {
+    "question": "Create an endpoint to receive GitHub webhook notifications.",
+    "expected_tools": [
+      "YepCode.webhook"
+    ]
+  },
+  {
+    "question": "Does this repository use GitHub Actions for its continuous integration or CI/CD workflows?",
+    "expected_tools": [
+      "OpsLevel.actions/github_actions"
+    ]
+  },
+  {
+    "question": "Which continuous integration tools are configured in this codebase, such as Travis CI, CircleCI, GitHub Actions, or Jenkins?",
+    "expected_tools": [
+      "OpsLevel.code/ci"
+    ]
+  },
+  {
+    "question": "Does the repository have automated tests and which test frameworks are detected?",
+    "expected_tools": [
+      "OpsLevel.code/test"
+    ]
+  },
+  {
+    "question": "Is there a license file present in this repository, and if so, what type of open source license does it use?",
+    "expected_tools": [
+      "OpsLevel.code/license"
+    ]
+  },
+  {
+    "question": "Does the repository include a README file, and is the documentation sufficient for new users to onboard?",
+    "expected_tools": [
+      "OpsLevel.docs/readme"
+    ]
+  },
+  {
+    "question": "Is there a CONTRIBUTING guide present that details how new contributors should engage with the project?",
+    "expected_tools": [
+      "OpsLevel.docs/contributing"
+    ]
+  },
+  {
+    "question": "Is CodeQL static analysis security scanning configured in this repository?",
+    "expected_tools": [
+      "OpsLevel.security/codeql"
+    ]
+  },
+  {
+    "question": "Run the provided SQL script to update customer data in the Teradata database.",
+    "expected_tools": [
+      "Teradata.td_mcp_sqlrunner"
+    ]
+  },
+  {
+    "question": "Schedule a daily backup for the financial database and provide the latest backup status.",
+    "expected_tools": [
+      "Teradata.td_mcp_backuprestore"
+    ]
+  },
+  {
+    "question": "Perform a full system health check and report any detected anomalies in resource usage.",
+    "expected_tools": [
+      "Teradata.td_mcp_healthcheck"
+    ]
+  },
+  {
+    "question": "Filter the system logs for the past 24 hours to identify any critical error messages.",
+    "expected_tools": [
+      "Teradata.td_mcp_logs"
+    ]
+  },
+  {
+    "question": "List all users with admin roles and review the last login activity for each.",
+    "expected_tools": [
+      "Teradata.td_mcp_useradmin"
+    ]
+  },
+  {
+    "question": "Restore the sales database from the snapshot created last week.",
+    "expected_tools": [
+      "Teradata.td_mcp_backuprestore"
+    ]
+  },
+  {
+    "question": "Add a new user to the analytics database with read-only permissions.",
+    "expected_tools": [
+      "Teradata.td_mcp_useradmin"
+    ]
+  },
+  {
+    "question": "Search logs for unsuccessful login attempts over the past 7 days.",
+    "expected_tools": [
+      "Teradata.td_mcp_logs"
+    ]
+  },
+  {
+    "id": 1,
+    "question": "What public repositories under the Microsoft organization mention \"Copilot\" in their description?",
+    "expected_tools": [
+      "GitHub.SearchRepositories"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 2,
+    "question": "List all public repositories for user \"mark3labs\".",
+    "expected_tools": [
+      "GitHub.SearchRepositories"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 3,
+    "question": "Find repositories related to \"machine learning\" created in the last year.",
+    "expected_tools": [
+      "GitHub.SearchRepositories"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 4,
+    "question": "Show all repositories with the keyword \"metadata\" in the description.",
+    "expected_tools": [
+      "GitHub.SearchRepositories"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 5,
+    "question": "Retrieve the README.md of the repository azure/azure-sdk.",
+    "expected_tools": [
+      "GitHub.GetFileContents"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 6,
+    "question": "Fetch the contents of Dockerfile in microsoft/vscode.",
+    "expected_tools": [
+      "GitHub.GetFileContents"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 7,
+    "question": "What does the .gitignore file contain in the LangChain repo?",
+    "expected_tools": [
+      "GitHub.GetFileContents"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 8,
+    "question": "List the last 20 commits on the main branch of the Copilot repository.",
+    "expected_tools": [
+      "GitHub.ListCommits"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 9,
+    "question": "Show commit history for the branch dev in your repository.",
+    "expected_tools": [
+      "GitHub.ListCommits"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 10,
+    "question": "Retrieve details of commit 7a4e3df in the Copilot server codebase.",
+    "expected_tools": [
+      "GitHub.GetCommit"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 11,
+    "question": "Which files changed in commit 7a4e3df?",
+    "expected_tools": [
+      "GitHub.GetCommit"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 12,
+    "question": "Find code snippets in repositories that reference \"Pinecone\".",
+    "expected_tools": [
+      "GitHub.SearchCode"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 13,
+    "question": "Search for functions named PushFiles across all repos under your account.",
+    "expected_tools": [
+      "GitHub.SearchCode"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 14,
+    "question": "Identify occurrences of LangChain.run in public repositories.",
+    "expected_tools": [
+      "GitHub.SearchCode"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 15,
+    "question": "List all branches in the microsoft/azure-sdk repository.",
+    "expected_tools": [
+      "GitHub.ListBranches"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 16,
+    "question": "What branches are protected in the microsoft/vscode repo?",
+    "expected_tools": [
+      "GitHub.ListBranches"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 17,
+    "question": "Show remote and local branches for the Copilot server.",
+    "expected_tools": [
+      "GitHub.ListBranches"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 18,
+    "question": "List all tags for the GitHub-Copilot repository.",
+    "expected_tools": [
+      "GitHub.ListTags"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 19,
+    "question": "What is the latest tag in azure-sdk-for-js?",
+    "expected_tools": [
+      "GitHub.ListTags"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 20,
+    "question": "Get details on tag v1.2.3 in the Copilot repo.",
+    "expected_tools": [
+      "GitHub.GetTag"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 21,
+    "question": "Which branch is tag v1.2.3 linked to?",
+    "expected_tools": [
+      "GitHub.GetTag"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 22,
+    "question": "Create or update config.yaml on branch main in repo AI-Governance.",
+    "expected_tools": [
+      "GitHub.CreateOrUpdateFile"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 23,
+    "question": "Add a new README.md file to the project repo.",
+    "expected_tools": [
+      "GitHub.CreateOrUpdateFile"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 24,
+    "question": "Initialize a new private repository named MCP-Test.",
+    "expected_tools": [
+      "GitHub.CreateRepository"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 25,
+    "question": "Create a public repository named OpenAI-Examples.",
+    "expected_tools": [
+      "GitHub.CreateRepository"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 26,
+    "question": "Fork the microsoft/Copilot repository to your GitHub account.",
+    "expected_tools": [
+      "GitHub.ForkRepository"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 27,
+    "question": "Fork azure-sdk-for-python as a template in your organization.",
+    "expected_tools": [
+      "GitHub.ForkRepository"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 28,
+    "question": "Create a new branch feature/login from main.",
+    "expected_tools": [
+      "GitHub.CreateBranch"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 29,
+    "question": "Start a hotfix branch from the release branch.",
+    "expected_tools": [
+      "GitHub.CreateBranch"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 30,
+    "question": "Push local changes from branch dev-feature to GitHub.",
+    "expected_tools": [
+      "GitHub.PushFiles"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 31,
+    "question": "Show issue #24 in the Copilot repo.",
+    "expected_tools": [
+      "GitHub.GetIssue"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 32,
+    "question": "List all open issues in the microsoft/azure-cli repository.",
+    "expected_tools": [
+      "GitHub.ListIssues"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 33,
+    "question": "Search issues mentioning MCP across repositories.",
+    "expected_tools": [
+      "GitHub.SearchIssues"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 34,
+    "question": "Find issues with the label bug in Copilot.",
+    "expected_tools": [
+      "GitHub.SearchIssues"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 35,
+    "question": "What comments exist on issue #13?",
+    "expected_tools": [
+      "GitHub.GetIssueComments"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 36,
+    "question": "Add reproduction steps as a comment to issue #9.",
+    "expected_tools": [
+      "GitHub.AddIssueComment"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 37,
+    "question": "Create a new issue titled Memory leak in agent in your repo.",
+    "expected_tools": [
+      "GitHub.CreateIssue"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 38,
+    "question": "Update issue #18 to add the label wontfix.",
+    "expected_tools": [
+      "GitHub.UpdateIssue"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 39,
+    "question": "Assign Copilot agent to triage issue #44.",
+    "expected_tools": [
+      "GitHub.AssignCopilotToIssue"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 40,
+    "question": "Fetch details for issue #31, including title and body.",
+    "expected_tools": [
+      "GitHub.GetIssue"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 41,
+    "question": "Get pull request #89 in the azure-sdk repo.",
+    "expected_tools": [
+      "GitHub.GetPullRequest"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 42,
+    "question": "List all open pull requests in microsoft/vscode.",
+    "expected_tools": [
+      "GitHub.ListPullRequests"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 43,
+    "question": "Search for pull requests with label enhancement.",
+    "expected_tools": [
+      "GitHub.SearchPullRequests"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 44,
+    "question": "What files changed in PR #45?",
+    "expected_tools": [
+      "GitHub.GetPullRequestFiles"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 45,
+    "question": "Retrieve the diff view for PR #108.",
+    "expected_tools": [
+      "GitHub.GetPullRequestDiff"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 46,
+    "question": "Check if PR #77 can be merged without conflicts.",
+    "expected_tools": [
+      "GitHub.GetPullRequestStatus"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 47,
+    "question": "List review comments on PR #19.",
+    "expected_tools": [
+      "GitHub.GetPullRequestComments"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 48,
+    "question": "Who approved PR #92?",
+    "expected_tools": [
+      "GitHub.GetPullRequestReviews"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 49,
+    "question": "Merge PR #60 into main with squash commits.",
+    "expected_tools": [
+      "GitHub.MergePullRequest"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 50,
+    "question": "Create a draft pull request from dev to main.",
+    "expected_tools": [
+      "GitHub.CreatePullRequest"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 51,
+    "question": "Update the title of PR #34 to Refactor logging module.",
+    "expected_tools": [
+      "GitHub.UpdatePullRequest"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 52,
+    "question": "Request Copilot to review PR #101.",
+    "expected_tools": [
+      "GitHub.RequestCopilotReview"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 53,
+    "question": "Start a pending review on PR #41.",
+    "expected_tools": [
+      "GitHub.CreatePendingPullRequestReview"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 54,
+    "question": "Add an inline comment to the pending review for PR #22.",
+    "expected_tools": [
+      "GitHub.AddPullRequestReviewCommentToPendingReview"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 55,
+    "question": "Submit the pending review for PR #22.",
+    "expected_tools": [
+      "GitHub.SubmitPendingPullRequestReview"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 56,
+    "question": "List all workflows for the azure-sdk repo.",
+    "expected_tools": [
+      "GitHub.ListWorkflows"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 57,
+    "question": "Show recent workflow runs for the deploy workflow.",
+    "expected_tools": [
+      "GitHub.ListWorkflowRuns"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 58,
+    "question": "Get details for workflow run #32.",
+    "expected_tools": [
+      "GitHub.GetWorkflowRun"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 59,
+    "question": "Download logs for run #17.",
+    "expected_tools": [
+      "GitHub.GetWorkflowRunLogs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 60,
+    "question": "List jobs executed in workflow run #17.",
+    "expected_tools": [
+      "GitHub.ListWorkflowJobs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 61,
+    "question": "Show logs for the build-app job.",
+    "expected_tools": [
+      "GitHub.GetJobLogs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 62,
+    "question": "List artifacts from workflow run #20.",
+    "expected_tools": [
+      "GitHub.ListWorkflowRunArtifacts"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 63,
+    "question": "Trigger the deploy workflow manually.",
+    "expected_tools": [
+      "GitHub.RunWorkflow"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 64,
+    "question": "Retry only the failed jobs in workflow run #25.",
+    "expected_tools": [
+      "GitHub.RerunFailedJobs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 65,
+    "question": "Cancel the currently running backup workflow.",
+    "expected_tools": [
+      "GitHub.CancelWorkflowRun"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 66,
+    "question": "List all code scanning alerts in microsoft/vscode.",
+    "expected_tools": [
+      "GitHub.ListCodeScanningAlerts"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 67,
+    "question": "Get alert #12 details from code scanning in the Copilot repo.",
+    "expected_tools": [
+      "GitHub.GetCodeScanningAlert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 68,
+    "question": "How many security alerts exist in azure-sdk?",
+    "expected_tools": [
+      "GitHub.ListCodeScanningAlerts"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 69,
+    "question": "Show buffer overflow findings for code scanning.",
+    "expected_tools": [
+      "GitHub.GetCodeScanningAlert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 70,
+    "question": "Fetch metadata for alert #15 from code scanning.",
+    "expected_tools": [
+      "GitHub.GetCodeScanningAlert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 71,
+    "question": "List all secret scanning alerts in your repo.",
+    "expected_tools": [
+      "GitHub.ListSecretScanningAlerts"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 72,
+    "question": "Retrieve details for secret scanning alert #99.",
+    "expected_tools": [
+      "GitHub.GetSecretScanningAlert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 73,
+    "question": "Are any API keys exposed in azure-sdk?",
+    "expected_tools": [
+      "GitHub.ListSecretScanningAlerts"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 74,
+    "question": "Show the context of secret alert #42.",
+    "expected_tools": [
+      "GitHub.GetSecretScanningAlert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 75,
+    "question": "How many leaks detected by GitHub secret scanning?",
+    "expected_tools": [
+      "GitHub.ListSecretScanningAlerts"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 76,
+    "question": "List your current GitHub notifications.",
+    "expected_tools": [
+      "GitHub.ListNotifications"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 77,
+    "question": "Get details for notification #5.",
+    "expected_tools": [
+      "GitHub.GetNotificationDetails"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 78,
+    "question": "Dismiss notification for PR #32.",
+    "expected_tools": [
+      "GitHub.DismissNotification"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 79,
+    "question": "Mark all notifications as read.",
+    "expected_tools": [
+      "GitHub.MarkAllNotificationsRead"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 80,
+    "question": "Subscribe to updates on issue #14.",
+    "expected_tools": [
+      "GitHub.ManageNotificationSubscription"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 81,
+    "question": "Search for GitHub users with “AI” in their bio.",
+    "expected_tools": [
+      "GitHub.SearchUsers"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 82,
+    "question": "Find details for user “mark3labs.”",
+    "expected_tools": [
+      "GitHub.SearchUsers"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 83,
+    "question": "Search for organizations working on Copilot projects.",
+    "expected_tools": [
+      "GitHub.SearchOrgs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 84,
+    "question": "Find GitHub orgs related to “LangChain Labs.”",
+    "expected_tools": [
+      "GitHub.SearchOrgs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 85,
+    "question": "Search for users with keyword “engineer” in their profile.",
+    "expected_tools": [
+      "GitHub.SearchUsers"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 86,
+    "question": "Who am I authenticated as in this GitHub session?",
+    "expected_tools": [
+      "GitHub.GetMe"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 87,
+    "question": "What is my GitHub username?",
+    "expected_tools": [
+      "GitHub.GetMe"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 88,
+    "question": "Retrieve my profile metadata.",
+    "expected_tools": [
+      "GitHub.GetMe"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 89,
+    "question": "Which permissions does the authenticated user have?",
+    "expected_tools": [
+      "GitHub.GetMe"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 90,
+    "question": "Get the current user’s email from GitHub context.",
+    "expected_tools": [
+      "GitHub.GetMe"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 91,
+    "question": "What GitHub toolsets are available for dynamic enabling?",
+    "expected_tools": [
+      "GitHub.ListAvailableToolsets"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 92,
+    "question": "Show all tools grouped by toolset.",
+    "expected_tools": [
+      "GitHub.GetToolsetsTools"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 93,
+    "question": "Enable the “issues” toolset at runtime.",
+    "expected_tools": [
+      "GitHub.EnableToolset"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 94,
+    "question": "Discover dynamic tool groups that can be activated.",
+    "expected_tools": [
+      "GitHub.ListAvailableToolsets"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 95,
+    "question": "List tools in the “actions” toolset.",
+    "expected_tools": [
+      "GitHub.GetToolsetsTools"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 96,
+    "question": "Activate the “notifications” toolset dynamically.",
+    "expected_tools": [
+      "GitHub.EnableToolset"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 97,
+    "question": "What dynamic toolsets exist for secret protection?",
+    "expected_tools": [
+      "GitHub.ListAvailableToolsets"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 98,
+    "question": "Display tools within the “repos” dynamic group.",
+    "expected_tools": [
+      "GitHub.GetToolsetsTools"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 99,
+    "question": "Enable the “code_security” toolset for scanning.",
+    "expected_tools": [
+      "GitHub.EnableToolset"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 100,
+    "question": "List all potentially activatable toolsets for advanced workflows.",
+    "expected_tools": [
+      "GitHub.ListAvailableToolsets"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 101,
+    "question": "List all App Configuration accounts available in the subscription.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-account-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 102,
+    "question": "Show all key-values in the App Configuration named 'ProdConfig'.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-kv-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 103,
+    "question": "Retrieve the value of the 'AppTheme' key.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-kv-show"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 104,
+    "question": "Set the 'LogLevel' key to 'Verbose'.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-kv-set"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 105,
+    "question": "Delete the 'DeprecatedSetting' key from configuration.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-kv-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 106,
+    "question": "Lock the 'EnvironmentMode' key to prevent edits.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-kv-lock"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 7,
+    "question": "Unlock the 'MaintenanceFlag' key to allow updates.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-kv-unlock"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 8,
+    "question": "Compare the values of 'FeatureToggleA' and 'FeatureToggleB' keys.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-kv-show",
+      "Azure.azmcp-appconfig-kv-show"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 9,
+    "question": "List all Cosmos DB accounts in the resource group 'rg-prod'.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-account-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 10,
+    "question": "Show databases under the 'prod-cosmos' account.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 11,
+    "question": "List containers in the 'analytics-db' database.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-container-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 12,
+    "question": "Query user profiles from the 'users' container.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-container-item-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 13,
+    "question": "Insert a new telemetry record into the 'logs' container.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-container-item-insert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 14,
+    "question": "Delete expired token items from the 'sessions' container.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-container-item-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 15,
+    "question": "Count the number of documents in the 'orders' container.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-container-item-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 16,
+    "question": "Fetch all items where 'status' equals 'active' from the 'clients' container.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-container-item-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 17,
+    "question": "Migrate documents from container 'temp-data' to 'archive-data'.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-container-item-query",
+      "Azure.azmcp-cosmos-database-container-item-insert",
+      "Azure.azmcp-cosmos-database-container-item-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 18,
+    "question": "Preview the schema of a document in the 'config' container.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-container-item-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 19,
+    "question": "List all Blob Storage accounts under subscription.",
+    "expected_tools": [
+      "Azure.azmcp-storage-account-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 20,
+    "question": "Display containers in the 'backup-container' Storage account.",
+    "expected_tools": [
+      "Azure.azmcp-storage-container-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 21,
+    "question": "List blobs in the 'archive-container'.",
+    "expected_tools": [
+      "Azure.azmcp-storage-blob-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 22,
+    "question": "Download the 'app.log' blob from 'logs' container.",
+    "expected_tools": [
+      "Azure.azmcp-storage-blob-download"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 23,
+    "question": "Upload 'report.pdf' to the 'reports' container.",
+    "expected_tools": [
+      "Azure.azmcp-storage-blob-upload"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 24,
+    "question": "Delete the 'debug.log' blob from 'logs'.",
+    "expected_tools": [
+      "Azure.azmcp-storage-blob-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 25,
+    "question": "Download 'data.csv' with SAS token generation via CLI.",
+    "expected_tools": [
+      "Azure.azmcp-storage-blob-download",
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 26,
+    "question": "Copy 'archive.zip' blob from container 'temp' to 'archive' using CLI.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 27,
+    "question": "Retrieve metadata of 'images/photo.png' blob.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 28,
+    "question": "Set a blob tier to 'Archive' for 'bigdata.bak'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 29,
+    "question": "Run KQL log query to find error logs from yesterday.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-logs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 30,
+    "question": "Query CPU usage metrics for 'AppService' over the last 24 hours.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-metrics"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 31,
+    "question": "Find login failures in the past 24 hours via log query.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-logs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 32,
+    "question": "Get memory usage metrics for the storage account.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-metrics"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 33,
+    "question": "List all failed requests count from logs.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-logs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 34,
+    "question": "Compare CPU and memory usage for 'VM01' in the last week.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-metrics",
+      "Azure.azmcp-monitor-query-metrics"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 35,
+    "question": "Retrieve disk I/O metrics for 'DBServer'.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-metrics"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 36,
+    "question": "Filter logs for timeout errors in 'FunctionApp'.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-logs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 37,
+    "question": "Estimate cost of Azure Monitor data ingestion last month.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-metrics"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 38,
+    "question": "Stream all logs where 'severity' equals 'Critical'.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-logs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 39,
+    "question": "List all keys stored in Key Vault 'prod-kv'.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 40,
+    "question": "Retrieve metadata for key 'SignKey'.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-get"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 41,
+    "question": "Fetch the value of key 'EncryptionKeyId'.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-get"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 42,
+    "question": "Create a new RSA key named 'NewRSAKey'.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-create"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 43,
+    "question": "Generate an AES key for encryption named 'AESKey01'.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-create"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 44,
+    "question": "Delete the key 'DeprecatedKey' from the vault.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 45,
+    "question": "Rotate the key 'SignKey' to a new version.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-create"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 46,
+    "question": "Backup the key 'MyKey' to secure storage.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 47,
+    "question": "Restore a key from backup into 'prod-kv'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 48,
+    "question": "List only RSA keys in the vault.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 49,
+    "question": "List all AI Search services in West US.",
+    "expected_tools": [
+      "Azure.azmcp-search-service-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 50,
+    "question": "Show indexes in the 'LegalSearch' service.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 51,
+    "question": "Run search query for contracts tagged NDA.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 52,
+    "question": "Find policies labeled '2024-HIPAA'.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 53,
+    "question": "Create an index for product catalog named 'product-index'.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-create"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 54,
+    "question": "Build a new index for resume search named 'resume-index'.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-create"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 55,
+    "question": "Delete the legacy index 'dev-test' from AI Search.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 56,
+    "question": "Update the 'product-index' with new mapping.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 57,
+    "question": "List all indexes across all search services.",
+    "expected_tools": [
+      "Azure.azmcp-search-service-list",
+      "Azure.azmcp-search-index-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 58,
+    "question": "Retrieve document count from 'resume-index'.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 59,
+    "question": "List all Kusto clusters in subscription.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-cluster-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 60,
+    "question": "Show databases in cluster 'telemetry-cluster'.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-database-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 61,
+    "question": "Run Kusto query to find error logs from Data Explorer.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 62,
+    "question": "Count failed requests by region in Kusto.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 63,
+    "question": "Export query results to CSV from Kusto.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 64,
+    "question": "Find the top 10 slowest queries in last 7 days.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 65,
+    "question": "List all tables in Kusto database 'analytics'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 66,
+    "question": "Visualize time series of CPU metrics via Kusto query.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 67,
+    "question": "List PostgreSQL servers in finance subscription.",
+    "expected_tools": [
+      "Azure.azmcp-postgres-server-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 68,
+    "question": "Show all databases on server 'pg-core'.",
+    "expected_tools": [
+      "Azure.azmcp-postgres-database-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 69,
+    "question": "Run SQL query: SELECT * FROM users WHERE active=true.",
+    "expected_tools": [
+      "Azure.azmcp-postgres-table-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 70,
+    "question": "Get top 10 customers by revenue from 'salesdb'.",
+    "expected_tools": [
+      "Azure.azmcp-postgres-table-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 71,
+    "question": "Backup the 'reports' database to storage.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 72,
+    "question": "Restore 'reports' database from backup.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 73,
+    "question": "List schemas in the 'finance' database.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 74,
+    "question": "Count rows in 'transactions' table where amount > 1000.",
+    "expected_tools": [
+      "Azure.azmcp-postgres-table-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 75,
+    "question": "List all Service Bus namespaces in the subscription.",
+    "expected_tools": [
+      "Azure.azmcp-servicebus-namespace-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 76,
+    "question": "Show queues in namespace 'prod-sb'.",
+    "expected_tools": [
+      "Azure.azmcp-servicebus-queue-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 77,
+    "question": "Send a 'Hello World' message to the 'alerts' queue.",
+    "expected_tools": [
+      "Azure.azmcp-servicebus-message-send"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 78,
+    "question": "Receive the next 5 messages from 'alert-queue'.",
+    "expected_tools": [
+      "Azure.azmcp-servicebus-message-receive"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 79,
+    "question": "Purge all messages in 'temp-queue'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 80,
+    "question": "Peek messages without removing from 'alerts'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 81,
+    "question": "Schedule a message to 'scheduled-queue' for tomorrow.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 82,
+    "question": "Get queue metadata for 'order-queue'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 83,
+    "question": "List resource groups in the 'West US' subscription.",
+    "expected_tools": [
+      "Azure.azmcp-resourcegroup-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 84,
+    "question": "Show all Azure subscriptions available.",
+    "expected_tools": [
+      "Azure.azmcp-subscription-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 85,
+    "question": "Check if resource group 'rg-test' exists.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 86,
+    "question": "List resources in resource group 'rg-prod'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 87,
+    "question": "List all tagged resource groups with tag 'env=prod'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 88,
+    "question": "Count resource groups per region.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 89,
+    "question": "Delete resource group 'rg-old'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 90,
+    "question": "Lock resource group 'rg-prod' from deletion.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 91,
+    "question": "Run 'az vm list' to display virtual machines.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 92,
+    "question": "Execute 'az deployment group create' for ARM template.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 93,
+    "question": "List available locations for resources using CLI.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 94,
+    "question": "Show help for 'az storage account create'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 95,
+    "question": "Run an interactive shell command 'bash' in Azure Cloud Shell.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 96,
+    "question": "Execute any valid Azure CLI command, such as 'az group show'.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 97,
+    "question": "Query error logs in Azure Monitor and store the results in a Cosmos DB container.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-logs",
+      "Azure.azmcp-cosmos-database-container-item-insert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 98,
+    "question": "Retrieve all keys from Key Vault and save them as key-value pairs in App Configuration.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-list",
+      "Azure.azmcp-appconfig-kv-set"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 99,
+    "question": "List all blobs in storage, then log the count via Azure Monitor metrics.",
+    "expected_tools": [
+      "Azure.azmcp-storage-blob-list",
+      "Azure.azmcp-monitor-query-metrics"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 100,
+    "question": "Run a Kusto query, then export the result to a Blob Storage container.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-query",
+      "Azure.azmcp-storage-blob-upload"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 201,
+    "question": "Open the file named 'main.py' from the project root.",
+    "expected_tools": [
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 202,
+    "question": "Search for the term 'database connection' across the entire workspace.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 203,
+    "question": "Run the command 'npm install' in the terminal.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 204,
+    "question": "Install the Prettier extension for formatting support.",
+    "expected_tools": [
+      "VSCode.InstallExtension"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 205,
+    "question": "Toggle a breakpoint at the current line in the editor.",
+    "expected_tools": [
+      "VSCode.ToggleBreakpoint"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 206,
+    "question": "List all extensions currently installed in VSCode.",
+    "expected_tools": [
+      "VSCode.ListExtensions"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 207,
+    "question": "Change the theme of the editor to 'Dark+ (default dark)'.",
+    "expected_tools": [
+      "VSCode.ChangeTheme"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 208,
+    "question": "Start a debug session for the current Python project.",
+    "expected_tools": [
+      "VSCode.StartDebugSession"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 209,
+    "question": "Format the currently open document according to default settings.",
+    "expected_tools": [
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 210,
+    "question": "Peek at the definition of the 'handleRequest' function.",
+    "expected_tools": [
+      "VSCode.PeekDefinition"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 211,
+    "question": "Rename the 'apiService' symbol across all usages.",
+    "expected_tools": [
+      "VSCode.RenameSymbol"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 212,
+    "question": "Enable Zen Mode for a distraction-free editing experience.",
+    "expected_tools": [
+      "VSCode.ToggleZenMode"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 213,
+    "question": "Search for all usages of the variable 'userData' in the workspace.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 214,
+    "question": "Install the Python extension published by Microsoft.",
+    "expected_tools": [
+      "VSCode.InstallExtension"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 215,
+    "question": "Open a file by fuzzy-matching 'config.json'.",
+    "expected_tools": [
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 216,
+    "question": "Apply formatting to the currently open HTML file.",
+    "expected_tools": [
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 217,
+    "question": "Run the command 'pytest' in the terminal.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 218,
+    "question": "Start debugging the Node.js server script.",
+    "expected_tools": [
+      "VSCode.StartDebugSession"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 219,
+    "question": "Toggle Zen Mode off to return to default layout.",
+    "expected_tools": [
+      "VSCode.ToggleZenMode"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 220,
+    "question": "Change the color theme to 'Solarized Light'.",
+    "expected_tools": [
+      "VSCode.ChangeTheme"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 221,
+    "question": "Peek the definition of a class named 'UserModel'.",
+    "expected_tools": [
+      "VSCode.PeekDefinition"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 222,
+    "question": "Add a breakpoint to the first line of a test function.",
+    "expected_tools": [
+      "VSCode.ToggleBreakpoint"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 223,
+    "question": "Rename function 'calculateTax' to 'computeTax' everywhere.",
+    "expected_tools": [
+      "VSCode.RenameSymbol"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 224,
+    "question": "Install the 'Live Server' extension to preview web pages.",
+    "expected_tools": [
+      "VSCode.InstallExtension"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 225,
+    "question": "Find where 'config.PORT' is being set.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 226,
+    "question": "Run 'git status' via integrated terminal.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 227,
+    "question": "Reformat JavaScript file to comply with ESLint rules.",
+    "expected_tools": [
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 228,
+    "question": "View a list of all installed VSCode extensions.",
+    "expected_tools": [
+      "VSCode.ListExtensions"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 229,
+    "question": "Debug the currently open test file.",
+    "expected_tools": [
+      "VSCode.StartDebugSession"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 230,
+    "question": "Rename symbol 'MAX_RETRY' throughout the entire workspace.",
+    "expected_tools": [
+      "VSCode.RenameSymbol"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 231,
+    "question": "Install a VSCode extension by searching for 'Docker'.",
+    "expected_tools": [
+      "VSCode.InstallExtension"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 232,
+    "question": "Open the most recently modified file.",
+    "expected_tools": [
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 233,
+    "question": "Find the number of times 'logger.info' is called.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 234,
+    "question": "Add breakpoints to all test cases in 'auth.test.js'.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.ToggleBreakpoint"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 235,
+    "question": "Preview the definition of an enum named 'StatusCode'.",
+    "expected_tools": [
+      "VSCode.PeekDefinition"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 236,
+    "question": "Format a Markdown file with inconsistent spacing.",
+    "expected_tools": [
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 237,
+    "question": "Start debugging with breakpoints already in place.",
+    "expected_tools": [
+      "VSCode.StartDebugSession"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 238,
+    "question": "Change editor theme to 'Abyss'.",
+    "expected_tools": [
+      "VSCode.ChangeTheme"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 239,
+    "question": "Enable Zen Mode and hide minimap for focus.",
+    "expected_tools": [
+      "VSCode.ToggleZenMode"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 240,
+    "question": "Search the workspace for a comment containing 'TODO'.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 241,
+    "question": "Open the 'README.md' file from root directory.",
+    "expected_tools": [
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 242,
+    "question": "Install the ESLint plugin for JavaScript linting.",
+    "expected_tools": [
+      "VSCode.InstallExtension"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 243,
+    "question": "List plugins that assist with Python development.",
+    "expected_tools": [
+      "VSCode.ListExtensions"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 244,
+    "question": "Peek into the implementation of the 'fetchData' method.",
+    "expected_tools": [
+      "VSCode.PeekDefinition"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 245,
+    "question": "Replace all references of 'authToken' with 'accessToken'.",
+    "expected_tools": [
+      "VSCode.RenameSymbol"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 300,
+    "question": "Search for public GitHub repositories mentioning \"Copilot\" and open the README in VSCode.",
+    "expected_tools": [
+      "GitHub.SearchRepositories",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 301,
+    "question": "List all Azure App Configuration accounts and show their key-values in a Cosmos DB container.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-account-list",
+      "Azure.azmcp-appconfig-kv-list",
+      "Azure.azmcp-cosmos-database-container-item-insert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 302,
+    "question": "Find code references to \"Pinecone\" across GitHub repos and navigate to the files in VSCode.",
+    "expected_tools": [
+      "GitHub.SearchCode",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 303,
+    "question": "Retrieve the Dockerfile from a GitHub repo and format it in the editor.",
+    "expected_tools": [
+      "GitHub.GetFileContents",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 304,
+    "question": "List recent commits on the main branch of a repo and peek at the diff for the latest commit.",
+    "expected_tools": [
+      "GitHub.ListCommits",
+      "GitHub.GetCommit"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 305,
+    "question": "Fetch secrets scanning alerts from GitHub and save the alert list to Azure Blob Storage.",
+    "expected_tools": [
+      "GitHub.ListSecretScanningAlerts",
+      "Azure.azmcp-storage-blob-upload"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 306,
+    "question": "Search VSCode workspace for \"TODO\" and run a terminal command to create an issue in GitHub.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 307,
+    "question": "Open the Python project main file, start a debug session, and toggle a breakpoint on the first line.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.StartDebugSession",
+      "VSCode.ToggleBreakpoint"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 308,
+    "question": "List all Azure Storage accounts and download a specific blob to local workspace.",
+    "expected_tools": [
+      "Azure.azmcp-storage-account-list",
+      "Azure.azmcp-storage-blob-download"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 309,
+    "question": "Search for pull requests labeled \"enhancement\" and request a Copilot review for each.",
+    "expected_tools": [
+      "GitHub.SearchPullRequests",
+      "GitHub.RequestCopilotReview"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 310,
+    "question": "Query Azure Monitor logs for errors, then insert the results into a PostgreSQL table.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-logs",
+      "Azure.azmcp-postgres-table-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 311,
+    "question": "List VSCode extensions, then install the Prettier extension if missing.",
+    "expected_tools": [
+      "VSCode.ListExtensions",
+      "VSCode.InstallExtension"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 312,
+    "question": "Create a new branch in GitHub, open VSCode to that branch, and format the workspace.",
+    "expected_tools": [
+      "GitHub.CreateBranch",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 313,
+    "question": "Fetch all code scanning alerts, filter for high severity, and rename the symbol \"vuln\" to \"issue\" in VSCode.",
+    "expected_tools": [
+      "GitHub.ListCodeScanningAlerts",
+      "VSCode.RenameSymbol"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 314,
+    "question": "List Kusto clusters, run a query for request failures, and save the output to a file in VSCode.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-cluster-list",
+      "Azure.azmcp-kusto-query",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 315,
+    "question": "Search for issues mentioning \"bug\" in GitHub, then list their comments.",
+    "expected_tools": [
+      "GitHub.SearchIssues",
+      "GitHub.GetIssueComments"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 316,
+    "question": "Retrieve a pull request diff, apply formatting, and commit updates.",
+    "expected_tools": [
+      "GitHub.GetPullRequestDiff",
+      "VSCode.FormatDocument",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 317,
+    "question": "List resource groups in Azure, then query CPU metrics for each VM in those groups.",
+    "expected_tools": [
+      "Azure.azmcp-resourcegroup-list",
+      "Azure.azmcp-monitor-query-metrics"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 318,
+    "question": "Open the workspace settings, change the theme to Solarized, and enable Zen Mode.",
+    "expected_tools": [
+      "VSCode.ChangeTheme",
+      "VSCode.ToggleZenMode"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 319,
+    "question": "Search Azure Search indexes for \"NDA\", then download results to Blob Storage.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-query",
+      "Azure.azmcp-storage-blob-upload"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 320,
+    "question": "List all pull requests, mergeable status, and list associated tags.",
+    "expected_tools": [
+      "GitHub.ListPullRequests",
+      "GitHub.GetPullRequestStatus",
+      "GitHub.ListTags"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 321,
+    "question": "Run a VSCode terminal command to execute 'npm test' and capture output in Azure App Configuration.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand",
+      "Azure.azmcp-appconfig-kv-set"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 322,
+    "question": "Search for a GitHub user, fetch their public repos, and open their profile in VSCode terminal.",
+    "expected_tools": [
+      "GitHub.SearchUsers",
+      "GitHub.SearchRepositories",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 323,
+    "question": "List all Azure Key Vault keys, then retrieve each key metadata.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-list",
+      "Azure.azmcp-keyvault-key-get"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 324,
+    "question": "Show notifications in GitHub, dismiss irrelevant ones, and mark remaining as read.",
+    "expected_tools": [
+      "GitHub.ListNotifications",
+      "GitHub.DismissNotification",
+      "GitHub.MarkAllNotificationsRead"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 325,
+    "question": "Open a file by fuzzy search for \"config.yaml\" and rename the symbol \"env\" to \"environment\".",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.RenameSymbol"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 326,
+    "question": "List workflows in GitHub, rerun only failed jobs, and fetch logs for a specific job.",
+    "expected_tools": [
+      "GitHub.ListWorkflowRuns",
+      "GitHub.RerunFailedJobs",
+      "GitHub.GetJobLogs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 327,
+    "question": "Query Azure Cosmos DB for documents older than 30 days, then delete them.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-container-item-query",
+      "Azure.azmcp-cosmos-database-container-item-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 328,
+    "question": "Search code for \"LangChain.run\", list branches, and open relevant branches in VSCode.",
+    "expected_tools": [
+      "GitHub.SearchCode",
+      "GitHub.ListBranches",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 329,
+    "question": "Install ESLint, list all installed extensions, and format the project code.",
+    "expected_tools": [
+      "VSCode.InstallExtension",
+      "VSCode.ListExtensions",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 330,
+    "question": "Create an Azure Service Bus queue, send a test message, then receive it.",
+    "expected_tools": [
+      "Azure.azmcp-servicebus-queue-list",
+      "Azure.azmcp-servicebus-message-send",
+      "Azure.azmcp-servicebus-message-receive"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 331,
+    "question": "Search GitHub orgs for \"LangChain Labs\", list their repos, and fork one.",
+    "expected_tools": [
+      "GitHub.SearchOrgs",
+      "GitHub.SearchRepositories",
+      "GitHub.ForkRepository"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 332,
+    "question": "Open the terminal, run 'az vm list', and format the JSON output in VSCode.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 333,
+    "question": "List tags for a GitHub repo, get latest tag details, then create a release branch.",
+    "expected_tools": [
+      "GitHub.ListTags",
+      "GitHub.GetTag",
+      "GitHub.CreateBranch"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 334,
+    "question": "Query Azure Monitor metrics for memory usage, then visualize results in VSCode.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-metrics",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 335,
+    "question": "Retrieve pull request comments, add an inline comment on line 42, and submit review.",
+    "expected_tools": [
+      "GitHub.GetPullRequestComments",
+      "GitHub.AddPullRequestReviewCommentToPendingReview",
+      "GitHub.SubmitPendingPullRequestReview"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 336,
+    "question": "List all workflows artifacts, download one, and open it locally.",
+    "expected_tools": [
+      "GitHub.ListWorkflowRunArtifacts",
+      "GitHub.DownloadWorkflowRunArtifact",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 337,
+    "question": "Search Azure AI Search for \"HIPAA\" documents and list matching indexes.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-query",
+      "Azure.azmcp-search-index-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 338,
+    "question": "Open the GitHub Actions logs for a failed run and cancel the running workflow.",
+    "expected_tools": [
+      "GitHub.GetWorkflowRunLogs",
+      "GitHub.CancelWorkflowRun"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 339,
+    "question": "List PostgreSQL databases, run a schema query, and open results in VSCode.",
+    "expected_tools": [
+      "Azure.azmcp-postgres-database-list",
+      "Azure.azmcp-postgres-table-query",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 340,
+    "question": "Create or update a file in a GitHub repo, commit changes, and push them.",
+    "expected_tools": [
+      "GitHub.CreateOrUpdateFile",
+      "GitHub.PushFiles"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 341,
+    "question": "Search code for critical TODOs, list issues, and open issue #1 in VSCode terminal.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "GitHub.ListIssues",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 342,
+    "question": "List Key Vault keys, delete a deprecated key, and verify via list again.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-list",
+      "Azure.azmcp-keyvault-key-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 343,
+    "question": "Search users with \"AI\" in bio, fetch their repos, and clone one via terminal.",
+    "expected_tools": [
+      "GitHub.SearchUsers",
+      "GitHub.SearchRepositories",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 344,
+    "question": "Open a file, rename symbol \"oldName\" to \"newName\", and format document.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.RenameSymbol",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 345,
+    "question": "List Azure CLI commands help for storage account creation in the terminal.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 346,
+    "question": "Search GitHub code for regex patterns, then run tests via VSCode terminal.",
+    "expected_tools": [
+      "GitHub.SearchCode",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 347,
+    "question": "Peek definition of a function in VSCode, then commit updated docstring to GitHub.",
+    "expected_tools": [
+      "VSCode.PeekDefinition",
+      "GitHub.PushFiles"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 348,
+    "question": "List Azure Monitor log queries, run one, and insert results into App Configuration.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-logs",
+      "Azure.azmcp-appconfig-kv-set"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 349,
+    "question": "Retrieve pull request status, merge if clean, then delete the feature branch.",
+    "expected_tools": [
+      "GitHub.GetPullRequestStatus",
+      "GitHub.MergePullRequest",
+      "GitHub.DeleteBranch"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 350,
+    "question": "List extensions, install Python and Docker support, then reload VSCode window.",
+    "expected_tools": [
+      "VSCode.ListExtensions",
+      "VSCode.InstallExtension",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 351,
+    "question": "Search for security alerts in GitHub code scanning and mute a specific alert.",
+    "expected_tools": [
+      "GitHub.ListCodeScanningAlerts",
+      "GitHub.GetCodeScanningAlert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 352,
+    "question": "Query Kusto for transaction errors and upload the output to a Search index.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-query",
+      "Azure.azmcp-search-index-create"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 353,
+    "question": "Open the terminal, run 'git status', then list branches in VSCode.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand",
+      "GitHub.ListBranches"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 354,
+    "question": "List Azure subscriptions, switch to one, and list resource groups.",
+    "expected_tools": [
+      "Azure.azmcp-subscription-list",
+      "Azure.azmcp-resourcegroup-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 355,
+    "question": "Search workspace for deprecated API usage, then create GitHub issues for each occurrence.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "GitHub.CreateIssue"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 356,
+    "question": "Peek definition of a class, start debugging, and add breakpoints to constructor.",
+    "expected_tools": [
+      "VSCode.PeekDefinition",
+      "VSCode.StartDebugSession",
+      "VSCode.ToggleBreakpoint"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 357,
+    "question": "Retrieve secret scanning alerts, filter by exposed tokens, and delete offending files via VSCode.",
+    "expected_tools": [
+      "GitHub.ListSecretScanningAlerts",
+      "VSCode.OpenFile",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 358,
+    "question": "Search for Azure Service Bus namespaces, open a queue list, and send test messages.",
+    "expected_tools": [
+      "Azure.azmcp-servicebus-namespace-list",
+      "Azure.azmcp-servicebus-queue-list",
+      "Azure.azmcp-servicebus-message-send"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 359,
+    "question": "Open the current workspace folder list and close any unused folders.",
+    "expected_tools": [
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 360,
+    "question": "List GitHub notifications, mark all as read, and open VSCode Zen Mode.",
+    "expected_tools": [
+      "GitHub.ListNotifications",
+      "GitHub.MarkAllNotificationsRead",
+      "VSCode.ToggleZenMode"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 361,
+    "question": "List workflows for a repo, download the last artifact, and open in editor.",
+    "expected_tools": [
+      "GitHub.ListWorkflowRuns",
+      "GitHub.DownloadWorkflowRunArtifact",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 362,
+    "question": "Search Kusto for resource spikes, then push alerts to GitHub issues via CLI.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-query",
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 363,
+    "question": "List Azure Postgres servers, query all tables, and format results in VSCode.",
+    "expected_tools": [
+      "Azure.azmcp-postgres-server-list",
+      "Azure.azmcp-postgres-table-query",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 364,
+    "question": "Search for all Azure CLI commands referencing 'storage' and list their help outputs.",
+    "expected_tools": [
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 365,
+    "question": "Open the file 'index.html', rename title tag, and commit to GitHub.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.RenameSymbol",
+      "GitHub.CreateOrUpdateFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 366,
+    "question": "List GitHub dynamic toolsets, enable 'issues', and search for open issues.",
+    "expected_tools": [
+      "GitHub.ListAvailableToolsets",
+      "GitHub.EnableToolset",
+      "GitHub.ListIssues"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 367,
+    "question": "Run VSCode terminal command to install Azure CLI and list subscriptions.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand",
+      "Azure.azmcp-subscription-list"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 368,
+    "question": "List all GitHub branches, sync the current branch, and push changes.",
+    "expected_tools": [
+      "GitHub.ListBranches",
+      "GitHub.UpdatePullRequestBranch",
+      "GitHub.PushFiles"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 369,
+    "question": "Search the workspace for 'fetchData', peek its definition, and refactor name.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "VSCode.PeekDefinition",
+      "VSCode.RenameSymbol"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 370,
+    "question": "List Azure Key Vault keys, back them up via CLI, and lock each key.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-list",
+      "Azure.azmcp-cli-command-run",
+      "Azure.azmcp-keyvault-key-lock"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 371,
+    "question": "Search GitHub for repos tagged 'machine learning', list commits, and merge a PR.",
+    "expected_tools": [
+      "GitHub.SearchRepositories",
+      "GitHub.ListCommits",
+      "GitHub.MergePullRequest"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 372,
+    "question": "Open the launch configuration file, format JSON, and start a debug session.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.FormatDocument",
+      "VSCode.StartDebugSession"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 373,
+    "question": "Run a VSCode terminal command to seed the database, then query active users.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand",
+      "Azure.azmcp-postgres-table-query"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 374,
+    "question": "List secret scanning alerts, dismiss low-risk ones, and mark others in App Configuration.",
+    "expected_tools": [
+      "GitHub.ListSecretScanningAlerts",
+      "GitHub.DismissNotification",
+      "Azure.azmcp-appconfig-kv-set"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 375,
+    "question": "Search workspace for 'errorHandler', peek its definition, and commit improvements.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "VSCode.PeekDefinition",
+      "GitHub.PushFiles"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 376,
+    "question": "Fetch pull request files, format them, and run ESLint via terminal.",
+    "expected_tools": [
+      "GitHub.GetPullRequestFiles",
+      "VSCode.FormatDocument",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 377,
+    "question": "List workflows, cancel a stuck run, and rerun only its failed jobs.",
+    "expected_tools": [
+      "GitHub.ListWorkflowRuns",
+      "GitHub.CancelWorkflowRun",
+      "GitHub.RerunFailedJobs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 378,
+    "question": "Query Azure Monitor metrics for cost, then insert summary into Cosmos DB.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-metrics",
+      "Azure.azmcp-cosmos-database-container-item-insert"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 379,
+    "question": "Open the key vault policy file, format it, and push changes to GitHub.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.FormatDocument",
+      "GitHub.CreateOrUpdateFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 380,
+    "question": "Search for open VSCode issues in workspace, then create GitHub issues for each.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "GitHub.CreateIssue"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 381,
+    "question": "List Azure Search indexes, delete an obsolete one, and recreate with new schema.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-list",
+      "Azure.azmcp-search-index-delete",
+      "Azure.azmcp-search-index-create"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 382,
+    "question": "Search GitHub code for SQL injection patterns, open files, and fix vulnerabilities.",
+    "expected_tools": [
+      "GitHub.SearchCode",
+      "VSCode.OpenFile",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 383,
+    "question": "List all GitHub notifications, open the first in VSCode, and dismiss after review.",
+    "expected_tools": [
+      "GitHub.ListNotifications",
+      "VSCode.RunTerminalCommand",
+      "GitHub.DismissNotification"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 384,
+    "question": "Run a terminal command to install Python dependencies and start VSCode debugger.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand",
+      "VSCode.StartDebugSession"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 385,
+    "question": "List Azure Cosmos DB containers, query items, and delete expired entries.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-container-list",
+      "Azure.azmcp-cosmos-database-container-item-query",
+      "Azure.azmcp-cosmos-database-container-item-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 386,
+    "question": "Search workspace for \"import pandas\", peek definition, and run stats script.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "VSCode.PeekDefinition",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 387,
+    "question": "Fetch pull request review comments, add one more, and submit the review.",
+    "expected_tools": [
+      "GitHub.GetPullRequestReviews",
+      "GitHub.CreateAndSubmitPullRequestReview"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 388,
+    "question": "List storage containers, upload a backup, and verify via blob list.",
+    "expected_tools": [
+      "Azure.azmcp-storage-container-list",
+      "Azure.azmcp-storage-blob-upload",
+      "Azure.azmcp-storage-blob-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 389,
+    "question": "Open settings.json, change editor.fontSize to 14, and save.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 390,
+    "question": "Search GitHub for license files, open one, and format markdown.",
+    "expected_tools": [
+      "GitHub.SearchCode",
+      "VSCode.OpenFile",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 391,
+    "question": "List GitHub pull requests, create a pending review, and add inline comments.",
+    "expected_tools": [
+      "GitHub.ListPullRequests",
+      "GitHub.CreatePendingPullRequestReview",
+      "GitHub.AddPullRequestReviewCommentToPendingReview"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 392,
+    "question": "Query Azure Kusto for performance metrics, then download results as CSV.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-query",
+      "Azure.azmcp-cli-command-run"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 393,
+    "question": "Open the main configuration, rename symbol 'timeout' to 'requestTimeout', and format.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.RenameSymbol",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 394,
+    "question": "Search for Azure CLI 'vm start', run it in VSCode terminal, and confirm VM status.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 395,
+    "question": "List Azure Monitor logs, query for critical errors, and create GitHub issues.",
+    "expected_tools": [
+      "Azure.azmcp-monitor-query-logs",
+      "GitHub.CreateIssue"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 396,
+    "question": "List repositories, fork one, open it in VSCode, and create a new branch.",
+    "expected_tools": [
+      "GitHub.ListRepositories",
+      "GitHub.ForkRepository",
+      "GitHub.CreateBranch",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 397,
+    "question": "Open the terminal, install Azure Data Explorer extension, and list clusters.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand",
+      "Azure.azmcp-kusto-cluster-list"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 398,
+    "question": "Format the workspace codebase, run linter via terminal, and commit fixes.",
+    "expected_tools": [
+      "VSCode.FormatDocument",
+      "VSCode.RunTerminalCommand",
+      "GitHub.PushFiles"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 399,
+    "question": "List service bus namespaces, peek queue metadata, and toggle Zen Mode.",
+    "expected_tools": [
+      "Azure.azmcp-servicebus-namespace-list",
+      "Azure.azmcp-cli-command-run",
+      "VSCode.ToggleZenMode"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 400,
+    "question": "Search GitHub for 'vulnerability', get alerts, and delete vulnerable files in VSCode.",
+    "expected_tools": [
+      "GitHub.SearchCode",
+      "GitHub.GetCodeScanningAlert",
+      "VSCode.OpenFile",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 401,
+    "question": "Create a new GitHub repository named 'Telemetry-Dashboard' and push initial files from VSCode.",
+    "expected_tools": [
+      "GitHub.CreateRepository",
+      "GitHub.PushFiles",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 402,
+    "question": "Search for Azure blob storage accounts containing 'backup' and list their container contents.",
+    "expected_tools": [
+      "Azure.azmcp-storage-account-list",
+      "Azure.azmcp-storage-container-list",
+      "Azure.azmcp-storage-blob-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 403,
+    "question": "List all pull requests in a GitHub repo and open their modified files in VSCode.",
+    "expected_tools": [
+      "GitHub.ListPullRequests",
+      "GitHub.GetPullRequestFiles",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 404,
+    "question": "Open a README file in VSCode and format its markdown structure using editor settings.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 405,
+    "question": "List all PostgreSQL servers and run SQL queries on the 'finance' database.",
+    "expected_tools": [
+      "Azure.azmcp-postgres-server-list",
+      "Azure.azmcp-postgres-database-list",
+      "Azure.azmcp-postgres-table-query"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 406,
+    "question": "Start a debug session for the VSCode workspace and toggle breakpoints on function calls.",
+    "expected_tools": [
+      "VSCode.StartDebugSession",
+      "VSCode.ToggleBreakpoint"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 407,
+    "question": "Search GitHub issues with label 'security', assign Copilot to review the top 3.",
+    "expected_tools": [
+      "GitHub.SearchIssues",
+      "GitHub.AssignCopilotToIssue"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 408,
+    "question": "Query Kusto database for login failures and export to blob storage.",
+    "expected_tools": [
+      "Azure.azmcp-kusto-query",
+      "Azure.azmcp-storage-blob-upload"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 409,
+    "question": "Open the workspace file containing environment variables and rename 'API_KEY' to 'SERVICE_TOKEN'.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.RenameSymbol"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 410,
+    "question": "Create a new pull request, assign reviewers, and submit a review.",
+    "expected_tools": [
+      "GitHub.CreatePullRequest",
+      "GitHub.UpdatePullRequest",
+      "GitHub.CreateAndSubmitPullRequestReview"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 411,
+    "question": "List current workflow runs in GitHub and rerun any failed deployment jobs.",
+    "expected_tools": [
+      "GitHub.ListWorkflowRuns",
+      "GitHub.RerunFailedJobs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 412,
+    "question": "Install Python and Docker extensions and reload VSCode session.",
+    "expected_tools": [
+      "VSCode.InstallExtension",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 413,
+    "question": "Search in workspace for deprecated function and open its definition.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "VSCode.PeekDefinition"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 414,
+    "question": "List Azure AI Search services and indexes used for eDiscovery.",
+    "expected_tools": [
+      "Azure.azmcp-search-service-list",
+      "Azure.azmcp-search-index-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 415,
+    "question": "Open a folder in the VSCode workspace and list all files inside.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 416,
+    "question": "Retrieve details about a secret scanning alert and comment on the associated issue.",
+    "expected_tools": [
+      "GitHub.GetSecretScanningAlert",
+      "GitHub.AddIssueComment"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 417,
+    "question": "List Cosmos DB containers and delete any items with expired timestamps.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-container-list",
+      "Azure.azmcp-cosmos-database-container-item-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 418,
+    "question": "Format a YAML configuration file and push updates to GitHub.",
+    "expected_tools": [
+      "VSCode.FormatDocument",
+      "GitHub.PushFiles"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 419,
+    "question": "Search GitHub for repositories using LangChain and get README content of top 3.",
+    "expected_tools": [
+      "GitHub.SearchRepositories",
+      "GitHub.GetFileContents"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 420,
+    "question": "Start a terminal command to run 'az login' and list subscriptions.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand",
+      "Azure.azmcp-subscription-list"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 421,
+    "question": "Trigger a backup job workflow and view its status.",
+    "expected_tools": [
+      "GitHub.RunWorkflow",
+      "GitHub.GetWorkflowRun"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 422,
+    "question": "Rename a symbol in all TypeScript files and add breakpoints to changed lines.",
+    "expected_tools": [
+      "VSCode.RenameSymbol",
+      "VSCode.ToggleBreakpoint"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 423,
+    "question": "Create a new key in Azure Key Vault and show its metadata.",
+    "expected_tools": [
+      "Azure.azmcp-keyvault-key-create",
+      "Azure.azmcp-keyvault-key-get"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 424,
+    "question": "List Azure search indexes, delete the legacy one, and build a new one for product catalog.",
+    "expected_tools": [
+      "Azure.azmcp-search-index-list",
+      "Azure.azmcp-search-index-delete",
+      "Azure.azmcp-search-index-create"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 425,
+    "question": "Search the workspace for '404 handler' and view inline definition.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "VSCode.PeekDefinition"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 426,
+    "question": "Retrieve all comments from a GitHub issue and summarize them in editor.",
+    "expected_tools": [
+      "GitHub.GetIssueComments",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 427,
+    "question": "List storage blob files, download logs, and format in editor.",
+    "expected_tools": [
+      "Azure.azmcp-storage-blob-list",
+      "Azure.azmcp-storage-blob-download",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 428,
+    "question": "List service bus queues and send a diagnostic message to one of them.",
+    "expected_tools": [
+      "Azure.azmcp-servicebus-queue-list",
+      "Azure.azmcp-servicebus-message-send"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 429,
+    "question": "List tools grouped by GitHub toolset and enable the 'actions' group.",
+    "expected_tools": [
+      "GitHub.GetToolsetsTools",
+      "GitHub.EnableToolset"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 430,
+    "question": "Open the license file in the workspace and format it using Prettier.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 431,
+    "question": "Query Azure App Configuration for logging keys and update them to 'Verbose'.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-kv-list",
+      "Azure.azmcp-appconfig-kv-set"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 432,
+    "question": "Search the workspace for obsolete helper functions and delete related files.",
+    "expected_tools": [
+      "VSCode.SearchInWorkspace",
+      "VSCode.RunTerminalCommand"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 433,
+    "question": "Run a command to count test cases and create GitHub issues for missing coverage.",
+    "expected_tools": [
+      "VSCode.RunTerminalCommand",
+      "GitHub.CreateIssue"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 434,
+    "question": "Display all blob containers and delete obsolete storage files.",
+    "expected_tools": [
+      "Azure.azmcp-storage-container-list",
+      "Azure.azmcp-storage-blob-delete"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 435,
+    "question": "List GitHub branches and create a new one named 'feature-graphql'.",
+    "expected_tools": [
+      "GitHub.ListBranches",
+      "GitHub.CreateBranch"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 436,
+    "question": "Search for high-severity security alerts and format descriptions in Markdown.",
+    "expected_tools": [
+      "GitHub.ListCodeScanningAlerts",
+      "VSCode.OpenFile"
+    ],
+    "local_server": true
+  },
+  {
+    "id": 437,
+    "question": "Query App Configuration for feature flags and lock critical ones.",
+    "expected_tools": [
+      "Azure.azmcp-appconfig-kv-list",
+      "Azure.azmcp-appconfig-kv-lock"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 438,
+    "question": "List Cosmos DB database names and containers under each.",
+    "expected_tools": [
+      "Azure.azmcp-cosmos-database-list",
+      "Azure.azmcp-cosmos-container-list"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 439,
+    "question": "Search GitHub organizations for ones involved with OpenAI.",
+    "expected_tools": [
+      "GitHub.SearchOrgs"
+    ],
+    "local_server": false
+  },
+  {
+    "id": 440,
+    "question": "Open the main application file, rename 'initApp' to 'initializeApp', and format.",
+    "expected_tools": [
+      "VSCode.OpenFile",
+      "VSCode.RenameSymbol",
+      "VSCode.FormatDocument"
+    ],
+    "local_server": true
+  }
+]

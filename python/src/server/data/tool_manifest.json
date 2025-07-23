@@ -1,0 +1,25 @@
+[
+    {
+        "name": "get_mcp_tools",
+        "description": "Get relevant MCP tools for a given query through semantic matching.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            "query": {
+                "type": "string",
+                "description": "The query to be processed"
+                }
+            },
+            "required": ["query"]
+        }
+    },
+    {
+        "name": "get_router_status",
+        "description": "Get the current status and configuration of the tool router.",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [""]
+        }
+    }
+]

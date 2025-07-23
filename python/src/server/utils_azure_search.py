@@ -1,16 +1,18 @@
-import configparser, asyncio, logging, json, requests
+import re, configparser, logging, json
 from azure.search.documents import SearchClient
+from azure.search.documents.models import VectorizedQuery
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from openai import AzureOpenAI
-from typing import List, Optional
-from src.server.utils_core import Server, ToolSearchManager
+from typing import List, Dict, Any
+from utils_objects import Tool
 
 # Configuration variables from config.ini
 config = configparser.ConfigParser()
+# config.read('data/config.ini')
 config.read('python/src/server/data/config.ini')
 
 
-class AzureSearchManager(ToolSearchManager):
+class AzureSearchManager():
     """Manager for Azure Search and Azure OpenAI embedding operations."""
 
     def __init__(self):
@@ -18,6 +20,7 @@ class AzureSearchManager(ToolSearchManager):
         Initialize Azure Search and Azure OpenAI embedding clients.
         This constructor reads configuration from 'core_config.ini' and sets up the necessary clients.
         """
+        self.type = "remote"
         # Azure Foundry configuration
         self.azure_foundry_endpoint = config.get('AzureAI', 'AZURE_FOUNDARY_ENDPOINT')
         self.azure_embedding_model = config.get('AzureAI', 'AZURE_EMBEDDING_MODEL')
@@ -25,15 +28,11 @@ class AzureSearchManager(ToolSearchManager):
         self.azure_embedding_dimensions = config.getint('AzureAI', 'AZURE_EMBEDDING_DIMENSIONS', fallback=1536)
         self.azure_api_version = config.get('AzureAI', 'AZURE_API_VERSION')
 
-        # Set attributes expected by the base class
-        self.embedding_model = self.azure_embedding_model
-        self.embedding_dimensions = self.azure_embedding_dimensions
-
         # Azure Search configuration
         self.azure_search_endpoint = config.get('AzureSearch', 'AZURE_SEARCH_ENDPOINT')
         self.azure_search_index_name = config.get('AzureSearch', 'AZURE_SEARCH_INDEX_NAME')
 
-        # Azure authentication
+        # Azure Auth configuration
         credential = DefaultAzureCredential()
         token_provider = get_bearer_token_provider(credential, "https://cognitiveservices.azure.com/.default")
 
@@ -45,40 +44,103 @@ class AzureSearchManager(ToolSearchManager):
             azure_ad_token_provider=token_provider,
         )
 
-        # Initialize tool search client
+        # Initialize Azure Search client
         self.azure_search_client = SearchClient(
             endpoint=self.azure_search_endpoint,
             index_name=self.azure_search_index_name,
             credential=credential
         )
-        super().__init__(embedding_client=self.embedding_client, search_client=self.azure_search_client)
 
 
-    async def update_server(self, server: Server):
-        # Step 1: Fetch the tools by calling list_tools on the server
-        # Step 2: Create the server object Server(id, name, url, location)
-        # Step 3: Loop through each tool and create a Tool object Tool(server, toolset, id, name, description, tool_vector)
-        # Step 4: Embed the tool description using Azure OpenAI embedding model (tool_vector)
-        # Step 5: Upload the tool document to Azure Search index
-        pass
+    async def create_text_embedding(self, text) -> List[float]:
+        """
+        Embed text using Azure OpenAI embedding model.
+        Args:
+            text (str): The text to embed.
+        Returns:
+            List[float]: The embedding vector for the text.
+        """
+        try:
+            response = self.embedding_client.embeddings.create(
+                model=self.azure_embedding_model,
+                input=[text],
+                dimensions=self.azure_embedding_dimensions
+            )
+            return response.data[0].embedding
+        except Exception as e:
+            logging.error("Error embedding text")
+            return None
 
 
-    async def update_all_servers(self):
-        # Step 1: Fetch the servers by calling the MCP registry.
-        # Step 2: Create the server object Server(id, name, url, location).
-        # Step 3: Loop through each tool and create a Tool object Tool(server, toolset, id, name, description, tool_vector).
-        # Step 4: Embed the tool description using Azure OpenAI embedding model (tool_vector).
-        # Step 5: Erase the existing Azure Search index.
-        # Step 6: Recreate the Azure Search index and upload the servers and tools.
-        pass
+    async def perform_azure_search(self, search_text: str, top_k: int = 10):
+        """
+        Performs a hybrid search for documents in the specified Azure Search index.
+        Args:
+            search_text (str): The text to search for in the index.
+            top_k (int): The number of top results to return.
+        Returns:
+            SearchResults: The search results.
+        """
+        try:
+            results = self.azure_search_client.search(
+                search_text=search_text,
+                vector_queries=[VectorizedQuery(
+                    vector=await self.create_text_embedding(text=search_text),
+                    k_nearest_neighbors=top_k,
+                    fields="tool_vector"
+                )],
+                query_type="semantic",
+                semantic_configuration_name="default",
+                select=["server", "toolset", "name", "description"],
+                top=top_k
+            )
+            return results
+        except Exception as e:
+            logging.error(f"Error searching documents: {e}")
+            return None
+    
 
+    async def clear_azure_search_index(self):
+        """
+        Clear all documents from the specified Azure Search index.
+        Args:
+            client (SearchClient): The Azure Search client to use for clearing the index.
+        Returns:
+            None: If the operation is successful, or an error message if it fails.
+        """
+        try:
+            # First, retrieve all document IDs
+            results = self.azure_search_client.search(
+                search_text="*",
+                select=["id"]
+            )
+            ids_to_delete = [doc['id'] for doc in results]
+        except Exception as e:
+            logging.error(f"Error retrieving documents for clearing index: {e}")
+            ids_to_delete = []
 
-    async def create_tools_from_file(self, file_path: str):
+        if not ids_to_delete or len(ids_to_delete) == 0:
+            logging.info("No documents to delete.")
+            return None
+
+        # Now, delete documents in bulk
+        try:
+            result = self.azure_search_client.delete_documents(documents=[{"id": id} for id in ids_to_delete])
+            return result
+        except Exception as e:
+            logging.error(f"Error deleting documents from index: {e}")
+            return None
+        
+
+    async def create_tools_from_file(self, file_path: str) -> bool:
         """
         Create tools from a JSON file and upload them to Azure Search.
-        This function reads a JSON file containing MCP server information, extracts tool metadata,
-        and uploads each tool as a document to the Azure Search index.
-        It skips tools associated with the "VSCode" server.
+        This function reads a JSON file containing MCP server information, extracts tool metadata, and uploads each tool as a document to the Azure Search index.
+
+        Args:
+            file_path (str): The path to the JSON file containing MCP server information.
+        Returns:
+            bool: True if the operation is successful, False otherwise.
         """
 
         if not file_path or not file_path.endswith('.json'):
@@ -86,72 +148,42 @@ class AzureSearchManager(ToolSearchManager):
 
         with open(file_path, 'r', encoding='utf-8') as f:
             mcp_servers = json.load(f)
-        
+
+        # TEMPORARY: List of servers with more than 5 tools to limit noise in the search index
+        servers_with_more_than_5_tools = ['GitHub', 'Azure', 'VSCode', 'ActionKitbyParagon', 'AlibabaCloudOPS', 'AlibabaCloudRDS', 'AllVoiceLab', 'ApacheIoTDB', 'AqaraMCPServer', 'Auth0', 'AWS', 'BoostSpace', 'Campertunity', 'Cloudinary', 'CodeLogic', 'CoinGecko', 'DevRev', 'Drata', 'DumplingAI', 'fetchSERP', 'FluidAttacks', 'Globalping', 'Hiveflow', 'HubSpot', 'Hunter', 'Hyperbolic', 'Hyperbrowser', 'IntegrationApp', 'JFrog', 'Klaviyo', 'klusterai', 'LaunchDarkly', 'LINE', 'Linear', 'Lingodev', 'Liveblocks', 'Logfire', 'MagicMealKits', 'Memgraph', 'Milvus', 'NanoVMs', 'Netdata', 'NormanFinance', 'Notion', 'Nutrient', 'Octagon', 'OctoEverywhere', 'ONLYOFFICEDocSpace', 'OpenSearch', 'PlayCanvas', 'Pluggedin', 'PortIO', 'Putio', 'Rember', 'Riza', 'RobloxStudio', 'RootSignals', 'Shortcut', 'SonarQube', 'Sophtron', 'Tako', 'ThoughtSpot', 'Tianji', 'TradeAgent', 'Twilio', 'UnifAI', 'Upstash', 'WaveSpeed', 'YepCode', 'Yunxin', 'Zapier', 'ZIZAI Recruitment', 'OpsLevel', 'SmoothOperator', 'TextIn']
+
         for server in mcp_servers.get("servers", []):
-            server_name = server.get("name", "")
-            _server = Server(
-                id=f"{server_name}.remote",
-                name=server_name,
-                url=server.get("url", ""),
-                location=server.get("location", "remote")  # Default to 'remote' if not specified
-            )
-            tool_sets = server.get("toolsets", [])
-            for tool_set in tool_sets:
-                toolset_name = tool_set.get("name", "")
-                tools = tool_set.get("tools", [])
-                for tool in tools:
-                    _tool = {
-                        'id': f"{_server.name}_{toolset_name}_{tool.get('name', '')}",
-                        'server': _server.name,
-                        'toolset':  toolset_name,
-                        'name': tool.get("name", ""),
-                        'description': f"{tool.get('description', '')} Keywords: {', '.join(tool.get('keywords', []))}. Examples: {'; '.join(tool.get('sample_questions', []))}",
-                        'tool_vector': await super().embed_text(text=f"Server name: {server_name} {f'Toolset name: {toolset_name}' if toolset_name else ''} Tool name: {tool.get('name', '')}: Description: {tool.get('description', '')}.")
-                    }
-                    result = await super().upload_document(
-                        client=self.azure_search_client,
-                        document=_tool
-                        )
-                    if result is None or not result[0].succeeded:
-                        logging.error(f"Failed to upload tool {tool.get('name', '')} to Azure Search.")
-                    else:
-                        logging.info(f"Successfully uploaded tool {tool.get('name', '')} to Azure Search.")
+            if server.get("name") in servers_with_more_than_5_tools:
+                toolset = await self.create_tool_dictionaries(server)
+                self.azure_search_client.upload_documents(documents=[tool for tool in toolset])
+                logging.info(f"Uploaded {len(toolset)} tools for server '{server.get('name')}' to Azure Search index '{self.azure_search_index_name}'.")
+        return True
 
 
+    async def create_tool_dictionaries(self, server:dict) -> List[Dict[str, Any]]:
+        """
+        Create a list of tool dictionaries from the server information.
+        Args:
+            server (dict): The server information containing tools.
+        Returns:
+            List[Dict[str, Any]]: A list of dictionaries representing tools.
+        """
+        def clean_string(s):
+            """Removes special characters that the Azure Search index key does not support."""
+            return re.sub(r'[^a-zA-Z0-9_\-]', '', s)
 
-            ## OpenAPI specification for the MCP server
-            # {
-            #     "openapi": "3.0.0",
-            #     "info": {
-            #         "title": "Demo MCP server",
-            #         "description": "Very basic MCP server that exposes mock tools and prompts.",
-            #         "version": "1.0"
-            #     },
-            #     "servers": [
-            #         {
-            #         "url": "https://my-mcp-server.contoso.com"
-            #         }
-            #     ]
-            # }
-            
-            # {
-            #   "servers": [
-            #     {
-            #       "id": "a5e8a7f0-d4e4-4a1d-b12f-2896a23fd4f1",
-            #       "name": "io.modelcontextprotocol/filesystem",
-            #       "description": "Node.js server implementing Model Context Protocol (MCP) for filesystem operations.",
-            #       "repository": {
-            #         "url": "https://github.com/modelcontextprotocol/servers",
-            #         "source": "github",
-            #         "id": "b94b5f7e-c7c6-d760-2c78-a5e9b8a5b8c9"
-            #       },
-            #       "version_detail": {
-            #         "version": "1.0.2",
-            #         "release_date": "2023-06-15T10:30:00Z",
-            #         "is_latest": true
-            #       }
-            #     }
-            #   ],
-            #   "next": "https://registry.modelcontextprotocol.io/servers?offset=50",
-            #   "total_count": 1
-            # }
+        tools_to_return = []
+        server_name = server.get("name", "")
+        toolsets = server.get("toolsets", [])
+        for toolset in toolsets:
+            tools = toolset.get("tools", [])
+            tools_to_return.append([
+                Tool(
+                    id=f"{server_name}_{toolset.get('name', '')}_{tool.get('name', '')}",
+                    server=server_name,
+                    toolset=toolset.get("name", ""),
+                    name=tool.get("name", ""),
+                    description=f"{tool.get('description', '')} Keywords: {', '.join(tool.get('keywords', []))}. Examples: {'; '.join(tool.get('sample_questions', []))}",
+                    tool_vector=await self.create_text_embedding(text=f"Server name: {server_name} Tool name: {tool.get('name', '')}: Description: {tool.get('description', '')}.")
+                ) for tool in tools])
+        return tools_to_return

@@ -1,0 +1,35 @@
+# Core Python dependencies
+# Built-in modules: os, sys, logging, json, time, configparser, datetime, typing, re, asyncio
+
+# Azure dependencies
+azure-search-documents>=11.4.0
+azure-identity>=1.15.0
+
+# OpenAI
+openai>=1.12.0
+
+# Data validation and models
+pydantic>=2.5.0
+
+# HTTP requests and utilities
+requests>=2.31.0
+
+# Web framework and server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Local vector search (planned future feature)
+sqlite-vec>=0.1.0
+
+# Model Context Protocol (for future registry integration)
+mcp>=1.0.0
+
+# Development and testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Optional performance enhancements
+httpx>=0.25.0
+
+# Configuration and logging
+python-dotenv>=1.0.0
