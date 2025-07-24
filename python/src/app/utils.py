@@ -8,6 +8,7 @@ from pydantic.dataclasses import dataclass
 from tabulate import tabulate
 
 
+
 @dataclass
 class TestResult:
     """Dataclass to store the result of a test case."""
@@ -108,8 +109,7 @@ class TestRunManager:
         return round(true_positives / (true_positives + false_negatives), 2)
 
     async def _calculate_judgement(self, query: str, selected_tools: list, expected_tools: list) -> float:
-        scores = []
-        for i in range(0, self.config.getint('TestRun', 'TOOL_QUALITY_JUDGES', fallback=5)):
+        async def get_judge_score() -> float:
             try:
                 result = self.az_openaoi_client.chat.completions.create(
                     model="gpt-4.1",
@@ -136,16 +136,27 @@ class TestRunManager:
                 )
                 result_str = result.choices[0].message.content
                 score = json.loads(result_str.replace("'", '"')).get('score', '')
-                scores.append(float(score))
+                return score
             except OpenAIError as e:
                 print(f"OpenAI error: {e}")
+                return None
 
-        return round((sum(scores) / len(scores)), 2) if scores else None
-        
+        tasks = []
+        for i in range(0, self.config.getint('TestRun', 'TOOL_QUALITY_JUDGES', fallback=5)):
+            tasks.append(get_judge_score())
+        scores = await asyncio.gather(*tasks)
+        valid_scores = [s for s in scores if s is not None]
+        if len(valid_scores) > 0:
+            return round((sum(valid_scores) / len(valid_scores)), 2) if valid_scores else None
+        else:
+            return 0.0
 
-    async def run_single_test(self, test_case: TestCase) -> TestResult:
-        print(f"Running test case: {test_case.question}")
-        results_json = self.request_handler.route_request(query=test_case.question)
+    async def run_single_test(self, test_case: TestCase, index: int) -> None:
+        print(f"Running test case #{index}: {test_case.question}")
+
+        # Adding app criteria to the query as an example of user context. Assuming server name and app name are the same.
+        query = f"Current application: {test_case.expected_tools[0].split('.')[0]}. {test_case.question}"
+        results_json = self.request_handler.route_request(query=query)
 
         if results_json is not None and results_json != "":
             results_json = json.loads(results_json)
@@ -187,7 +198,17 @@ class TestRunManager:
             single_test_result.match_top_5 = True
         elif any(item in returned_tools for item in test_case.expected_tools[:10]):
             single_test_result.match_top_10 = True
-        return single_test_result
+
+        with open("python/src/app/data/test_results.json", "r", encoding="utf-8") as file:
+            try:
+                existing_results = json.load(file)
+            except json.JSONDecodeError:
+                existing_results = []
+
+        existing_results.append(single_test_result.__dict__)
+        
+        with open("python/src/app/data/test_results.json", "w", encoding="utf-8") as f:
+            json.dump(existing_results, f, indent=4, ensure_ascii=False)
 
 
     async def run_multiple_test_cases(self, count: int = 0):
@@ -210,21 +231,31 @@ class TestRunManager:
         else:
             trimmed_tests = raw_tests[:count]
 
-        test_results_list = []
         tasks = []
+        i = 1
         for test in trimmed_tests:
             test_case = TestCase(
                 question=test['question'],
                 description=test['description'],
                 expected_tools=test['expected_tools']
             )
-            tasks.append(self.run_single_test(test_case))
-        test_results_list = await asyncio.gather(*tasks)
+            tasks.append(self.run_single_test(test_case, i))
+            i += 1
+        await asyncio.gather(*tasks)
         
         ####
-        # Test runs complete, print metrics.
+        print(f"\n\n====TEST RUN COMPLETE====\n")
+        print(f"Total test cases run: {len(trimmed_tests)}")
+        print(f"Total time taken: {round((time.time() - total_time_start) * 1000, 2)} ms")
+        print(f"Test results saved to: python/src/app/data/test_results.json\n")
+        print(f"Creating results summary...\n")
         ####
 
+        test_results_list = []
+        with open("python/src/app/data/test_results.json", "r", encoding="utf-8") as file:
+            data = json.load(file)
+        test_results_list = [TestResult(**item) for item in data]
+        
         # Overall statistics
         total_queries = len(trimmed_tests)
         result_count = len(test_results_list)
@@ -235,11 +266,14 @@ class TestRunManager:
         top_3_matches = len([r for r in test_results_list if r.match_top_3])
         top_5_matches = len([r for r in test_results_list if r.match_top_5])
         top_10_matches = len([r for r in test_results_list if r.match_top_10])
-        avg_precision_score = (sum([r.precision_metric for r in test_results_list]) / result_count)*100 if result_count > 0 else 0.0
-        avg_recall_score = (sum([r.recall_metric for r in test_results_list]) / result_count)*100 if result_count > 0 else 0.0
-        avg_judge_score = round(sum([r.judge_metric for r in test_results_list]) / result_count, 2) if result_count > 0 else 0.0
 
+        valid_precision_scores = [r.precision_metric for r in test_results_list if r.precision_metric is not None]
+        valid_recall_scores = [r.recall_metric for r in test_results_list if r.recall_metric is not None]
+        valid_judge_scores = [r.judge_metric for r in test_results_list if r.judge_metric is not None]
 
+        avg_precision_score = (sum(valid_precision_scores) / len(valid_precision_scores)) * 100 if valid_precision_scores else 0.0
+        avg_recall_score = (sum(valid_recall_scores) / len(valid_recall_scores)) * 100 if valid_recall_scores else 0.0
+        avg_judge_score = round(sum(valid_judge_scores) / len(valid_judge_scores), 2) if valid_judge_scores else 0.0
 
         print(f"\n====TEST RUN SUMMARY====")
         print(f"Total queries processed: {total_queries}")
@@ -262,8 +296,6 @@ class TestRunManager:
         data = [["Expected Tools", "Returned Tools", "Query"]]
         for result in test_results_list:
             if len(result.missing_tools) > 0:
-                _data = [f"{tool}\n" for tool in result.expected_tools], [f"{tool}\n" for tool in result.returned_tools], result.query
-                data.append(_data)
-        print(tabulate(data, headers="firstrow", tablefmt="grid"))
+                print(f"Expected tools: {result.expected_tools}, Returned tools: {result.returned_tools}, Query: {result.query}")
 
         print(f"\n***Note: precision will not work well until we expect multiple tools to be returned.***\n")

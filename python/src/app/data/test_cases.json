@@ -7,7 +7,7 @@
     ]
   },
   {
-    "question": "machine learning",
+    "question": "Find the machine learning org in GitHub",
     "description": "Search for GitHub organizations by name or keywords. Keywords: . Examples: ",
     "expected_tools": [
       "GitHub.SearchOrgs"
@@ -259,7 +259,7 @@
     ]
   },
   {
-    "question": "machine learning image classification",
+    "question": "What repos support machine learning image classification?",
     "description": "Search repositories by name and metadata using GitHub’s REST API. Keywords: . Examples: ",
     "expected_tools": [
       "GitHub.SearchRepositories"
@@ -896,7 +896,7 @@
     ]
   },
   {
-    "question": "best wireless headphones under $100",
+    "question": "Help me shop for the best wireless headphones under $100",
     "description": "Returns product search results from Google Shopping, including prices and store details. Keywords: . Examples: ",
     "expected_tools": [
       "fetchSERP.Google_Shopping"
@@ -1736,7 +1736,7 @@
     ]
   },
   {
-    "question": "az vm list --output table",
+    "question": "CLI command: az vm list --output table",
     "description": "Execute any valid Azure CLI command Keywords: . Examples: ",
     "expected_tools": [
       "Azure.azmcp_cli_command_run"
@@ -2702,7 +2702,7 @@
     ]
   },
   {
-    "question": "ls -la",
+    "question": "VScode terminal: ls -la",
     "description": "Execute a shell command in VSCode terminal Keywords: . Examples: ",
     "expected_tools": [
       "VSCode.vscode_terminal_run_command"

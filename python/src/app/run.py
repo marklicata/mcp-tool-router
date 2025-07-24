@@ -34,4 +34,4 @@ if __name__ == "__main__":
     # run_chat()
 
     test_runner = TestRunManager()
-    asyncio.run(test_runner.run_multiple_test_cases(count=10))
+    asyncio.run(test_runner.run_multiple_test_cases())
