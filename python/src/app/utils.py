@@ -5,7 +5,7 @@ from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from openai import AzureOpenAI, OpenAIError
 from typing import List, Dict, Any, Optional
 from pydantic.dataclasses import dataclass
-from tabulate import tabulate
+import numpy as np
 
 
 
@@ -220,16 +220,25 @@ class TestRunManager:
 
         total_time_start = time.time()
 
-        with open('python/src/app/data/test_cases.json', 'r', encoding='utf-8') as file:
+        # Clear the test results file before starting
+        with open("python/src/app/data/test_results.json", "w", encoding="utf-8") as f:
+            json.dump([], f, indent=4, ensure_ascii=False)
+
+
+        # Load test cases from the specified file
+        test_case_file = self.config.get('TestRun', 'TEST_CASE_FILE', fallback='python/src/app/data/test_cases_v1.json')        
+        with open(test_case_file, 'r', encoding='utf-8') as file:
             raw_tests = json.load(file)
 
         random.shuffle(raw_tests)
 
-        # if a specific count is not provided, use the sample size from config
-        if count == 0:
+        # Set up the number of test runs based on the provided count, config, and number of tests available.
+        if count == 0 and len(raw_tests) > self.config.getint('TestRun', 'SAMPLE_SIZE', fallback=500):
             trimmed_tests = raw_tests[:self.config.getint('TestRun', 'SAMPLE_SIZE')]
-        else:
+        elif count > 0 and len(raw_tests) > count:
             trimmed_tests = raw_tests[:count]
+        else:
+            trimmed_tests = raw_tests
 
         tasks = []
         i = 1
@@ -246,7 +255,7 @@ class TestRunManager:
         ####
         print(f"\n\n====TEST RUN COMPLETE====\n")
         print(f"Total test cases run: {len(trimmed_tests)}")
-        print(f"Total time taken: {round((time.time() - total_time_start) * 1000, 2)} ms")
+        print(f"Total time taken: {round((time.time() - total_time_start), 2)} seconds")
         print(f"Test results saved to: python/src/app/data/test_results.json\n")
         print(f"Creating results summary...\n")
         ####
@@ -260,7 +269,15 @@ class TestRunManager:
         total_queries = len(trimmed_tests)
         result_count = len(test_results_list)
         total_time = round((time.time() - total_time_start) * 1000, 2)  # in milliseconds
-        avg_query_time = round(sum([r.response_time for r in test_results_list]) / total_queries, 2) if total_queries > 0 else 0.0
+
+        # Perf statistics
+        response_times = [r.response_time for r in test_results_list]
+        tp50_query_time = round(np.percentile(response_times, 50), 2) if response_times else 0.0
+        tp75_query_time = round(np.percentile(response_times, 75), 2) if response_times else 0.0
+        tp90_query_time = round(np.percentile(response_times, 90), 2) if response_times else 0.0
+        tp95_query_time = round(np.percentile(response_times, 95), 2) if response_times else 0.0
+
+        # Match stats
         matches = len([result for result in test_results_list if result.match])
         top_1_match = len([r for r in test_results_list if r.match_top_1])
         top_3_matches = len([r for r in test_results_list if r.match_top_3])
@@ -279,14 +296,17 @@ class TestRunManager:
         print(f"Total queries processed: {total_queries}")
         print(f"Successful queries: {result_count}")
         print(f"Failed queries: {total_queries - result_count}")
-        print(f"Average time per query: {avg_query_time:.2f} ms")
+        print(f"TP50 response time: {tp50_query_time:.2f} ms")
+        print(f"TP75 response time: {tp75_query_time:.2f} ms")
+        print(f"TP90 response time: {tp90_query_time:.2f} ms")
+        print(f"TP95 response time: {tp95_query_time:.2f} ms")
         print(f"\n====TOOL SELECTION QUALITY====")
         print(f"Match success rate: {matches/result_count*100:.1f}% ({matches})")
         print(f"Match miss rate: {(result_count-matches)/result_count*100:.1f}% ({(result_count-matches)})")
-        print(f"Top match: {top_1_match} ({(top_1_match / matches * 100):.1f}%)" if matches else f"Top match: {top_1_match}")
-        print(f"Top 3 matches: {top_3_matches} ({top_3_matches/matches*100:.1f}%)" if matches else f"Top 3 matches: {top_3_matches}")
-        print(f"Top 5 matches: {top_5_matches} ({top_5_matches/matches*100:.1f}%)" if matches else f"Top 5 matches: {top_5_matches}")
-        print(f"Top 10 matches: {top_10_matches} ({top_10_matches/matches*100:.1f}%)" if matches else f"Top 10 matches: {top_10_matches}")
+        print(f"Matches in first slot: {top_1_match} ({(top_1_match / matches * 100):.1f}%)" if matches else f"Matches in first slot: {top_1_match}")
+        print(f"Matches in top 3: {top_3_matches} ({top_3_matches/matches*100:.1f}%)" if matches else f"Matches in top 3: {top_3_matches}")
+        print(f"Matches in top 5: {top_5_matches} ({top_5_matches/matches*100:.1f}%)" if matches else f"Matches in top 5: {top_5_matches}")
+        print(f"Matches in top 10: {top_10_matches} ({top_10_matches/matches*100:.1f}%)" if matches else f"Matches in top 10: {top_10_matches}")
         print(f"\n====TOOL SELECTION ACCURACY====")
         print(f"Average Precision Score: {avg_precision_score:.1f}%***")
         print(f"Average Recall Score: {avg_recall_score:.1f}%")
@@ -299,3 +319,4 @@ class TestRunManager:
                 print(f"Expected tools: {result.expected_tools}, Returned tools: {result.returned_tools}, Query: {result.query}")
 
         print(f"\n***Note: precision will not work well until we expect multiple tools to be returned.***\n")
+

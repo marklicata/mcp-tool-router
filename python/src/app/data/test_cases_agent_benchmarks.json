@@ -1,0 +1,142 @@
+[
+    {
+        "question": "Find the machine learning org in GitHub",
+        "description": "",
+        "expected_tools": [
+            "GitHub.SearchOrgs"
+        ]
+    },
+    {
+        "question": "Download the artifact named 'build-results' from workflow run ID 123456 in the repository 'octocat/Hello-World'.",
+        "description": "",
+        "expected_tools": [
+            "GitHub.DownloadWorkflowRunArtifact"
+        ]
+    },
+    {
+        "question": "Delete the logs for workflow run ID 123456 in the repository 'octocat/Hello-World'.",
+        "description": "",
+        "expected_tools": [
+            "GitHub.DeleteWorkflowRunLogs"
+        ]
+    },
+    {
+        "question": "What is the current market capitalization of Bitcoin and Ethereum?",
+        "description": "",
+        "expected_tools": [
+            "CoinGecko.coin_market_cap"
+        ]
+    },
+    {
+        "question": "What was the price of Bitcoin on January 1, 2020?",
+        "description": "",
+        "expected_tools": [
+            "CoinGecko.coin_historical_price"
+        ]
+    },
+    {
+        "question": "Retrieve the current CPU and memory usage metrics for the virtual machine named 'prod-webserver-01' in the 'East US' region for the past 30 minutes.",
+        "description": "",
+        "expected_tools": [
+            "Azure.azmcp_monitor_query_metrics"
+        ]
+    },
+    {
+        "question": "List all Kusto clusters available in my Azure subscription.",
+        "description": "",
+        "expected_tools": [
+            "Azure.azmcp_kusto_cluster_list"
+        ]
+    },
+    {
+        "question": "Push my latest local commits to the remote repository on the main branch.",
+        "description": "",
+        "expected_tools": [
+            "VSCode.vscode_git_push"
+        ]
+    },
+    {
+        "question": "Close the currently active terminal session in VSCode.",
+        "description": "",
+        "expected_tools": [
+            "VSCode.vscode_terminal_close"
+        ]
+    },
+    {
+        "question": "Convert the following AWS CDK Step Function workflow definition into MCP-compatible YAML format.",
+        "description": "",
+        "expected_tools": [
+            "AWS.Convert_CDK_StepFunction_Constructs_to_MCP_YAML"
+        ]
+    },
+    {
+        "question": "Analyze the sentiment of the following customer support ticket: 'I'm really frustrated that my issue hasn't been resolved after multiple attempts. Please fix this as soon as possible.'",
+        "description": "",
+        "expected_tools": [
+            "DevRev.sentiment_analysis"
+        ]
+    },
+    {
+        "question": "Identify all the points in the application where user input data is received, transformed, and ultimately written to the database.",
+        "description": "",
+        "expected_tools": [
+            "CodeLogic.Dataflow_Analyzer"
+        ]
+    },
+    {
+        "question": "Find all documents related to renewable energy policies published after 2020, ranked by relevance.",
+        "description": "",
+        "expected_tools": [
+            "Hiveflow.Search"
+        ]
+    },
+    {
+        "question": "Send a message to the host to ask if pets are allowed at their campsite.",
+        "description": "",
+        "expected_tools": [
+            "Campertunity.messaging"
+        ]
+    },
+    {
+        "question": "What is the IP address of the domain example.com?",
+        "description": "",
+        "expected_tools": [
+            "WaveSpeed.DNS_Lookup"
+        ]
+    },
+    {
+        "question": "List all partitions in the 'user_activity' collection.",
+        "description": "",
+        "expected_tools": [
+            "Milvus.Partition_Management"
+        ]
+    },
+    {
+        "question": "Find all entities in the collection where the 'category' field is 'electronics' and the 'price' is less than 500.",
+        "description": "",
+        "expected_tools": [
+            "Milvus.Search_and_Query"
+        ]
+    },
+    {
+        "question": "Update the configuration of node 'node-123' to increase its memory allocation to 16GB.",
+        "description": "",
+        "expected_tools": [
+            "Nutrient.NodeController"
+        ]
+    },
+    {
+        "question": "Compare the similarity between the abstracts of two scientific articles to identify overlapping content or unique contributions.",
+        "description": "",
+        "expected_tools": [
+            "Hyperbrowser.text_comparison"
+        ]
+    },
+    {
+        "question": "How can I upload a new 3D model asset to my PlayCanvas project?",
+        "description": "",
+        "expected_tools": [
+            "PlayCanvas.asset"
+        ]
+    }
+]
