@@ -1,3481 +1,543 @@
 [
   {
-    "question": "Find GitHub users with expertise in machine learning",
-    "description": "Search GitHub users by name or keywords. Keywords: . Examples: ",
+    "task": "Can you help me find recent issues in my repository, summarize what people are saying in the comments, and tell me if the feedback is mostly positive or negative?",
+    "app": "GitHub",
     "expected_tools": [
-      "GitHub.SearchUsers"
-    ]
-  },
-  {
-    "question": "machine learning",
-    "description": "Search for GitHub organizations by name or keywords. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.SearchOrgs"
-    ]
-  },
-  {
-    "question": "Download the artifact named 'build-results' from workflow run ID 123456 in the repository 'octocat/Hello-World'.",
-    "description": "Download specific workflow run artifact. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.DownloadWorkflowRunArtifact"
-    ]
-  },
-  {
-    "question": "Delete the logs for workflow run ID 123456 in the repository 'octocat/Hello-World'.",
-    "description": "Delete logs associated with a workflow run. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.DeleteWorkflowRunLogs"
-    ]
-  },
-  {
-    "question": "What is the current market capitalization of Bitcoin and Ethereum?",
-    "description": "Fetches market capitalization data for cryptocurrencies. Useful for tracking the total value of given coins or for ranking cryptocurrencies by market cap. Keywords: . Examples: ",
-    "expected_tools": [
-      "CoinGecko.coin_market_cap"
-    ]
-  },
-  {
-    "question": "What was the price of Bitcoin on January 1, 2020?",
-    "description": "Provides historical price data for a specific cryptocurrency and date range. Relevant for analysis of price trends and historical movements. Keywords: . Examples: ",
-    "expected_tools": [
-      "CoinGecko.coin_historical_price"
-    ]
-  },
-  {
-    "question": "Retrieve the current CPU and memory usage metrics for the virtual machine named 'prod-webserver-01' in the 'East US' region for the past 30 minutes.",
-    "description": "Query real-time performance metrics Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_monitor_query_metrics"
-    ]
-  },
-  {
-    "question": "List all Kusto clusters available in my Azure subscription.",
-    "description": "List all Kusto clusters in a subscription Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_kusto_cluster_list"
-    ]
-  },
-  {
-    "question": "Push my latest local commits to the remote repository on the main branch.",
-    "description": "Push local commits to remote repository Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_git_push"
-    ]
-  },
-  {
-    "question": "Close the currently active terminal session in VSCode.",
-    "description": "Close an active terminal session Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_terminal_close"
-    ]
-  },
-  {
-    "question": "Convert the following AWS CDK Step Function workflow definition into MCP-compatible YAML format.",
-    "description": "Enables conversion of AWS CDK (Cloud Development Kit) workflow constructs into MCP-compatible YAML format, aiding migration or interoperability between CDK-based projects and YAML workflow definitions. Keywords: . Examples: ",
-    "expected_tools": [
-      "AWS.Convert_CDK_StepFunction_Constructs_to_MCP_YAML"
-    ]
-  },
-  {
-    "question": "Analyze the sentiment of the following customer support ticket: 'I'm really frustrated that my issue hasn't been resolved after multiple attempts. Please fix this as soon as possible.'",
-    "description": "Analyzes text and classifies the emotional tone as positive, negative, or neutral. Useful for gauging reactions in support tickets, reviews, or feedback. Keywords: . Examples: ",
-    "expected_tools": [
+      "GitHub.SearchIssues",
+      "GitHub.GetIssueComments",
+      "DevRev.summarization",
       "DevRev.sentiment_analysis"
     ]
   },
   {
-    "question": "Identify all the points in the application where user input data is received, transformed, and ultimately written to the database.",
-    "description": "Analyzes how data moves through the application, highlighting sources, sinks, and transformation points. Keywords: . Examples: ",
-    "expected_tools": [
-      "CodeLogic.Dataflow_Analyzer"
-    ]
-  },
-  {
-    "question": "Find all documents related to renewable energy policies published after 2020, ranked by relevance.",
-    "description": "Natural language search over indexed documents and metadata. Supports complex queries, filtering, and ranking results by relevance. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hiveflow.Search"
-    ]
-  },
-  {
-    "question": "Send a message to the host to ask if pets are allowed at their campsite.",
-    "description": "Supports messaging between campers and hosts for inquiries, booking clarifications, or support. Keywords: . Examples: ",
-    "expected_tools": [
-      "Campertunity.messaging"
-    ]
-  },
-  {
-    "question": "What is the IP address of the domain example.com?",
-    "description": "Performs DNS queries to resolve domain names to IP addresses and vice versa. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hunter.DNS_Lookup"
-    ]
-  },
-  {
-    "question": "List all partitions in the 'user_activity' collection.",
-    "description": "Tools to manage partitions within collections, which allow you to organize large datasets. Includes creation, deletion, listing, loading, and releasing partitions. Keywords: . Examples: ",
-    "expected_tools": [
-      "Milvus.Partition_Management"
-    ]
-  },
-  {
-    "question": "Find all entities in the collection where the 'category' field is 'electronics' and the 'price' is less than 500.",
-    "description": "Tools for searching vector or scalar data, querying by filter expressions, and retrieving entities by primary key. Keywords: . Examples: ",
-    "expected_tools": [
-      "Milvus.Search_and_Query"
-    ]
-  },
-  {
-    "question": "Update the configuration of node 'node-123' to increase its memory allocation to 16GB.",
-    "description": "A core component responsible for managing the state and configuration of individual nodes in the DWS system. Its functionality includes registering nodes, updating their configuration, health probing, and supporting the creation, update, and deletion of node records through the control plane API. Keywords: . Examples: ",
-    "expected_tools": [
-      "Nutrient.NodeController"
-    ]
-  },
-  {
-    "question": "Compare the similarity between the abstracts of two scientific articles to identify overlapping content or unique contributions.",
-    "description": "Text Comparison toolset offers functions for comparing and analyzing similarities or differences between texts. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hyperbrowser.text_comparison"
-    ]
-  },
-  {
-    "question": "How can I upload a new 3D model asset to my PlayCanvas project?",
-    "description": "Tools for handling assets (models, textures, scripts, etc.). Allows uploading, searching, renaming, deleting and updating assets. Keywords: . Examples: ",
-    "expected_tools": [
-      "PlayCanvas.asset"
-    ]
-  },
-  {
-    "question": "Find all documents containing the keyword 'climate change' in the environmental_reports index.",
-    "description": "Executes search queries against one or more indices. This tool allows retrieval of documents based on query criteria. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpenSearch.search"
-    ]
-  },
-  {
-    "question": "Show me the first 10 entries from the customer orders dataset.",
-    "description": "Limit tools let users restrict the number of rows returned by a query, making large datasets more manageable. Keywords: . Examples: ",
-    "expected_tools": [
-      "klusterai.Limit"
-    ]
-  },
-  {
-    "question": "Can you explain the difference between supervised and unsupervised machine learning?",
-    "description": "Tool for conversational AI using OpenAI\"s chat models (e.g., GPT-3.5, GPT-4). Keywords: . Examples: ",
-    "expected_tools": [
-      "Logfire.ask_openai_chat"
-    ]
-  },
-  {
-    "question": "Define the data schema for a project management system, including entities such as Project, Task, User, and their relationships.",
-    "description": "Tool for defining and describing data structures and relationships in the MCP system. Keywords: . Examples: ",
-    "expected_tools": [
-      "Linear.Schemas"
-    ]
-  },
-  {
-    "question": "Retrieve detailed information about the user with ID '12345' in Notion.",
-    "description": "Gets detailed info about a user by their ID. Keywords: . Examples: ",
-    "expected_tools": [
-      "Notion.get_user"
-    ]
-  },
-  {
-    "question": "Get the value of the key 'user:1234:session_token'",
-    "description": "Allows basic string value operations in Redis. Includes Set (set value), Get (get value), Del (delete key), and IncrBy (increment integer value). Sample usage: \"Set config version to v2\", \"Increment view_count by 1\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Upstash.String"
-    ]
-  },
-  {
-    "question": "Retrieve the real-time number of active users and rooms in the system over the past 24 hours.",
-    "description": "Tools to collect and analyze metrics about rooms, users, media usage, and system performance. Offers real-time and historical data querying. Keywords: . Examples: ",
-    "expected_tools": [
-      "Yunxin.Statistics_-_Monitoring"
-    ]
-  },
-  {
-    "question": "What objects are present in this image?",
-    "description": "Answers natural-language questions about the content of provided images. Enables users to query specific details in a visual input. Keywords: . Examples: ",
-    "expected_tools": [
-      "UnifAI.ImageQuestionAnswering"
-    ]
-  },
-  {
-    "question": "Create an HTTP endpoint to receive order status updates from an external e-commerce platform via POST requests.",
-    "description": "Webhook toolset enables triggering and handling HTTP webhooks. It allows you to create endpoints to receive and process data from external systems via HTTP POST requests. Keywords: . Examples: ",
-    "expected_tools": [
-      "YepCode.webhook"
-    ]
-  },
-  {
-    "question": "Check if the 'my-app' project passed the quality gate in SonarQube for the latest build.",
-    "description": "Checks whether a SonarQube project meets the defined quality gate. Useful for CI/CD pipelines or any automated quality monitoring. Keywords: . Examples: ",
-    "expected_tools": [
-      "SonarQube.Check_Quality_Gate"
-    ]
-  },
-  {
-    "question": "How can I schedule a daily backup for the ThoughtSpot system and monitor its status?",
-    "description": "Backup and restore management toolset. Handles scheduling, running, monitoring backups, and restoring data from backups. Keywords: . Examples: ",
-    "expected_tools": [
-      "ThoughtSpot.backup"
-    ]
-  },
-  {
-    "question": "Add comment to epic 1234: Please update the acceptance criteria.",
-    "description": "Posts comments on stories, epics, or other entities. Handles instructions such as \"Add comment to story 9999: Needs more info.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Shortcut.Comment"
-    ]
-  },
-  {
-    "question": "Retrieve all checking and savings account details for user John Doe from his linked financial institution.",
-    "description": "Retrieves end-user account information from a financial institution. Keywords: . Examples: ",
-    "expected_tools": [
-      "Sophtron.GetAccounts"
-    ]
-  },
-  {
-    "question": "Write a short story about a robot who learns to paint.",
-    "description": "Generates and completes text based on a given prompt or context. Keywords: . Examples: ",
-    "expected_tools": [
-      "Riza.text_completion"
-    ]
-  },
-  {
-    "question": "How can I prevent race conditions when multiple microservices attempt to update the same user profile record simultaneously?",
-    "description": "A distributed lock mechanism to coordinate access to shared resources, ensuring exclusive control in distributed systems. Applications include \"Prevent race condition in key update\", \"Synchronize microservice access to a resource.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "ZIZAI Recruitment.locker"
-    ]
-  },
-  {
-    "question": "Does the repository contain any automated tests using frameworks like pytest, jest, or unittest?",
-    "description": "Checks if automated tests exist in the repository and will report whether testing frameworks such as pytest, jest, or unittest are present. Useful for enforcing a testing standard and coverage adoption. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpsLevel.code/test"
-    ]
-  },
-  {
-    "question": "machine learning image classification",
-    "description": "Search repositories by name and metadata using GitHub’s REST API. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.SearchRepositories"
-    ]
-  },
-  {
-    "question": "Retrieve the details of the commit with SHA 'a1b2c3d4e5f6g7h8i9j0' in the repository 'octocat/Hello-World'.",
-    "description": "Retrieve details of a specific commit by SHA. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetCommit"
-    ]
-  },
-  {
-    "question": "Push the updated README.md and main.py files from my local project directory to the 'feature/update-docs' branch of the 'myusername/myproject' GitHub repository.",
-    "description": "Push local file changes to a GitHub repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.PushFiles"
-    ]
-  },
-  {
-    "question": "Find all open issues labeled 'bug' in the tensorflow/tensorflow repository created in the last 7 days",
-    "description": "Search issues across repositories using filters and keywords. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.SearchIssues"
-    ]
-  },
-  {
-    "question": "Assign Copilot to assist with issue #12345 in the repository 'octocat/Hello-World'.",
-    "description": "Assign Copilot agent to a GitHub issue for assistance. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.AssignCopilotToIssue"
-    ]
-  },
-  {
-    "question": "Cancel the workflow run with ID 123456 in the repository 'octocat/Hello-World'.",
-    "description": "Cancel a currently running workflow. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.CancelWorkflowRun"
-    ]
-  },
-  {
-    "question": "Update the value of the key 'AppTheme' to 'DarkMode' in the Azure App Configuration store.",
-    "description": "Set or update a key-value entry Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_appconfig_kv_set"
-    ]
-  },
-  {
-    "question": "List all containers in the storage account named 'mydatastorage'.",
-    "description": "List containers within a storage account Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_storage_container_list"
-    ]
-  },
-  {
-    "question": "Delete the blob named 'backup2023.zip' from the 'archives' container in the 'companydata' storage account.",
-    "description": "Delete a blob Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_storage_blob_delete"
-    ]
-  },
-  {
-    "question": "List all PostgreSQL servers available in my current Azure subscription.",
-    "description": "List PostgreSQL servers in your Azure subscription Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_postgres_server_list"
-    ]
-  },
-  {
-    "question": "Send a message to the 'orders-queue' in Azure Service Bus with the content: 'New order received: OrderID 12345, Customer John Doe, Total $250.00'.",
-    "description": "Send message to a Service Bus queue Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_servicebus_message_send"
-    ]
-  },
-  {
-    "question": "Delete the file named 'old_report.txt' from the workspace.",
-    "description": "Delete a file from the workspace Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_fs_delete_file"
-    ]
-  },
-  {
-    "question": "Install the Python extension for Visual Studio Code.",
-    "description": "Install a new VSCode extension Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_extension_install"
-    ]
-  },
-  {
-    "question": "Stop the current active debugging session in VSCode.",
-    "description": "Stop an active debugging session Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_debug_stop"
-    ]
-  },
-  {
-    "question": "Analyze the following support ticket to determine its priority: 'Our main payment gateway is down, and customers are unable to complete purchases. This is impacting revenue. Please resolve ASAP.'",
-    "description": "Determines the priority level of tasks or tickets based on their content. Helps support teams react to urgent matters more efficiently. Keywords: . Examples: ",
-    "expected_tools": [
-      "DevRev.priority_detection"
-    ]
-  },
-  {
-    "question": "Find available campsites near Banff National Park with lake access and pet-friendly amenities for the weekend of July 15-17, under $100 per night.",
-    "description": "Allows users to search for available campsites based on various filters such as location, amenities, price range, and availability. Keywords: . Examples: ",
-    "expected_tools": [
-      "Campertunity.searchCamps"
-    ]
-  },
-  {
-    "question": "List all environments for the 'my-app' project.",
-    "description": "Commands for managing project environments such as staging, production, etc. Functions include creating, deleting, or listing environments. Keywords: . Examples: ",
-    "expected_tools": [
-      "LaunchDarkly.environment"
-    ]
-  },
-  {
-    "question": "Generate a report summarizing the results of the latest codebase scan, including dependency graphs and risk analyses, for the upcoming audit.",
-    "description": "Generates customizable reports on scans, graphs, and analyses for sharing or auditing purposes. Keywords: . Examples: ",
-    "expected_tools": [
-      "CodeLogic.Reporting_Engine"
-    ]
-  },
-  {
-    "question": "List all permissions that can be granted to a user for accessing the project management resource.",
-    "description": "Define and list specific permissions that can be granted to identities over resources. Keywords: . Examples: ",
-    "expected_tools": [
-      "Auth0.Permissions"
-    ]
-  },
-  {
-    "question": "Find the geolocation and owner of the IP address 192.168.1.1",
-    "description": "Looks up geolocation and ownership information for IP addresses. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hunter.IP_Lookup"
-    ]
-  },
-  {
-    "question": "Analyze the dependencies and metadata of the 'my-app' project to extract relevant project information.",
-    "description": "Analyzes and extracts relevant project information. Keywords: . Examples: ",
-    "expected_tools": [
-      "JFrog.project_inspect"
-    ]
-  },
-  {
-    "question": "Check the current status of all nodes in the cluster and identify any nodes that are not responding.",
-    "description": "Manages cluster operations and node management. Includes joining or removing nodes, status checks, and cluster configurations. Keywords: . Examples: ",
-    "expected_tools": [
-      "ThoughtSpot.cluster"
-    ]
-  },
-  {
-    "question": "Check the current status of the ThoughtSpot service and restart it if it is not running.",
-    "description": "Service lifecycle management toolset for starting, stopping, or restarting system services and viewing their status. Keywords: . Examples: ",
-    "expected_tools": [
-      "ThoughtSpot.service"
-    ]
-  },
-  {
-    "question": "What is the latest available upgrade version for my current ThoughtSpot deployment and are there any critical patches I should apply?",
-    "description": "Version management and upgrade toolset. Checks for current and available upgrade versions, applies patches, and rolls back updates. Keywords: . Examples: ",
-    "expected_tools": [
-      "ThoughtSpot.upgrade"
-    ]
-  },
-  {
-    "question": "List all collections currently available in the Milvus database.",
-    "description": "Tools to create, manage, and delete collections in a Milvus database. Includes functionality for listing, describing, loading, releasing, and altering collections. Keywords: . Examples: ",
-    "expected_tools": [
-      "Milvus.Collection_Management"
-    ]
-  },
-  {
-    "question": "Index a new user profile document with fields for username, email, and registration date into the 'users' index.",
-    "description": "Indexes a new document or updates an existing one in a specified index. Useful for adding or modifying data in the OpenSearch cluster. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpenSearch.index_document"
-    ]
-  },
-  {
-    "question": "Extract and visualize the timestamps and frequency of lever presses and nose pokes during the operant conditioning experiment for subject A on June 5, 2023.",
-    "description": "Enables extraction and visualization of behavioral events such as pokes, licks, lever presses, and other animal behavioral responses during experiments. Keywords: . Examples: ",
-    "expected_tools": [
-      "Tako.Behavior"
-    ]
-  },
-  {
-    "question": "Initiate a transfer of $500 from my checking account at Bank A to my savings account at Bank B.",
-    "description": "Starts a money transfer between two accounts, either within the same institution or across institutions. Keywords: . Examples: ",
-    "expected_tools": [
-      "Sophtron.InitiateTransfer"
-    ]
-  },
-  {
-    "question": "How can I upvote an answer that I found helpful on this platform?",
-    "description": "A tool for voting on questions or answers, such as upvoting or downvoting content to indicate its helpfulness or relevance. Keywords: . Examples: ",
-    "expected_tools": [
-      "Tianji.vote"
-    ]
-  },
-  {
-    "question": "What are the main arguments presented in the provided article about climate change?",
-    "description": "Answers direct questions based on provided text or context, retrieving relevant information. Keywords: . Examples: ",
-    "expected_tools": [
-      "Riza.question_answering"
-    ]
-  },
-  {
-    "question": "What is the docstring and documentation for the Python function 'os.path.join'?",
-    "description": "Extracts the docstring and documentation for a specified Python function. Keywords: . Examples: ",
-    "expected_tools": [
-      "Logfire.get_function_doc"
-    ]
-  },
-  {
-    "question": "Summarize the main points from this 10-page research paper on climate change.",
-    "description": "Summarizes provided text, conversation threads, or documents. Keywords: . Examples: ",
-    "expected_tools": [
-      "Octagon.summarize"
-    ]
-  },
-  {
-    "question": "Retrieve the current access credentials for all active Twilio accounts in our organization.",
-    "description": "Tools for managing access credentials for multiple Twilio accounts. This tool helps securely store, retrieve, and rotate credentials for use with the Twilio CLI and other automation environments. Keywords: . Examples: ",
-    "expected_tools": [
-      "Twilio.access_management"
-    ]
-  },
-  {
-    "question": "What are some effective strategies for improving time management skills for college students?",
-    "description": "A versatile question-answering tool that allows users to ask uncategorized questions or provide custom instructions. It is designed to handle a wide range of queries not covered by specific modules. Keywords: . Examples: ",
-    "expected_tools": [
-      "UnifAI.Ask"
-    ]
-  },
-  {
-    "question": "Get the last 10 messages from the chat history list.",
-    "description": "Manages lists in Redis. Commands include LPush (prepend), RPush (append), LPop (remove first), RPop (remove last), LRange (fetch range), and LLen (get length). Sample usage: \"Add player to waiting list\", \"Get first 5 elements of job queue\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Upstash.List"
-    ]
-  },
-  {
-    "question": "Scan the host 192.168.1.10 for open TCP and UDP ports to identify running services.",
-    "description": "Scans a host for open TCP or UDP ports. Useful for security assessments and checking if particular services are running. Keywords: . Examples: ",
-    "expected_tools": [
-      "WaveSpeed.Port_Scan"
-    ]
-  },
-  {
-    "question": "Retrieve the value stored for the key 'user:1234:session' from the Redis database.",
-    "description": "Redis toolset provides actions for interacting with a Redis database. It allows performing operations such as setting, getting, and deleting keys, as well as executing more advanced Redis commands. Keywords: . Examples: ",
-    "expected_tools": [
-      "YepCode.redis"
-    ]
-  },
-  {
-    "question": "Create a new virtual meeting room for a team conference scheduled at 3 PM tomorrow.",
-    "description": "APIs and tools for creation, modification, and removal of media rooms. Supports room entry, exit, and status checks for virtual meetings or streaming. Keywords: . Examples: ",
-    "expected_tools": [
-      "Yunxin.Room_Management"
-    ]
-  },
-  {
-    "question": "Does the repository contain any GitHub Actions workflows, and if so, how many workflow files are present?",
-    "description": "Tool to check for the presence and configuration of GitHub Actions workflows in a repository. It identifies if GitHub Actions are defined, counts the number of workflow files, and provides guidance on standardizing continuous integration using GitHub Actions. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpsLevel.actions/github_actions"
-    ]
-  },
-  {
-    "question": "Replace the currently selected code snippet in the editor with the following updated version that fixes the syntax error.",
-    "description": "Replace the selected text with new content Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_editor_replace_selection"
-    ]
-  },
-  {
-    "question": "Show the current git status to see which files have been modified, added, or deleted in the working directory and staging area.",
-    "description": "Show changes in working directory and staging area Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_git_status"
-    ]
-  },
-  {
-    "question": "Pull the latest changes from the remote repository into my current local workspace.",
-    "description": "Pull remote updates into local workspace Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_git_pull"
-    ]
-  },
-  {
-    "question": "What is the currently active file open in the VSCode editor?",
-    "description": "Get the currently active file in editor Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_workspace_get_active_file"
-    ]
-  },
-  {
-    "question": "Sync the branch of pull request #1234 with its base branch in the repository 'octocat/Hello-World'.",
-    "description": "Sync the PR branch with its base branch. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.UpdatePullRequestBranch"
-    ]
-  },
-  {
-    "question": "List all jobs executed during the latest workflow run for the repository 'octocat/Hello-World'.",
-    "description": "List jobs executed during a workflow run. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListWorkflowJobs"
-    ]
-  },
-  {
-    "question": "Get the metadata for the notification with ID 123456 from my GitHub account.",
-    "description": "Retrieve metadata about a specific notification. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetNotificationDetails"
-    ]
-  },
-  {
-    "question": "Convert the following AWS Step Functions definition from Amazon States Language (ASL) JSON format to YAML format.",
-    "description": "A tool to transform Step Functions definitions written in Amazon States Language (ASL, which is JSON-based) into a simplified YAML representation. Useful for developers who prefer YAML for editing complex workflows or for diffing changes. Keywords: . Examples: ",
-    "expected_tools": [
-      "AWS.Convert_AWS_Step_Functions_Amazon_States_Language_(ASL)_to_YAML"
-    ]
-  },
-  {
-    "question": "Validate the following Step Functions state machine definition in JSON format to ensure it complies with Amazon States Language schema.",
-    "description": "A tool for validating Step Functions workflow definitions to ensure they comply with Amazon\"s expected schema (ASL/JSON or YAML). It helps catch errors before deployment or simulation. Keywords: . Examples: ",
-    "expected_tools": [
-      "AWS.Validate_State_Machine_Definitions"
-    ]
-  },
-  {
-    "question": "Retrieve all error logs from the last 24 hours for the 'AppService' resource group in Azure Monitor using KQL.",
-    "description": "Run KQL-based log queries in Azure Monitor Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_monitor_query_logs"
-    ]
-  },
-  {
-    "question": "Create a new RSA cryptographic key named 'myEncryptionKey' in the Azure Key Vault called 'FinanceVault' with a key size of 2048 bits.",
-    "description": "Create a new cryptographic key in vault Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_keyvault_key_create"
-    ]
-  },
-  {
-    "question": "Transcribe this audio file into written text.",
-    "description": "Converts audio files or spoken input into written text. Sample queries: \"Transcribe this audio recording,\" \"Convert my voice note to text.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "AllVoiceLab.Speech_to_Text_STT"
-    ]
-  },
-  {
-    "question": "Extract all company and product names mentioned in the following customer feedback: 'I recently switched from QuickBooks to FreshBooks for my accounting needs, but I still prefer using PayPal for online transactions.'",
-    "description": "Extracts relevant entities (such as person, company, product names) from text for downstream applications like search or tagging. Keywords: . Examples: ",
-    "expected_tools": [
-      "DevRev.entity_extraction"
-    ]
-  },
-  {
-    "question": "List all files and directories in the current working directory.",
-    "description": "A virtual Linux terminal interface for basic shell operations (ls, cat, echo, etc), file management, and command-line programs. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hyperbolic.terminal"
-    ]
-  },
-  {
-    "question": "Retrieve all user identities created in the last 30 days.",
-    "description": "Manage identities such as users, clients, or machines. Allows for querying, creating, updating, and removing identities. Keywords: . Examples: ",
-    "expected_tools": [
-      "Auth0.Identities"
-    ]
-  },
-  {
-    "question": "How do I authenticate a user to access MCP endpoints using Cloudinary's authentication mechanisms?",
-    "description": "Provides authentication and authorization mechanisms for accessing MCP endpoints. Keywords: . Examples: ",
-    "expected_tools": [
-      "Cloudinary.mcp_authentication"
-    ]
-  },
-  {
-    "question": "latest research on machine learning algorithms for natural language processing",
-    "description": "Fetches academic papers, publications, and citations from Google Scholar. Keywords: . Examples: ",
-    "expected_tools": [
-      "fetchSERP.Google_Scholar"
-    ]
-  },
-  {
-    "question": "List all Python packages currently installed in the runtime environment.",
-    "description": "Lists currently installed Python packages in the runtime environment. Keywords: . Examples: ",
-    "expected_tools": [
-      "Logfire.list_python_packages"
-    ]
-  },
-  {
-    "question": "How does the Python 'with' statement work and what is its syntax?",
-    "description": "Searches the official Python documentation for relevant information based on a query. Keywords: . Examples: ",
-    "expected_tools": [
-      "Logfire.search_python_docs"
-    ]
-  },
-  {
-    "question": "List all active pods currently managed in the DWS environment.",
-    "description": "A controller responsible for the lifecycle management of specific resources (e.g. volumes, pods, or allocations) within the DWS environment. It supports CRUD operations via the server’s API and coordinates state between system components. Keywords: . Examples: ",
-    "expected_tools": [
-      "Nutrient.ResourceController"
-    ]
-  },
-  {
-    "question": "Join customer orders with payment records to display order details alongside payment status.",
-    "description": "Joins tools help users combine data from multiple tables by specifying join conditions and types (inner, left, right). Example queries: \"Combine user profiles with transactions,\" or \"Join orders with shipment details.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "klusterai.Joins"
-    ]
-  },
-  {
-    "question": "Create a vector index on the 'images' collection to improve similarity search performance.",
-    "description": "Tools to handle index creation and deletion for Milvus collections, improving search efficiency. Includes creating vector and scalar indexes and describing index parameters. Keywords: . Examples: ",
-    "expected_tools": [
-      "Milvus.Index_Management"
-    ]
-  },
-  {
-    "question": "Create a new MCP deployment using the following configuration: 2 CPU cores, 4GB RAM, Ubuntu 22.04 image, and attach a 20GB persistent volume.",
-    "description": "Tool to create new MCP deployments using user-provided configurations. Handles resource allocation, image selection, and deployment initialization. Keywords: . Examples: ",
-    "expected_tools": [
-      "NanoVMs.Create_Deployment"
-    ]
-  },
-  {
-    "question": "Scan this Terraform configuration file for any security vulnerabilities or misconfigurations.",
-    "description": "Inspects Infrastructure as Code (IaC) configurations for possible security issues or misconfigurations. Keywords: . Examples: ",
-    "expected_tools": [
-      "JFrog.iac_scan"
-    ]
-  },
-  {
-    "question": "Extract all named entities and keywords from the following news article: 'Apple announced the release of its new iPhone 15 at the event in Cupertino, California, on September 12, 2023.'",
-    "description": "Facilitates extracting keywords, entities, or specific data from input text. Keywords: . Examples: ",
-    "expected_tools": [
-      "Rember.extract"
-    ]
-  },
-  {
-    "question": "Does user 'john.doe' have permission to edit project 'Alpha'?",
-    "description": "Manages access control for different objects and actions. Keywords: . Examples: ",
-    "expected_tools": [
-      "Linear.Permissions"
-    ]
-  },
-  {
-    "question": "Classify the following customer feedback into categories such as 'positive', 'negative', or 'neutral': 'The product arrived late but works perfectly.'",
-    "description": "Classifies text according to predefined categories or criteria. Keywords: . Examples: ",
-    "expected_tools": [
-      "Octagon.classify"
-    ]
-  },
-  {
-    "question": "How can I set up a workflow to run every weekday at 8am?",
-    "description": "Schedule workflows to run at set times or intervals. Users can ask \"Can I run an automation every Monday at 9am?\" or \"How do I trigger this workflow daily?\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Zapier.Schedule"
-    ]
-  },
-  {
-    "question": "How can I set up a workflow to wait 30 minutes before sending a reminder notification to a user after they submit a form?",
-    "description": "Pause workflows for a certain time or until a specific condition is met. Useful for \"How do I wait 1 hour before sending a follow-up email?\" or \"Can I delay an action until tomorrow?\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Zapier.Delay"
-    ]
-  },
-  {
-    "question": "Trace the route from the server to google.com to identify any network delays or routing issues.",
-    "description": "Traces the path packets take from the server to a specified IP or domain, listing each hop along the route. Helps identify routing problems and network delays. Keywords: . Examples: ",
-    "expected_tools": [
-      "WaveSpeed.Traceroute"
-    ]
-  },
-  {
-    "question": "Find the geographic location, including country and city, for the IP address 203.0.113.45.",
-    "description": "Fetches geographic location data based on an IP address, including country, city, and ISP details. Keywords: . Examples: ",
-    "expected_tools": [
-      "WaveSpeed.GeoIP"
-    ]
-  },
-  {
-    "question": "Show the raster plot for spike times around rewards",
-    "description": "Visualizes raster plots of spikes or events relative to repeated stimuli or behaviors. Sample queries: \"Show the raster plot for spike times around rewards\", \"Plot rasters for all trials\", \"Visualize event rasters.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Tako.Raster"
-    ]
-  },
-  {
-    "question": "How can I configure a singleton service and automatically resolve its dependencies using ZIZAI Recruitment.injector?",
-    "description": "A simple dependency injection (DI) container for wiring instances and managing object lifecycles. It allows for configuration of services and automatic dependency resolution. Keywords: . Examples: ",
-    "expected_tools": [
-      "ZIZAI Recruitment.injector"
-    ]
-  },
-  {
-    "question": "Does the repository contain a CONTRIBUTING.md file outlining the guidelines for new contributors, including code style, code review process, and instructions for submitting issues or pull requests?",
-    "description": "Analyzes the presence of a CONTRIBUTING.md file that details guidelines for new contributors, such as code style, code review process, and how to submit issues/pull requests. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpsLevel.docs/contributing"
-    ]
-  },
-  {
-    "question": "List all open bugs and vulnerabilities for the project 'my-app', sorted by severity in descending order.",
-    "description": "Retrieves a list of open or resolved issues (bugs, vulnerabilities, code smells) for a specific project, including filtering and sorting options. Keywords: . Examples: ",
-    "expected_tools": [
+    "task": "Find a repository related to our product, check the latest pull requests, analyze the code changes for quality issues, and see if the project passes the quality gate.",
+    "app": "GitHub",
+    "expected_tools": [
+      "GitHub.SearchRepositories",
+      "GitHub.ListPullRequests",
+      "GitHub.GetPullRequestFiles",
+      "SonarQube.Trigger_Project_Analysis",
+      "SonarQube.Check_Quality_Gate",
       "SonarQube.List_Issues"
     ]
   },
   {
-    "question": "Reset the password for user 'jdoe'.",
-    "description": "Administrative operations toolset. Includes commands to manage users, reset passwords, handle roles, check system status, and maintenance tasks. Keywords: . Examples: ",
-    "expected_tools": [
-      "ThoughtSpot.admin"
-    ]
-  },
-  {
-    "question": "How can I assign a moderator role to a user in a specific chat room and restrict their permissions to only mute or remove participants?",
-    "description": "Tools for assigning roles, setting and enforcing permissions, and managing user access within rooms or services. Keywords: . Examples: ",
-    "expected_tools": [
-      "Yunxin.Permission_-_Role_Management"
-    ]
-  },
-  {
-    "question": "Summarize the main points from this 10-page research article on climate change impacts.",
-    "description": "Produces concise summaries from larger bodies of text, preserving key information. Keywords: . Examples: ",
-    "expected_tools": [
-      "Riza.summarization"
-    ]
-  },
-  {
-    "question": "List all open issues in the microsoft/vscode repository labeled as 'bug'.",
-    "description": "List issues for a repository with optional filters. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListIssues"
-    ]
-  },
-  {
-    "question": "List all open pull requests in the microsoft/vscode repository.",
-    "description": "List pull requests in a repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListPullRequests"
-    ]
-  },
-  {
-    "question": "Merge pull request #42 into the main branch of the repository 'octocat/Hello-World'.",
-    "description": "Merge a pull request into the target branch. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.MergePullRequest"
-    ]
-  },
-  {
-    "question": "List all workflows configured in the repository 'octocat/Hello-World'.",
-    "description": "List workflows configured in a GitHub repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListWorkflows"
-    ]
-  },
-  {
-    "question": "Retrieve the details of code scanning alert #12345 in the repository 'octocat/Hello-World'.",
-    "description": "Retrieve details of a specific code scanning alert. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetCodeScanningAlert"
-    ]
-  },
-  {
-    "question": "Unlock the key 'AppSettings:FeatureFlag' in the Azure App Configuration store.",
-    "description": "Unlock a previously locked key Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_appconfig_kv_unlock"
-    ]
-  },
-  {
-    "question": "Insert a new user profile document with fields 'userId', 'name', and 'email' into the 'Users' container in the Cosmos DB database.",
-    "description": "Insert a document into a container Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_cosmos_database_container_item_insert"
-    ]
-  },
-  {
-    "question": "Retrieve the metadata for the key named 'encryptionKey1' from the Azure Key Vault named 'ProductionVault'.",
-    "description": "Retrieve specific key metadata or value Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_keyvault_key_get"
-    ]
-  },
-  {
-    "question": "List all search indexes available in the Azure search service.",
-    "description": "List indexes within a search service Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_search_index_list"
-    ]
-  },
-  {
-    "question": "Read the contents of the file 'README.md' in the workspace.",
-    "description": "Read the contents of a file from the workspace Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_fs_read_file"
-    ]
-  },
-  {
-    "question": "Overwrite the contents of 'README.md' with the updated project documentation.",
-    "description": "Write new contents to an existing file Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_fs_write_file"
-    ]
-  },
-  {
-    "question": "Create a new Git branch named 'feature/login-authentication' in the current repository.",
-    "description": "Create a new branch in Git Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_git_create_branch"
-    ]
-  },
-  {
-    "question": "How can I refactor this JavaScript function to improve its readability and performance?",
-    "description": "Send a message to Copilot Chat panel Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_copilot_chat_send"
-    ]
-  },
-  {
-    "question": "Find the top-rated Italian restaurants near Times Square, New York City.",
-    "description": "Fetches information from Google Maps, such as places, addresses, and business details. Keywords: . Examples: ",
-    "expected_tools": [
-      "fetchSERP.Google_Maps"
-    ]
-  },
-  {
-    "question": "best wireless headphones under $100",
-    "description": "Returns product search results from Google Shopping, including prices and store details. Keywords: . Examples: ",
-    "expected_tools": [
-      "fetchSERP.Google_Shopping"
-    ]
-  },
-  {
-    "question": "Convert the following paragraph into spoken audio: 'Welcome to our online course. In this lesson, we will explore the basics of programming.'",
-    "description": "Turns entered text into spoken audio. Useful for accessibility and creating voiceovers. Sample queries: \"Read this text aloud,\" \"Generate audio for this paragraph.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "AllVoiceLab.Text_to_Speech_TTS"
-    ]
-  },
-  {
-    "question": "Analyze this research paper to identify its main topics, assess the quality of its content, and outline its structural organization.",
-    "description": "Analyzes documents for structure, content quality, and key topics. Keywords: . Examples: ",
-    "expected_tools": [
-      "AllVoiceLab.Document_Analyzer"
-    ]
-  },
-  {
-    "question": "List all files in the 'project_data' directory.",
-    "description": "File Manager toolset offers capabilities for managing files and directories, including upload, download, delete, and listing files. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hyperbrowser.file_manager"
-    ]
-  },
-  {
-    "question": "Scan the repository at https://github.com/example/project to generate a report of its application structure and list all external dependencies.",
-    "description": "Performs automated scans of source code repositories or files to generate metadata, application structure, and dependencies. Keywords: . Examples: ",
-    "expected_tools": [
-      "CodeLogic.Scanner"
-    ]
-  },
-  {
-    "question": "Summarize the main points from this 10-page project proposal document.",
-    "description": "Summarizes text input into concise and meaningful summaries. Useful for quickly understanding large documents or conversations. Keywords: . Examples: ",
-    "expected_tools": [
-      "DevRev.summarization"
-    ]
-  },
-  {
-    "question": "How can I create a custom email template for a summer sale campaign in Klaviyo?",
-    "description": "Work with message templates for emails and SMS, allowing creation and customization of communication formats. Keywords: . Examples: ",
-    "expected_tools": [
-      "Klaviyo.Templates"
-    ]
-  },
-  {
-    "question": "Retrieve the error logs for MCP services from the past 24 hours.",
-    "description": "Offers logging and monitoring tools for MCP services. Keywords: . Examples: ",
-    "expected_tools": [
-      "Cloudinary.mcp_logging"
-    ]
-  },
-  {
-    "question": "Find all tasks in the project management database that are marked as 'In Progress' and have a due date within the next 7 days.",
-    "description": "Queries data from a specific database with complex filtering. Keywords: . Examples: ",
-    "expected_tools": [
-      "Notion.query_database"
-    ]
-  },
-  {
-    "question": "Retrieve the metadata for the Notion database with ID 'abc123'.",
-    "description": "Retrieves a Notion database\"s metadata by its ID. Keywords: . Examples: ",
-    "expected_tools": [
-      "Notion.get_database"
-    ]
-  },
-  {
-    "question": "Add a comment to the meeting notes page stating 'Please review the action items before our next meeting.'",
-    "description": "Adds a new comment to a page or block. Keywords: . Examples: ",
-    "expected_tools": [
-      "Notion.create_comment"
-    ]
-  },
-  {
-    "question": "Export the entire Memgraph database to a JSON file for backup purposes.",
-    "description": "Facilitates exporting database contents to various formats such as CSV or JSON for backup and sharing. Keywords: . Examples: ",
-    "expected_tools": [
-      "Memgraph.Export_Data_Tool"
-    ]
-  },
-  {
-    "question": "Find all users who have more than 5 friends in the social network.",
-    "description": "Translates user questions or commands into valid Cypher queries for Memgraph, without executing them. Assists users or downstream tools to programmatically generate and examine Cypher queries from natural language. Sample: \"How many cities are connected via flights in the network?\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Memgraph.Memgraph_Cypher_Generator"
-    ]
-  },
-  {
-    "question": "How can I write a Python function to reverse a linked list?",
-    "description": "A coding assistant tool for answering programming-related questions, troubleshooting, and code generation. Keywords: . Examples: ",
-    "expected_tools": [
-      "Octagon.ask_code"
-    ]
-  },
-  {
-    "question": "Extract all dates and names of people mentioned in the following news article.",
-    "description": "Extracts structured information or specific data points from unstructured text. Keywords: . Examples: ",
-    "expected_tools": [
-      "Octagon.extract"
-    ]
-  },
-  {
-    "question": "Fetch the current health status of all managed nodes and services in the system.",
-    "description": "A built-in facility for periodically checking the health and availability of managed nodes and services. It includes endpoints or gRPC methods to fetch the aggregated status. Keywords: . Examples: ",
-    "expected_tools": [
-      "Nutrient.Health_Checking_Tool"
-    ]
-  },
-  {
-    "question": "List all defined feature flags for the MCP project and show their current enabled/disabled status.",
-    "description": "Manage feature flags within MCP. Includes enabling/disabling flags, checking status, and listing defined flags for a project. Keywords: . Examples: ",
-    "expected_tools": [
-      "LaunchDarkly.feature_flag"
-    ]
-  },
-  {
-    "question": "List all recent snapshots for the 'main' branch of project ID 12345.",
-    "description": "Tools for project versioning and snapshots. Includes creating snapshots (saves), loading snapshots, and listing recent snapshots for projects or branches. Keywords: . Examples: ",
-    "expected_tools": [
-      "PlayCanvas.snapshot"
-    ]
-  },
-  {
-    "question": "What is the current disk usage on the host system?",
-    "description": "Performs host system operations, such as rebooting the host, checking disk usage, and reporting hardware information. Keywords: . Examples: ",
-    "expected_tools": [
-      "OctoEverywhere.System"
-    ]
-  },
-  {
-    "question": "Which of the following is the capital city of France? A) Berlin B) Madrid C) Paris D) Rome",
-    "description": "Provides the ability to select from one or more potential answers, typically in a multiple-choice format. Keywords: . Examples: ",
-    "expected_tools": [
-      "Rember.choices"
-    ]
-  },
-  {
-    "question": "Send a message to a user with buttons for 'View Profile', 'Settings', and 'Help', each triggering a different action.",
-    "description": "Sends a buttons template message with multiple action options (e.g., postback, message, URL). Keywords: . Examples: ",
-    "expected_tools": [
-      "LINE.Buttons"
-    ]
-  },
-  {
-    "question": "Can you help me practice a job interview by simulating a multi-turn conversation where you act as the interviewer and I am the candidate?",
-    "description": "Engages in multi-turn conversational exchanges, simulating dialogue with users. Keywords: . Examples: ",
-    "expected_tools": [
-      "Riza.chat"
-    ]
-  },
-  {
-    "question": "Show me all high priority bugs assigned to John Doe in the Mobile App project.",
-    "description": "Enables users to ask questions in natural language about projects, issues, stories, or other Shortcut entities. Processes queries like \"List all open stories in project X\" or \"Who is assigned to bug Y?\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Shortcut.Ask"
-    ]
-  },
-  {
-    "question": "What is my latest credit score and the relevant details?",
-    "description": "Returns the user\"s latest credit score and relevant details. Keywords: . Examples: ",
-    "expected_tools": [
-      "Sophtron.GetCreditScore"
-    ]
-  },
-  {
-    "question": "Generate a report showing monthly sales trends for the past year segmented by product category.",
-    "description": "Queries and analytical operations toolset. Used to generate reports, run queries, export/import data, and monitor analytics queries. Keywords: . Examples: ",
-    "expected_tools": [
-      "ThoughtSpot.analytics"
-    ]
-  },
-  {
-    "question": "Transcribe the audio recording of the recent team meeting into written text.",
-    "description": "Transcribes spoken language from an audio file into written text. Useful for converting voice memos, interviews, or multimedia content to text. Keywords: . Examples: ",
-    "expected_tools": [
-      "UnifAI.SpeechRecognition"
-    ]
-  },
-  {
-    "question": "Add user42 to online users set",
-    "description": "Provides commands to manipulate Redis sets. Includes SAdd (add member), SRem (remove member), SIsMember (check membership), SMembers (get all members), and SPop (pop member). Sample usage: \"Add user42 to online users set\", \"List all active sessions\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Upstash.Set"
-    ]
-  },
-  {
-    "question": "Find all documents in the 'users' collection where the 'status' field is 'active'.",
-    "description": "MongoDB toolset provides integrations for connecting and performing database operations on a MongoDB instance. Enables inserting, finding, updating, and deleting documents. Keywords: . Examples: ",
-    "expected_tools": [
-      "YepCode.mongodb"
-    ]
-  },
-  {
-    "question": "List all local and remote Git branches in the current repository.",
-    "description": "List all local and remote branches Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_git_branch_list"
-    ]
-  },
-  {
-    "question": "Uninstall the Python extension from VSCode.",
-    "description": "Uninstall an existing extension Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_extension_uninstall"
-    ]
-  },
-  {
-    "question": "List all folders currently open in my VSCode workspace.",
-    "description": "List all workspace folders currently open Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_workspace_list_folders"
-    ]
-  },
-  {
-    "question": "Close the 'my_project' folder from the current VSCode workspace.",
-    "description": "Close a folder from the workspace Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_workspace_close_folder"
-    ]
-  },
-  {
-    "question": "Show me the recent chat history from the Copilot panel in VSCode.",
-    "description": "Retrieve chat history from Copilot panel Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_copilot_chat_get_history"
-    ]
-  },
-  {
-    "question": "Retrieve the details of pull request number 42 in the repository 'octocat/Hello-World'.",
-    "description": "Retrieve a pull request by number. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetPullRequest"
-    ]
-  },
-  {
-    "question": "Find all open pull requests in the microsoft/vscode repository that mention 'bug fix' in the title or description.",
-    "description": "Search pull requests across repositories. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.SearchPullRequests"
-    ]
-  },
-  {
-    "question": "Create a new pull request from the 'feature/login' branch to the 'main' branch in the repository 'my-org/my-app' with the title 'Add user login functionality' and description 'Implements user authentication and login page.'",
-    "description": "Create a new pull request. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.CreatePullRequest"
-    ]
-  },
-  {
-    "question": "Request a Copilot review for pull request #42 in the repository 'octocat/Hello-World'.",
-    "description": "Request an agentic Copilot review on the PR. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.RequestCopilotReview"
-    ]
-  },
-  {
-    "question": "Enable the GitHub Actions toolset for this repository to allow automated CI/CD workflows at runtime.",
-    "description": "Dynamically enable a toolset for runtime access. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.EnableToolset"
-    ]
-  },
-  {
-    "question": "Show me all contacts who have not been emailed in the last 30 days",
-    "description": "Powerful search tool for HubSpot CRM records such as contacts, companies, deals, and tickets. Enables natural language queries about customer data, e.g. \"Show me all deals closed this quarter\", \"List companies with open tickets\", or \"Find contacts named John at Acme Corp.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "HubSpot.CRM_Search"
-    ]
-  },
-  {
-    "question": "Get the full engagement history and associated deals for contact John Doe.",
-    "description": "Retrieve detailed information about a specific contact, including timelines, engagement history, and associated deals or tickets. Keywords: . Examples: ",
-    "expected_tools": [
-      "HubSpot.Contact_Insights"
-    ]
-  },
-  {
-    "question": "Run a traceroute from probes in different geographic locations to www.example.com to identify network routing paths and potential bottlenecks.",
-    "description": "Runs traceroute operations from probes to a specified target, mapping the path and hops packets take across networks. Useful for diagnosing routing issues and identifying network bottlenecks. Keywords: . Examples: ",
-    "expected_tools": [
-      "Globalping.trace"
-    ]
-  },
-  {
-    "question": "Perform an MTR check to google.com from New York to analyze route hops, latency, and packet loss.",
-    "description": "Performs MTR (My Traceroute) checks for combined route and latency analysis to a target destination. Provides statistics on packet loss and delay per hop. Keywords: . Examples: ",
-    "expected_tools": [
-      "Globalping.mtr"
-    ]
-  },
-  {
-    "question": "List all available Azure App Configuration accounts in my subscription.",
-    "description": "List available App Configuration accounts Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_appconfig_account_list"
-    ]
-  },
-  {
-    "question": "List all databases on the PostgreSQL server named 'my-postgres-server' in the resource group 'my-resource-group'.",
-    "description": "List databases within a PostgreSQL server Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_postgres_database_list"
-    ]
-  },
-  {
-    "question": "List all columns in the employee_details table.",
-    "description": "Tools under Profiling allow users to gain insights into their data warehouse by querying metadata about tables, columns, and schemas. Example questions include: \"Show me all the tables in the sales schema,\" or \"What columns does customer_orders have?\" Keywords: . Examples: ",
-    "expected_tools": [
-      "klusterai.Profiling"
-    ]
-  },
-  {
-    "question": "Show the full dependency tree for the 'UserAuthentication' module in the application.",
-    "description": "Resolves and displays dependency trees for modules, libraries, and services used within the application. Keywords: . Examples: ",
-    "expected_tools": [
-      "CodeLogic.Dependency_Resolver"
-    ]
-  },
-  {
-    "question": "Retrieve all products in the current catalog to prepare for an upcoming marketing campaign.",
-    "description": "Manage product catalogs including adding, updating, or retrieving catalog items for marketing purposes. Keywords: . Examples: ",
-    "expected_tools": [
-      "Klaviyo.Catalogs"
-    ]
-  },
-  {
-    "question": "Test message to check if the echo tool is working properly.",
-    "description": "A tool that echoes back the user\"s message. Useful for debugging or testing connectivity. Keywords: . Examples: ",
-    "expected_tools": [
-      "LINE.Echo"
-    ]
-  },
-  {
-    "question": "Upload a new promotional video file to Cloudinary's Media Control Plane for use on the company website.",
-    "description": "Handles uploading media files to Cloudinary\"s Media Control Plane (MCP). Keywords: . Examples: ",
-    "expected_tools": [
-      "Cloudinary.mcp_upload"
-    ]
-  },
-  {
-    "question": "What is the current firmware version installed on my 3D printer's mainboard?",
-    "description": "Offers interaction with printer firmware functions, including restarts, firmware information, and state diagnostics. Keywords: . Examples: ",
-    "expected_tools": [
-      "OctoEverywhere.PrinterMainboard"
-    ]
-  },
-  {
-    "question": "Send the G-code command M503 to the 3D printer and retrieve the current firmware settings from the terminal output.",
-    "description": "Allows sending raw G-code commands directly to the 3D printer and retrieving G-code terminal output. Keywords: . Examples: ",
-    "expected_tools": [
-      "OctoEverywhere.GCodeTerminal"
-    ]
-  },
-  {
-    "question": "Paraphrase the following sentence: 'The quick brown fox jumps over the lazy dog.'",
-    "description": "Rewrites or paraphrases given text. Keywords: . Examples: ",
-    "expected_tools": [
-      "Rember.rewrite"
-    ]
-  },
-  {
-    "question": "Convert the following JSON data into CSV format: [{\"name\": \"Alice\", \"age\": 30}, {\"name\": \"Bob\", \"age\": 25}].",
-    "description": "Transforms data or text from one format to another, or performs conversions (e.g., JSON to CSV, lowercase to uppercase). Keywords: . Examples: ",
-    "expected_tools": [
-      "Rember.transform"
-    ]
-  },
-  {
-    "question": "Show me the current schema of the database, including all node labels and their relationships.",
-    "description": "Displays the current database schema as a visual graph, showing node labels and relationships. It helps users understand data structure and design queries. Keywords: . Examples: ",
-    "expected_tools": [
-      "Memgraph.Graph_Schema_Viewer"
-    ]
-  },
-  {
-    "question": "List all available MCP images in the current environment.",
-    "description": "Supports listing, describing, creating, and deleting MCP images used for deployments. Offers controls over the available images in your MCP environment. Keywords: . Examples: ",
-    "expected_tools": [
-      "NanoVMs.MCP_Image_Management"
-    ]
-  },
-  {
-    "question": "Add a comment to the answer explaining why the proposed solution may not work in certain scenarios.",
-    "description": "A tool for adding comments to questions or answers. It is intended for providing further clarification, discussion, or follow-up information on a given topic. Keywords: . Examples: ",
-    "expected_tools": [
-      "Tianji.comment"
-    ]
-  },
-  {
-    "question": "Remove the 'moderator' and 'editor' roles from user 'user123' in room 'room456'.",
-    "description": "Removes specific roles from a user in a room. Useful for revoking permissions or demoting users. Keywords: . Examples: ",
-    "expected_tools": [
-      "Liveblocks.admin_remove_user_roles"
-    ]
-  },
-  {
-    "question": "Delete the document with ID '12345' from the 'user_profiles' index due to incorrect user information.",
-    "description": "Removes a document by ID from a specified index. Used for data cleanup or corrections. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpenSearch.delete_document"
-    ]
-  },
-  {
-    "question": "Show the complete current Netdata configuration.",
-    "description": "Displays the effective Netdata configuration, either partially or in whole. Keywords: . Examples: ",
-    "expected_tools": [
-      "Netdata.netdata_config"
-    ]
-  },
-  {
-    "question": "How can I bulk import a CSV file containing user data into the system?",
-    "description": "Tools for bulk importing and exporting data. Keywords: . Examples: ",
-    "expected_tools": [
-      "Linear.Data_Loading"
-    ]
-  },
-  {
-    "question": "List all active phone numbers associated with my Twilio account.",
-    "description": "A general set of utilities and helper commands that make working with Twilio accounts and projects faster. These include shortcuts, info retrieval, and automation scripts. Keywords: . Examples: ",
-    "expected_tools": [
-      "Twilio.toolbelt"
-    ]
-  },
-  {
-    "question": "Extract all text from this scanned PDF of a handwritten letter.",
-    "description": "Performs Optical Character Recognition to extract text from images, PDFs, or other visual sources. Supports printed and handwritten text. Useful for digitizing documents, receipts, and IDs. Keywords: . Examples: ",
-    "expected_tools": [
-      "TextIn.ocr"
-    ]
-  },
-  {
-    "question": "Extract the vendor name, invoice date, line items, and total amount from the attached scanned invoice PDF.",
-    "description": "Extracts structured data from invoices, such as vendor, date, line items, and totals, to automate financial processing. Integrates with accounting, finance, and expense management systems. Keywords: . Examples: ",
-    "expected_tools": [
-      "TextIn.invoice_ocr"
-    ]
-  },
-  {
-    "question": "List the most recent commits in the repository 'tensorflow/tensorflow'.",
-    "description": "List recent commits in a GitHub repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListCommits"
-    ]
-  },
-  {
-    "question": "Find all instances of 'JWT authentication' implementation in Python repositories.",
-    "description": "Search code across repositories for specific keywords or patterns. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.SearchCode"
-    ]
-  },
-  {
-    "question": "List all branches for the repository 'octocat/Hello-World'.",
-    "description": "List all branches for a repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListBranches"
-    ]
-  },
-  {
-    "question": "Add a comment to issue #42 in the repository 'octocat/Hello-World' stating that the bug has been reproduced and is being investigated.",
-    "description": "Add a comment to an existing issue. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.AddIssueComment"
-    ]
-  },
-  {
-    "question": "List all artifacts generated during the latest workflow run for the repository 'octocat/Hello-World'.",
-    "description": "List artifacts generated during a workflow run. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListWorkflowRunArtifacts"
-    ]
-  },
-  {
-    "question": "Get the resource usage statistics for workflow run ID 123456 in the repository octocat/Hello-World.",
-    "description": "Get resource usage statistics for a workflow run. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetWorkflowRunUsage"
-    ]
-  },
-  {
-    "question": "Rerun the workflow run with ID 123456 in the repository 'octocat/Hello-World'.",
-    "description": "Rerun a completed workflow. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.RerunWorkflowRun"
-    ]
-  },
-  {
-    "question": "Show me my latest GitHub notifications.",
-    "description": "List GitHub notifications for the current user. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListNotifications"
-    ]
-  },
-  {
-    "question": "Unsubscribe from notifications for issue #12345 in the repository octocat/Hello-World.",
-    "description": "Manage subscriptions for notifications on specific threads. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ManageNotificationSubscription"
-    ]
-  },
-  {
-    "question": "List all files and folders in the 'src' directory of my project.",
-    "description": "List files and folders in a directory Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_fs_list_directory"
-    ]
-  },
-  {
-    "question": "Insert the comment '// TODO: Refactor this function' at the current cursor position in the code editor.",
-    "description": "Insert text at the current cursor location Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_editor_insert_text"
-    ]
-  },
-  {
-    "question": "Open the 'my_project' folder into the current VSCode workspace.",
-    "description": "Open a folder into the workspace Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_workspace_open_folder"
-    ]
-  },
-  {
-    "question": "Run the 'build' task in VSCode",
-    "description": "Run a named VSCode task Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_task_run"
-    ]
-  },
-  {
-    "question": "Create an action plan for refactoring a legacy Python codebase to improve maintainability and add unit tests.",
-    "description": "Generate agentic action plan based on user intent Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_copilot_agent_plan"
-    ]
-  },
-  {
-    "question": "Delete the document with id 'user123' from the 'users' container in the 'appdata' Cosmos DB database.",
-    "description": "Delete a document from container Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_cosmos_database_container_item_delete"
-    ]
-  },
-  {
-    "question": "List all blobs in the 'images' container in the 'myazurestorage' storage account.",
-    "description": "List blobs within a container Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_storage_blob_list"
-    ]
-  },
-  {
-    "question": "Upload the file 'annual_report.pdf' to the 'documents' container in Azure Blob Storage.",
-    "description": "Upload a blob to a container Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_storage_blob_upload"
-    ]
-  },
-  {
-    "question": "Delete the key named 'MyEncryptionKey' from the Key Vault named 'ProductionSecrets'.",
-    "description": "Delete a key from Key Vault Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_keyvault_key_delete"
-    ]
-  },
-  {
-    "question": "Get the metadata and list of current participants for room ID 'abc123'.",
-    "description": "Fetches details about a particular room, such as metadata and current participants. Keywords: . Examples: ",
-    "expected_tools": [
-      "Liveblocks.get_room_info"
-    ]
-  },
-  {
-    "question": "Show me all the rooms currently managed by the server.",
-    "description": "Provides a list of all rooms currently managed by the server. Useful for browsing or selecting rooms. Keywords: . Examples: ",
-    "expected_tools": [
-      "Liveblocks.list_rooms"
-    ]
-  },
-  {
-    "question": "Generate a report of all users with administrative access to our AWS environment and confirm if their access is still required.",
-    "description": "Automates the process of regularly reviewing and confirming users’ access rights across cloud and on-premise systems. Keywords: . Examples: ",
-    "expected_tools": [
-      "Drata.Access_Reviews"
-    ]
-  },
-  {
-    "question": "List all cloud and on-premise assets currently inventoried in our organization.",
-    "description": "Maintains a continual inventory of cloud, on-premise, and SaaS assets. Keywords: . Examples: ",
-    "expected_tools": [
-      "Drata.Asset_Inventory"
-    ]
-  },
-  {
-    "question": "Find books or documents related to quantum computing fundamentals.",
-    "description": "A tool that searches a local digital library/book database for relevant documents, excerpts, or references. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hyperbolic.book_search"
-    ]
-  },
-  {
-    "question": "Find all knowledge articles related to cybersecurity best practices within the MCP platform.",
-    "description": "Manage and query knowledge articles within the MCP platform. Allows uploading, tagging, and searching large text corpora. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hiveflow.Knowledge_Base"
-    ]
-  },
-  {
-    "question": "Create a new project in MCP named 'UserAnalytics' with a description 'Project for tracking user analytics data'.",
-    "description": "Toolset for organizing and maintaining projects in MCP. Use to create, update, or delete projects. Keywords: . Examples: ",
-    "expected_tools": [
-      "LaunchDarkly.project"
-    ]
-  },
-  {
-    "question": "Review the execution history and automation triggers for our current email marketing workflow to identify any bottlenecks or errors.",
-    "description": "Audit and review marketing or sales workflows, including execution histories and automation triggers. Keywords: . Examples: ",
-    "expected_tools": [
-      "HubSpot.Workflow_Insights"
-    ]
-  },
-  {
-    "question": "Retrieve all metadata associated with the asset ID '12345' stored in the MCP platform.",
-    "description": "Manages metadata for media assets stored in the MCP platform. Keywords: . Examples: ",
-    "expected_tools": [
-      "Cloudinary.mcp_metadata"
-    ]
-  },
-  {
-    "question": "Subscribe to notifications channel for real-time updates",
-    "description": "Allows publish-subscribe messaging via Redis Pub/Sub. Includes publish command to send message to a channel and subscribe/unsubscribe commands. Sample usage: \"Publish notification to updates channel\", \"Subscribe to chat:room42\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Upstash.PubSub"
-    ]
-  },
-  {
-    "question": "Do any keys matching user:session:* exist in the database?",
-    "description": "Keyspace inspection and management commands. Includes Exists (key existence check), Keys (pattern match), Del (delete key), Rename (rename key), and Expire (set time-to-live). Sample usage: \"Do keys matching foo:* exist?\", \"Set expiry for session:xyz to 60s\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Upstash.Keys"
-    ]
-  },
-  {
-    "question": "MATCH (n)-[r]->(m) RETURN n, r, m LIMIT 25",
-    "description": "A tool in MCP for running Cypher queries against the Memgraph database. It features a query editor, result browser, history of executed queries, and the ability to visualize execution plans. Users can execute, explain, and tune queries. Keywords: . Examples: ",
-    "expected_tools": [
-      "Memgraph.Query_Runner"
-    ]
-  },
-  {
-    "question": "Import a CSV file containing user data into the Memgraph database, mapping columns to user node properties.",
-    "description": "Enables uploading and importing various data files (CSV, JSON, etc.) into the Memgraph database. Supports mapping columns to property fields and running bulk imports. Keywords: . Examples: ",
-    "expected_tools": [
-      "Memgraph.Import_Data_Tool"
-    ]
-  },
-  {
-    "question": "Show the differences between the current production and staging environment configuration files for the messaging service.",
-    "description": "Tools focused on managing configuration files and settings across multiple projects or environments. These tools automate importing, exporting, diffing, and updating configuration. Keywords: . Examples: ",
-    "expected_tools": [
-      "Twilio.config_management"
-    ]
-  },
-  {
-    "question": "How do I update all installed Twilio CLI plugins to their latest versions?",
-    "description": "Tools for managing Twilio CLI plugins, including searching, installing, updating, and removing plugins. They assist in maintaining a healthy CLI environment and extending CLI capabilities. Keywords: . Examples: ",
-    "expected_tools": [
-      "Twilio.plugin_management"
-    ]
-  },
-  {
-    "question": "How can I load application configuration settings from environment variables using ZIZAI Recruitment.settings?",
-    "description": "A configuration and settings management tool for applications. Supports loading configurations from various sources like files, environment variables, and system properties. Keywords: . Examples: ",
-    "expected_tools": [
-      "ZIZAI Recruitment.settings"
-    ]
-  },
-  {
-    "question": "How can I schedule a background job to send reminder emails to candidates every Monday at 9 AM?",
-    "description": "An asynchronous task execution framework that abstracts scheduling and running jobs. Useful for running background jobs, scheduling, and managing futures. Keywords: . Examples: ",
-    "expected_tools": [
-      "ZIZAI Recruitment.task"
-    ]
-  },
-  {
-    "question": "How do I programmatically log a user out of the MCP using the session management tools?",
-    "description": "Tools for managing user sessions. Includes operations such as login, logout, session creation and deletion. Useful for authentication flows and user management within the MCP (Multi-Cluster Platform). Keywords: . Examples: ",
-    "expected_tools": [
-      "PlayCanvas.session"
-    ]
-  },
-  {
-    "question": "List all existing branches for project ID 12345.",
-    "description": "Tools for interacting with project branches. Allows creating new branches, listing existing branches, and renaming or deleting them. Keywords: . Examples: ",
-    "expected_tools": [
-      "PlayCanvas.branch"
-    ]
-  },
-  {
-    "question": "Plot the animal trajectory for session 2024-06-15.",
-    "description": "Tool for plotting and analyzing animal trajectory (tracking) data. Questions could include: \"Plot the animal trajectory for this session\", \"What is the path taken by the subject?\", \"Show me the heatmap of the position data.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Tako.Trajectory"
-    ]
-  },
-  {
-    "question": "Index a batch of 500 new product documents into the 'products' index and update the price field for 200 existing products in a single request.",
-    "description": "Performs multiple indexing, update, or delete operations in a single request. Useful for high-throughput data ingestion or batch modifications. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpenSearch.bulk"
-    ]
-  },
-  {
-    "question": "List all open stories assigned to me.",
-    "description": "Lists Shortcut entities filtered by parameters, e.g., \"Show all open pull requests,\" \"List epics for Q2,\" or \"List unassigned stories.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Shortcut.List"
-    ]
-  },
-  {
-    "question": "Please rephrase the following sentence to make it more formal: 'Hey, can you send me those files ASAP?'",
-    "description": "Edits or improves given text according to specified instructions, such as grammar correction, rewriting, or rephrasing. Keywords: . Examples: ",
-    "expected_tools": [
-      "Riza.text_editing"
-    ]
-  },
-  {
-    "question": "Is GitHub CodeQL static analysis security scanning configured and enabled for this repository?",
-    "description": "Checks for configuration of GitHub\"s CodeQL static analysis security scanning in the repository. Ensures automated security scanning is enabled. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpsLevel.security/codeql"
-    ]
-  },
-  {
-    "question": "Transcribe the audio recording of the meeting into written text.",
-    "description": "Provides speech-to-text (ASR) capabilities for converting audio input into written text. Useful for audio transcription, voice command interfaces, and accessibility features. Keywords: . Examples: ",
-    "expected_tools": [
-      "TextIn.speech_recognition"
-    ]
-  },
-  {
-    "question": "Create a new branch called 'feature/login' from the existing 'main' branch in the repository 'my-app'.",
-    "description": "Create a new branch from an existing one. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.CreateBranch"
-    ]
-  },
-  {
-    "question": "Show the code differences introduced in pull request #42 in the repository octocat/Hello-World.",
-    "description": "Retrieve the diff view of a pull request. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetPullRequestDiff"
-    ]
-  },
-  {
-    "question": "Update the title and description of pull request #42 in the repository 'octocat/Hello-World' to reflect the latest changes.",
-    "description": "Update metadata of a pull request. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.UpdatePullRequest"
-    ]
-  },
-  {
-    "question": "Create a pending review for pull request #42 in the repository octocat/Hello-World with the comment 'Needs more unit tests before merging.'",
-    "description": "Create a pending review for a pull request. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.CreatePendingPullRequestReview"
-    ]
-  },
-  {
-    "question": "Delete the pending review for pull request #42 in the repository 'octocat/Hello-World' before it is submitted.",
-    "description": "Delete a pending review before submission. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.DeletePendingPullRequestReview"
-    ]
-  },
-  {
-    "question": "List all runs for the 'build-and-test' workflow in the 'octocat/Hello-World' repository.",
-    "description": "List all runs for a specific workflow. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListWorkflowRuns"
-    ]
-  },
-  {
-    "question": "List all secret scanning alerts for the repository 'octocat/Hello-World'.",
-    "description": "List all secret scanning alerts in a repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListSecretScanningAlerts"
-    ]
-  },
-  {
-    "question": "Get details about the currently authenticated GitHub user.",
-    "description": "Retrieve information about the current authenticated user. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetMe"
-    ]
-  },
-  {
-    "question": "List all available Cosmos DB accounts in my Azure subscription.",
-    "description": "List available Cosmos DB accounts Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_cosmos_account_list"
-    ]
-  },
-  {
-    "question": "List all databases under the Cosmos DB account named 'my-cosmos-account'.",
-    "description": "List databases under a Cosmos account Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_cosmos_database_list"
-    ]
-  },
-  {
-    "question": "Find all items in the Cosmos DB container where the 'status' field is 'active'.",
-    "description": "Query items from a Cosmos container Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_cosmos_database_container_item_query"
-    ]
-  },
-  {
-    "question": "Download the file 'monthly-report.xlsx' from the 'reports' container in Azure Blob Storage.",
-    "description": "Download a blob from storage Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_storage_blob_download"
-    ]
-  },
-  {
-    "question": "List all available AI Search services in my Azure subscription.",
-    "description": "List available AI Search services Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_search_service_list"
-    ]
-  },
-  {
-    "question": "Delete the search index named 'customer-orders-index' from the Azure Cognitive Search service.",
-    "description": "Delete a search index Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_search_index_delete"
-    ]
-  },
-  {
-    "question": "az vm list --output table",
-    "description": "Execute any valid Azure CLI command Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_cli_command_run"
-    ]
-  },
-  {
-    "question": "Format the currently open Python file according to PEP8 standards.",
-    "description": "Apply formatting rules to the entire open document Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_editor_format_document"
-    ]
-  },
-  {
-    "question": "Show the commit history for the current repository.",
-    "description": "View commit history of the repository Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_git_log"
-    ]
-  },
-  {
-    "question": "List all currently active terminals in VSCode.",
-    "description": "List active terminals Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_terminal_list"
-    ]
-  },
-  {
-    "question": "Convert the following AWS Step Functions workflow written in YAML to the standard ASL/JSON format for deployment.",
-    "description": "This utility converts YAML-formatted Step Functions definitions back into the standard Amazon States Language (ASL/JSON). It allows users to store or edit workflows in YAML and have them automatically converted to a deployable JSON format. Keywords: . Examples: ",
-    "expected_tools": [
-      "AWS.Convert_AWS_Step_Functions_YAML_to_ASL_JSON"
-    ]
-  },
-  {
-    "question": "What is the current price of Bitcoin in USD?",
-    "description": "Retrieves the current price of a specified cryptocurrency. Suitable for obtaining up-to-date pricing on coins in various fiat or crypto pairs. Keywords: . Examples: ",
-    "expected_tools": [
-      "CoinGecko.coin_price"
-    ]
-  },
-  {
-    "question": "Collect all audit evidence from integrated systems for the upcoming SOC 2 compliance audit.",
-    "description": "Automates collecting and organizing audit evidence from integrations with your tech stack, reducing manual effort during audits. Keywords: . Examples: ",
-    "expected_tools": [
-      "Drata.Evidence_Collection"
-    ]
-  },
-  {
-    "question": "Generate an abstract model of the current application architecture using the latest scanned metadata for architectural analysis.",
-    "description": "Creates and manages abstract models of applications based on scanned metadata, facilitating architectural analysis. Keywords: . Examples: ",
-    "expected_tools": [
-      "CodeLogic.Application_Modeler"
-    ]
-  },
-  {
-    "question": "Classify the following customer support ticket into the appropriate category: 'The app crashes every time I try to upload a photo.'",
-    "description": "Automatically classifies support or feedback tickets into predefined categories for efficient handling and routing. Keywords: . Examples: ",
-    "expected_tools": [
-      "DevRev.ticket_categorization"
-    ]
-  },
-  {
-    "question": "Translate the following audio recording from Spanish to English.",
-    "description": "Translates spoken or written content from one language to another. Keywords: . Examples: ",
-    "expected_tools": [
-      "AllVoiceLab.Voice_Translation"
-    ]
-  },
-  {
-    "question": "latest advancements in artificial intelligence 2024",
-    "description": "Allows querying Google Search results for various topics. Keywords: . Examples: ",
-    "expected_tools": [
-      "fetchSERP.Google_Search"
-    ]
-  },
-  {
-    "question": "Summarize the current state of our sales pipeline, including the number of deals in each stage, their win probabilities, and the projected revenue for this quarter.",
-    "description": "Summarize the current state of sales pipelines, highlighting stage breakdowns, win probabilities, and projected revenue. Sample prompts: \"What deals are in negotiation?\", \"Summarize this quarter\"s pipeline.\", \"Show predicted revenue from open opportunities.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "HubSpot.Deal_Pipeline_Overview"
-    ]
-  },
-  {
-    "question": "Show all open customer service tickets assigned to John Doe with high priority.",
-    "description": "Manage and report on customer service tickets. Enables querying by status, owner, or priority. Keywords: . Examples: ",
-    "expected_tools": [
-      "HubSpot.Ticket_Management"
-    ]
-  },
-  {
-    "question": "Show me the open rates and click-through rates for all marketing emails sent in the last quarter.",
-    "description": "Analyze marketing email performance, including open rates, click rates, and recipient engagement. Sample queries: \"How did our latest campaign perform?\", \"Which newsletter had the highest CTR?\", \"Show email metrics for the past month.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "HubSpot.Marketing_Email_Analytics"
-    ]
-  },
-  {
-    "question": "Retrieve all open issues assigned to user 'john.doe' in project 'Website Redesign'.",
-    "description": "REST and GraphQL interfaces for interacting with MCP data and actions. Keywords: . Examples: ",
-    "expected_tools": [
-      "Linear.API"
-    ]
-  },
-  {
-    "question": "Show all changes made to user permissions in the last 30 days.",
-    "description": "Tracks changes and activity across MCP objects for auditing purposes. Keywords: . Examples: ",
-    "expected_tools": [
-      "Linear.Audit_Logs"
-    ]
-  },
-  {
-    "question": "List all available graph algorithms and procedures, including their descriptions and execution options.",
-    "description": "Lists available query procedures and algorithms (e.g., PageRank, Shortest Path), with descriptions and execution options. Users can run analytics and graph algorithms directly. Keywords: . Examples: ",
-    "expected_tools": [
-      "Memgraph.Procedures_Catalog"
-    ]
-  },
-  {
-    "question": "Test if port 443 is open on www.example.com from multiple global locations.",
-    "description": "Initiates TCP connection checks to a specified port on a target host to test basic connectivity and port reachability across different geographies. Keywords: . Examples: ",
-    "expected_tools": [
-      "Globalping.tcp"
-    ]
-  },
-  {
-    "question": "Find all pages on the registered website that mention 'climate change policy updates'.",
-    "description": "Search for specific pages or content within registered websites (local or remote). Keywords: . Examples: ",
-    "expected_tools": [
-      "Hyperbolic.site_search"
-    ]
-  },
-  {
-    "question": "Scan the Docker image 'myapp:latest' for known security vulnerabilities.",
-    "description": "Examines container images specified in the project for vulnerabilities. Keywords: . Examples: ",
-    "expected_tools": [
-      "JFrog.container_scan"
-    ]
-  },
-  {
-    "question": "Remove user with ID 12345 from room 'general-chat' due to violation of community guidelines.",
-    "description": "Forcibly removes a user from a specific room. Useful for moderation actions. Keywords: . Examples: ",
-    "expected_tools": [
-      "Liveblocks.user_kick"
-    ]
-  },
-  {
-    "question": "Perform a traceroute to www.google.com to determine the network path packets take from my location to Google's servers.",
-    "description": "Performs a traceroute to a given host to map the path packets take through the network. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hunter.Traceroute"
-    ]
-  },
-  {
-    "question": "What are the main differences between Google Gemini and OpenAI's GPT-4 models?",
-    "description": "Chat-based question answer tool using Google Gemini models. Keywords: . Examples: ",
-    "expected_tools": [
-      "Logfire.ask_chat_google"
-    ]
-  },
-  {
-    "question": "Retrieve the current health status and configuration of all connected nodes in the Nutrient DWS system.",
-    "description": "The main server component of the \"nutrient-dws-mcp-server\" project. This tool provides a Management Control Plane (MCP) for the Nutrient DWS system, offering endpoints for lifecycle management, status, and configuration of resources. Typical usage includes managing services, handling requests, starting/stopping resource controllers, and monitoring health/status of connected nodes. Keywords: . Examples: ",
-    "expected_tools": [
-      "Nutrient.DWS_MCP_Server"
-    ]
-  },
-  {
-    "question": "Provision a new MCP server instance with default configuration settings.",
-    "description": "A set of gRPC-based services allowing clients to interact programmatically with the MCP server for operational and configuration tasks. Sample use includes provisioning, status queries, and event notifications. Keywords: . Examples: ",
-    "expected_tools": [
-      "Nutrient.GRPC_API"
-    ]
-  },
-  {
-    "question": "Generate a report showing the total number of SMS messages sent and received across all Twilio accounts in the last month, including any account errors encountered.",
-    "description": "Tools for generating usage and operations reports from multiple Twilio accounts or projects. Reporting covers metrics like messages sent, call minutes, and account errors. Keywords: . Examples: ",
-    "expected_tools": [
-      "Twilio.reporting"
-    ]
-  },
-  {
-    "question": "Submit an answer to question ID 12345 with the content: 'The capital of France is Paris.'",
-    "description": "A tool for submitting answers to questions. Given a question ID and the answer content, this tool enables automatic or manual response workflows. Keywords: . Examples: ",
-    "expected_tools": [
-      "Tianji.answer"
-    ]
-  },
-  {
-    "question": "Show the current ThoughtSpot license status and expiration date.",
-    "description": "Toolset for handling subscription and licensing information. Includes displaying current license status and applying new license keys. Keywords: . Examples: ",
-    "expected_tools": [
-      "ThoughtSpot.license"
-    ]
-  },
-  {
-    "question": "What is the current memory usage, number of threads, and uptime of the Netdata agent?",
-    "description": "Outputs internal statistics about the Netdata agent, such as memory usage, threads, and uptime. Keywords: . Examples: ",
-    "expected_tools": [
-      "Netdata.netdata_stats"
-    ]
-  },
-  {
-    "question": "Get detailed information about the issue with key 'AXd3fG2k9b2l4Qz8h7Jk' in the 'my-java-project' repository.",
-    "description": "Fetches detailed information about a specific issue in a project based on its key or identifier. Keywords: . Examples: ",
-    "expected_tools": [
-      "SonarQube.Show_Issue_Details"
-    ]
-  },
-  {
-    "question": "Get the WHOIS information for the domain example.com",
-    "description": "Retrieves WHOIS information about a domain or IP address, such as ownership, registration dates, and contact details. Keywords: . Examples: ",
-    "expected_tools": [
-      "WaveSpeed.Whois"
-    ]
-  },
-  {
-    "question": "Combine the following phrases into a single, coherent question: 'What are the main causes of climate change?', 'How does human activity contribute?', and 'What can individuals do to help?'",
-    "description": "Enables composing complex strings or questions by joining together several strings or input data. Keywords: . Examples: ",
-    "expected_tools": [
-      "Rember.compose"
-    ]
-  },
-  {
-    "question": "Retrieve all current investment holdings for user account 12345.",
-    "description": "Obtains asset and investment holding data for a user\"s account. Keywords: . Examples: ",
-    "expected_tools": [
-      "Sophtron.GetHoldings"
-    ]
-  },
-  {
-    "question": "Send a GET request to https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY to retrieve the current weather data for London.",
-    "description": "REST toolset allows making generic HTTP requests to external RESTful APIs. Supports GET, POST, PUT, DELETE requests and handling responses. Keywords: . Examples: ",
-    "expected_tools": [
-      "YepCode.rest"
-    ]
-  },
-  {
-    "question": "List all repositories in our organization that do not have a detected license file or have an unknown license type.",
-    "description": "Detects the presence and the type of license file (e.g., MIT, Apache-2.0) in the repository. Ensures that each repository is properly licensed and tracked. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpsLevel.code/license"
-    ]
-  },
-  {
-    "question": "Extract all mathematical formulas from this scanned page of a calculus textbook.",
-    "description": "Recognizes and extracts mathematical formulas from images or documents. Ideal for educational technology, academic research, and digitizing handwritten or printed math content. Keywords: . Examples: ",
-    "expected_tools": [
-      "TextIn.formula_recognition"
-    ]
-  },
-  {
-    "question": "Extract all tables from a scanned PDF of a financial report and convert them into an Excel spreadsheet.",
-    "description": "Detects and digitizes tables from images or scanned documents, converting them into structured formats such as CSV or Excel. Enables data extraction from receipts, financial reports, and forms. Keywords: . Examples: ",
-    "expected_tools": [
-      "TextIn.table_recognition"
-    ]
-  },
-  {
-    "question": "Detect and normalize the layout of a scanned tax form image to prepare it for OCR processing.",
-    "description": "Detects and normalizes the layout of printed paper documents in images, aiding downstream OCR or content extraction. Useful as a preprocessing step for scanned forms or papers. Keywords: . Examples: ",
-    "expected_tools": [
-      "TextIn.printer_paper_recognition"
-    ]
-  },
-  {
-    "question": "Create a new README.md file in the main branch of the repository 'octocat/Hello-World' with the content 'Welcome to Hello-World!'",
-    "description": "Create or modify a file in a repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.CreateOrUpdateFile"
-    ]
-  },
-  {
-    "question": "Update the title of issue #42 in the repository octocat/Hello-World to 'Bug: Crash on startup' and add the label 'bug'.",
-    "description": "Update an issue’s title, body, or labels. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.UpdateIssue"
-    ]
-  },
-  {
-    "question": "Retrieve all comments on pull request #42 in the repository octocat/Hello-World.",
-    "description": "Retrieve all comments on a pull request. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetPullRequestComments"
-    ]
-  },
-  {
-    "question": "List all reviews submitted to pull request #42 in the repository octocat/Hello-World.",
-    "description": "List reviews submitted to a pull request. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetPullRequestReviews"
-    ]
-  },
-  {
-    "question": "Retrieve the detailed logs for the 'build-and-test' job in workflow run #456 of the repository 'octocat/Hello-World'.",
-    "description": "Get detailed logs for a specific job in a workflow. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetJobLogs"
-    ]
-  },
-  {
-    "question": "Rerun only the failed jobs from the latest workflow run in the repository 'octocat/Hello-World'.",
-    "description": "Rerun only failed jobs in a workflow run. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.RerunFailedJobs"
-    ]
-  },
-  {
-    "question": "Mark all my GitHub notifications as read.",
-    "description": "Mark all GitHub notifications as read. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.MarkAllNotificationsRead"
-    ]
-  },
-  {
-    "question": "Unsubscribe from all notifications for the repository 'octocat/Hello-World'.",
-    "description": "Subscribe or unsubscribe to repository-wide notifications. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ManageRepositoryNotificationSubscription"
-    ]
-  },
-  {
-    "question": "Retrieve the value of the key 'AppSettings:DatabaseConnectionString' from Azure App Configuration.",
-    "description": "Retrieve value of a specific key Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_appconfig_kv_show"
-    ]
-  },
-  {
-    "question": "Lock the configuration key 'AppSettings:DatabaseConnectionString' in Azure App Configuration to prevent further edits.",
-    "description": "Lock a key to prevent editing Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_appconfig_kv_lock"
-    ]
-  },
-  {
-    "question": "Find all documents in the Azure search index that mention 'machine learning' and were updated in the last 30 days.",
-    "description": "Run search queries on an Azure index Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_search_index_query"
-    ]
-  },
-  {
-    "question": "List all available Azure subscriptions for my account.",
-    "description": "List available Azure subscriptions Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_subscription_list"
-    ]
-  },
-  {
-    "question": "Set up a connection to an external PostgreSQL database and ingest customer transaction data into MCP.",
-    "description": "Configure connections to external data sources (databases, APIs, file storage) and ingest structured or unstructured data into MCP. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hiveflow.Data_Connector"
-    ]
-  },
-  {
-    "question": "Design a workflow to automatically extract sales data from the MCP database, transform it into a monthly summary report, and integrate the results into the company's analytics dashboard.",
-    "description": "Automate multi-step business processes involving data extraction, transformation, and integration within MCP. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hiveflow.Workflow_Engine"
-    ]
-  },
-  {
-    "question": "Create a reusable prompt template for summarizing research articles in the field of artificial intelligence.",
-    "description": "Define reusable generative AI prompt templates for querying knowledge or enabling conversational AI features. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hiveflow.Prompt_Templates"
-    ]
-  },
-  {
-    "question": "Register a new API endpoint for controlled access using Auth0.",
-    "description": "Register and manage resources that need controlled access (APIs, endpoints, data assets). Keywords: . Examples: ",
-    "expected_tools": [
-      "Auth0.Resource_Registration"
-    ]
-  },
-  {
-    "question": "List all audiences configured in Auth0 that can receive tokens or be referenced in access control decisions.",
-    "description": "List the audiences that can receive tokens or be referenced in access control decisions. Keywords: . Examples: ",
-    "expected_tools": [
-      "Auth0.Audience_Listing"
-    ]
-  },
-  {
-    "question": "What are the supported trading pairs, fees, and 24-hour trading volume for Binance exchange?",
-    "description": "Gives detailed information about a cryptocurrency exchange such as supported trading pairs, fees, and market volume. Useful for comparison and research of exchanges. Keywords: . Examples: ",
-    "expected_tools": [
-      "CoinGecko.exchange_info"
-    ]
-  },
-  {
-    "question": "How can I resize an image to 800x600 pixels and apply a grayscale filter using Cloudinary MCP transformations?",
-    "description": "Provides on-the-fly transformations for images and videos via MCP. Keywords: . Examples: ",
-    "expected_tools": [
-      "Cloudinary.mcp_transformations"
-    ]
-  },
-  {
-    "question": "Ping google.com from probes in Asia to measure network latency and packet loss.",
-    "description": "Performs ICMP ping checks from distributed probes worldwide to measure network latency and packet loss. Keywords: . Examples: ",
-    "expected_tools": [
-      "Globalping.ping"
-    ]
-  },
-  {
-    "question": "Show me all current technical controls that are in a non-compliant state across our cloud infrastructure.",
-    "description": "Monitors technical controls in real time, alerting on misconfigurations or non-compliant states. Keywords: . Examples: ",
-    "expected_tools": [
-      "Drata.Continuous_Control_Monitoring"
-    ]
-  },
-  {
-    "question": "Summarize the main findings and recommendations from the latest IPCC climate change report.",
-    "description": "A tool to generate concise summaries from long documents or articles. Keywords: . Examples: ",
-    "expected_tools": [
-      "AllVoiceLab.Summarizer"
-    ]
-  },
-  {
-    "question": "latest developments in artificial intelligence 2024",
-    "description": "Retrieves the latest news articles and headlines from Google News. Keywords: . Examples: ",
-    "expected_tools": [
-      "fetchSERP.Google_News"
-    ]
-  },
-  {
-    "question": "List all PlayCanvas projects created in the last 30 days.",
-    "description": "Tools for project lifecycle management. Includes creating, deleting, cloning, and loading projects. Also provides search and listing functionality. Keywords: . Examples: ",
-    "expected_tools": [
-      "PlayCanvas.project"
-    ]
-  },
-  {
-    "question": "Rename the entity named 'PlayerCharacter' to 'HeroAvatar' in my project.",
-    "description": "Tools to manage entities within a project. Enables creation, renaming, deletion, duplication, and updating of entities (such as 3D objects or scripts). Keywords: . Examples: ",
-    "expected_tools": [
-      "PlayCanvas.entity"
-    ]
-  },
-  {
-    "question": "Find the user profile information for the username 'johndoe'.",
-    "description": "User administration tools. Includes searching users, getting user data, and looking up users by email, username, or ID. Keywords: . Examples: ",
-    "expected_tools": [
-      "PlayCanvas.user"
-    ]
-  },
-  {
-    "question": "Retrieve the current state and health of the OpenSearch cluster to diagnose any potential issues or misconfigurations.",
-    "description": "Retrieves the current state of an OpenSearch or Elasticsearch cluster. This tool can be used to diagnose cluster health and settings. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpenSearch.get_cluster_state"
-    ]
-  },
-  {
-    "question": "Update the mapping of the 'products' index to add a new field called 'release_date' of type 'date'.",
-    "description": "Updates the mapping for an index, for example to add a new field or change a field type. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpenSearch.update_mapping"
-    ]
-  },
-  {
-    "question": "Check for security vulnerabilities and outdated versions in the dependencies of my Node.js project.",
-    "description": "Inspects project dependencies for vulnerabilities and outdated versions. Keywords: . Examples: ",
-    "expected_tools": [
-      "JFrog.dependency_check"
-    ]
-  },
-  {
-    "question": "Check if all dependencies in the current project comply with the approved open-source license list and flag any that may cause legal issues.",
-    "description": "Ensures that all project dependencies comply with allowed license types and flags licensed causing legal issues. Keywords: . Examples: ",
-    "expected_tools": [
+    "task": "I need to find some active open source repositories related to data science, check if they have any open pull requests, see if their code quality meets standards, and make sure their dependencies are secure and compliant.",
+    "app": "GitHub",
+    "expected_tools": [
+      "GitHub.SearchRepositories",
+      "GitHub.ListPullRequests",
+      "SonarQube.List_Projects",
+      "SonarQube.Check_Quality_Gate",
+      "JFrog.dependency_check",
       "JFrog.license_compliance"
     ]
   },
   {
-    "question": "What are the key findings and recommendations in the uploaded annual financial report?",
-    "description": "Allows users to ask questions that are answered based on the textual content of an uploaded document. Useful for interrogating reports, contracts, and any document. Keywords: . Examples: ",
+    "task": "I have a bunch of AWS Step Functions in JSON and I want to convert them to YAML, check if they're valid, simulate one locally, and then search for related workflow logs in OpenSearch. Also, I need to update a status flag in Redis when the simulation is complete.",
+    "app": "AWS Console",
     "expected_tools": [
-      "UnifAI.DocumentQA"
+      "AWS.Convert_AWS_Step_Functions_Amazon_States_Language_(ASL)_to_YAML",
+      "AWS.Validate_State_Machine_Definitions",
+      "AWS.Local_Simulation_of_Step_Functions_Workflows",
+      "OpenSearch.search",
+      "Upstash.String"
     ]
   },
   {
-    "question": "Invite a new user to the MCP system and assign them the 'Project Manager' role for the 'Alpha' project.",
-    "description": "Manage users and access within the MCP system, including inviting users, setting roles, and removing users from a project. Keywords: . Examples: ",
+    "task": "I need to move some files from Azure storage to Cloudinary, update their metadata, and then make them available as assets in my PlayCanvas project. Can you help me with this?",
+    "app": "PlayCanvas",
     "expected_tools": [
-      "LaunchDarkly.user"
+      "Azure.azmcp_storage_blob_list",
+      "Azure.azmcp_storage_blob_download",
+      "Cloudinary.mcp_upload",
+      "Cloudinary.mcp_metadata",
+      "PlayCanvas.asset"
     ]
   },
   {
-    "question": "Add a new public SSH key to the MCP deployment for user access.",
-    "description": "Facilitates adding and removing public SSH keys for accessing MCP deployments and instances. Keywords: . Examples: ",
+    "task": "I need to review the latest code updates, analyze how data flows through the new changes, and make sure the project passes all code quality checks before merging. Can you help me with this?",
+    "app": "Visual Studio Code",
     "expected_tools": [
-      "NanoVMs.SSH_Management"
+      "VSCode.vscode_git_pull",
+      "VSCode.vscode_fs_read_file",
+      "CodeLogic.Scanner",
+      "CodeLogic.Dataflow_Analyzer",
+      "SonarQube.Trigger_Project_Analysis",
+      "SonarQube.Check_Quality_Gate"
     ]
   },
   {
-    "question": "Show me a carousel of the top 5 trending products with buttons to view details or purchase each one.",
-    "description": "Returns a carousel template message displaying multiple columns with action buttons for each. Keywords: . Examples: ",
+    "task": "I made some changes to my project and want to make sure all dependencies are up to date and then share a report of the current state of the codebase with my team. Can you help me with this?",
+    "app": "Visual Studio Code",
     "expected_tools": [
-      "LINE.Carousel"
+      "VSCode.vscode_git_status",
+      "VSCode.vscode_git_commit",
+      "VSCode.vscode_git_push",
+      "CodeLogic.Scanner",
+      "CodeLogic.Dependency_Resolver",
+      "CodeLogic.Reporting_Engine"
     ]
   },
   {
-    "question": "What are the main differences between renewable and non-renewable energy sources?",
-    "description": "Generic QA tool using Groq-hosted Llama-3 generative models. Keywords: . Examples: ",
+    "task": "Can you help me review recent customer support tickets, identify which ones are most urgent, analyze the sentiment of the messages, and provide more details about the customers who submitted them?",
+    "app": "HubSpot",
     "expected_tools": [
-      "Logfire.ask_groq_llama3"
+      "HubSpot.Ticket_Management",
+      "DevRev.sentiment_analysis",
+      "DevRev.priority_detection",
+      "HubSpot.Contact_Insights"
     ]
   },
   {
-    "question": "Ping google.com to check if the host is reachable and measure network latency.",
-    "description": "Sends ping requests to hosts to test connectivity and network latency. Keywords: . Examples: ",
+    "task": "Can you help me review recent feedback in our Notion database, summarize the main points, analyze the sentiment, and leave a comment with the summary and sentiment on the relevant Notion page?",
+    "app": "Notion",
     "expected_tools": [
-      "Hunter.Ping"
+      "Notion.query_database",
+      "Notion.create_comment",
+      "DevRev.sentiment_analysis",
+      "DevRev.summarization"
     ]
   },
   {
-    "question": "How can I play back a previously recorded media session and manage the recorded files?",
-    "description": "Enables recording of media sessions, management of recorded files, and playback controls. Keywords: . Examples: ",
+    "task": "I want to set up an automated workflow that sends a personalized SMS to customers after they make a purchase, tracks the engagement, and generates a weekly report of campaign performance across multiple Twilio accounts. Can you help me get this all working together?",
+    "app": "Zapier",
     "expected_tools": [
-      "Yunxin.Recording_-_Playback"
-    ]
-  },
-  {
-    "question": "How can I send a POST request with JSON data to a custom API endpoint that Zapier does not natively support?",
-    "description": "Send or receive data to/from any app via HTTP requests. Useful for requests such as \"Can I connect to a service that Zapier doesn\"t natively support?\" or \"How do I send data to a custom API URL?\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Zapier.Webhooks"
-    ]
-  },
-  {
-    "question": "Get the contents of the README.md file from the main branch of the octocat/Hello-World repository.",
-    "description": "Retrieve the contents of a specific file within a GitHub repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetFileContents"
-    ]
-  },
-  {
-    "question": "List all tags for the repository 'tensorflow/tensorflow'.",
-    "description": "List all Git tags associated with a repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListTags"
-    ]
-  },
-  {
-    "question": "Get details about the 'v2.0.1' tag in the 'octocat/Hello-World' repository.",
-    "description": "Retrieve details about a specific tag. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetTag"
-    ]
-  },
-  {
-    "question": "Fork the repository 'octocat/Hello-World' to my GitHub account.",
-    "description": "Fork a repository to your GitHub account. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ForkRepository"
-    ]
-  },
-  {
-    "question": "Delete the file 'docs/old_readme.md' from the repository 'username/project' on the 'main' branch.",
-    "description": "Delete a file from the repository via GitHub API. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.DeleteFile"
-    ]
-  },
-  {
-    "question": "Create a new issue in the repository 'octocat/Hello-World' with the title 'Bug: Application crashes on startup' and the description 'Steps to reproduce: 1. Open the app 2. Observe crash. Expected behavior: App should launch successfully.'",
-    "description": "Create a new issue in the repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.CreateIssue"
-    ]
-  },
-  {
-    "question": "List all files that were modified in pull request #42 in the repository octocat/Hello-World.",
-    "description": "Fetch files changed in a pull request. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetPullRequestFiles"
-    ]
-  },
-  {
-    "question": "Get details for secret scanning alert ID 123456 in the repository 'octocat/Hello-World'.",
-    "description": "Retrieve details of a specific secret scanning alert. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetSecretScanningAlert"
-    ]
-  },
-  {
-    "question": "List all key-values stored in the Azure App Configuration for the specified application environment.",
-    "description": "List key-values in App Configuration Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_appconfig_kv_list"
-    ]
-  },
-  {
-    "question": "List all databases in the Kusto cluster named 'my-kusto-cluster'.",
-    "description": "List databases within a Kusto cluster Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_kusto_database_list"
-    ]
-  },
-  {
-    "question": "Show the top 10 most active users in the 'user_activity' table over the past 7 days.",
-    "description": "Run Kusto query in a selected database Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_kusto_query"
-    ]
-  },
-  {
-    "question": "List all Service Bus namespaces in my Azure subscription.",
-    "description": "List all Service Bus namespaces Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_servicebus_namespace_list"
-    ]
-  },
-  {
-    "question": "Book a campsite at Jasper National Park for 2 adults and 1 child from July 15th to July 18th, 2024.",
-    "description": "Facilitates booking a selected campsite for desired dates and guest details. Handles reservations, payment processing, and confirmation notifications. Keywords: . Examples: ",
-    "expected_tools": [
-      "Campertunity.bookCamp"
-    ]
-  },
-  {
-    "question": "Show my booking history and saved favorite campsites.",
-    "description": "Manages user profiles, including personal information, booking history, saved favorites, and communication with site admins or hosts. Keywords: . Examples: ",
-    "expected_tools": [
-      "Campertunity.userProfile"
-    ]
-  },
-  {
-    "question": "Check the propagation status and latency of the 'A' record for example.com from multiple global locations.",
-    "description": "Executes DNS resolution queries from various locations to check latency, DNS record correctness, and propagation worldwide. Keywords: . Examples: ",
-    "expected_tools": [
-      "Globalping.dns"
-    ]
-  },
-  {
-    "question": "Check the HTTP status code, response time, and headers for https://www.wikipedia.org from multiple global locations to assess its uptime and accessibility.",
-    "description": "Performs HTTP(S) requests (GET/HEAD) to assess website uptime, performance, and accessibility from global probes. Checks status codes, headers, and response times. Keywords: . Examples: ",
-    "expected_tools": [
-      "Globalping.http"
-    ]
-  },
-  {
-    "question": "Get the historical price and market cap data for Bitcoin over the past 30 days.",
-    "description": "Returns a series of market chart points for a given cryptocurrency over a time window (historical prices and market caps). Important for plotting price or market cap charts. Keywords: . Examples: ",
-    "expected_tools": [
-      "CoinGecko.coin_market_chart"
-    ]
-  },
-  {
-    "question": "List all users with admin roles and their current permissions for MCP resources.",
-    "description": "Manage user accounts, roles, and permissions for secure access to MCP resources. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hiveflow.User_-_Access_Management"
-    ]
-  },
-  {
-    "question": "Route an image upload request to the correct MCP service endpoint for optimized media processing.",
-    "description": "Acts as a reverse proxy for routing media requests to appropriate MCP services. Keywords: . Examples: ",
-    "expected_tools": [
-      "Cloudinary.mcp_proxy"
-    ]
-  },
-  {
-    "question": "Translate the following English text into Spanish: 'Welcome to our customer support portal. How can we assist you today?'",
-    "description": "Translates text between multiple languages. Helps users understand content written in different languages. Keywords: . Examples: ",
-    "expected_tools": [
-      "DevRev.translation"
-    ]
-  },
-  {
-    "question": "What are the main findings discussed in the provided research document?",
-    "description": "A question answering tool that lets users ask questions about a specific document or content. Keywords: . Examples: ",
-    "expected_tools": [
-      "AllVoiceLab.QA"
-    ]
-  },
-  {
-    "question": "Commit all currently staged changes with the message 'Fix bug in user authentication flow'.",
-    "description": "Commit staged changes with a message Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_git_commit"
-    ]
-  },
-  {
-    "question": "Retrieve the profile information for customer with email john.doe@example.com.",
-    "description": "Manage user profiles using MCP. Allows creation, update, and retrieval of customer profile data. Keywords: . Examples: ",
-    "expected_tools": [
-      "Klaviyo.Profiles"
-    ]
-  },
-  {
-    "question": "Show me all the current email lists and segments in my Klaviyo account.",
-    "description": "Handle mailing lists and segments. Provides tools to create, remove, and query lists or segments of contacts. Keywords: . Examples: ",
-    "expected_tools": [
-      "Klaviyo.Lists_and_Segments"
-    ]
-  },
-  {
-    "question": "Show me all purchase events recorded for user john.doe@example.com in the last 30 days.",
-    "description": "Record and view user events, such as purchases, email opens, or custom actions for analytics and automation. Keywords: . Examples: ",
-    "expected_tools": [
-      "Klaviyo.Events"
-    ]
-  },
-  {
-    "question": "How can I set up an automated welcome email flow for new subscribers in Klaviyo?",
-    "description": "Automate campaigns and customer journeys by defining relevant flows and triggers. Keywords: . Examples: ",
-    "expected_tools": [
+      "Twilio.reporting",
+      "Twilio.config_management",
+      "Zapier.Schedule",
+      "Klaviyo.Events",
       "Klaviyo.Flows"
     ]
   },
   {
-    "question": "Show all details for the current user account.",
-    "description": "Manage account-related operations within the MCP server. This toolset typically handles commands related to viewing, editing, and maintaining account information. Keywords: . Examples: ",
+    "task": "Can you help me find out which servers had high CPU usage last week, check if there were any related alerts, and add a summary of these incidents to our incident tracking system?",
+    "app": "Kibana",
     "expected_tools": [
-      "LaunchDarkly.account"
+      "Netdata.data_query",
+      "Netdata.alarms_list",
+      "OpenSearch.search",
+      "OpenSearch.index_document"
     ]
   },
   {
-    "question": "List all active API keys for the MCP server.",
-    "description": "Manage API keys for programmatic access to the MCP server. Tasks include creating, listing, and revoking API keys. Keywords: . Examples: ",
+    "task": "I have a large dataset of user activity logs that I want to analyze for trends and search efficiently. Can you help me set up the database, import the data, make sure it's indexed for fast search, and also update the search engine to support new fields in the data?",
+    "app": "Kibana",
     "expected_tools": [
-      "LaunchDarkly.api_key"
+      "Milvus.Data_Import_Export",
+      "Milvus.Collection_Management",
+      "Milvus.Index_Management",
+      "OpenSearch.bulk",
+      "OpenSearch.update_mapping"
     ]
   },
   {
-    "question": "What is the current hostname and system time of the host machine?",
-    "description": "Provides information about the host, such as the id, hostname, and time. Keywords: . Examples: ",
+    "task": "I have several datasets with user activity logs and transaction records. I want to organize them, import them into a database, and then analyze user behavior by joining the tables, filtering by date, grouping by user segments, and calculating key metrics.",
+    "app": "Tableau",
     "expected_tools": [
-      "Netdata.system_info"
-    ]
-  },
-  {
-    "question": "Retrieve the CPU usage metrics for the past 24 hours for all monitored servers.",
-    "description": "Directs queries to the main data collection engine to retrieve metrics or chart data. Keywords: . Examples: ",
-    "expected_tools": [
-      "Netdata.data_query"
-    ]
-  },
-  {
-    "question": "Find all users named 'Alex Johnson' in the Notion workspace.",
-    "description": "Allows searching of Notion users. Keywords: . Examples: ",
-    "expected_tools": [
-      "Notion.search_users"
-    ]
-  },
-  {
-    "question": "Retrieve the details of the Notion block with the ID 'b3f2c4e1-8a2d-4e5b-9c3d-2d1a7e6f5b4c'.",
-    "description": "Retrieves details of a Notion block using its ID. Keywords: . Examples: ",
-    "expected_tools": [
-      "Notion.get_block"
-    ]
-  },
-  {
-    "question": "What is the average order value for the past month?",
-    "description": "Metrics tools enable users to summarize and aggregate data using pre-defined or custom metrics. They automate the creation of SQL queries to compute KPIs, averages, counts, sums, etc. Sample queries: \"What is the total revenue for Q1?\", \"Show me average session time per user.\" Keywords: . Examples: ",
-    "expected_tools": [
+      "Milvus.Collection_Management",
+      "Milvus.Schema_Management",
+      "Milvus.Data_Import_Export",
+      "klusterai.Joins",
+      "klusterai.Filters",
+      "klusterai.Grouping",
       "klusterai.Metrics"
     ]
   },
   {
-    "question": "Delete the deployment named 'web-app-prod' from MCP and ensure all associated resources are cleaned up.",
-    "description": "Removes specified deployments from MCP. Manages cleanup of associated resources and ensures proper teardown. Keywords: . Examples: ",
+    "task": "I have a bunch of new product images and videos that need to be uploaded, tagged with metadata, transformed for web and mobile, and then made searchable in our catalog. Can you help me set this up?",
+    "app": "Shopify",
     "expected_tools": [
-      "NanoVMs.Delete_Deployment"
+      "Cloudinary.mcp_upload",
+      "Cloudinary.mcp_metadata",
+      "Cloudinary.mcp_transformations",
+      "OpenSearch.index_document",
+      "OpenSearch.search"
     ]
   },
   {
-    "question": "What are the main differences between supervised and unsupervised machine learning?",
-    "description": "A retrieval-based QA tool that leverages a vector database to find relevant context and answer questions. Keywords: . Examples: ",
+    "task": "I need to investigate a suspicious domain I found in my server logs. Can you find out who owns it, where it's located, what its DNS records look like, and if there are any recent reports or news about it?",
+    "app": "Splunk",
     "expected_tools": [
-      "Octagon.ask_retrieval"
-    ]
-  },
-  {
-    "question": "What are the privacy benefits of using locally hosted AI models compared to cloud-based solutions?",
-    "description": "Asking questions to locally hosted Ollama models for private, on-device inference. Keywords: . Examples: ",
-    "expected_tools": [
-      "Logfire.ask_ollama_chat"
-    ]
-  },
-  {
-    "question": "What is the current presence status of user 'john_doe' in room 'project_alpha'?",
-    "description": "Shows the presence status of a user in a room (online, offline, etc). Keywords: . Examples: ",
-    "expected_tools": [
-      "Liveblocks.get_user_presence"
-    ]
-  },
-  {
-    "question": "List all index aliases currently configured in the OpenSearch cluster.",
-    "description": "Fetches all index aliases in the cluster. Use this to understand aliasing for index management or routing. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpenSearch.get_aliases"
-    ]
-  },
-  {
-    "question": "Retrieve the field mapping and structure for the 'user_data' index to understand how user information is indexed.",
-    "description": "Retrieves the mapping for one or more indices, showing field types and structure. Useful for understanding how data is indexed. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpenSearch.get_mapping"
-    ]
-  },
-  {
-    "question": "Permanently delete the 'user_activity_logs' index from the OpenSearch cluster.",
-    "description": "Deletes an index permanently. Use with caution as this is irreversible. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpenSearch.delete_index"
-    ]
-  },
-  {
-    "question": "Convert this Java List<Employee> object into a JSON array representation.",
-    "description": "A serialization/deserialization tool to transform complex objects into primitive types. It supports fluent APIs for mapping objects (e.g., Map, List, Set) into JSON or other primitive-based representations. Sample use-cases: \"Convert this Java object to JSON\", \"Map this HashMap into a String.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "ZIZAI Recruitment.mapper"
-    ]
-  },
-  {
-    "question": "How can I propagate user authentication data through multiple asynchronous service calls in a microservices architecture using ZIZAI Recruitment.context?",
-    "description": "A context propagation system to maintain and pass contextual state (such as request-scoped data) through call chains, especially for async operations. Keywords: . Examples: ",
-    "expected_tools": [
-      "ZIZAI Recruitment.context"
-    ]
-  },
-  {
-    "question": "Retrieve all transaction records for account 123456789 from January 1, 2024 to March 31, 2024.",
-    "description": "Fetches transaction records linked to a specified account over a time period. Keywords: . Examples: ",
-    "expected_tools": [
-      "Sophtron.GetTransactions"
-    ]
-  },
-  {
-    "question": "Verify if John Doe is the owner of the bank account with routing number 123456789 and account number 987654321 for onboarding purposes.",
-    "description": "Confirms account ownership or account details, usually for onboarding or funding purposes. Keywords: . Examples: ",
-    "expected_tools": [
-      "Sophtron.VerifyAccount"
-    ]
-  },
-  {
-    "question": "Show me available boilerplate templates for creating a Twilio SMS notification service in Python.",
-    "description": "Templates and scaffolding tools for quickly spinning up new Twilio projects. This includes boilerplate code, best practice configurations, and automation for setting up a new project. Keywords: . Examples: ",
-    "expected_tools": [
-      "Twilio.project_templates"
-    ]
-  },
-  {
-    "question": "What is the current temperature of the printer's hotend and heated bed?",
-    "description": "Interacts with and controls the 3D printer, including retrieving the printer state, temperatures, sending commands, and reporting errors. Keywords: . Examples: ",
-    "expected_tools": [
-      "OctoEverywhere.Printer"
-    ]
-  },
-  {
-    "question": "List all quality gates currently configured on the SonarQube server for comparison and selection purposes.",
-    "description": "Returns all available quality gates configured on the SonarQube server. Helpful for choosing or comparing gate standards. Keywords: . Examples: ",
-    "expected_tools": [
-      "SonarQube.List_Quality_Gates"
-    ]
-  },
-  {
-    "question": "Send an email notification to user@example.com with the subject 'Account Activation' and the message 'Your account has been successfully activated.' using the configured SMTP server.",
-    "description": "SMTP toolset enables sending emails through an SMTP server. Allows configuring sender, recipient, subject, and content for outgoing mail. Keywords: . Examples: ",
-    "expected_tools": [
-      "YepCode.smtp"
-    ]
-  },
-  {
-    "question": "Delete story 10234",
-    "description": "Deletes Shortcut entities, e.g., stories, comments, or projects, with queries such as \"Delete story 5555\" or \"Remove comment from epic 4321.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Shortcut.Delete"
-    ]
-  },
-  {
-    "question": "Send a notification to user123 about a new comment on their post.",
-    "description": "A tool for sending notifications to users, such as new answers, comments, or system announcements. Keywords: . Examples: ",
-    "expected_tools": [
-      "Tianji.notification"
-    ]
-  },
-  {
-    "question": "Does the repository contain any continuous integration configuration files such as .travis.yml, circle.yml, .github/workflows, .gitlab-ci.yml, or Jenkinsfile?",
-    "description": "This tool checks for the presence of continuous integration configuration files commonly used in software projects, such as .travis.yml, circle.yml, .github/workflows, .gitlab-ci.yml, and Jenkinsfile. It helps ensure projects are using a CI pipeline. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpsLevel.code/ci"
-    ]
-  },
-  {
-    "question": "List all keys stored in the specified Azure Key Vault.",
-    "description": "List all keys stored in Key Vault Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_keyvault_key_list"
-    ]
-  },
-  {
-    "question": "Create a new search index for the 'products' collection with fields: product_id (string), name (string), description (string), price (double), and category (string).",
-    "description": "Create a new search index Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_search_index_create"
-    ]
-  },
-  {
-    "question": "List all queues in the Service Bus namespace 'my-namespace'.",
-    "description": "List queues inside a namespace Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_servicebus_queue_list"
-    ]
-  },
-  {
-    "question": "List all resource groups in the current Azure subscription.",
-    "description": "List resource groups in current subscription Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_resourcegroup_list"
-    ]
-  },
-  {
-    "question": "Add an inline comment to a pending review on pull request #42 in the repository 'octocat/Hello-World' at file 'app.js' line 15 with the comment 'Please refactor this function for readability.'",
-    "description": "Add inline comments to a pending PR review. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.AddPullRequestReviewCommentToPendingReview"
-    ]
-  },
-  {
-    "question": "List all toolsets that can be enabled dynamically in the current environment.",
-    "description": "List all toolsets that could be enabled dynamically. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListAvailableToolsets"
-    ]
-  },
-  {
-    "question": "Calculate the standard deviation of the following list of numbers: [12, 15, 20, 22, 25].",
-    "description": "A safe Python code execution tool for calculations, data analysis, and general scripting. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hyperbolic.python"
-    ]
-  },
-  {
-    "question": "What is the Wikidata Q-code and description for the city of Paris?",
-    "description": "Search and retrieve structured information from Wikidata (Q-codes, facts, definitions, entities). Keywords: . Examples: ",
-    "expected_tools": [
-      "Hyperbolic.wikidata"
-    ]
-  },
-  {
-    "question": "photos of the Eiffel Tower at night",
-    "description": "Searches and returns image results from Google Images. Keywords: . Examples: ",
-    "expected_tools": [
-      "fetchSERP.Google_Images"
-    ]
-  },
-  {
-    "question": "latest NASA Mars rover landing video",
-    "description": "Allows searching for video content indexed by Google, such as YouTube videos or news clips. Keywords: . Examples: ",
-    "expected_tools": [
-      "fetchSERP.Google_Videos"
-    ]
-  },
-  {
-    "question": "Show the differences between the 'main' branch and the 'feature/login' branch.",
-    "description": "Show code differences between commits or branches Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_git_diff"
-    ]
-  },
-  {
-    "question": "ls -la",
-    "description": "Execute a shell command in VSCode terminal Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_terminal_run_command"
-    ]
-  },
-  {
-    "question": "Analyze the Step Functions definition for the 'OrderProcessingWorkflow' to identify any unused steps and provide metrics on workflow coverage and possible execution paths.",
-    "description": "Analyzes Step Functions definitions to provide metrics on workflow coverage, unused steps, and step execution paths. Useful for optimization and validation purposes. Keywords: . Examples: ",
-    "expected_tools": [
-      "AWS.Workflow_Coverage_and_Step_Analysis"
-    ]
-  },
-  {
-    "question": "List all access policies that grant permissions to the 'admin' role for the 'finance' resource.",
-    "description": "Manage access policies that control what permissions are granted to identities and resources. Sample actions include listing, creating, updating, and deleting policies. Keywords: . Examples: ",
-    "expected_tools": [
-      "Auth0.Policies"
-    ]
-  },
-  {
-    "question": "Show the total revenue grouped by product category.",
-    "description": "Grouping tools allow users to group data by columns to see aggregated results per group. For example: \"Show sales per region,\" or \"Count of users by signup source.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "klusterai.Grouping"
-    ]
-  },
-  {
-    "question": "Show me the latest reviews and ratings for Whispering Pines Campground.",
-    "description": "Handles creation and display of reviews and ratings for campsites and hosts by users after their stay. Keywords: . Examples: ",
-    "expected_tools": [
-      "Campertunity.reviews"
-    ]
-  },
-  {
-    "question": "List all files and directories in the current working directory using the 'ls -al' command.",
-    "description": "Bash Shell toolset enables executing bash shell commands in a restricted environment. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hyperbrowser.bash"
-    ]
-  },
-  {
-    "question": "List all current alarms, both active and inactive, on the Netdata agent.",
-    "description": "Lists all alarms currently present on the Netdata agent, including both active and inactive alerts. Keywords: . Examples: ",
-    "expected_tools": [
-      "Netdata.alarms_list"
-    ]
-  },
-  {
-    "question": "Silence the 'disk_space_low' alarm on the Netdata agent for the next 2 hours.",
-    "description": "Silences one or more alarms on the Netdata agent, either temporarily or permanently. Keywords: . Examples: ",
-    "expected_tools": [
-      "Netdata.alarms_silence"
-    ]
-  },
-  {
-    "question": "Unsilence all previously silenced alarms on the Netdata monitoring system to immediately re-enable alert notifications.",
-    "description": "Unsilences alarms that have previously been silenced, immediately re-enabling alerting. Keywords: . Examples: ",
-    "expected_tools": [
-      "Netdata.alarms_unsilence"
-    ]
-  },
-  {
-    "question": "Show the latest 20 entries from the Netdata logs to help diagnose recent monitoring issues.",
-    "description": "Returns the most recent entries from Netdata logs, useful for debugging. Keywords: . Examples: ",
-    "expected_tools": [
-      "Netdata.log_tail"
-    ]
-  },
-  {
-    "question": "Change the status of story 4321 to 'Completed'.",
-    "description": "Allows for updating Shortcut entities such as changing a story’s status, assigning a user, or moving a story to another workflow. Sample tasks: \"Move story 1234 to In Progress,\" \"Assign Alice to story 5678.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Shortcut.Update"
-    ]
-  },
-  {
-    "question": "Create a new story titled 'User cannot reset password on mobile app' and assign it to the Mobile Team.",
-    "description": "Handles creation of new entities in Shortcut, such as stories, epics, comments, or projects. Example: \"Create a new story titled Bug in Login Screen\" or \"Add epic Security Improvements.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Shortcut.Create"
-    ]
-  },
-  {
-    "question": "Summarize activity on project Apollo for the past week.",
-    "description": "Summarizes activity or status for Shortcut entities. Useful for commands like \"Summarize activity on project X\" or \"What happened this week?\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Shortcut.Summarize"
-    ]
-  },
-  {
-    "question": "Who are the direct collaborators of Alice in the project database?",
-    "description": "A tool that interprets natural language questions, translates them into Cypher (Memgraph\"s query language), executes them against the graph database, and returns a user-friendly answer. Useful for QA interfaces over graph data. Keywords: . Examples: ",
-    "expected_tools": [
-      "Memgraph.Cypher_QA_Chain"
-    ]
-  },
-  {
-    "question": "Trigger a new analysis for the 'web-app-backend' project to refresh code quality metrics after the recent code merge.",
-    "description": "Initiates a new analysis for a project. Useful when you want to refresh metrics or rerun quality checks after changes. Keywords: . Examples: ",
-    "expected_tools": [
-      "SonarQube.Trigger_Project_Analysis"
-    ]
-  },
-  {
-    "question": "How can I bulk import a CSV file containing 1 million vector embeddings into my Milvus collection and monitor the import progress?",
-    "description": "Tools to bulk import and export data to/from Milvus. Supports importing via files and monitoring import progress. Keywords: . Examples: ",
-    "expected_tools": [
-      "Milvus.Data_Import_Export"
-    ]
-  },
-  {
-    "question": "List all available timelapse videos generated by the 3D printer.",
-    "description": "Handles timelapse video requests for the 3D printer, including generating, listing, or deleting timelapses. Keywords: . Examples: ",
-    "expected_tools": [
-      "OctoEverywhere.Timelapse"
-    ]
-  },
-  {
-    "question": "Show me a sample image message that can be sent via the LINE platform.",
-    "description": "Sends back a sample image to the user, demonstrating image messaging via the LINE platform. Keywords: . Examples: ",
-    "expected_tools": [
-      "LINE.Image"
-    ]
-  },
-  {
-    "question": "Send a notification message to user123 informing them that their document has been approved.",
-    "description": "Sends a message to a specific user, either for notifications or communication. Keywords: . Examples: ",
-    "expected_tools": [
-      "Liveblocks.send_user_message"
-    ]
-  },
-  {
-    "question": "How can I set up an HTTP webhook to be triggered when a new issue is created in my Linear workspace?",
-    "description": "Enables sending HTTP callbacks on certain events. Keywords: . Examples: ",
-    "expected_tools": [
-      "Linear.Webhooks"
-    ]
-  },
-  {
-    "question": "Plot the tuning curve for neuron 12 in response to varying sound frequencies.",
-    "description": "Performs and visualizes tuning curve analysis for neural or behavioral data, illustrating responses as a function of stimulus parameters. Example prompts: \"Plot the tuning curve for neuron 5\", \"Show how firing rate changes with stimulus frequency\", \"What is the tuning profile for cell X?\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Tako.Tuning"
-    ]
-  },
-  {
-    "question": "How do I submit a new question on the platform?",
-    "description": "A tool for asking or creating new questions in the platform. It handles the submission of new questions by users or agents. Keywords: . Examples: ",
-    "expected_tools": [
-      "Tianji.question"
-    ]
-  },
-  {
-    "question": "Extract all the text from this scanned image of a handwritten letter.",
-    "description": "Performs optical character recognition on a given image and extracts the text content. Handy for digitizing printed or handwritten material. Keywords: . Examples: ",
-    "expected_tools": [
-      "UnifAI.OCR"
-    ]
-  },
-  {
-    "question": "List the top 10 players by their scores in the leaderboard.",
-    "description": "Provides operations for managing sorted sets in Redis via MCP. Includes commands such as ZAdd (add member/score), ZPopMax/ZPopMin (pop max/min elements), ZRangeByScore (fetch elements by score range), ZRem (remove members), and ZScore (get score of a member). Sample usage: \"Add a score for player123\", \"List top 10 by rank\", Keywords: . Examples: ",
-    "expected_tools": [
-      "Upstash.ZSet"
-    ]
-  },
-  {
-    "question": "Check the response time and availability of google.com to diagnose if there are any network connectivity issues.",
-    "description": "Checks the availability and response time of an IP address or domain. Useful for diagnosing network connectivity issues. Keywords: . Examples: ",
-    "expected_tools": [
-      "WaveSpeed.Ping"
-    ]
-  },
-  {
-    "question": "What are the A and MX records for the domain example.com?",
-    "description": "Resolves domain names to IP addresses (and vice versa), checks DNS records like A, AAAA, MX, TXT, and more. Useful for diagnosing DNS issues and gathering DNS-related data. Keywords: . Examples: ",
-    "expected_tools": [
-      "WaveSpeed.DNS_Lookup"
-    ]
-  },
-  {
-    "question": "How can I set up a webhook to receive notifications when a user leaves a chat room?",
-    "description": "Manages event-based notifications and webhook callbacks to external systems on specific triggers (like user join/leave, room end, etc). Keywords: . Examples: ",
-    "expected_tools": [
-      "Yunxin.Notification_-_Callback"
-    ]
-  },
-  {
-    "question": "Validate if the 'candidate_email' field in this job application object is a properly formatted email address.",
-    "description": "A validation framework for defining constraints and validating objects, fields, or custom data structures. Useful for tasks such as \"Check if this field is a valid email address\" or \"Validate this object against custom rules.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "ZIZAI Recruitment.validator"
-    ]
-  },
-  {
-    "question": "Does the repository contain a README file, and does it meet the minimum content and documentation quality standards?",
-    "description": "Checks for the existence and adequacy of a README file in the repository. The tool can assess README presence, minimum content, and documentation quality. Keywords: . Examples: ",
-    "expected_tools": [
-      "OpsLevel.docs/readme"
-    ]
-  },
-  {
-    "question": "Retrieve the details of issue number 42 in the repository 'octocat/Hello-World'.",
-    "description": "Retrieve a specific issue by number. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetIssue"
-    ]
-  },
-  {
-    "question": "What is the current status and mergeability of pull request #42 in the repository octocat/Hello-World?",
-    "description": "Get the status of a pull request including mergeability. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetPullRequestStatus"
-    ]
-  },
-  {
-    "question": "Submit a review for pull request #42 in the repository 'octocat/Hello-World' with comments and an approval decision.",
-    "description": "Create and submit a complete PR review. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.CreateAndSubmitPullRequestReview"
-    ]
-  },
-  {
-    "question": "Fetch the details for workflow run ID 123456 in the repository octocat/Hello-World.",
-    "description": "Fetch details for a specific workflow run. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetWorkflowRun"
-    ]
-  },
-  {
-    "question": "Get the log output for workflow run ID 123456 in the repository 'octocat/Hello-World'.",
-    "description": "Retrieve the log output for a workflow run. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetWorkflowRunLogs"
-    ]
-  },
-  {
-    "question": "Trigger the 'deploy-to-production' workflow in the 'my-org/my-repo' repository on the 'main' branch with custom input parameters.",
-    "description": "Trigger a GitHub Actions workflow manually. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.RunWorkflow"
-    ]
-  },
-  {
-    "question": "List all code scanning alerts for the repository 'octocat/Hello-World'.",
-    "description": "List all code scanning alerts in a repository. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.ListCodeScanningAlerts"
-    ]
-  },
-  {
-    "question": "List all available tools grouped by their respective toolsets.",
-    "description": "Retrieve all tools grouped by toolset. Keywords: . Examples: ",
-    "expected_tools": [
-      "GitHub.GetToolsetsTools"
-    ]
-  },
-  {
-    "question": "Delete the key-value pair with key 'AppSettings:FeatureFlag' from the Azure App Configuration store.",
-    "description": "Delete a key-value from configuration Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_appconfig_kv_delete"
-    ]
-  },
-  {
-    "question": "List all Azure Storage accounts in my subscription.",
-    "description": "List Azure Storage accounts Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_storage_account_list"
-    ]
-  },
-  {
-    "question": "SELECT COUNT(*) FROM users WHERE signup_date >= CURRENT_DATE - INTERVAL '30 days';",
-    "description": "Run SQL queries on PostgreSQL tables Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_postgres_table_query"
-    ]
-  },
-  {
-    "question": "Receive the next 10 messages from the 'orders-queue' in Azure Service Bus.",
-    "description": "Receive messages from a queue Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_servicebus_message_receive"
-    ]
-  },
-  {
-    "question": "What is the currently selected text in the active VSCode editor window?",
-    "description": "Get selected text in active editor Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_editor_get_selection"
-    ]
-  },
-  {
-    "question": "Change the VSCode editor font size to 16.",
-    "description": "Update a configuration setting in VSCode Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_settings_update"
-    ]
-  },
-  {
-    "question": "List all available tasks configured in the current VSCode workspace.",
-    "description": "List available configured tasks Keywords: . Examples: ",
-    "expected_tools": [
-      "VSCode.vscode_task_list"
-    ]
-  },
-  {
-    "question": "Show all sales transactions from the last quarter where the product category is 'Electronics' and the sales amount is greater than $500.",
-    "description": "Filtering tools allow users to refine their data views by applying conditions to their queries. These tools help filter data based on time periods, categories, or other column values. Keywords: . Examples: ",
-    "expected_tools": [
-      "klusterai.Filters"
-    ]
-  },
-  {
-    "question": "Show me the top 5 products sorted by sales volume in descending order.",
-    "description": "Ordering tools support users in sorting data results based on specified columns, either in ascending or descending order. For instance: \"List top 10 customers by purchase amount,\" or \"Sort transactions by date descending.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "klusterai.Ordering"
-    ]
-  },
-  {
-    "question": "Create a new action to automatically assign high-priority tickets to the support team in MCP.",
-    "description": "Allows users to create, update, invoke, and manage actions that can be performed on objects in MCP. Keywords: . Examples: ",
-    "expected_tools": [
-      "Linear.Actions"
-    ]
-  },
-  {
-    "question": "How can I define a field in my database that automatically calculates the total price based on quantity and unit price without storing the value directly?",
-    "description": "Defines fields whose values are determined by evaluating expressions rather than stored directly. Keywords: . Examples: ",
-    "expected_tools": [
-      "Linear.Computed_Fields"
-    ]
-  },
-  {
-    "question": "Find the latest news articles about the 2024 US presidential election.",
-    "description": "Web Browsing toolset provides the capability to search, fetch, and extract information from the web. Keywords: . Examples: ",
-    "expected_tools": [
+      "WaveSpeed.DNS_Lookup",
+      "WaveSpeed.Whois",
+      "WaveSpeed.GeoIP",
       "Hyperbrowser.web_browser"
     ]
   },
   {
-    "question": "Write a Python script that calculates the factorial of a given number.",
-    "description": "Python Code Execution toolset allows safe execution of Python code snippets and scripts. Keywords: . Examples: ",
+    "task": "Find a campsite near a lake that's available next weekend, book it for two people, and help me write a message to the host asking about firewood availability.",
+    "app": "Campertunity",
     "expected_tools": [
-      "Hyperbrowser.python"
+      "Campertunity.searchCamps",
+      "Campertunity.bookCamp",
+      "Campertunity.messaging",
+      "Riza.text_editing"
     ]
   },
   {
-    "question": "Visualize the relationships between all users and the projects they are collaborating on in the database.",
-    "description": "Allows interactive visualization of query results as a graph. Users can explore data, expand nodes, and see properties on nodes and edges. Keywords: . Examples: ",
+    "task": "I have a bunch of customer support voicemails in different languages. Can you transcribe them, translate them to English, and then store the results in our database? Also, I need to send the transcriptions to our CRM via their API.",
+    "app": "Zendesk",
     "expected_tools": [
-      "Memgraph.Graph_Visualizer"
+      "AllVoiceLab.Speech_to_Text_STT",
+      "AllVoiceLab.Voice_Translation",
+      "YepCode.rest",
+      "YepCode.mongodb"
     ]
   },
   {
-    "question": "How can I list my private campsite for rent, including uploading photos, setting prices, and specifying availability?",
-    "description": "Allows landowners to list their campsites for rent, providing site details, photos, prices, and availability schedules. Keywords: . Examples: ",
+    "task": "I need to review all my current MCP deployments, get details about their configurations, and find any recent security advisories that might affect them. Also, summarize the key risks for each deployment.",
+    "app": "NanoVMs MCP Console",
     "expected_tools": [
-      "Campertunity.listMyCamps"
+      "NanoVMs.List_Deployments",
+      "NanoVMs.Describe_Deployment",
+      "Hyperbolic.web_search",
+      "Rember.extract"
     ]
   },
   {
-    "question": "Scan the main branch of the repository for any accidentally committed AWS secret keys or passwords.",
-    "description": "Scans the repository for sensitive information such as secret keys and passwords accidentally committed to the codebase. Keywords: . Examples: ",
+    "task": "I have a bunch of scanned contracts and I want to find all the ones that mention specific clauses about data privacy. Can you help me extract the text, import it into a database, and then search for relevant documents?",
+    "app": "Adobe Acrobat",
     "expected_tools": [
-      "JFrog.secrets_scan"
+      "UnifAI.OCR",
+      "UnifAI.DocumentQA",
+      "Milvus.Data_Import_Export",
+      "Milvus.Search_and_Query"
     ]
   },
   {
-    "question": "latest news on AI advancements in 2024",
-    "description": "A tool for searching the web for up-to-date information. Keywords: . Examples: ",
+    "task": "I need to analyze customer purchase patterns by combining transaction data with user profiles, filter for purchases in the last quarter, group by product category, and sort by total sales. Also, find similar customers based on their purchase vectors.",
+    "app": "ThoughtSpot",
     "expected_tools": [
-      "Hyperbolic.web_search"
+      "klusterai.Joins",
+      "klusterai.Filters",
+      "klusterai.Grouping",
+      "klusterai.Ordering",
+      "Milvus.Search_and_Query"
     ]
   },
   {
-    "question": "Find all Notion blocks containing the keyword 'project deadline'.",
-    "description": "Enables searching Notion blocks by various criteria. Keywords: . Examples: ",
+    "task": "I have a large set of customer support tickets and want to quickly understand the main issues, see the overall sentiment, and find similar past tickets for some of the most common problems.",
+    "app": "Zendesk",
     "expected_tools": [
-      "Notion.search_blocks"
+      "DevRev.summarization",
+      "DevRev.sentiment_analysis",
+      "Milvus.Search_and_Query",
+      "Milvus.Collection_Management"
     ]
   },
   {
-    "question": "project management templates",
-    "description": "Searches among available Notion databases. Keywords: . Examples: ",
+    "task": "I need to find some open source repositories related to machine learning, check their recent pull requests, and make sure their dependencies are up to date and compliant with open source licenses.",
+    "app": "GitHub",
     "expected_tools": [
-      "Notion.search_databases"
+      "GitHub.SearchRepositories",
+      "GitHub.ListPullRequests",
+      "GitHub.GetPullRequest",
+      "JFrog.dependency_check",
+      "JFrog.license_compliance"
     ]
   },
   {
-    "question": "Update the title and description of the 'Project Tasks' database to reflect the new project scope and objectives.",
-    "description": "Updates metadata of a Notion database. Keywords: . Examples: ",
+    "task": "I want to review all my current projects, scan them for issues, and get a sense of their dependencies and any problems that need to be fixed.",
+    "app": "SonarQube",
     "expected_tools": [
-      "Notion.update_database"
+      "SonarQube.List_Projects",
+      "SonarQube.Trigger_Project_Analysis",
+      "SonarQube.List_Issues",
+      "CodeLogic.Scanner",
+      "CodeLogic.Dependency_Resolver"
     ]
   },
   {
-    "question": "Create a new Notion database to track project tasks with columns for task name, status, due date, and assignee.",
-    "description": "Creates a new Notion database. Keywords: . Examples: ",
+    "task": "I have a bunch of research documents and I want to organize them in a database, split them into different groups, and also keep a summary of each group in Notion. Can you help me set this up?",
+    "app": "Notion",
     "expected_tools": [
-      "Notion.create_database"
-    ]
-  },
-  {
-    "question": "Create a new Notion page titled 'Project Roadmap Q3 2024' in the 'Product Management' workspace with sections for milestones, deadlines, and responsible team members.",
-    "description": "Creates a new Notion page. Keywords: . Examples: ",
-    "expected_tools": [
+      "Milvus.Collection_Management",
+      "Milvus.Partition_Management",
+      "Milvus.Data_Import_Export",
+      "Notion.create_database",
       "Notion.create_page"
     ]
   },
   {
-    "question": "Fetch the email and phone number for user:12345",
-    "description": "Provides hash table operations similar to Redis Hashes. Includes HSet (set hash key to value), HMGet (get multiple values), HDel (delete fields), and HGet (get a single field). Sample usage: \"Set user:1001 email address\", \"Fetch names and emails for set of users\". Keywords: . Examples: ",
+    "task": "I need to set up a new 3D project, upload a bunch of media assets, organize them, and make sure all the asset metadata is searchable. Also, I want to import some external data into a database for later querying and manage the collections for that data.",
+    "app": "PlayCanvas",
     "expected_tools": [
-      "Upstash.Hash"
+      "PlayCanvas.project",
+      "PlayCanvas.asset",
+      "Milvus.Data_Import_Export",
+      "Milvus.Collection_Management",
+      "Cloudinary.mcp_upload",
+      "Cloudinary.mcp_metadata"
     ]
   },
   {
-    "question": "What are the most frequently asked questions about account recovery?",
-    "description": "A tool for searching relevant items, particularly questions within the system. It allows users to perform full-text queries and is useful for finding similar questions, FAQs, or previously answered content. Keywords: . Examples: ",
+    "task": "I have a bunch of files with different types of data and I want to set up a new database to organize, index, and search through them efficiently. Can you help me get started and show me how to find specific records once the data is loaded?",
+    "app": "Milvus",
     "expected_tools": [
-      "Tianji.search"
+      "Milvus.Collection_Management",
+      "Milvus.Schema_Management",
+      "Milvus.Data_Import_Export",
+      "Milvus.Index_Management",
+      "Milvus.Search_and_Query"
     ]
   },
   {
-    "question": "Analyze the text 'quick brown fox jumps over the lazy dog' using the standard analyzer to see how it will be tokenized and indexed.",
-    "description": "Analyzes text using a specified analyzer, returning tokenization and analysis workflows. This is useful for debugging how text will be indexed and searched. Keywords: . Examples: ",
+    "task": "Why is my website slow for users in different countries? Can you check if it's up everywhere, see if there are any DNS issues, look at server performance, and find any related error logs?",
+    "app": "Kibana",
     "expected_tools": [
-      "OpenSearch.analyze_text"
+      "Globalping.http",
+      "Globalping.dns",
+      "Netdata.data_query",
+      "OpenSearch.search"
     ]
   },
   {
-    "question": "Describe the contents of this image in detail for someone who is visually impaired.",
-    "description": "Analyzes an image and returns a natural language description of its contents. Useful for accessibility, content understanding, and summarization. Keywords: . Examples: ",
+    "task": "I want to monitor my server's CPU and memory usage, get alerts if something goes wrong, and send formatted notifications to my custom dashboard. How do I set this up?",
+    "app": "Zapier",
     "expected_tools": [
-      "UnifAI.ImageDescription"
+      "Netdata.data_query",
+      "Netdata.alarms_list",
+      "Zapier.Data_Formatter",
+      "Zapier.Webhooks"
     ]
   },
   {
-    "question": "Get detailed information about the current configuration, resource usage, and runtime status of the deployment named 'web-app-prod'.",
-    "description": "Provides detailed information on a specific deployment, including configuration, resource usage, and runtime status. Keywords: . Examples: ",
+    "task": "Can you review my open source repository and tell me if it meets best practices for documentation, testing, licensing, CI/CD, and security scanning? I want to make sure it's ready for new contributors.",
+    "app": "GitHub",
     "expected_tools": [
-      "NanoVMs.Describe_Deployment"
+      "OpsLevel.code/test",
+      "OpsLevel.actions/github_actions",
+      "OpsLevel.docs/contributing",
+      "OpsLevel.security/codeql",
+      "OpsLevel.code/license",
+      "OpsLevel.docs/readme"
     ]
   },
   {
-    "question": "Show me the criteria and conditions for the 'Default' quality gate in SonarQube.",
-    "description": "Displays criteria and conditions for a specified quality gate. Useful for understanding why a project may have passed or failed. Keywords: . Examples: ",
+    "task": "Can you check if there are any current security alerts on our systems, see if any are related to access control misconfigurations, and confirm if our access policies are set up correctly?",
+    "app": "Splunk",
     "expected_tools": [
-      "SonarQube.Show_Quality_Gate_Details"
+      "Netdata.alarms_list",
+      "Netdata.data_query",
+      "Drata.Continuous_Control_Monitoring",
+      "Auth0.Policies"
     ]
   },
   {
-    "question": "Classify the following customer feedback into categories such as 'positive', 'negative', or 'neutral': 'The product arrived on time but the packaging was damaged.'",
-    "description": "Classifies text into different categories or labels as per the task requirements. Keywords: . Examples: ",
+    "task": "Can you check if my repo has all the right CI/CD setup, security scanning, documentation, and feature flags configured? I want to make sure everything is ready for a new release.",
+    "app": "GitHub",
     "expected_tools": [
-      "Riza.classification"
+      "OpsLevel.code/ci",
+      "OpsLevel.actions/github_actions",
+      "OpsLevel.security/codeql",
+      "OpsLevel.docs/readme",
+      "LaunchDarkly.feature_flag"
     ]
   },
   {
-    "question": "Replace all occurrences of the word 'dog' with 'cat' in the sentence: 'The dog chased the dog around the yard.'",
-    "description": "Allows replacing specific parts of a string or text based on rules or keywords. Keywords: . Examples: ",
+    "task": "Why are some of my services running slow and are there any alerts or logs that can help me figure out if it's a network or server issue? Also, can you check if there are any recent changes in the logs or data?",
+    "app": "Kibana",
     "expected_tools": [
-      "Rember.replace"
+      "Netdata.data_query",
+      "Netdata.alarms_list",
+      "WaveSpeed.Ping",
+      "WaveSpeed.Traceroute",
+      "OpenSearch.search"
     ]
   },
   {
-    "question": "Send a JSON message containing order details to the 'orders' queue on the RabbitMQ broker.",
-    "description": "RabbitMQ toolset provides actions to send and receive messages to and from RabbitMQ broker queues and exchanges. Supports creating consumers, producers, and managing message queues. Keywords: . Examples: ",
+    "task": "I need to pull recent customer feedback from our database, summarize the main points, and then reformat the summaries for a weekly report. Can you help automate this process?",
+    "app": "Zapier",
     "expected_tools": [
-      "YepCode.rabbitmq"
+      "OpenSearch.search",
+      "OpenSearch.index_document",
+      "Zapier.Data_Formatter",
+      "Logfire.ask_openai_chat"
     ]
   },
   {
-    "question": "Mute the microphone for user ID 12345 in the current video conference session.",
-    "description": "Controls for managing media streams and resources such as muting/unmuting users, switching cameras, or adjusting audio/video settings in real time. Keywords: . Examples: ",
+    "task": "Our web app is having intermittent outages and some users can't log in. Can you check if it's a network issue or something with our Azure backend? Also, see if there are any recent changes to user identities.",
+    "app": "Azure Portal",
     "expected_tools": [
-      "Yunxin.Media_Control"
+      "Azure.azmcp_monitor_query_metrics",
+      "Azure.azmcp_monitor_query_logs",
+      "Globalping.ping",
+      "Globalping.trace",
+      "Auth0.Identities"
     ]
   },
   {
-    "question": "How can I convert the date '06/24/2024' from MM/DD/YYYY format to DD-MM-YYYY format?",
-    "description": "Format numbers, dates, text, and more in pipelines. Useful for questions like \"How do I change the date format from MM/DD/YYYY to DD-MM-YYYY?\" or \"Can I capitalize all text in this field?\". Keywords: . Examples: ",
+    "task": "I want to review all open customer support tickets from this month, see which ones are from unhappy customers, and set up a weekly report to track these going forward.",
+    "app": "HubSpot",
     "expected_tools": [
+      "HubSpot.CRM_Search",
+      "HubSpot.Ticket_Management",
+      "DevRev.sentiment_analysis",
+      "Zapier.Schedule"
+    ]
+  },
+  {
+    "task": "I need to pull a list of all contacts who have open deals this quarter, get a summary of the pipeline status, generate a report on recent Twilio messaging activity for those contacts, and format the results for a presentation.",
+    "app": "HubSpot",
+    "expected_tools": [
+      "HubSpot.CRM_Search",
+      "HubSpot.Deal_Pipeline_Overview",
+      "Twilio.reporting",
       "Zapier.Data_Formatter"
     ]
   },
   {
-    "question": "I have a list of sales transactions in JSON format. Can you write a Python script to calculate the total sales for each product category?",
-    "description": "Run custom Javascript or Python scripts within a workflow. Answers queries like \"Can I manipulate this data with my own code?\" or \"How can I calculate this value dynamically?\". Keywords: . Examples: ",
+    "task": "I want to set up an automated email campaign for our new product launch, targeting customers who have shown interest in similar products, and then monitor how well the emails are performing. Can you help me organize the product info, set up the campaign, and track engagement?",
+    "app": "Klaviyo",
     "expected_tools": [
-      "Zapier.Code_by_Zapier"
+      "Klaviyo.Catalogs",
+      "Klaviyo.Templates",
+      "Klaviyo.Flows",
+      "HubSpot.CRM_Search",
+      "HubSpot.Marketing_Email_Analytics"
     ]
   },
   {
-    "question": "Create a new terminal instance in VSCode to run shell commands.",
-    "description": "Create a new terminal instance Keywords: . Examples: ",
+    "task": "I need to find out which users in our system have access to sensitive customer data and see what permissions they have, then cross-reference those users with our CRM to get their recent activity and engagement details.",
+    "app": "HubSpot",
     "expected_tools": [
-      "VSCode.vscode_terminal_create"
+      "Auth0.Identities",
+      "Auth0.Permissions",
+      "Auth0.Entitlements",
+      "HubSpot.CRM_Search",
+      "HubSpot.Contact_Insights"
     ]
   },
   {
-    "question": "List all currently installed extensions in my VSCode environment.",
-    "description": "List installed extensions in VSCode Keywords: . Examples: ",
+    "task": "I want to find a campsite near a lake that's available next weekend, book it for 4 people, and message the host to ask if dogs are allowed. Also, I want to make sure my profile is updated with my latest contact info.",
+    "app": "Campertunity",
     "expected_tools": [
-      "VSCode.vscode_extension_list"
+      "Campertunity.searchCamps",
+      "Campertunity.bookCamp",
+      "Campertunity.messaging",
+      "Campertunity.userProfile"
     ]
   },
   {
-    "question": "What is the current value of the 'editor.fontSize' setting in VSCode?",
-    "description": "Retrieve a VSCode configuration setting Keywords: . Examples: ",
+    "task": "I want to find some open source projects related to SMS automation, see what issues they have, and then create a new issue suggesting integration with a webhook that stores incoming SMS data in MongoDB. Can you help me with this?",
+    "app": "GitHub",
     "expected_tools": [
-      "VSCode.vscode_settings_get"
+      "GitHub.SearchRepositories",
+      "GitHub.ListIssues",
+      "GitHub.CreateIssue",
+      "YepCode.rest",
+      "YepCode.mongodb"
     ]
   },
   {
-    "question": "Start a debugging session for the current Python project in VSCode.",
-    "description": "Start a debugging session Keywords: . Examples: ",
+    "task": "I want to find a campsite near a lake that's available next weekend, book it, and send a message to the host to ask if they allow dogs. Also, help me write a polite message to the host.",
+    "app": "Campertunity",
     "expected_tools": [
-      "VSCode.vscode_debug_start"
+      "Campertunity.searchCamps",
+      "Campertunity.bookCamp",
+      "Campertunity.messaging",
+      "Riza.text_editing"
     ]
   },
   {
-    "question": "Execute the next planned action suggested by Copilot agent in the current VSCode workspace.",
-    "description": "Execute planned actions from Copilot agent Keywords: . Examples: ",
+    "task": "Can you show me all the open stories for our Q2 projects, update the status of any that have been completed, and provide an activity summary with analytics on project progress?",
+    "app": "Shortcut",
     "expected_tools": [
-      "VSCode.vscode_copilot_agent_execute"
+      "Shortcut.List",
+      "Shortcut.Update",
+      "Linear.Audit_Logs",
+      "ThoughtSpot.analytics"
     ]
   },
   {
-    "question": "Create a new GitHub repository named 'project-alpha' with a description 'Initial repository for Project Alpha' and set it as private.",
-    "description": "Initialize a new GitHub repository. Keywords: . Examples: ",
+    "task": "I need to find some open source repositories that use AWS Step Functions, check if they have any security or dependency issues, and make sure their workflow definitions are valid. Can you help me with that?",
+    "app": "GitHub",
     "expected_tools": [
-      "GitHub.CreateRepository"
+      "GitHub.SearchRepositories",
+      "GitHub.ListCodeScanningAlerts",
+      "JFrog.dependency_check",
+      "JFrog.license_compliance",
+      "AWS.Validate_State_Machine_Definitions"
     ]
   },
   {
-    "question": "Retrieve all comments on issue #42 in the octocat/Hello-World repository.",
-    "description": "Retrieve all comments on a specific issue. Keywords: . Examples: ",
+    "task": "Find all active pull requests for our main repositories, check if any recent changes could impact our feature flags, and review related Azure logs for errors.",
+    "app": "GitHub",
     "expected_tools": [
-      "GitHub.GetIssueComments"
+      "GitHub.SearchRepositories",
+      "GitHub.ListPullRequests",
+      "GitHub.GetPullRequest",
+      "GitHub.GetPullRequestDiff",
+      "Azure.azmcp_monitor_query_logs",
+      "LaunchDarkly.feature_flag"
     ]
   },
   {
-    "question": "Submit my pending review for pull request #42 in the repository 'octocat/Hello-World'.",
-    "description": "Submit a pending review once complete. Keywords: . Examples: ",
+    "task": "Find a popular open source project, check if there are any open pull requests that might introduce code quality issues, and see what files are being changed and if the latest analysis passes the quality gate.",
+    "app": "GitHub",
     "expected_tools": [
-      "GitHub.SubmitPendingPullRequestReview"
+      "GitHub.SearchRepositories",
+      "GitHub.ListPullRequests",
+      "GitHub.GetPullRequestFiles",
+      "SonarQube.Trigger_Project_Analysis",
+      "SonarQube.Check_Quality_Gate",
+      "SonarQube.List_Issues",
+      "VSCode.vscode_git_pull",
+      "VSCode.vscode_git_diff"
     ]
   },
   {
-    "question": "Dismiss the notification for issue #123 in the repository octocat/Hello-World.",
-    "description": "Dismiss a GitHub notification. Keywords: . Examples: ",
+    "task": "Can you help me find recent issues in our main repo, summarize the main points from the comments, and let me know if people are generally positive or negative about the proposed changes?",
+    "app": "GitHub",
     "expected_tools": [
-      "GitHub.DismissNotification"
+      "GitHub.SearchIssues",
+      "GitHub.GetIssueComments",
+      "DevRev.summarization",
+      "DevRev.sentiment_analysis"
     ]
   },
   {
-    "question": "List all third-party vendors currently under risk assessment and show the status of their completed questionnaires.",
-    "description": "Tracks third-party vendors and automates risk assessments and questionnaire workflows. Keywords: . Examples: ",
+    "task": "I need to investigate why our recent CI builds are failing for a few repositories, check if there are any related infrastructure alerts, and see if there are any error logs or indexed documents about these failures.",
+    "app": "GitHub",
     "expected_tools": [
-      "Drata.Vendor_Risk_Management"
+      "GitHub.SearchRepositories",
+      "GitHub.ListWorkflowRuns",
+      "GitHub.GetWorkflowRunLogs",
+      "Netdata.alarms_list",
+      "Netdata.data_query",
+      "OpenSearch.search"
     ]
   },
   {
-    "question": "Show me the current list of published security policies and which employees have acknowledged them.",
-    "description": "Central repository for customizing, publishing, and tracking employee acknowledgement of security policies. Keywords: . Examples: ",
+    "task": "Find all recent pull requests related to bug fixes in our main repositories, summarize the changes, and classify them by severity or type.",
+    "app": "GitHub",
     "expected_tools": [
-      "Drata.Policy_Management"
+      "GitHub.SearchRepositories",
+      "GitHub.ListPullRequests",
+      "GitHub.GetPullRequestDiff",
+      "Octagon.summarize",
+      "Octagon.classify"
     ]
   },
   {
-    "question": "Get the WHOIS registration details for the domain example.com",
-    "description": "Retrieves domain registration information using WHOIS database queries. Keywords: . Examples: ",
+    "task": "I need to gather recent news articles about a specific topic, compare their content for similarities and differences, upload the most relevant article to our media platform, and check if similar articles already exist in our search index.",
+    "app": "Notion",
     "expected_tools": [
-      "Hunter.Whois_Lookup"
+      "Hyperbrowser.web_browser",
+      "Hyperbrowser.text_comparison",
+      "OpenSearch.search",
+      "Cloudinary.mcp_upload"
     ]
   },
   {
-    "question": "Check the SSL certificate validity and details for the domain example.com",
-    "description": "Verifies SSL certificate details and validity for a domain. Keywords: . Examples: ",
+    "task": "I have a Step Functions workflow in JSON and I want to migrate it to MCP. Can you help me convert it, make sure it's valid, and then set up a new deployment using the right image?",
+    "app": "AWS Management Console",
     "expected_tools": [
-      "Hunter.SSL_Check"
-    ]
-  },
-  {
-    "question": "Simulate the execution of my Step Functions workflow defined in YAML to test the branching logic and trace the input/output before deploying to AWS.",
-    "description": "Provides local execution/simulation of Step Functions workflows based on YAML or ASL definitions, allowing developers to test workflows before deploying them on AWS. Supports iteration, branch coverage, and input/output tracing. Keywords: . Examples: ",
-    "expected_tools": [
-      "AWS.Local_Simulation_of_Step_Functions_Workflows"
-    ]
-  },
-  {
-    "question": "Get the basic information (symbol, name, id, and logo) for the cryptocurrency Ethereum.",
-    "description": "Offers basic metadata about a cryptocurrency including symbol, name, id, and logo. Handy for referencing or displaying coin info. Keywords: . Examples: ",
-    "expected_tools": [
-      "CoinGecko.simple_coin_info"
-    ]
-  },
-  {
-    "question": "What resources and permissions does user john.doe@example.com have access to in the system?",
-    "description": "Assign and manage entitlements that link identities to resources and permissions. Useful for determining what an identity can access. Keywords: . Examples: ",
-    "expected_tools": [
-      "Auth0.Entitlements"
-    ]
-  },
-  {
-    "question": "Generate a dependency graph showing how all modules in the payment processing application interact with each other.",
-    "description": "Builds and outputs graph structures representing code relationships, dependencies, and flows within an application. Keywords: . Examples: ",
-    "expected_tools": [
-      "CodeLogic.Graph_Generator"
-    ]
-  },
-  {
-    "question": "Create a new Python script named 'data_analysis.py' in the project directory and add a function that reads a CSV file and prints the first five rows.",
-    "description": "Code Editor toolset is used to create, edit, and manage code files in a project. Keywords: . Examples: ",
-    "expected_tools": [
-      "Hyperbrowser.code_editor"
-    ]
-  },
-  {
-    "question": "List all containers in the 'customerData' Cosmos DB database.",
-    "description": "List containers within a database Keywords: . Examples: ",
-    "expected_tools": [
-      "Azure.azmcp_cosmos_container_list"
-    ]
-  },
-  {
-    "question": "Show me how the employees in our company are connected through their projects and departments using a visual graph interface.",
-    "description": "A visual tool allowing users to construct graph queries without directly writing Cypher code. It provides an interactive user interface to drag-and-drop nodes and relationships, generating the corresponding Cypher. Keywords: . Examples: ",
-    "expected_tools": [
-      "Memgraph.Visual_Query_Builder"
-    ]
-  },
-  {
-    "question": "MATCH (user:Person)-[:PURCHASED]->(product:Product) RETURN user.name, product.title, product.price ORDER BY product.price DESC LIMIT 20",
-    "description": "Executes arbitrary Cypher queries on a connected Memgraph database and fetches the results for further analysis. Useful for retrieving data for visualization, analytics, or custom processing. Sample: \"MATCH (n)-[:FRIEND]->(m) RETURN n, m LIMIT 10\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Memgraph.Memgraph_Data_Retriever"
-    ]
-  },
-  {
-    "question": "Set the role of user 'user123' to 'admin' in room 'room456'.",
-    "description": "Sets roles for a specific user within a room. Useful for managing permissions, such as making a user an admin or removing roles. Keywords: . Examples: ",
-    "expected_tools": [
-      "Liveblocks.admin_set_user_roles"
-    ]
-  },
-  {
-    "question": "What roles does user 'john.doe@example.com' have in room 'project-alpha'?",
-    "description": "Retrieves the current roles assigned to a user within a given room. Helps in checking user access or responsibilities. Keywords: . Examples: ",
-    "expected_tools": [
-      "Liveblocks.admin_get_user_roles"
-    ]
-  },
-  {
-    "question": "Get the display name and user ID for the current LINE user.",
-    "description": "Fetches and displays the LINE user profile information such as display name and user ID. Keywords: . Examples: ",
-    "expected_tools": [
-      "LINE.Profile"
-    ]
-  },
-  {
-    "question": "Would you like to proceed with deleting your account? (Yes/No)",
-    "description": "Sends a confirm-type template message, allowing the user to select a response (e.g., Yes/No buttons). Keywords: . Examples: ",
-    "expected_tools": [
-      "LINE.Confirm"
-    ]
-  },
-  {
-    "question": "What are the main features of OctoEverywhere?",
-    "description": "Provides general QA and answering capabilities. Handles a wide range of questions, including but not limited to commands like \"What can you do?\" and general chit-chat. Keywords: . Examples: ",
-    "expected_tools": [
-      "OctoEverywhere.Knowledge"
-    ]
-  },
-  {
-    "question": "Retrieve the current operational status of all nodes managed by the MCP server.",
-    "description": "A RESTful HTTP API provided by the MCP server to allow external integrations and operational management, including endpoints for resources, node management, and status checks. Keywords: . Examples: ",
-    "expected_tools": [
-      "Nutrient.REST_API"
-    ]
-  },
-  {
-    "question": "List all current MCP deployments along with their statuses.",
-    "description": "Displays existing MCP deployments and their statuses. Useful for inventory and management of active, pending, or failed deployments. Keywords: . Examples: ",
-    "expected_tools": [
-      "NanoVMs.List_Deployments"
-    ]
-  },
-  {
-    "question": "List all schema fields, including vector and scalar fields, for the collection named 'user_profiles'.",
-    "description": "Tools to add, modify, and list schema fields (including vector fields and scalar fields) in collections. Keywords: . Examples: ",
-    "expected_tools": [
-      "Milvus.Schema_Management"
-    ]
-  },
-  {
-    "question": "What is the square root of 256?",
-    "description": "Performs calculator operations for math queries, including arithmetic, trigonometry, and simple algebra. Keywords: . Examples: ",
-    "expected_tools": [
-      "Octagon.ask_calculator"
-    ]
-  },
-  {
-    "question": "What version of the Netdata agent is currently installed and what features are enabled?",
-    "description": "Returns information about the Netdata agent, including its version, build, and features. Keywords: . Examples: ",
-    "expected_tools": [
-      "Netdata.netdata_info"
-    ]
-  },
-  {
-    "question": "List all the features included in the premium subscription plan.",
-    "description": "Handles listing objects, data, or responses, often formatting as enumerations or bullet points. Keywords: . Examples: ",
-    "expected_tools": [
-      "Rember.list"
-    ]
-  },
-  {
-    "question": "Show me all projects currently analyzed in SonarQube.",
-    "description": "Returns a list of all projects analyzed in SonarQube. Useful for users to view available codebases and their status. Keywords: . Examples: ",
-    "expected_tools": [
-      "SonarQube.List_Projects"
-    ]
-  },
-  {
-    "question": "Get the latest code quality metrics, including bugs, vulnerabilities, code smells, coverage, and duplications, for the project named 'MyApp'.",
-    "description": "Provides detailed metrics for a specified project—like bugs, vulnerabilities, code smells, coverage, and duplications. Keywords: . Examples: ",
-    "expected_tools": [
-      "SonarQube.Get_Project_Metrics"
-    ]
-  },
-  {
-    "question": "Retrieve all electronic statements for checking account 123456789 from January 1, 2023 to December 31, 2023.",
-    "description": "Provides electronic statements (e.g., PDFs) for a given account and date range. Keywords: . Examples: ",
-    "expected_tools": [
-      "Sophtron.GetStatements"
-    ]
-  },
-  {
-    "question": "Plot the Peri-Stimulus Time Histogram (PSTH) of neuronal spikes aligned to the onset of the auditory stimulus.",
-    "description": "Tool for plotting spike (or event) histograms around specific events or stimuli. You can ask: \"Plot PSTH aligned to lever press\", \"Show the average firing rate relative to stimulus onset\", \"Give me the Peri-Event Time Histogram for licks.\" Keywords: . Examples: ",
-    "expected_tools": [
-      "Tako.PSTH_Peri_Stimulus_Time_Histogram"
-    ]
-  },
-  {
-    "question": "Calculate and visualize the cross-correlation between neural spike trains recorded from two different brain regions during a behavioral task.",
-    "description": "Calculates and visualizes correlations (including cross-correlograms) between two event series, such as between neural spike trains or between behavior and neural data. Keywords: . Examples: ",
-    "expected_tools": [
-      "Tako.Cross_correlation"
-    ]
-  },
-  {
-    "question": "Retrieve the profile information for user with username 'johndoe'.",
-    "description": "Tools for managing user accounts within the Media Control Platform (MCP) server. Handles operations like user registration, authentication, and information retrieval. Keywords: . Examples: ",
-    "expected_tools": [
-      "Yunxin.User_Management"
-    ]
-  },
-  {
-    "question": "How can I automatically extract tracking numbers from shipping confirmation emails and add them to a spreadsheet?",
-    "description": "Extract information from incoming emails to automate further actions. Use questions like \"How do I pull order numbers from customer emails automatically?\" or \"Can I trigger a workflow from specific email content?\". Keywords: . Examples: ",
-    "expected_tools": [
-      "Zapier.Email_Parser"
-    ]
-  },
-  {
-    "question": "Extract the full name, date of birth, and ID number from a scanned Indonesian KTP (identity card) image for onboarding verification.",
-    "description": "Specialized OCR for extracting fields from identity documents such as ID cards, driver’s licenses, and passports. Useful for verification, onboarding, and compliance workflows. Keywords: . Examples: ",
-    "expected_tools": [
-      "TextIn.id_ocr"
+      "AWS.Convert_AWS_Step_Functions_Amazon_States_Language_(ASL)_to_YAML",
+      "AWS.Validate_State_Machine_Definitions",
+      "NanoVMs.Create_Deployment",
+      "NanoVMs.MCP_Image_Management"
     ]
   }
 ]

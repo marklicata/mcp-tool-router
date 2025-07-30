@@ -1,4 +1,4 @@
-import os, sys, logging, json, time, configparser
+import os, sys, logging, json, time, configparser, uuid
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 from datetime import datetime
 from utils_azure_search import AzureSearchManager

@@ -245,7 +245,7 @@ class TestRunManager:
         for test in trimmed_tests:
             test_case = TestCase(
                 question=test['question'],
-                description=test['description'],
+                description=test.get('description', ''),
                 expected_tools=test['expected_tools']
             )
             tasks.append(self.run_single_test(test_case, i))
@@ -313,10 +313,9 @@ class TestRunManager:
         print(f"Average Judge Score: {avg_judge_score:.2f}")
         print(f"\n====MISSED TOOLS====")
 
-        data = [["Expected Tools", "Returned Tools", "Query"]]
         for result in test_results_list:
             if len(result.missing_tools) > 0:
-                print(f"Expected tools: {result.expected_tools}, Returned tools: {result.returned_tools}, Query: {result.query}")
+                print(f"Expected tools: {result.expected_tools}, Missed tools: {result.missing_tools}, Query: {result.query}")
 
         print(f"\n***Note: precision will not work well until we expect multiple tools to be returned.***\n")
 
