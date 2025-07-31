@@ -35,3 +35,23 @@ if __name__ == "__main__":
 
     test_runner = TestRunManager()
     asyncio.run(test_runner.run_multiple_test_cases())
+
+    # with open("python/src/app/data/test_results.json", "r") as f:
+    #     results = json.load(f)
+
+
+    # tools_cnt = 0
+    # test_cases_cnt = 0
+    # missed_tools = {}
+    # for result in results:
+    #     missing_tool = result.get("missing_tools", [])
+    #     if missing_tool is not None and len(missing_tool) > 0:
+    #         test_cases_cnt += 1
+    #         tools_cnt += len(missing_tool)
+    #         for tool in missing_tool:
+    #             if tool not in missed_tools:
+    #                 missed_tools[tool] = 1
+    #             else:
+    #                 missed_tools[tool] += 1
+    # print(f"average missing tools per test case: {tools_cnt / test_cases_cnt if test_cases_cnt > 0 else 0}")
+    # print(json.dumps(missed_tools, indent=4))

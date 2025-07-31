@@ -311,11 +311,21 @@ class TestRunManager:
         print(f"Average Precision Score: {avg_precision_score:.1f}%***")
         print(f"Average Recall Score: {avg_recall_score:.1f}%")
         print(f"Average Judge Score: {avg_judge_score:.2f}")
-        print(f"\n====MISSED TOOLS====")
+        print(f"\n====COMMONLY MISSED TOOLS====")
 
+        missed_tools_cnt = 0
+        test_case_with_missed_tools = 0
+        missed_tools = {}
         for result in test_results_list:
             if len(result.missing_tools) > 0:
-                print(f"Expected tools: {result.expected_tools}, Missed tools: {result.missing_tools}, Query: {result.query}")
-
+                missed_tools_cnt += len(result.missing_tools)
+                test_case_with_missed_tools += 1
+                for tool in result.missing_tools:
+                    if tool not in missed_tools:
+                        missed_tools[tool] = 1
+                    else:
+                        missed_tools[tool] += 1
+        print(f"Test cases missing tools: {test_case_with_missed_tools} ({(test_case_with_missed_tools/result_count*100):.1f}%)")
+        print(f"Average missing tools per test case: {missed_tools_cnt / test_case_with_missed_tools if test_case_with_missed_tools > 0 else 0:.2f}")
         print(f"\n***Note: precision will not work well until we expect multiple tools to be returned.***\n")
 
