@@ -71,18 +71,20 @@ class ToolRouter:
         return []  # Placeholder for local tools retrieval logic
 
 
-    async def get_remote_tools(self, query: str) -> List[Tool]:
+    async def get_remote_tools(self, query: str, allowed_tools: List[str] = []) -> List[Tool]:
         """
         Retrieve remote tools based on the query.
         Args:
             query (str): The query string to search for remote tools.
+            allowed_tools (List[str]): A list of allowed tool IDs for the query.
         Returns:
             List[Tool]: A list of remote tools matching the query.
         """
         try:
             search_result = await self.azure_search_manager.perform_azure_search(
                 search_text=query,
-                top_k=self.tool_result_cnt
+                top_k=self.tool_result_cnt,
+                allowed_tools=allowed_tools
             )
         except Exception as e:
             logging.error(f"Error querying Azure Search for '{query}': {e}")
@@ -92,14 +94,14 @@ class ToolRouter:
             result_list = list(search_result)
             if result_list:
                 search_result_list = [Tool(
-                    id=f"{result.get('server', '')}.{result.get('name', '')}",
+                    id=result.get('id'),
                     server=result.get('server', ''),
                     toolset=result.get('toolset', ''),
                     name=result.get('name', ''),
                     description=result.get('description', ''),
                     tool_vector=result.get('tool_vector', []),
                     score=result.get('@search.reranker_score', 0.0),
-                ) for result in result_list if result.get('server') and result.get('name')]
+                ) for result in result_list if result.get('id') and result.get('server') and result.get('name')]
 
                 if len(search_result_list) == 0:
                     logging.info("No results found.")                
@@ -109,18 +111,19 @@ class ToolRouter:
             return []
 
 
-    async def route(self, query: str) -> ToolResults:
+    async def route(self, query: str, allowed_tools: List[str] = []) -> ToolResults:
         """
         Process a single query with performance tracking
         Args:
             query (str): The query string to process
+            allowed_tools (List[str]): A list of allowed tool IDs for the query
         Returns:
             ToolResults: A ToolResults object containing the results of the query processing
         """
 
         start_execution_time = time.time()
         try:
-            remote_tools_list = await self.get_remote_tools(query=query)
+            remote_tools_list = await self.get_remote_tools(query=query, allowed_tools=allowed_tools)
             remote_tools_list.sort(key=lambda x: x.score if x else 0, reverse=True)
         except Exception as e:
             logging.error(f"Error retrieving remote tools: {e}")
@@ -154,7 +157,7 @@ async def get_mcp_tools(request: Request) -> ToolResults:
     """
     Get tools based on the query.
     Args:
-        query (str): The query string to search for tools.
+        request (Request): The request object containing the query and allowed tools.
     Returns:
         ToolListResult: A ToolListResult containing the tools matching the query.
     """
@@ -162,6 +165,7 @@ async def get_mcp_tools(request: Request) -> ToolResults:
     token = auth_header.split(" ")[1] if auth_header else None
     raw_RQ_body = await request.body()
     query = json.loads(raw_RQ_body.decode("utf-8")).get("query", "")
+    allowed_tools = json.loads(raw_RQ_body.decode("utf-8")).get("allowed_tools", [])
 
     global router_instance
     if router_instance is None:
@@ -179,7 +183,7 @@ async def get_mcp_tools(request: Request) -> ToolResults:
     
     # Route the query to get tools
     try:
-        results = await router_instance.route(query=query)
+        results = await router_instance.route(query=query, allowed_tools=allowed_tools)
     except Exception as e:
         logging.error(f"Error routing query '{query}': {e}")
         return {

@@ -1,4 +1,4 @@
-import re, configparser, logging, json
+import re, configparser, logging, json, uuid
 from azure.search.documents import SearchClient
 from azure.search.documents.models import VectorizedQuery
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
@@ -72,15 +72,18 @@ class AzureSearchManager():
             return None
 
 
-    async def perform_azure_search(self, search_text: str, top_k: int = 10):
+    async def perform_azure_search(self, search_text: str, top_k: int = 10, allowed_tools: List[str] = []):
         """
         Performs a hybrid search for documents in the specified Azure Search index.
         Args:
             search_text (str): The text to search for in the index.
             top_k (int): The number of top results to return.
+            allowed_tools (List[str]): A list of allowed tool IDs for the query.
         Returns:
             SearchResults: The search results.
         """
+        cleaned_tools_list = [f"'{i}'" for i in allowed_tools] if allowed_tools else []
+
         try:
             results = self.azure_search_client.search(
                 search_text=search_text,
@@ -91,8 +94,9 @@ class AzureSearchManager():
                 )],
                 query_type="semantic",
                 semantic_configuration_name="default",
-                select=["server", "toolset", "name", "description"],
-                top=top_k
+                select=["id", "server", "toolset", "name", "description"],
+                top=top_k,
+                filter=f"search.in(id, {','.join(cleaned_tools_list)})"
             )
             return results
         except Exception as e:
@@ -155,8 +159,11 @@ class AzureSearchManager():
         for server in mcp_servers.get("servers", []):
             if server.get("name") in servers_with_more_than_5_tools:
                 toolset = await self.create_tool_dictionaries(server)
-                self.azure_search_client.upload_documents(documents=[tool for tool in toolset])
-                logging.info(f"Uploaded {len(toolset)} tools for server '{server.get('name')}' to Azure Search index '{self.azure_search_index_name}'.")
+                try: 
+                    self.azure_search_client.upload_documents(documents=[tool for tool in toolset])
+                    logging.info(f"Uploaded {len(toolset)} tools for server '{server.get('name')}' to Azure Search index '{self.azure_search_index_name}'.")
+                except Exception as e:
+                    logging.error(f"Error uploading tools for server '{server.get('name')}': {e}")
         return True
 
 
@@ -177,13 +184,14 @@ class AzureSearchManager():
         toolsets = server.get("toolsets", [])
         for toolset in toolsets:
             tools = toolset.get("tools", [])
-            tools_to_return.append([
-                Tool(
-                    id=f"{server_name}_{toolset.get('name', '')}_{tool.get('name', '')}",
-                    server=server_name,
-                    toolset=toolset.get("name", ""),
-                    name=tool.get("name", ""),
-                    description=f"{tool.get('description', '')} Keywords: {', '.join(tool.get('keywords', []))}. Examples: {'; '.join(tool.get('sample_questions', []))}",
-                    tool_vector=await self.create_text_embedding(text=f"Server name: {server_name} Tool name: {tool.get('name', '')}: Description: {tool.get('description', '')}.")
-                ) for tool in tools])
+            for tool in tools:
+                tools_to_return.append({
+                    "id": str(uuid.uuid4()),
+                    "server": server_name,
+                    "toolset": toolset.get("name", ""),
+                    "name": tool.get("name", ""),
+                    "description": f"{tool.get('description', '')} Keywords: {', '.join(tool.get('keywords', []))}. Examples: {'; '.join(tool.get('sample_questions', []))}",
+                    "tool_vector": await self.create_text_embedding(text=f"Server name: {server_name} Tool name: {tool.get('name', '')}: Description: {tool.get('description', '')}.")
+                })
         return tools_to_return
+    

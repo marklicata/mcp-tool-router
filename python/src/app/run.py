@@ -11,8 +11,15 @@ def run_chat():
 
   # query = input("Type a query to route to tools (or press Enter to exit)... ")
   query = "How do I clone a repo in GitHub?"
+  allowed_tools = ["360322a9-db0a-41df-a26d-38ce063a8084"]
+
   while query is not None and query != "":
-    payload = json.dumps({'query': query})
+    payload = json.dumps({
+       'query': query,
+       'allowed_tools': allowed_tools
+    })
+
+    print(payload)
 
     try:
       conn = http.client.HTTPConnection("localhost", 8000)
@@ -31,10 +38,10 @@ def run_chat():
 
 
 if __name__ == "__main__":
-    # run_chat()
+    run_chat()
 
-    test_runner = TestRunManager()
-    asyncio.run(test_runner.run_multiple_test_cases())
+    # test_runner = TestRunManager()
+    # asyncio.run(test_runner.run_multiple_test_cases())
 
     # with open("python/src/app/data/test_results.json", "r") as f:
     #     results = json.load(f)

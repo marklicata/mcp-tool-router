@@ -118,8 +118,11 @@ class TestRunManager:
                             "role": "system",
                             "content": 
                                 "You are a helpful assistant that helps evaluate if the correct TOOLS have been selected to help an LLM answer the user's prompt."
-                                "You will be given the user's prompt. And then a json array of tools that were selected to help answer the prompt. Each tool will include a name and description."
-                                "I would like you to rate how well the selected tools would help answer the prompt on a scale of 1-10, where 0 is completely useless and 10 is perfect."
+                                "You will be given the following details:"
+                                    "1.) The user's prompt."
+                                    "2.) The expected tools."
+                                    "3.) A json array of tools that were selected to help answer the prompt. Each tool will include a name and description."
+                                "I would like you to rate how well the tool selection process did at selecting tools to answer the prompt on a scale of 1-10, where 0 is completely useless and 10 is perfect."
                                 "You will provide this score in simple JSON format: {'score': <number from 0-10>}"
                                 "That is it. Provide no other commentary or text."
                         },
