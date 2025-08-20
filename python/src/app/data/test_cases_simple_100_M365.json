@@ -1,700 +1,900 @@
 [
     {
         "question": "Category: Q&A: File Content, Question: Could you summarize the main ideas outlined in the <document> document regarding making changes?",
-        "description": "",
+        "expected_tool_ids": [
+            "1737c7cc-12f8-4431-8821-79af24bfbeb7"
+        ],
         "expected_tools": [
             "UnifAI.DocumentQA"
         ]
     },
     {
-        "question": "Category: Post to: Teams Channel, Question: Share the \"Cyber Labs Q4 Update\" in the business development channel and notify <person> and <person>, requesting their feedback by the end of <time>.",
-        "description": "",
+        "question": "Category: Post to: Teams Channel, Question: Share the 'Cyber Labs Q4 Update' in the business development channel and notify <person> and <person>, requesting their feedback by the end of <time>.",
+        "expected_tool_ids": [
+            "29c5420f-1d96-44d4-ab8b-ac2ad22b9f22"
+        ],
         "expected_tools": [
             "Upstash.PubSub"
         ]
     },
     {
         "question": "Category: Q&A: GPT only, Question: Ensure documents are clearly included in the GRAS process, especially those that detail both extrusion and high-pressure methods.",
-        "description": "",
+        "expected_tool_ids": [
+            "1737c7cc-12f8-4431-8821-79af24bfbeb7"
+        ],
         "expected_tools": [
             "UnifAI.DocumentQA"
         ]
     },
     {
         "question": "Category: Extensibility: Fanout to multiple plugins, Question: Find all emails in Outlook, Excel files, and documents from Word and SharePoint that pertain to phototherapy calibration between October 1 and 31, including the correspondence dates and the attached notes.",
-        "description": "",
+        "expected_tool_ids": [
+            "d394c7c7-171a-4e30-89d7-361aede279ee"
+        ],
         "expected_tools": [
             "Octagon.ask_retrieval"
         ]
     },
     {
         "question": "Category: Modify: Add Grounding, Question: Include the budget breakdown estimated from Chapter 3 and the detailed project timeline from Section 5 of the proposal into the report shared earlier.",
-        "description": "",
+        "expected_tool_ids": [
+            "ed9375d2-6523-4b25-9e06-ef2b9bfe028f"
+        ],
         "expected_tools": [
             "CodeLogic.Reporting_Engine"
         ]
     },
     {
         "question": "Category: Help: Web Content, Question: The web plugin menu isn't appearing. How do I reactivate it to retrieve the most recent data?",
-        "description": "",
+        "expected_tool_ids": [
+            "48792e8b-cd1e-442f-8591-25e076b27876"
+        ],
         "expected_tools": [
             "Hyperbrowser.web_browser"
         ]
     },
     {
         "question": "Category: Help: Microsoft, Question: How can I ensure auto-formatting works properly when using <software> in <software> to reformat text in handouts with styles and templates, as errors keep occurring?",
-        "description": "",
+        "expected_tool_ids": [
+            "5e5d5417-fb44-4652-b321-9181e1e704db"
+        ],
         "expected_tools": [
             "VSCode.vscode_editor_format_document"
         ]
     },
     {
         "question": "Category: Q&A: Web Only, Question: What are the optimal dimensions and quality settings for exporting videos to reduce size and maintain quality?",
-        "description": "",
+        "expected_tool_ids": [
+            "e0df5144-1ca0-4145-baa8-3a3c256d79e2"
+        ],
         "expected_tools": [
             "Cloudinary.mcp_transformations"
         ]
     },
     {
         "question": "Category: Recommend: Files, Question: Can you provide a list of the recent files from the <time> that are necessary for preparing for <event> and <event>, especially those concerning the <event>?",
-        "description": "",
+        "expected_tool_ids": [
+            "1f8afeb0-8edf-4a70-b56a-5f6c393cceab"
+        ],
         "expected_tools": [
             "Hyperbrowser.file_manager"
         ]
     },
     {
         "question": "Category: Q&A: GPT only, Question: How do I choose the best packaging materials for non-perishable goods, and how can those materials be optimized to ensure the quality is preserved during storage?",
-        "description": "",
+        "expected_tool_ids": [
+            "348f8b98-2ab2-4383-8bb0-c333284bac08"
+        ],
         "expected_tools": [
             "Logfire.ask_openai_chat"
         ]
     },
     {
         "question": "Category: Rewrite: GPT only, Question: Please rephrase my <date> email to <person> about the new <event> to be more engaging and personalized. Begin with a concise summary of the <thing>, keep the content under <quantity>, and conclude with a specific request for her feedback by <date>.",
-        "description": "",
+        "expected_tool_ids": [
+            "88e8568a-0c78-49bc-b202-d6f13387473a"
+        ],
         "expected_tools": [
             "Rember.rewrite"
         ]
     },
     {
         "question": "Category: Summarize: File, Question: Summarize the main points in the document.",
-        "description": "",
+        "expected_tool_ids": [
+            "43bfb1fa-3587-4fa6-8d37-d86b94c15283"
+        ],
         "expected_tools": [
             "DevRev.summarization"
         ]
     },
     {
         "question": "Category: Translate: Language, Question: Translate the document into <language>.",
-        "description": "",
+        "expected_tool_ids": [
+            "972c647e-4d9e-464d-8243-4c4e597e7e4f"
+        ],
         "expected_tools": [
             "DevRev.translation"
         ]
     },
     {
         "question": "Category: Q&A: User Data, Question: Generate a project plan template document",
-        "description": "",
+        "expected_tool_ids": [
+            "a8276d0e-6282-4cc8-8ca7-831d2309e4f6"
+        ],
         "expected_tools": [
             "UnifAI.Ask"
         ]
     },
     {
         "question": "Category: Web and/or Work, Question: Is there a way to make messages searchable by certain keywords so the <organization> can find information quickly?",
-        "description": "",
+        "expected_tool_ids": [
+            "feeacb33-d3ca-4767-a812-65c3e904aeb2"
+        ],
         "expected_tools": [
             "Hiveflow.Search"
         ]
     },
     {
         "question": "Category: Prep for: Day, Question: Create a checklist for the <time>, summarizing any key messages needing responses and links to relevant documents.",
-        "description": "",
+        "expected_tool_ids": [
+            "5e2da678-544d-42e3-b6d1-3c89906ad456"
+        ],
         "expected_tools": [
             "Octagon.summarize"
         ]
     },
     {
-        "question": "Category: Search for: Files, Question: Locate the \"<document>\" file that I sent via <communication> <time>.",
-        "description": "",
+        "question": "Category: Search for: Files, Question: Locate the '<document>' file that I sent via <communication> <time>.",
+        "expected_tool_ids": [
+            "1f8afeb0-8edf-4a70-b56a-5f6c393cceab"
+        ],
         "expected_tools": [
             "Hyperbrowser.file_manager"
         ]
     },
     {
-        "question": "Category: Modify: Correct Grounding, Question: Please utilize the \"<document>\" document rather than the <person> referral, as the referral was the wrong source.",
-        "description": "",
+        "question": "Category: Modify: Correct Grounding, Question: Please utilize the '<document>' document rather than the <person> referral, as the referral was the wrong source.",
+        "expected_tool_ids": [
+            "13b4559a-9669-432f-af87-c76a0a4b214b"
+        ],
         "expected_tools": [
             "Riza.text_editing"
         ]
     },
     {
-        "question": "Category: Rewrite: GPT only, Question: Rewrite this notice in a courteous manner while including references to <legal_reference> and the <legal_reference>. \"<legal_reference> is now concerning the collection of debts. To prevent issues, settle the full past due amount within 10 days. Under Revised Statutes <legal_reference>, pay the debt prior to its sale. Information related to debt collection provided will be utilized for that purpose.\"",
-        "description": "",
+        "question": "Category: Rewrite: GPT only, Question: Rewrite this notice in a courteous manner while including references to <legal_reference> and the <legal_reference>. '<legal_reference> is now concerning the collection of debts. To prevent issues, settle the full past due amount within 10 days. Under Revised Statutes <legal_reference>, pay the debt prior to its sale. Information related to debt collection provided will be utilized for that purpose.'",
+        "expected_tool_ids": [
+            "88e8568a-0c78-49bc-b202-d6f13387473a"
+        ],
         "expected_tools": [
             "Rember.rewrite"
         ]
     },
     {
         "question": "Category: Q&A: Focus Areas, Question: Could you clarify what <scientific term> is and how it impacts the prioritization of <scientific term> in the context of mapping <scientific term>?",
-        "description": "",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
-        "question": "Category: Summarize: Work AND Web, Question: Create a comprehensive summary highlighting our 2018 sustainability achievements by focusing on vital metrics and key insights from the UECS2018 Post-Event ROI & Sustainability Impact Report, Pacific Sustainability Expo Post-Event Impact Report, and EcoCrew Waste-Diversion SOP. Enrich this summary with data from the First Nations stewardship case study on EventManagementInsights.com and the farm-to-table lifecycle analysis on SustainableCateringInsider.com. Pay particular attention to CO₂ reductions, waste-diversion percentages, and PUE statistics, and suggest three improvement strategies for sponsors at future events.",
-        "description": "",
+        "question": "Category: Summarize: Work AND Web, Question: Create a comprehensive summary highlighting our 2018 sustainability achievements by focusing on vital metrics and key insights from the UECS2018 Post-Event ROI & Sustainability Impact Report, Pacific Sustainability Expo Post-Event Impact Report, and EcoCrew Waste-Diversion SOP. Enrich this summary with data from the First Nations stewardship case study on EventManagementInsights.com and the farm-to-table lifecycle analysis on SustainableCateringInsider.com. Pay particular attention to CO\u00e2\u201a\u201a reductions, waste-diversion percentages, and PUE statistics, and suggest three improvement strategies for sponsors at future events.",
+        "expected_tool_ids": [
+            "48792e8b-cd1e-442f-8591-25e076b27876"
+        ],
         "expected_tools": [
             "Hyperbrowser.web_browser"
         ]
     },
     {
-        "question": "Category: Web and/or Work, Question: In <software>, how can I format an entire row to change to yellow if the value in the \"<column>\" column is between 45-59, and to green if it's 60 or higher?",
-        "description": "",
+        "question": "Category: Web and/or Work, Question: In <software>, how can I format an entire row to change to yellow if the value in the '<column>' column is between 45-59, and to green if it's 60 or higher?",
+        "expected_tool_ids": [
+            "48792e8b-cd1e-442f-8591-25e076b27876"
+        ],
         "expected_tools": [
             "Hyperbrowser.web_browser"
         ]
     },
     {
-        "question": "Category: Search for: Files, Question: Locate the \"<file>\" file that I shared recently.",
-        "description": "",
+        "question": "Category: Search for: Files, Question: Locate the '<file>' file that I shared recently.",
+        "expected_tool_ids": [
+            "1f8afeb0-8edf-4a70-b56a-5f6c393cceab"
+        ],
         "expected_tools": [
             "Hyperbrowser.file_manager"
         ]
     },
     {
         "question": "Category: Q&A: Tenant Info, Question: How do I locate the software troubleshooting area and the <function> function within our network?",
-        "description": "",
+        "expected_tool_ids": [
+            "18086f1b-04b7-4ab4-9313-834d0bcff2db"
+        ],
         "expected_tools": [
             "Tianji.search"
         ]
     },
     {
         "question": "Category: Recap: Multiple Past Meetings, Question: Can you give me a concise overview of the key decisions, main topics, and action items from <organization> and <organization> meetings held between <date> and <date> that I need to focus on for <date>?",
-        "description": "",
+        "expected_tool_ids": [
+            "5e2da678-544d-42e3-b6d1-3c89906ad456"
+        ],
         "expected_tools": [
             "Octagon.summarize"
         ]
     },
     {
         "question": "Category: Brainstorm: GPT only, Question: Create a minimum of 10 suggestions to gamify the augmented reality training module for the <organization> firewall, incorporating levels, challenges, and rewards, while ensuring it works with Power BI.",
-        "description": "",
+        "expected_tool_ids": [
+            "348f8b98-2ab2-4383-8bb0-c333284bac08"
+        ],
         "expected_tools": [
             "Logfire.ask_openai_chat"
         ]
     },
     {
         "question": "Category: Create: PPT from prompt, Question: 1) Agenda & introductory comments, 2) Project schedule, 3) Floor layout with four distinctly colored zones, 4) Shift timing & rotation information, 5) Overview of Phase 1 (issues encountered & fraction breakdown), 6) Overview of Phase 2 (cue-by-cue process steps), 7) Details of Phase 3 (QR-code pH testing + example outcomes), 8) Overview of Phase 4 (task arrangement based on coordinates), 9) Troubleshooting guide (frequent problems, quick solutions, advanced troubleshooting), 10) Presenter guide (step-by-step instructions, note cards, presenting tips), 11) Summary slide",
-        "description": "",
+        "expected_tool_ids": [
+            "782d08e4-23b1-4040-a6f0-e4442ddc1a56"
+        ],
         "expected_tools": [
             "Riza.text_completion"
         ]
     },
     {
         "question": "Category: Create: Web Only, Question: Write a 600-word essay that includes a case study on <activity> with a performance analysis of eco-transparent whale-watching aviaries, highlighting key sustainability practices and demonstrations for <event>.",
-        "description": "",
+        "expected_tool_ids": [
+            "11218501-0ed9-4851-b196-36efe8cd9cfd"
+        ],
         "expected_tools": [
             "Hyperbolic.web_search"
         ]
     },
     {
-        "question": "Category: Brainstorm: GPT + Work, Question: Create attention-grabbing bilingual (English & Spanish) social media posts to promote our Product Demo & Webinar Event on Nov 5, using key metrics (e.g., 100 kWh savings, LCFS carbon credits, 0.5% efficiency boost) from “Annual Report” and the latest industry updates.",
-        "description": "",
+        "question": "Category: Brainstorm: GPT + Work, Question: Create attention-grabbing bilingual (English & Spanish) social media posts to promote our Product Demo & Webinar Event on Nov 5, using key metrics (e.g., 100 kWh savings, LCFS carbon credits, 0.5% efficiency boost) from 'Annual Report' and the latest industry updates.",
+        "expected_tool_ids": [
+            "348f8b98-2ab2-4383-8bb0-c333284bac08"
+        ],
         "expected_tools": [
             "Logfire.ask_openai_chat"
         ]
     },
     {
         "question": "Category: Q&A: Person, Question: Tell <person> about <person>.",
-        "description": "",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
         "question": "Category: Prep for: Day, Question: Clear overview of tasks and meetings for <date>, including key documents and any recent updates, to prioritize efficiently.",
-        "description": "",
+        "expected_tool_ids": [
+            "43bfb1fa-3587-4fa6-8d37-d86b94c15283"
+        ],
         "expected_tools": [
             "DevRev.summarization"
         ]
     },
     {
         "question": "Category: Q&A: Web Only, Question: Can <organization> use <product> for <process>, and if they can, what is the <rule> regarding these <product>?",
-        "description": "",
+        "expected_tool_ids": [
+            "48792e8b-cd1e-442f-8591-25e076b27876"
+        ],
         "expected_tools": [
             "Hyperbrowser.web_browser"
         ]
     },
     {
         "question": "Category: Remember: Copilot Profile, Question: Reply to Maria (cc James) about FusionSecure v2.3 PCI-DSS test results. Summarize the results, then highlight three key areas to focus on: (1) Cross-check with compliance team, (2) TLS 1.3 fallback when the cert chain is missing, and (3) Legacy systems 2008 compatibility with only SHA1 enabled. Close by mentioning that embedding certutil and related scripts is convenient for automated tasks. Keep the tone casual, using my usual bullet-point approach for clear communication.",
-        "description": "",
+        "expected_tool_ids": [
+            "79fd7724-219b-4d4d-bd26-df1f24e2b5b9"
+        ],
         "expected_tools": [
             "Tianji.answer"
         ]
     },
     {
-        "question": "Category: Q&A: Email Content, Question: Can you provide the pricing quotes from the vendors for the <organization> desk riser, <organization> keyguard, and <organization> cushion as outlined in my email sent on <date> under the subject “Draft Joint IT & Job Coach Training Agenda for Adaptive Equipment Roll-Out”?",
-        "description": "",
+        "question": "Category: Q&A: Email Content, Question: Can you provide the pricing quotes from the vendors for the <organization> desk riser, <organization> keyguard, and <organization> cushion as outlined in my email sent on <date> under the subject \u00e2\u20ac\u0153Draft Joint IT & Job Coach Training Agenda for Adaptive Equipment Roll-Out'?",
+        "expected_tool_ids": [
+            "de610290-16f2-4cad-b600-45a7d6d743f8"
+        ],
         "expected_tools": [
             "Zapier.Email_Parser"
         ]
     },
     {
         "question": "Category: Learn: BizChat, Question: How can I effectively use Copilot in Teams without going into an extensive breakdown of all its features and capabilities?",
-        "description": "",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
         "question": "Category: Summarize: Work AND Web, Question: Compile a detailed summary of the key insights from internal market research reports and web-based consumer behavior analytics to pinpoint the top five reasons customers choose our services. Ensure you utilize data from documents like <document> and <document>, and compare them with external web metrics from sources such as <website> and <document>, noting any similarities or discrepancies in practical procedures.",
-        "description": "",
+        "expected_tool_ids": [
+            "43bfb1fa-3587-4fa6-8d37-d86b94c15283"
+        ],
         "expected_tools": [
             "DevRev.summarization"
         ]
     },
     {
         "question": "Category: Prep for: Day, Question: Could you summarize the remaining tasks for <date>, including <meeting>, <email> or <message>, and the <document> that need to be updated or sent before the <deadline>?",
-        "description": "",
+        "expected_tool_ids": [
+            "43bfb1fa-3587-4fa6-8d37-d86b94c15283"
+        ],
         "expected_tools": [
             "DevRev.summarization"
         ]
     },
     {
         "question": "Category: Create: GPT + Work, Question: Summarize the <document> into a one-page reference guide that covers the document's overview, various sample types and sizes used in vascular procedures, and guidelines for identifying common targets.",
-        "description": "",
+        "expected_tool_ids": [
+            "5e2da678-544d-42e3-b6d1-3c89906ad456"
+        ],
         "expected_tools": [
             "Octagon.summarize"
         ]
     },
     {
         "question": "Category: Compose: Email Reply, Question: Draft a reply to <person> about her concerns regarding the new project plan, confirm we'll address the issues in the next meeting, and mention the proposed timeline. Also, ask for clarification on a point mentioned in her nested within the annual report regarding sales data.",
-        "description": "",
+        "expected_tool_ids": [
+            "13f03676-2864-4356-93ee-4f7a3b64605b"
+        ],
         "expected_tools": [
             "Klaviyo.Templates"
         ]
     },
     {
         "question": "Category: Compose: Introduction Email, Question: Help draft a warm introduction email to an <person>, mentioning my current role at a <organization>, emphasizing the success of recent projects, and proposing a 10-minute call next <time> to discuss potential <time> cross-promotion opportunities.",
-        "description": "",
+        "expected_tool_ids": [
+            "ee30f2a1-5d5b-422b-be38-76b8f9b600bd"
+        ],
         "expected_tools": [
             "Rember.compose"
         ]
     },
     {
         "question": "Category: Help: BizChat, Question: What types of comparisons, summaries, or related data insights can you prepare from my emails, analysis files, and calendar events?",
-        "description": "",
+        "expected_tool_ids": [
+            "807aae86-6e96-4dbe-beff-7feebfbe920c"
+        ],
         "expected_tools": [
             "klusterai.Metrics"
         ]
     },
     {
         "question": "Category: Create: GPT + Work, Question: Create a one-page bilingual (English-Spanish) parent FAQ for the shared reading mini-workshop on July 21, using the documents Integrated_SpeechLanguage_Scaffolds_and_Family_Engagement.docx and Guia_Mini_Taller_Lectura_Compartida.docx. The FAQ should detail the workshop's goals, key schedule events, and three home strategies to support speech-language development.",
-        "description": "",
+        "expected_tool_ids": [
+            "4d998a2a-c426-4168-aab3-ad7edbe000e2"
+        ],
         "expected_tools": [
             "VSCode.vscode_fs_read_file"
         ]
     },
     {
-        "question": "Category: Draft to: Word, Question: Create a table with columns for calendar, emails, chats, documents, meetings, and contacts. Include a second column with a one-sentence description for each item and a third column labeled \"Task Details.\"",
-        "description": "",
+        "question": "Category: Draft to: Word, Question: Create a table with columns for calendar, emails, chats, documents, meetings, and contacts. Include a second column with a one-sentence description for each item and a third column labeled 'Task Details.'",
+        "expected_tool_ids": [
+            "79fd7724-219b-4d4d-bd26-df1f24e2b5b9"
+        ],
         "expected_tools": [
             "Tianji.answer"
         ]
     },
     {
         "question": "Category: Q&A: User Data, Question: Request information for SFHP-2023XXX22.",
-        "description": "",
+        "expected_tool_ids": [
+            "0c274430-d8c2-4e60-90e3-b8b9e0168fad"
+        ],
         "expected_tools": [
             "PlayCanvas.user"
         ]
     },
     {
-        "question": "Category: Q&A: Data Handling, Question: En uno de mis chats recientes, ¿cómo puedo asegurarme de que los datos al compartir puedan verlos otros no se lean?",
-        "description": "",
+        "question": "Category: Q&A: Data Handling, Question: En uno de mis chats recientes, \u00c2\u00bfc\u00c3\u00b3mo puedo asegurarme de que los datos al compartir puedan verlos otros no se lean?",
+        "expected_tool_ids": [
+            "a8276d0e-6282-4cc8-8ca7-831d2309e4f6"
+        ],
         "expected_tools": [
             "UnifAI.Ask"
         ]
     },
     {
         "question": "Category: Summarize: File, Question: Provide a summary of the recent <event> and follow-up actions outlined in the document.",
-        "description": "",
+        "expected_tool_ids": [
+            "1737c7cc-12f8-4431-8821-79af24bfbeb7"
+        ],
         "expected_tools": [
             "UnifAI.DocumentQA"
         ]
     },
     {
         "question": "Category: Q&A: Teams Chat, Question: Show any Teams messages from <time> onward that mention the 85% pump increase after the switch to the UF-24 CIP acid cycle.",
-        "description": "",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
         "question": "Category: Suggest: Workflow Optimization, Question: Analyze my emails, meeting records, and project documents from the past month and suggest targeted improvements to enhance task management, update IEP reports, and handle Telepsychiatry Kit dispatches, while reducing redundant entries in EHR, B-PAC systems, and e-nurse systems.",
-        "description": "",
+        "expected_tool_ids": [
+            "d3f609f9-aec7-4bcb-aea4-dd79efb3effa"
+        ],
         "expected_tools": [
             "Hiveflow.Workflow_Engine"
         ]
     },
     {
         "question": "Category: Create: Image, Question: Design a concept image showing different processes in Software Development: data export from storage, XML parsing, conversion of MARC data, cross-platform synchronization, and API integration. Include clean lines, modern icons, and the color palette (<color>, <color>).",
-        "description": "",
+        "expected_tool_ids": [
+            "7b441ed5-9395-423e-946c-fa52533b9c7d"
+        ],
         "expected_tools": [
             "CodeLogic.Application_Modeler"
         ]
     },
     {
         "question": "Category: Search for: Emails, Question: List the messages that match the criteria, such as <person>, with details and time stamps.",
-        "description": "",
+        "expected_tool_ids": [
+            "de610290-16f2-4cad-b600-45a7d6d743f8"
+        ],
         "expected_tools": [
             "Zapier.Email_Parser"
         ]
     },
     {
-        "question": "Category: Create: PPT from prompt, Question: Generate a 15-slide PowerPoint presentation summarizing Monday's DCAA findings. Include a root-cause analysis of the 7.4% labor loss, a 5-slide narrative on the 18.7% burden split update, details on resolving the 2.1% pool discrepancy, significant register entries, information on mitigating the 14.7% logistics risk, and an 8-slide tornado diagram showing the impact of a 3.65% contingency pool on BCWP and the SIT plan. Also, cover the effects of ±2.3% currency fluctuation, plans for two additional shifts, compliance with DFARS/FAR regulations, and updates on entries #42-44.",
-        "description": "",
+        "question": "Category: Create: PPT from prompt, Question: Generate a 15-slide PowerPoint presentation summarizing Monday's DCAA findings. Include a root-cause analysis of the 7.4% labor loss, a 5-slide narrative on the 18.7% burden split update, details on resolving the 2.1% pool discrepancy, significant register entries, information on mitigating the 14.7% logistics risk, and an 8-slide tornado diagram showing the impact of a 3.65% contingency pool on BCWP and the SIT plan. Also, cover the effects of \u00c2\u00b12.3% currency fluctuation, plans for two additional shifts, compliance with DFARS/FAR regulations, and updates on entries #42-44.",
+        "expected_tool_ids": [
+            "782d08e4-23b1-4040-a6f0-e4442ddc1a56"
+        ],
         "expected_tools": [
             "Riza.text_completion"
         ]
     },
     {
         "question": "Category: Search for: Next Best Contact, Question: Looking for <person> with experience in stapling <task>, who can address my <task>. Is anyone available?",
-        "description": "",
+        "expected_tool_ids": [
+            "01707304-a1b6-4462-ae73-2bd556a0bd92"
+        ],
         "expected_tools": [
             "HubSpot.CRM_Search"
         ]
     },
     {
-        "question": "Category: Compose: Email Reply, Question: Could you draft a reply to this email for me: \"ISO XXX-7 Calibration Curve XXXXXX XXX: thank XXX XXX XXX the XXX (XXXXXX XXX XXX (dimensionlessXXX XXX units XXX with XXX XXXXXX XXX the XXX XXXXXX verification pass XXX audit XXX and loop XXX XXX if any naming XXX XXX commit XXX sending close XXX FridayXXX\"",
-        "description": "",
+        "question": "Category: Compose: Email Reply, Question: Could you draft a reply to this email for me: 'ISO XXX-7 Calibration Curve XXXXXX XXX: thank XXX XXX XXX the XXX (XXXXXX XXX XXX (dimensionlessXXX XXX units XXX with XXX XXXXXX XXX the XXX XXXXXX verification pass XXX audit XXX and loop XXX XXX if any naming XXX XXX commit XXX sending close XXX FridayXXX'",
+        "expected_tool_ids": [
+            "66455b51-b278-47f2-ad4e-ce0652f300f9"
+        ],
         "expected_tools": [
             "YepCode.smtp"
         ]
     },
     {
         "question": "Category: Q&A: Web Only, Question: What are the <organization> recommended dimensions and placement for wheelchair accessibility symbols on bus stop signs?",
-        "description": "",
+        "expected_tool_ids": [
+            "48792e8b-cd1e-442f-8591-25e076b27876"
+        ],
         "expected_tools": [
             "Hyperbrowser.web_browser"
         ]
     },
     {
         "question": "Category: Q&A: People Details, Question: What has /<person> been focused on recently?",
-        "description": "",
+        "expected_tool_ids": [
+            "35ee11f5-5d19-435c-b758-6169ed46464f"
+        ],
         "expected_tools": [
             "Hyperbolic.wikidata"
         ]
     },
     {
         "question": "Category: Extensibility: Fanout to multiple plugins, Question: Create an invoice utilizing data from <software> that includes collection and next contact dates. Present the collection results in a table, sorted by date.",
-        "description": "",
+        "expected_tool_ids": [
+            "1b2aa80e-c3b6-491a-b1e9-4bb589e7ca39"
+        ],
         "expected_tools": [
             "klusterai.Ordering"
         ]
     },
     {
         "question": "Category: Generic Pleasantries, Question: Hello! Want to check if everything is ready for the evening.",
-        "description": "",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
-        "question": "Category: Remember: Copilot Profile, Question: Can you please send the follow-up email that we discussed in the 11 AM meeting? Include the meeting notes and address the email to Jane, John, Chris, and Zane, with me on cc. Ensure my writing style is maintained by being concise and organize the details into summarized tasks and action columns. The points to include are: 1) Completion of the basement drywall repair, 2) Installation of dual LED lights in the kitchen with an inspection report as of April 26, 3) Completion of mold remediation and air quality test results by April 25, 4) Reminder for the telehealth check on April 23 (include the report), 5) Administration of Mr. Rodriguez’s influenza vaccine at the April 25",
-        "description": "",
+        "question": "Category: Remember: Copilot Profile, Question: Can you please send the follow-up email that we discussed in the 11 AM meeting? Include the meeting notes and address the email to Jane, John, Chris, and Zane, with me on cc. Ensure my writing style is maintained by being concise and organize the details into summarized tasks and action columns. The points to include are: 1) Completion of the basement drywall repair, 2) Installation of dual LED lights in the kitchen with an inspection report as of April 26, 3) Completion of mold remediation and air quality test results by April 25, 4) Reminder for the telehealth check on April 23 (include the report), 5) Administration of Mr. Rodriguez\u00e2\u20ac\u2122s influenza vaccine at the April 25",
+        "expected_tool_ids": [
+            "8cf7ce63-0ad0-4887-bb72-5643ba95a874"
+        ],
         "expected_tools": [
             "VSCode.vscode_copilot_chat_send"
         ]
     },
     {
         "question": "Category: Remember: Copilot Profile, Question: Send an email to Lucina and Yajaira about the attendance for the 5 pm C Moisture-Control & Workshop. Include a brief summary followed by key agenda items in bullet points (make sure to check accuracy on drone metadata schema, chaincode updates, and action-item assignments). Ask them to use the probes to upload the 31 LIMS moisture export before the next session. Reply by tomorrow if they have any preliminary questions or data to provide by the end of day Tuesday.",
-        "description": "",
+        "expected_tool_ids": [
+            "13f03676-2864-4356-93ee-4f7a3b64605b"
+        ],
         "expected_tools": [
             "Klaviyo.Templates"
         ]
     },
     {
         "question": "Category: Create: Ambiguous Search, Question: Draft an email to <organization> summarizing <person>'s validation results for <product>. The summary should highlight lactate thresholds and key metrics, and elaborate on the recent quarterly review to enhance testing procedures.",
-        "description": "",
+        "expected_tool_ids": [
+            "43bfb1fa-3587-4fa6-8d37-d86b94c15283"
+        ],
         "expected_tools": [
             "DevRev.summarization"
         ]
     },
     {
         "question": "Category: Q&A: People Details, Question: What project is <person> currently working on?",
-        "description": "",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
         "question": "Category: Create: Ambiguous Search, Question: Please write an email to Susann Capello and Trina Cadmen highlighting outstanding quality control issues that need resolution before uploading the Desert Estates permit PDF packet to the City's e-Plan portal today. The issues include ensuring 50% transparency on the purple reclaimed-water layer in the L-4 legend, checking the PressureRating lookup for new types DeepVault_48Cover and ShallowVault_30Cover, and verifying the successful hyperlink tests for tags X-14 and Y-22 from the QC checklist. Request them to confirm with a thumbs-up or any last-minute corrections by 2 PM.",
-        "description": "",
+        "expected_tool_ids": [
+            "a95622cd-46ad-400f-b9cf-7f7b2cb4292c"
+        ],
         "expected_tools": [
             "Tianji.question"
         ]
     },
     {
-        "question": "Category: Remember: Copilot Profile, Question: Please draft a brief Teams message to Alfonso Balagtas, ensuring Shellie is copied, to confirm the following details: 1) DocuSign e-conveyancing envelope ID LR-20231229-34568 and the signing status as of 18:30; 2) Emma Carter from Preston & Co (emma.carter@preston-legal.co.uk, 0113 555 0456) is the solicitor contact for charge registration; 3) damp-proofing allowance breakdown: £650 for materials, £450 for labor, £100 for contingency; 4) assurance that the latest Title Alert indicates no encumbrances except leasehold covenants. Please close the message with my typical style, detailing the next steps",
-        "description": "",
+        "question": "Category: Remember: Copilot Profile, Question: Please draft a brief Teams message to Alfonso Balagtas, ensuring Shellie is copied, to confirm the following details: 1) DocuSign e-conveyancing envelope ID LR-20231229-34568 and the signing status as of 18:30; 2) Emma Carter from Preston & Co (emma.carter@preston-legal.co.uk, 0113 555 0456) is the solicitor contact for charge registration; 3) damp-proofing allowance breakdown: \u00c2\u00a3650 for materials, \u00c2\u00a3450 for labor, \u00c2\u00a3100 for contingency; 4) assurance that the latest Title Alert indicates no encumbrances except leasehold covenants. Please close the message with my typical style, detailing the next steps",
+        "expected_tool_ids": [
+            "8cf7ce63-0ad0-4887-bb72-5643ba95a874"
+        ],
         "expected_tools": [
             "VSCode.vscode_copilot_chat_send"
         ]
     },
     {
         "question": "Category: Help: BizChat, Question: What automated tasks and analyses can you perform on emails and meeting transcripts, such as quality assurance or highlighting key points?",
-        "description": "",
+        "expected_tool_ids": [
+            "de610290-16f2-4cad-b600-45a7d6d743f8"
+        ],
         "expected_tools": [
             "Zapier.Email_Parser"
         ]
     },
     {
         "question": "Category: Catch up: Emails, Question: Please summarize the recent emails for me.",
-        "description": "",
+        "expected_tool_ids": [
+            "de610290-16f2-4cad-b600-45a7d6d743f8"
+        ],
         "expected_tools": [
             "Zapier.Email_Parser"
         ]
     },
     {
         "question": "Category: Rewrite: GPT only, Question: Revise the email that explains the new policy to make it more engaging. Use inclusive language, keep it concise within three paragraphs, and address <person> concerns effectively.",
-        "description": "",
+        "expected_tool_ids": [
+            "13b4559a-9669-432f-af87-c76a0a4b214b"
+        ],
         "expected_tools": [
             "Riza.text_editing"
         ]
     },
     {
         "question": "Category: Catch up: Teams Chats, Question: Summarize the <organization> chats from <date>, focusing on decisions and tasks related to <person>.",
-        "description": "",
+        "expected_tool_ids": [
+            "43bfb1fa-3587-4fa6-8d37-d86b94c15283"
+        ],
         "expected_tools": [
             "DevRev.summarization"
         ]
     },
     {
-        "question": "Category: Search for: Emails, Question: Find any unread emails from this week with \"review,\" \"XXX,\" and \"action-required\" in the subject or body, and list the sender, the received date, attachment types, and note any deadlines or due dates specified in the email.",
-        "description": "",
+        "question": "Category: Search for: Emails, Question: Find any unread emails from this week with 'review,' 'XXX,' and 'action-required' in the subject or body, and list the sender, the received date, attachment types, and note any deadlines or due dates specified in the email.",
+        "expected_tool_ids": [
+            "de610290-16f2-4cad-b600-45a7d6d743f8"
+        ],
         "expected_tools": [
             "Zapier.Email_Parser"
         ]
     },
     {
         "question": "Category: Extensibility: Fanout to multiple plugins, Question: Find emails from Outlook, Excel spreadsheets, and PDF documents in Word, all related to project updates between October 1st and 31st. Include any attached notes.",
-        "description": "",
+        "expected_tool_ids": [
+            "88badb5d-1d82-4180-a441-203d33b020cb"
+        ],
         "expected_tools": [
             "TextIn.ocr"
         ]
     },
     {
-        "question": "Category: Create: GPT + Work, Question: Provide a summary outlining the goals highlighted in the \"<document>,\" as well as the conclusions from the \"<document>\" reports.",
-        "description": "",
+        "question": "Category: Create: GPT + Work, Question: Provide a summary outlining the goals highlighted in the '<document>,' as well as the conclusions from the '<document>' reports.",
+        "expected_tool_ids": [
+            "1737c7cc-12f8-4431-8821-79af24bfbeb7"
+        ],
         "expected_tools": [
             "UnifAI.DocumentQA"
         ]
     },
     {
-        "question": "Category: Remember: Copilot Profile, Question: Draft an email to <person> and request feedback that 1) summarizes the main findings from my \"<report>,\" 2) highlights the key concerns and the latest updates to testing <product> (focus on precision and uniformity drift >1.8 %), and 3) ask for their input by <time> so I can finalize the <document>. Follow my standard email format, keep a concise yet collaborative tone, and end with “Best, <person>.”",
-        "description": "",
+        "question": "Category: Remember: Copilot Profile, Question: Draft an email to <person> and request feedback that 1) summarizes the main findings from my '<report>,' 2) highlights the key concerns and the latest updates to testing <product> (focus on precision and uniformity drift >1.8 %), and 3) ask for their input by <time> so I can finalize the <document>. Follow my standard email format, keep a concise yet collaborative tone, and end with \u00e2\u20ac\u0153Best, <person>.'",
+        "expected_tool_ids": [
+            "43bfb1fa-3587-4fa6-8d37-d86b94c15283"
+        ],
         "expected_tools": [
             "DevRev.summarization"
         ]
     },
     {
         "question": "Category: Create: GPT only, Question: Create some fun questions for my next <event>, focusing on <topic> with multiple-choice options.",
-        "description": "",
+        "expected_tool_ids": [
+            "207a4919-2c32-41ac-8b84-ca6d4ec19156"
+        ],
         "expected_tools": [
             "Rember.choices"
         ]
     },
     {
         "question": "Category: Remember: Copilot Profile, Question: Please draft the follow-up email that was promised during the 11 AM Rodriguez home-safety and immunization planning meeting. Address it to Katharyn, Gabriele, Effie, and Zane, with me in the cc. Use my standard concise bullet-point format with columns for task owner and deadlines. Ensure to include the following details: 1) BrightSafe stair-rail installation on April 27 (Katharyn), 2) dual LED kitchen lights installation with pre/post lux log on April 26 (Gabriele), 3) mold remediation on April 25 and humidity check on April 27 (Effie), 4) MyChart invite for the April 23 telehealth vitals check (Zane), 5",
-        "description": "",
+        "expected_tool_ids": [
+            "00c82c5e-023f-411f-8e1f-97f10eb62264"
+        ],
         "expected_tools": [
             "VSCode.vscode_copilot_agent_plan"
         ]
     },
     {
         "question": "Category: Compose: Introduction Email, Question: Compose an email introducing myself to [<person>] on our team. Include my background and experience in [<industry>] and [<skill>], and offer support as [<person>] transitions into the new role.",
-        "description": "",
+        "expected_tool_ids": [
+            "13f03676-2864-4356-93ee-4f7a3b64605b"
+        ],
         "expected_tools": [
             "Klaviyo.Templates"
         ]
     },
     {
         "question": "Category: Create: Ambiguous Search, Question: Compose an email to <person> regarding the preparation for <date>'s inspection of machine SK-847B at <location>. Include the agenda for the meeting, instructions for the three hydraulic load tests, and a reminder to document findings in Inspection Report-54325. Also, request the latest test results.",
-        "description": "",
+        "expected_tool_ids": [
+            "ee30f2a1-5d5b-422b-be38-76b8f9b600bd"
+        ],
         "expected_tools": [
             "Rember.compose"
         ]
     },
     {
-        "question": "Category: Share: File, Question: Share the \"<file>\" file with <person>, and give her editing permissions.",
-        "description": "",
+        "question": "Category: Share: File, Question: Share the '<file>' file with <person>, and give her editing permissions.",
+        "expected_tool_ids": [
+            "9dd7feff-12c5-4c72-8414-57f7f6693aae"
+        ],
         "expected_tools": [
             "Auth0.Permissions"
         ]
     },
     {
         "question": "Category: Q&A: Teams Chat, Question: What are the most recent changes for <topic>?",
-        "description": "",
+        "expected_tool_ids": [
+            "6e148ca5-05e3-47e5-b424-e35eda84fc04"
+        ],
         "expected_tools": [
             "Logfire.ask_chat_google"
         ]
     },
     {
         "question": "Category: Help: Web Content, Question: How can I configure our web plugin to ensure it has proper network access via VLAN?",
-        "description": "",
+        "expected_tool_ids": [
+            "3eb902d2-b030-4c1a-9cef-124282053376"
+        ],
         "expected_tools": [
             "Hunter.Traceroute"
         ]
     },
     {
         "question": "Category: Create: Image, Question: Generate an image showing a flowchart for handling errors in the binding automation system with a POST request to /serials/binders branch based on HTTP responses. Log status 201 in the workflow. If a 400 bad request error occurs, log the payload and notify the automation team. For SAML token unauthorized issues, send a Slack alert to the admin. For a 404 Not Found error, halt the process and inform SciComm team. For a 429 Too Many Requests error, implement exponential backoff with up to 5 retries followed by an error status summary. Show the process times for all steps.",
-        "description": "",
+        "expected_tool_ids": [
+            "a87cf345-1ccf-4856-806d-c34e528d4115"
+        ],
         "expected_tools": [
             "LINE.Image"
         ]
     },
     {
         "question": "Category: Q&A: People Details, Question: What time zone is <person> in?",
-        "description": "",
+        "expected_tool_ids": [
+            "35ee11f5-5d19-435c-b758-6169ed46464f"
+        ],
         "expected_tools": [
             "Hyperbolic.wikidata"
         ]
     },
     {
         "question": "Category: Create: GPT only, Question: Collect encouraging and uplifting quotes about collaboration for the next <event>.",
-        "description": "",
+        "expected_tool_ids": [
+            "348f8b98-2ab2-4383-8bb0-c333284bac08"
+        ],
         "expected_tools": [
             "Logfire.ask_openai_chat"
         ]
     },
     {
         "question": "Category: Remember: Copilot Profile, Question: Draft a summary in <language> for the <project> project scheduled next week:",
-        "description": "",
+        "expected_tool_ids": [
+            "43bfb1fa-3587-4fa6-8d37-d86b94c15283"
+        ],
         "expected_tools": [
             "DevRev.summarization"
         ]
     },
     {
         "question": "Category: Recommend: Files, Question: Identify the key files I need to read <time> to get ready for <time> <event> and the <time> <event>.",
-        "description": "",
+        "expected_tool_ids": [
+            "0c2ac5f5-ec58-4eda-8613-8c04c4d2d4fc"
+        ],
         "expected_tools": [
             "VSCode.vscode_fs_list_directory"
         ]
     },
     {
         "question": "Category: Search for: Next Best Contact, Question: Who can help validate new API response mappings for the pre-service estimate updates now that <person> is away?",
-        "description": "",
+        "expected_tool_ids": [
+            "18086f1b-04b7-4ab4-9313-834d0bcff2db"
+        ],
         "expected_tools": [
             "Tianji.search"
         ]
     },
     {
         "question": "Category: Create: GPT only, Question: Create a brief <organization> post (150 words max) for an innovative clinic in <location> specializing in <service> and <product> to aid <condition> in their day-to-day lives. Begin with an engaging and inspirational headline, highlight a patient-driven success story, and conclude with a call-to-action for clinicians to reach out and connect.",
-        "description": "",
+        "expected_tool_ids": [
+            "a95622cd-46ad-400f-b9cf-7f7b2cb4292c"
+        ],
         "expected_tools": [
             "Tianji.question"
         ]
     },
     {
         "question": "Category: Q&A: Tenant Info, Question: Where can I find the company site policies in the documentation?",
-        "description": "",
+        "expected_tool_ids": [
+            "d394c7c7-171a-4e30-89d7-361aede279ee"
+        ],
         "expected_tools": [
             "Octagon.ask_retrieval"
         ]
     },
     {
         "question": "Category: Q&A: Web Only, Question: In what way can I establish and keep track of work objectives utilizing the SMART criteria?",
-        "description": "",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
         "question": "Category: Help: Microsoft, Question: Seeking assistance on drafting reports with <product> in <product>, specifically auto-populating data from <communication medium>, <communication medium>, and <communication medium>, and linking them. Where can I find guidance on searching these sources?",
-        "description": "",
+        "expected_tool_ids": [
+            "18086f1b-04b7-4ab4-9313-834d0bcff2db"
+        ],
         "expected_tools": [
             "Tianji.search"
         ]
     },
     {
         "question": "Category: Q&A: Web Only, Question: What methods can I use to efficiently cool a space like a <location>, and how can I determine the number of units required for each section of the room?",
-        "description": "",
+        "expected_tool_ids": [
+            "48792e8b-cd1e-442f-8591-25e076b27876"
+        ],
         "expected_tools": [
             "Hyperbrowser.web_browser"
         ]
     },
     {
         "question": "Category: Web and/or Work, Question: Request a review of ECO-27 Regulation in light of <person>'s suggestion to relocate the waste disposal manifold from the third-class ferry to the designated <organization> site in <location>.",
-        "description": "",
+        "expected_tool_ids": [
+            "48792e8b-cd1e-442f-8591-25e076b27876"
+        ],
         "expected_tools": [
             "Hyperbrowser.web_browser"
         ]
     },
     {
         "question": "Category: Create: GPT only, Question: Provide <education_level> level alternatives to the given phrases. I need it for the product specs.",
-        "description": "",
+        "expected_tool_ids": [
+            "13b4559a-9669-432f-af87-c76a0a4b214b"
+        ],
         "expected_tools": [
             "Riza.text_editing"
         ]
     },
     {
-        "question": "Category: Q&A: Topics & Acronyms, Question: What are the <number> key water quality metrics related to the \"Water Quality and Environmental Protection\" guidelines?",
-        "description": "",
+        "question": "Category: Q&A: Topics & Acronyms, Question: What are the <number> key water quality metrics related to the 'Water Quality and Environmental Protection' guidelines?",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
         "question": "Category: Modify: File, Question: Convert document into a PDF and rename it in the <location> directory",
-        "description": "",
+        "expected_tool_ids": [
+            "8f99c616-61d8-49c4-9f27-2e37917b352c"
+        ],
         "expected_tools": [
             "Rember.transform"
         ]
     },
     {
         "question": "Category: Q&A: GPT only, Question: What key elements should I keep in mind while organizing a <duration> <event> focused on instructing <audience> in <topic> and <topic>?",
-        "description": "",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
-        "question": "Category: Create: PPT from File, Question: Create a 15-slide PowerPoint presentation using \"Forensic_DNA_Training_Outline.pdf\": Start with a title slide, followed by an objectives slide. Each main section (I–V) should have its own slide with Roman numerals as headings and bullet points for sub-sections. Include a slide for practical application and another for additional resources.",
-        "description": "",
+        "question": "Category: Create: PPT from File, Question: Create a 15-slide PowerPoint presentation using 'Forensic_DNA_Training_Outline.pdf': Start with a title slide, followed by an objectives slide. Each main section (I\u00e2\u20ac\u201cV) should have its own slide with Roman numerals as headings and bullet points for sub-sections. Include a slide for practical application and another for additional resources.",
+        "expected_tool_ids": [
+            "d6461221-4327-487c-b449-8473400bd778"
+        ],
         "expected_tools": [
             "AllVoiceLab.Document_Analyzer"
         ]
     },
     {
         "question": "Category: Q&A: GPT only, Question: What are the most frequently used tools or techniques to evaluate skill growth in employee training, and which skill areas do they generally cover?",
-        "description": "",
+        "expected_tool_ids": [
+            "a7aebc78-4567-40f0-b43f-804b86b3810e"
+        ],
         "expected_tools": [
             "OctoEverywhere.Knowledge"
         ]
     },
     {
         "question": "Category: Compose: Introduction Email, Question: Draft an introduction email to <person> at <organization>, introducing myself as the project lead for <organization>'s <group>. Outline the goals of the project and guide him to the shared data and activity logs for initial review.",
-        "description": "",
+        "expected_tool_ids": [
+            "ee30f2a1-5d5b-422b-be38-76b8f9b600bd"
+        ],
         "expected_tools": [
             "Rember.compose"
         ]
     },
     {
         "question": "Category: Q&A: User Profile/Me, Question: What's the reporting structure for me in our <organization>? Need to update my records.",
-        "description": "",
+        "expected_tool_ids": [
+            "e3dc6b1d-c2f5-4a07-9d88-f7ddf3a20776"
+        ],
         "expected_tools": [
             "Campertunity.userProfile"
         ]
     },
     {
         "question": "Category: Compose: Introduction Email, Question: Please draft a brief and friendly introduction email to <person>, the new <job title> at the <organization>, to introduce myself as the media relations leader at <organization>. Highlight my <duration> of committed experience in <field> related to <location> campaigns and offer my assistance for any conservation or community-focused stories she may be working on.",
-        "description": "",
+        "expected_tool_ids": [
+            "ee30f2a1-5d5b-422b-be38-76b8f9b600bd"
+        ],
         "expected_tools": [
             "Rember.compose"
         ]
     },
     {
         "question": "Category: Search for: Emails, Question: Display the latest emails from my <person>, prioritized by importance and their relevance.",
-        "description": "",
+        "expected_tool_ids": [
+            "feeacb33-d3ca-4767-a812-65c3e904aeb2"
+        ],
         "expected_tools": [
             "Hiveflow.Search"
         ]

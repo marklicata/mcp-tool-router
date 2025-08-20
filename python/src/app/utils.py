@@ -229,7 +229,7 @@ class TestRunManager:
 
 
         # Load test cases from the specified file
-        test_case_file = self.config.get('TestRun', 'TEST_CASE_FILE', fallback='python/src/app/data/test_cases_v1.json')        
+        test_case_file = self.config.get('TestRun', 'TEST_CASE_FILE', fallback='python/src/app/data/test_cases_simple_100_M365.json')        
         with open(test_case_file, 'r', encoding='utf-8') as file:
             raw_tests = json.load(file)
 
