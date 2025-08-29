@@ -11,6 +11,7 @@ import uvicorn
 # GLOBAL VARIABLES
 app = FastAPI()
 router_instance = None
+search_instance = None
 
 class ToolRouter:
     """High-performance MCP Tool Router"""
@@ -26,6 +27,7 @@ class ToolRouter:
         self.use_local_tools = self.config.getboolean('ToolRouter', 'USE_LOCAL_TOOLS', fallback=False)
         self.use_search_cache = self.config.getboolean('TestRun', 'USE_SEARCH_CACHE', fallback=False)
         self.minimum_tool_score = self.config.getfloat('ToolRouter', 'MINIMUM_TOOL_SCORE', fallback=0.5)
+        self.minimum_reranker_score = self.config.getfloat('ToolRouter', 'MINIMUM_RERANKER_SCORE', fallback=1.1)
 
         # Initialize the Azure Search Manager
         self.azure_search_manager = AzureSearchManager()
@@ -124,7 +126,8 @@ class ToolRouter:
         start_execution_time = time.time()
         try:
             remote_tools_list = await self.get_remote_tools(query=query, allowed_tools=allowed_tools)
-            remote_tools_list.sort(key=lambda x: x.score if x else 0, reverse=True)
+            if remote_tools_list is not None:
+                remote_tools_list.sort(key=lambda x: x.score if x else 0, reverse=True)
         except Exception as e:
             logging.error(f"Error retrieving remote tools: {e}")
             remote_tools_list = []
@@ -140,7 +143,7 @@ class ToolRouter:
         ####
 
         # Make sure tools meet the minimum score requirement
-        remote_tools_list = [tool for tool in remote_tools_list if tool.score >= self.minimum_tool_score]
+        remote_tools_list = [tool for tool in remote_tools_list if tool.score >= self.minimum_reranker_score]
 
         # Limit the number of results if needed
         if len(remote_tools_list) > self.tool_return_limit:
@@ -150,6 +153,71 @@ class ToolRouter:
         total_execution_time = time.time() - start_execution_time
 
         return ToolResults(execution_time=total_execution_time, tools=remote_tools_list)
+
+
+@app.put("/run_az_search/")
+async def run_az_search(request: Request) -> ToolResults:
+    """
+    Get tools based on the query.
+    """
+    auth_header = request.headers.get("Authorization")
+    token = auth_header.split(" ")[1] if auth_header else None
+    raw_RQ_body = await request.body()
+    query = json.loads(raw_RQ_body.decode("utf-8")).get("query", "")
+    allowed_tools = json.loads(raw_RQ_body.decode("utf-8")).get("allowed_tools", [])
+
+    global search_instance
+    if search_instance is None:
+        search_instance = AzureSearchManager()
+
+    # Timer start
+    start_time = time.time()
+
+    # Check if the query is empty
+    if not query or query.strip() == "":
+        return {
+            "error": "Query cannot be empty",
+            "timestamp": datetime.now().isoformat()
+        }
+
+    # Route the query to get tools
+    try:
+        results = await search_instance.perform_azure_search(
+            search_text=query,
+            top_k=100
+        )
+    except Exception as e:
+        logging.error(f"Error routing query '{query}': {e}")
+        return {
+            "error": str(e),
+            "timestamp": datetime.now().isoformat()
+        }   
+    
+    if results is not None:
+        # Convert to list to check if we have results
+        result_list = list(results)
+        if result_list:
+            search_result_list = [Tool(
+                id=result.get('id'),
+                server=result.get('server', ''),
+                toolset=result.get('toolset', ''),
+                name=result.get('name', ''),
+                description=result.get('description', ''),
+                tool_vector=result.get('tool_vector', []),
+                score=result.get('@search.reranker_score') or 0.0,
+            ) for result in result_list if result.get('id') and result.get('server') and result.get('name')]
+            
+            if len(search_result_list) == 0:
+                logging.info("No results found.")                
+    else:
+        logging.info(f"No remote tools found matching query: '{query}'")
+
+    # Sort our returned tools
+    search_result_list.sort(key=lambda x: x.score if x else 0, reverse=True)
+
+    total_execution_time = time.time() - start_time
+    return ToolResults(execution_time=total_execution_time, tools=search_result_list)
+
 
 
 @app.put("/get_mcp_tools/")

@@ -84,6 +84,11 @@ class AzureSearchManager():
         """
         cleaned_tools_list = [f"'{i}'" for i in allowed_tools] if allowed_tools else []
 
+        if allowed_tools and len(allowed_tools) > 0:
+            filter_str = f"search.in(id, {','.join(cleaned_tools_list)})"
+        else:
+            filter_str = ""
+
         try:
             results = self.azure_search_client.search(
                 search_text=search_text,
@@ -96,7 +101,7 @@ class AzureSearchManager():
                 semantic_configuration_name="default",
                 select=["id", "server", "toolset", "name", "description"],
                 top=top_k,
-                filter=f"search.in(id, {','.join(cleaned_tools_list)})"
+                filter=filter_str
             )
             return results
         except Exception as e:
