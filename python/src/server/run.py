@@ -22,8 +22,6 @@ class ToolRouter:
         self.config = configparser.ConfigParser()
         self.config.read('python/src/server/data/config.ini')
         self.max_concurrent_requests = self.config.getint('ToolRouter', 'MAX_CONCURRENT_REQUESTS', fallback=15)
-        self.tool_result_cnt = self.config.getint('ToolRouter', 'TOOL_RESULT_CNT', fallback=10)
-        self.tool_return_limit = self.config.getint('ToolRouter', 'TOOL_RETURN_LIMIT', fallback=10)
         self.use_local_tools = self.config.getboolean('ToolRouter', 'USE_LOCAL_TOOLS', fallback=False)
         self.use_search_cache = self.config.getboolean('TestRun', 'USE_SEARCH_CACHE', fallback=False)
         self.minimum_tool_score = self.config.getfloat('ToolRouter', 'MINIMUM_TOOL_SCORE', fallback=0.5)
@@ -73,7 +71,7 @@ class ToolRouter:
         return []  # Placeholder for local tools retrieval logic
 
 
-    async def get_remote_tools(self, query: str, allowed_tools: List[str] = []) -> List[Tool]:
+    async def get_remote_tools(self, query: str, top_k: int = 10, allowed_tools: List[str] = []) -> List[Tool]:
         """
         Retrieve remote tools based on the query.
         Args:
@@ -85,7 +83,7 @@ class ToolRouter:
         try:
             search_result = await self.azure_search_manager.perform_azure_search(
                 search_text=query,
-                top_k=self.tool_result_cnt,
+                top_k=top_k,
                 allowed_tools=allowed_tools
             )
         except Exception as e:
@@ -113,11 +111,12 @@ class ToolRouter:
             return []
 
 
-    async def route(self, query: str, allowed_tools: List[str] = []) -> ToolResults:
+    async def route(self, query: str, top_k: int = 10, allowed_tools: List[str] = []) -> ToolResults:
         """
         Process a single query with performance tracking
         Args:
             query (str): The query string to process
+            top_k (int): The number of top results to return
             allowed_tools (List[str]): A list of allowed tool IDs for the query
         Returns:
             ToolResults: A ToolResults object containing the results of the query processing
@@ -125,7 +124,7 @@ class ToolRouter:
 
         start_execution_time = time.time()
         try:
-            remote_tools_list = await self.get_remote_tools(query=query, allowed_tools=allowed_tools)
+            remote_tools_list = await self.get_remote_tools(query=query, top_k=top_k, allowed_tools=allowed_tools)
             if remote_tools_list is not None:
                 remote_tools_list.sort(key=lambda x: x.score if x else 0, reverse=True)
         except Exception as e:
@@ -146,8 +145,8 @@ class ToolRouter:
         remote_tools_list = [tool for tool in remote_tools_list if tool.score >= self.minimum_reranker_score]
 
         # Limit the number of results if needed
-        if len(remote_tools_list) > self.tool_return_limit:
-            remote_tools_list = remote_tools_list[:self.tool_return_limit]
+        if len(remote_tools_list) > top_k:
+            remote_tools_list = remote_tools_list[:top_k]
 
         # create execution time for the query
         total_execution_time = time.time() - start_execution_time
@@ -164,6 +163,7 @@ async def run_az_search(request: Request) -> ToolResults:
     token = auth_header.split(" ")[1] if auth_header else None
     raw_RQ_body = await request.body()
     query = json.loads(raw_RQ_body.decode("utf-8")).get("query", "")
+    top_k = json.loads(raw_RQ_body.decode("utf-8")).get("top_k", 10)
     allowed_tools = json.loads(raw_RQ_body.decode("utf-8")).get("allowed_tools", [])
 
     global search_instance
@@ -180,12 +180,14 @@ async def run_az_search(request: Request) -> ToolResults:
             "timestamp": datetime.now().isoformat()
         }
 
-    # Route the query to get tools
+    # Route the query to get tools    
     try:
-        results = await search_instance.perform_azure_search(
-            search_text=query,
-            top_k=100
-        )
+        results = search_instance.azure_search_client.search(
+                query_type="simple",
+                search_text=query,
+                select=["id", "server", "toolset", "name", "description"],
+                top=top_k
+            )
     except Exception as e:
         logging.error(f"Error routing query '{query}': {e}")
         return {
@@ -204,7 +206,7 @@ async def run_az_search(request: Request) -> ToolResults:
                 name=result.get('name', ''),
                 description=result.get('description', ''),
                 tool_vector=result.get('tool_vector', []),
-                score=result.get('@search.reranker_score') or 0.0,
+                score=result.get('@search.score') or 0.0,
             ) for result in result_list if result.get('id') and result.get('server') and result.get('name')]
             
             if len(search_result_list) == 0:
@@ -233,6 +235,7 @@ async def get_mcp_tools(request: Request) -> ToolResults:
     token = auth_header.split(" ")[1] if auth_header else None
     raw_RQ_body = await request.body()
     query = json.loads(raw_RQ_body.decode("utf-8")).get("query", "")
+    top_k = json.loads(raw_RQ_body.decode("utf-8")).get("top_k", 10)
     allowed_tools = json.loads(raw_RQ_body.decode("utf-8")).get("allowed_tools", [])
 
     global router_instance
@@ -251,7 +254,7 @@ async def get_mcp_tools(request: Request) -> ToolResults:
     
     # Route the query to get tools
     try:
-        results = await router_instance.route(query=query, allowed_tools=allowed_tools)
+        results = await router_instance.route(query=query, top_k=top_k, allowed_tools=allowed_tools)
     except Exception as e:
         logging.error(f"Error routing query '{query}': {e}")
         return {

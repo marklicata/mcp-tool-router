@@ -9,9 +9,9 @@ class RequestHandler:
             'content-type': 'application/json'
         }       
 
-    def route_request(self, query: str, url: str) -> str:
+    def route_request(self, query: str, url: str, top_k: int = 10) -> str:
         self.conn = http.client.HTTPConnection("localhost", 8000)
-        payload = json.dumps({'query': query})
+        payload = json.dumps({'query': query, 'top_k': top_k})
 
         try:
             self.conn.request("PUT", url, payload, self.headers)

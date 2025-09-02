@@ -1,12 +1,4 @@
-import asyncio
-import configparser
-import time
-import sys
-import os
-import json
-import random
-import logging
-import random
+import asyncio, configparser, time, sys, os, json, random, logging
 from collections import Counter
 from typing import List
 from dataclasses import dataclass, asdict
@@ -62,7 +54,11 @@ class TestRunManager:
 
         # Adding app criteria to the query as an example of user context. Assuming server name and app name are the same.
         query = f"Current application: {test_case.expected_tools[0].split('.')[0]}. {test_case.question}"
-        results_json = self.request_handler.route_request(query=query, url="/get_mcp_tools/")
+        results_json = self.request_handler.route_request(
+            query=query,
+            url="/get_mcp_tools/",
+            top_k=self.config.getint('TestRun', 'TOOLS_TO_RETURN', fallback=10)
+        )
 
         if results_json is not None and results_json != "":
             results_json = json.loads(results_json)
@@ -98,7 +94,11 @@ class TestRunManager:
 
         if self.config.getboolean('TestRun', 'RUN_SIMPLE_SEARCH_COMPARISON', fallback=False):
             try:
-                search_result_json = self.request_handler.route_request(query=query, url="/run_az_search/")
+                search_result_json = self.request_handler.route_request(
+                    query=query,
+                    url="/run_az_search/",
+                    top_k=self.config.getint('TestRun', 'MAX_TOOLS_TO_RETURN', fallback=100)
+                )
             except Exception as e:
                 print(f"Error occurred while running search comparison: {e}")
             if search_result_json is not None and search_result_json != "":
@@ -107,7 +107,6 @@ class TestRunManager:
                 print(f"Error: No response received for query: Az Search using query: {query}")
                 return None
             search_result_tools_for_metrics_calc = [{"server": f"{tool.get('server', '')}", "name": f"{tool.get('name', '')}", "desc": f"{tool.get('description', '')}"} for tool in search_result_json.get('tools', [])]
-            random.shuffle(search_result_tools_for_metrics_calc)
             single_test_result.selection_disabled_metrics = await metrics_calculator.compute_metrics(
                 selected_tools=search_result_tools_for_metrics_calc,
                 expected_tools=test_case.expected_tools,

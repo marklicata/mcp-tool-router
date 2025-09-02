@@ -23,16 +23,18 @@ The server component provides a FastAPI-based tool routing service with Azure-ba
 **Key Features:**
 - **FastAPI REST API**: Modern web API with automatic documentation and authentication
 - **Intelligent Semantic Tool Discovery**: Uses Azure AI Search with OpenAI embeddings
-- **High-Performance Async Operations**: Configurable concurrent request handling
+- **High-Performance Async Operations**: Configurable concurrent request handling (default: 15)
 - **Advanced Score Normalization**: Rescaling algorithms for consistent ranking
 - **Tool Scoring & Filtering**: Configurable minimum score thresholds for result quality
-- **MCP Registry Integration**: Connects with MCP registry for server discovery
+- **Hybrid Search**: Combines semantic and keyword search for optimal results
+- **Flexible Configuration**: Easy configuration through INI files with multiple service sections
 - **Docker Support**: Containerized deployment ready
 
 **Current Implementation:**
-- Azure AI Search with OpenAI text-embedding-3-large
-- FastAPI endpoints: `/get_mcp_tools/` and `/get_router_status`
+- Azure AI Search with OpenAI text-embedding-3-large (1536 dimensions)
+- FastAPI endpoints: `/get_mcp_tools/`, `/run_az_search/`, and `/get_router_status`
 - Score normalization and filtering capabilities
+- Tool reranking with configurable thresholds
 - Local search planned for future implementation
 
 📖 **[Read the Server Documentation →](server/README.md)**
@@ -40,21 +42,23 @@ The server component provides a FastAPI-based tool routing service with Azure-ba
 ### 🧪 [App](app/)
 **Testing and Evaluation Application**
 
-The app component provides comprehensive automated testing and benchmarking capabilities for validating router performance and accuracy.
+The app component provides comprehensive automated testing and benchmarking capabilities for validating router performance and accuracy with advanced machine learning metrics.
 
 **Key Features:**
-- **Automated Benchmark Testing**: Batch evaluation against predefined test cases
-- **Multi-Metric Evaluation**: Precision, recall, and AI-judge scoring systems
-- **Multi-Tier Match Analysis**: Top-1, Top-3, Top-5, Top-10 accuracy measurement
-- **Performance Analytics**: Detailed timing and statistical reporting
-- **Interactive Chat Mode**: Manual query testing interface
-- **Azure OpenAI Integration**: AI-powered tool quality assessment
-- **Configurable Test Management**: Flexible test case and evaluation parameters
+- **Automated Benchmark Testing**: Batch evaluation against predefined test case collections
+- **Advanced Metrics Evaluation**: Precision@K, Recall@K, nDCG, Average Precision, and semantic analysis
+- **Performance Analytics**: Detailed timing measurements with percentile analysis (TP50, TP75, TP90, TP95)
+- **Match Tier Analysis**: Multi-tier matching evaluation (Top-1, Top-3, Top-5, Top-10)
+- **Comparison Testing**: Side-by-side evaluation of selection-enabled vs selection-disabled modes
+- **Statistical Reporting**: Comprehensive test run summaries with success rates and missed tool analysis
+- **Interactive Chat Mode**: Simple query interface for manual testing
+- **Azure OpenAI Integration**: Semantic similarity analysis using text embeddings for redundancy and confusion index metrics
 
 **Current Implementation:**
 - TestRunManager for automated testing orchestration
-- AI judge evaluation using GPT-4
-- Comprehensive statistical reporting
+- Advanced ML metrics (precision, recall, nDCG, average precision)
+- Semantic analysis using Azure OpenAI embeddings
+- Comprehensive statistical reporting with percentile analysis
 - HTTP client integration with server API
 
 📖 **[Read the App Documentation →](app/README.md)**
@@ -63,7 +67,7 @@ The app component provides comprehensive automated testing and benchmarking capa
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.11+
 - Azure account with AI Search and OpenAI services
 - FastAPI and Uvicorn for web server
 - SQLite with vector extensions (for future local mode)
@@ -93,7 +97,7 @@ The app component provides comprehensive automated testing and benchmarking capa
 # From python/src/server/
 python run.py
 ```
-Server will start on `http://localhost:8000` with API docs at `/docs`
+Server will start on `http://0.0.0.0:8000` with API docs at `/docs`
 
 #### Test with Interactive Mode
 ```python
@@ -113,10 +117,21 @@ python run.py
 
 ### REST API Endpoints
 
-**POST `/get_mcp_tools/`** - Search for tools
+**PUT `/get_mcp_tools/`** - Search for tools using full routing pipeline
 ```json
 {
-  "query": "file manipulation tools"
+  "query": "file manipulation tools",
+  "top_k": 10,
+  "allowed_tools": ["tool1", "tool2"]
+}
+```
+
+**PUT `/run_az_search/`** - Direct Azure Search access
+```json
+{
+  "query": "database operations",
+  "top_k": 10,
+  "allowed_tools": []
 }
 ```
 
@@ -127,7 +142,7 @@ python run.py
 from server.run import ToolRouter
 
 router = ToolRouter()
-results = await router.route(query="database operations")
+results = await router.route(query="database operations", top_k=10)
 ```
 
 ## Configuration
@@ -139,6 +154,8 @@ Located in [`server/data/config.ini`](server/data/config.ini):
 [AzureAI]
 AZURE_FOUNDARY_ENDPOINT = https://your-endpoint.cognitiveservices.azure.com/
 AZURE_EMBEDDING_MODEL = text-embedding-3-large
+AZURE_EMBEDDING_DEPLOYMENT = text-embedding-3-large
+AZURE_EMBEDDING_DIMENSIONS = 1536
 
 [AzureSearch]
 AZURE_SEARCH_ENDPOINT = https://your-search-service.search.windows.net
@@ -146,10 +163,9 @@ AZURE_SEARCH_INDEX_NAME = toolset-vector-index
 
 [ToolRouter]
 MAX_CONCURRENT_REQUESTS = 15
-TOOL_RESULT_CNT = 10
-TOOL_RETURN_LIMIT = 10
 USE_LOCAL_TOOLS = False
 MINIMUM_TOOL_SCORE = 0.5
+MINIMUM_RERANKER_SCORE = 1.1
 ```
 
 ### App Configuration  
@@ -157,23 +173,22 @@ Located in [`app/data/config.ini`](app/data/config.ini):
 
 ```ini
 [TestRun]
-SAMPLE_SIZE = 25
-TOOL_QUALITY_JUDGES = 7
-USE_SEARCH_CACHE = False
-
-[Registry]
-ENDPOINT1 = https://data.mcp.azure.com/workspaces/default/apis
-ENDPOINT2 = https://registry.mcp.azure.com/v0/servers
+SAMPLE_SIZE = 50
+TEST_CASE_FILE = python/src/app/data/test_cases_complex_50.json
+RUN_SIMPLE_SEARCH_COMPARISON = True
+TOOLS_TO_RETURN = 10
+MAX_TOOLS_TO_RETURN = 100
 ```
 
 ## Search Implementation
 
 ### 🌐 Azure Mode (Current Implementation)
-- **Azure AI Search**: Managed semantic search service
+- **Azure AI Search**: Managed semantic search service with hybrid search capabilities
 - **OpenAI Embeddings**: text-embedding-3-large model (1536 dimensions)
-- **Hybrid Search**: Combines text and vector search
+- **Hybrid Search**: Combines semantic vector search and keyword search
+- **Advanced Reranking**: Configurable reranker score thresholds
 - **Score Normalization**: Advanced rescaling algorithms for consistent ranking
-- **Tool Filtering**: Configurable minimum score thresholds
+- **Tool Filtering**: Configurable minimum score thresholds and allowed tools filtering
 
 ### 🏠 Local Mode (Planned)
 - **SQLite Vector Search**: Using sqlite-vec extensions
@@ -186,38 +201,59 @@ Configure the mode using `USE_LOCAL_TOOLS` in the server configuration.
 ## Key Data Structures
 
 ### Server Components
-- **`ToolRouter`**: Main orchestrator class with routing and normalization
-- **`Server`**: MCP server representation with validation
+- **`ToolRouter`**: Main orchestrator class with routing, normalization, and concurrent request handling
+- **`AzureSearchManager`**: Azure AI Search and OpenAI embedding integration
+- **`Server`**: MCP server representation with validation and metadata
 - **`Tool`**: Tool metadata with vector embeddings and scoring
-- **`ToolResults`**: Result container with performance metrics
-- **`VectorStoreManager`**: Extensible base for vector operations
+- **`ToolResults`**: Result container with performance metrics and execution time
 
 ### App Components
-- **`TestRunManager`**: Test execution orchestrator
-- **`TestResult`**: Individual test outcome storage
+- **`TestRunManager`**: Test execution orchestrator with advanced metrics calculation
+- **`MetricsCalculator`**: Advanced metrics computation including Azure OpenAI integration
+- **`TestResult`**: Individual test outcome storage with comprehensive metrics
 - **`TestCase`**: Test case definition structure
 - **`RequestHandler`**: HTTP client for server communication
+- **`MetricsResult`**: Data structure for storing calculated metrics (precision, recall, nDCG, etc.)
 
 ## Development Workflow
 
 ### 1. Server Development
 Work on core routing logic and search implementations in [`server/`](server/):
-- Modify [`run.py`](server/run.py) for main router logic
+- Modify [`run.py`](server/run.py) for main router logic and FastAPI endpoints
 - Update [`utils_azure_search.py`](server/utils_azure_search.py) for search functionality
 - Extend [`utils_objects.py`](server/utils_objects.py) for data structures
 
 ### 2. Testing & Validation
 Use the [`app/`](app/) component to:
 - Test new features with automated benchmarks
-- Validate accuracy with multi-tier match analysis
-- Monitor performance with detailed metrics
+- Validate accuracy with advanced ML metrics (precision, recall, nDCG)
+- Monitor performance with detailed timing and percentile analysis
 - Debug with interactive chat mode
+- Compare selection-enabled vs selection-disabled modes
 
 ### 3. Configuration Management
 Maintain separate configurations for:
 - **Development**: Local testing settings
 - **Production**: Deployed environment settings  
 - **Testing**: Benchmark-specific configurations
+
+## Advanced Evaluation Metrics
+
+### Machine Learning Metrics
+- **Precision@K**: Proportion of relevant tools in top-K results
+- **Recall@K**: Proportion of relevant tools successfully retrieved
+- **Average Precision**: Ranking-sensitive metric rewarding earlier placement
+- **nDCG@K**: Normalized Discounted Cumulative Gain with position-based discounting
+
+### Semantic Analysis Metrics
+- **Redundancy Score**: Semantic similarity between selected tools using Azure OpenAI embeddings
+- **Confusion Index**: Cognitive load estimation combining list length and redundancy
+- **Tool Overlap Analysis**: Identification of functionally similar tools
+
+### Performance Metrics
+- **Response Time Percentiles**: TP50, TP75, TP90, TP95 analysis
+- **Success/Failure Rates**: Query processing statistics
+- **Missing Tool Analysis**: Detailed breakdown of commonly missed tools
 
 ## Key Dependencies
 
@@ -226,26 +262,49 @@ Maintain separate configurations for:
 - **OpenAI**: `openai>=1.12.0`
 - **Web Framework**: `fastapi>=0.104.0`, `uvicorn[standard]>=0.24.0`
 - **Data Validation**: `pydantic>=2.5.0`
+- **MCP Framework**: `mcp>=1.0.0`
 - **Future Local Search**: `sqlite-vec>=0.1.0`
 
 ### App Dependencies
 - **HTTP Client**: `requests>=2.31.0`
-- **Azure AI**: `azure-identity`, `openai` (for quality assessment)
+- **Azure AI**: `azure-identity`, `openai` (for semantic analysis)
+- **ML Libraries**: `scikit-learn`, `numpy`
 - **Utilities**: `tabulate`, `asyncio`
 
 ## Performance Features
 
 ### Server Performance
 - **Concurrent Requests**: Configurable via `MAX_CONCURRENT_REQUESTS` (default: 15)
-- **Result Limits**: Tunable through `TOOL_RESULT_CNT` and `TOOL_RETURN_LIMIT`
-- **Score Filtering**: `MINIMUM_TOOL_SCORE` threshold for quality control
-- **Advanced Normalization**: Rescaling algorithms for consistent ranking
+- **Advanced Filtering**: `MINIMUM_TOOL_SCORE` and `MINIMUM_RERANKER_SCORE` thresholds
+- **Hybrid Search**: Combines semantic and keyword search for optimal results
+- **Score Normalization**: Rescaling algorithms for consistent ranking
+- **Tool Reranking**: Advanced reranking with configurable thresholds
 
 ### App Performance
-- **Concurrent Testing**: Parallel test case execution
+- **Concurrent Testing**: Parallel test case execution with asyncio
 - **Configurable Batches**: Adjustable `SAMPLE_SIZE` for testing needs
-- **Comprehensive Metrics**: Multiple evaluation methodologies
-- **AI Judge Evaluation**: Configurable number of quality assessors
+- **Advanced Metrics**: Multiple ML evaluation methodologies
+- **Semantic Analysis**: Azure OpenAI integration for redundancy assessment
+- **Statistical Analysis**: Comprehensive percentile and distribution reporting
+
+## Test Case Collections
+
+### Available Test Case Files
+- **`test_cases_simple_20_SWE.json`** - 20 simple software engineering test cases
+- **`test_cases_simple_100_M365.json`** - 100 simple Microsoft 365 test cases
+- **`test_cases_simple_600.json`** - 600 simple test cases across domains
+- **`test_cases_complex_50.json`** - 50 complex test scenarios
+- **`test_cases_complex_175.json`** - 175 complex test scenarios
+
+### Test Case Structure
+```json
+{
+    "question": "Find the machine learning org in GitHub",
+    "expected_tools": [
+        "GitHub.SearchOrgs"
+    ]
+}
+```
 
 ## File Organization
 
@@ -260,14 +319,22 @@ python/src/
 │   ├── data/
 │   │   ├── config.ini             # Server configuration
 │   │   ├── mcp_servers.json       # Server registry
-│   │   └── tool_manifest.json     # Tool metadata
+│   │   ├── tool_manifest.json     # Tool metadata
+│   │   └── new_tests.json         # Test cases and validation data
 │   └── json_utils/                # Server management utilities
+│       ├── create_servers.py      # Server creation utilities
+│       ├── create_test_cases.py   # Test case generation
+│       └── update_servers.py      # Server update utilities
 ├── app/
 │   ├── run.py                     # Testing application entry point
-│   ├── utils.py                   # Testing framework classes
+│   ├── utils_test_manager.py      # Core testing framework
+│   ├── utils_request_manager.py   # HTTP client for server communication
+│   ├── utils_metrics.py           # Advanced metrics calculation
 │   └── data/
 │       ├── config.ini             # App configuration
-│       └── test_cases.json        # Test case database
+│       ├── test_cases_simple_*.json    # Simple test case collections
+│       ├── test_cases_complex_*.json   # Complex test case collections
+│       └── test_results.json      # Test results storage
 └── .gitignore                     # Python ignore patterns
 ```
 
@@ -319,22 +386,24 @@ logging.basicConfig(level=logging.DEBUG)
 ## Future Enhancements
 
 ### Server Roadmap
-- **Local Search Implementation**: SQLite-based vector search
-- **Hybrid Search**: Combine local and remote results
+- **Local Search Implementation**: SQLite-based vector search with sqlite-vec
+- **Hybrid Local/Remote Search**: Combine local and remote results
 - **Enhanced Caching**: Search result caching for improved performance
 - **Multi-language Support**: Additional embedding models
+- **Real-time Tool Synchronization**: Dynamic tool updates
 
 ### App Roadmap
 - **Advanced Metrics**: Additional quality assessment methods
 - **Real-time Monitoring**: Continuous performance tracking
 - **Test Case Generation**: Automated test case creation
 - **Integration Testing**: End-to-end workflow validation
+- **Visualization**: Interactive dashboards for metrics analysis
 
 ## Next Steps
 
 - 📖 **Explore Server Implementation**: [Server Documentation](server/README.md)
-- 🧪 **Try Automated Testing**: [App Documentation](app/README.md)
+- 🧪 **Try Advanced Testing**: [App Documentation](app/README.md)
 - ⚙️ **Configure Your Environment**: Update configuration files
 - 🚀 **Deploy to Production**: Follow Docker deployment guide
 
-For detailed implementation information, refer to the component-specific documentation linked above.
+For detailed implementation information, refer to the component-specific documentation
