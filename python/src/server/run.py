@@ -214,9 +214,6 @@ async def run_az_search(request: Request) -> ToolResults:
     else:
         logging.info(f"No remote tools found matching query: '{query}'")
 
-    # Sort our returned tools
-    search_result_list.sort(key=lambda x: x.score if x else 0, reverse=True)
-
     total_execution_time = time.time() - start_time
     return ToolResults(execution_time=total_execution_time, tools=search_result_list)
 
